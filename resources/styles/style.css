@@ -48,9 +48,11 @@ header>h1 {
 }
 
 .grid {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 2rem 0;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -63,15 +65,23 @@ header>h1 {
     align-items: center;
     padding: 1rem;
     justify-content: left;
+    gap: 1rem;
+    text-decoration: none;
 }
 
 .button p {
     width: 70%;
+    height: auto;
     font-size: 1.1rem;
 }
 
-.button svg {
-    width: 30%
+.button img {
+    width: 20%;
+    height: auto;
+}
+
+.node-button img {
+    width: 25% !important;
 }
 
 #programming {

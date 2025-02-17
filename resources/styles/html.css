@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Light", sans-serif;
+    color: white;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: darkslategrey;
+}
+
+header {
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+header > h1 {
+    font-size: xx-large;
+    text-align: left;
+}
+
+.introduction-container {
+    width: 60rem;
+    margin: 0 auto;
+}
+
+#introduction {
+    text-align: center;
+    line-height: 3rem;
+    margin: 4rem 0
+}
+
+#introduction > h2 {
+    font-size: xxx-large;
+    font-weight: lighter;
+}
+
+#introduction > p {
+    font-size: larger;
+    font-weight: lighter;
+}
+
+.main-container {
+    width: 80rem;
+    margin: 0 auto;
+}
+
+section > h1 {
+    font-size: xx-large;
+    font-weight: lighter;
+    text-align: left;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.highlight-section {
+    text-decoration: none;
+    color: limegreen;
+}
+
+.cheatsheet-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    border-radius: 0.5rem;
+    background-color: #1e293b;
+    color: black;
+    text-align: center;
+}
+
+.card > h4 {
+    background-color: green;
+    float: right;
+}
