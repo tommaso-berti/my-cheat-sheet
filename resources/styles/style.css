@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Light", sans-serif;
+    color: white;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: darkslategrey;
+}
+
+header {
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+header>h1 {
+    font-size: xx-large;
+    text-align: left;
+}
+
+.main-container {
+    width: 60rem;
+    margin: 0 auto;
+}
+
+#introduction {
+    text-align: center;
+    line-height: 3rem;
+    margin: 4rem 0
+}
+
+#introduction > h2 {
+    font-size: xx-large;
+}
+
+#introduction > p {
+    font-size: x-large;
+}
+
+.grid-container > h2 {
+    padding-bottom: 1rem;
+    border-bottom: solid 1px white;
+    font-size: x-large;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.button {
+    display: flex;
+    width: 20%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: lightgrey;
+    align-items: center;
+    padding: 1rem;
+    justify-content: left;
+}
+
+.button p {
+    width: 70%;
+    font-size: 1.1rem;
+}
+
+.button svg {
+    width: 30%
+}
+
+#programming {
+
+}
+
