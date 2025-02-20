@@ -18,22 +18,43 @@
 </div>
 <div class="main-container">
     <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+        <h1><a href="#getting-started" class="highlight-section" onclick="highlightContainer()">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-            <div class="card">
-               <h4>Introduction</h4>
+            <div class="card tall">
+               <h2>Introduction</h2>
                 <p>lorem</p>
             </div>
-            <div class="card">
-                <h4>Introduction</h4>
+            <div class="card small">
+                <h2>Introduction</h2>
                 <p>lorem</p>
             </div>
-            <div class="card">
-                <h4>Introduction</h4>
+            <div class="card small">
+                <h2>Introduction</h2>
                 <p>lorem</p>
+            </div>
+            <div class="card medium">
+                <h2>Introduction</h2>
+                <p></p>
+            </div>
+            <div class="card medium">
+                <h2>Introduction</h2>
+                <p></p>
+            </div>
+            <div class="card medium">
+                <h2>Introduction</h2>
+                <p></p>
+            </div>
+            <div class="card small">
+                <h2>Introduction</h2>
+                <p></p>
             </div>
         </div>
     </section>
 </div>
+<script>
+    function highlightContainer() {
+        document.getElementsByClassName("cheatsheet-card-container").classList.toggle("highlighted");
+    }
+</script>
 </body>
 </html>
