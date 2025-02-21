@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="/resources/styles/html.css">
 </head>
 <body>
-<header>
-    <h1>My Cheat Sheet</h1>
+<header class="header-title">
+    <a href="../../index.html"><h1>My Cheat Sheet</h1></a>
 </header>
 <div class="introduction-container">
     <div id="introduction">
@@ -18,43 +18,43 @@
 </div>
 <div class="main-container">
     <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section" onclick="highlightContainer()">#</a> Getting started</h1>
+        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
             <div class="card tall">
-               <h2>Introduction</h2>
-                <p>lorem</p>
+               <h3>Introduction</h3>
+                <div class="content standard-content">
+                    <p>lorem</p>
+                </div>
             </div>
             <div class="card small">
-                <h2>Introduction</h2>
-                <p>lorem</p>
+                <h3>Introduction</h3>
+                <div class="content code-content">
+                    <button class="copy-button">Copy</button>
+                    <pre><code class="code">Your code here...</code></pre>
+                </div>
             </div>
             <div class="card small">
-                <h2>Introduction</h2>
+                <h3>Introduction</h3>
                 <p>lorem</p>
             </div>
             <div class="card medium">
-                <h2>Introduction</h2>
+                <h3>Introduction</h3>
                 <p></p>
             </div>
             <div class="card medium">
-                <h2>Introduction</h2>
+                <h3>Introduction</h3>
                 <p></p>
             </div>
             <div class="card medium">
-                <h2>Introduction</h2>
+                <h3>Introduction</h3>
                 <p></p>
             </div>
             <div class="card small">
-                <h2>Introduction</h2>
+                <h3>Introduction</h3>
                 <p></p>
             </div>
         </div>
     </section>
 </div>
-<script>
-    function highlightContainer() {
-        document.getElementsByClassName("cheatsheet-card-container").classList.toggle("highlighted");
-    }
-</script>
 </body>
 </html>

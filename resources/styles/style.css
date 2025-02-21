@@ -12,12 +12,12 @@ body {
     background-color: darkslategrey;
 }
 
-header {
+.header-title {
     justify-content: flex-start;
     padding: 2rem;
 }
 
-header>h1 {
+.header-title h1 {
     font-size: xx-large;
     text-align: left;
 }

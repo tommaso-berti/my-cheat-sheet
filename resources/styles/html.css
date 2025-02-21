@@ -12,14 +12,18 @@ body {
     background-color: darkslategrey;
 }
 
-header {
+.header-title {
     justify-content: flex-start;
     padding: 2rem;
 }
 
-header > h1 {
+.header-title > h1 {
     font-size: xx-large;
     text-align: left;
+}
+
+.header-title a {
+    text-decoration: none;
 }
 
 .introduction-container {
@@ -78,7 +82,7 @@ section > h1 {
 
 .card {
     border-radius: 0.5rem;
-    background-color: #1e293b;
+    background-color: #457474;
     color: black;
 }
 
@@ -92,13 +96,38 @@ section > h1 {
     grid-row: span 1;
 }
 
-.card > h2 {
-    color: green;
+.card > h3 {
+    color: limegreen;
     margin: 1rem;
 }
 
-.card p {
+.content {
     margin: 1rem;
+}
+
+.content.standard-content {
     font-weight: lighter;
     color: lightgrey;
+}
+
+.code {
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.copy-button {
+    position: relative;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: limegreen;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: lime;
 }
