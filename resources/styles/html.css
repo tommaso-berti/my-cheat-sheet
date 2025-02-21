@@ -110,24 +110,34 @@ section > h1 {
     color: lightgrey;
 }
 
-.code {
+.content.code-content {
+    position: relative;
+}
+
+.code.content .code {
     font-family: monospace;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
-.copy-button {
-    position: relative;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: limegreen;
+.code-content .copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
-    padding: 0.5rem;
+    padding: 0.2rem;
     border-radius: 0.25rem;
     cursor: pointer;
 }
 
-.copy-button:hover {
-    background-color: lime;
+.code-content .copy-button>img {
+    margin: auto auto;
+    width: 0.9rem;
+    height: auto;
+}
+
+.code-content .copy-button:hover {
+    background-color: rgba(0, 255, 0, 0.8);
 }
