@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto Light", sans-serif;
+    font-family: "Google sans", Roboto, Arial, sans-serif;
     color: white;
 }
 
@@ -98,7 +98,11 @@ section > h1 {
 
 .card > h3 {
     color: limegreen;
-    margin: 1rem;
+    padding-top: 0.3rem;
+    padding-right: 0.5rem;
+    display: inline-block;
+    text-align: right;
+    width: 100%;
 }
 
 .content {
@@ -114,10 +118,11 @@ section > h1 {
     position: relative;
 }
 
-.code.content .code {
+.code {
     font-family: monospace;
     white-space: pre-wrap;
     word-wrap: break-word;
+    font-size: 0.9rem;
 }
 
 .code-content .copy-button {
@@ -127,7 +132,7 @@ section > h1 {
     background-color: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
-    padding: 0.2rem;
+    padding: 0.3rem;
     border-radius: 0.25rem;
     cursor: pointer;
 }
@@ -140,4 +145,42 @@ section > h1 {
 
 .code-content .copy-button:hover {
     background-color: rgba(0, 255, 0, 0.8);
+}
+
+.content.list-content {
+    padding-left: 1rem;
+    line-height: 2.5rem;
+}
+
+.list-content li {
+    border-bottom: 1px solid darkslategrey;
+}
+
+.list-content li:last-child {
+    border-bottom: none;
+}
+
+.content.definition-content > ul li {
+    line-height: 2.5rem;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkslategrey;
+}
+
+.content.definition-content > ul li:last-child {
+    border-bottom: none;
+}
+
+.code-attribute {
+    font-family: monospace;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.subtitle {
+    text-align: center;
+    background-color: #4f8484;
+    padding: 0.5rem;
 }
