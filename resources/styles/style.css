@@ -9,17 +9,37 @@
 body {
     width: 100%;
     height: auto;
-    background-color: darkslategrey;
+    background-color: #0f172a;
+}
+
+header {
+    width: 90rem;
+    margin: 0 auto;
 }
 
 .header-title {
+    display: flex;
     justify-content: flex-start;
     padding: 2rem;
 }
 
+.header-title a {
+    display:flex;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    align-items: center;
+}
+
 .header-title h1 {
     font-size: xx-large;
+    font-weight: normal;
     text-align: left;
+}
+
+.header-title img {
+    width: 3rem;
+    height: auto;
 }
 
 .main-container {
@@ -34,11 +54,17 @@ body {
 }
 
 #introduction > h2 {
-    font-size: xx-large;
+    font-size: xxx-large;
 }
 
 #introduction > p {
-    font-size: x-large;
+    font-weight: lighter;
+    font-size: larger;
+    color: #94a3b8
+}
+
+section {
+    margin-bottom: 6rem;
 }
 
 .grid-container > h2 {
@@ -60,7 +86,6 @@ body {
     width: 20%;
     height: 4rem;
     border-radius: 0.5rem;
-    color: white;
     background-color: lightgrey;
     align-items: center;
     padding: 1rem;
@@ -73,6 +98,7 @@ body {
     width: 70%;
     height: auto;
     font-size: 1.1rem;
+    color: black;
 }
 
 .button img {
@@ -80,7 +106,30 @@ body {
     height: auto;
 }
 
-.node-button img {
-    width: 25% !important;
+.html-button {
+    background-color: #FFB38E;
 }
 
+.css-button {
+    background-color: #FFD166;
+}
+
+.javascript-button {
+    background-color: #06D6A0;
+}
+
+.node-button {
+    background-color: #118AB2;
+}
+
+.node-button img {
+    width: 25%;
+}
+
+.ssh-button {
+    background-color: #FFB3BA;
+}
+
+.ssh-button img {
+    width: 25%;
+}
