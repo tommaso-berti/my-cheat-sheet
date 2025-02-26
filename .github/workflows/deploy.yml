@@ -1,0 +1,25 @@
+name: Deploy My Cheatsheet
+
+on:
+  push:
+    branches:
+      - main  # Attiva il deploy quando fai un push sul branch "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # GitHub esegue il deploy su una macchina virtuale Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Scarica il codice del repository
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/websites/my-cheatsheet
+            git pull origin main  
+            docker compose up -d
