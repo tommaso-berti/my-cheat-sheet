@@ -22,4 +22,5 @@ jobs:
           script: |
             cd ~/websites/my-cheatsheet
             git pull origin main  
-            docker compose up -d
+            docker-compose down
+            docker compose up -d --build
