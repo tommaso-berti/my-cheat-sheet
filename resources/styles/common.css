@@ -110,6 +110,12 @@ section > h1 {
 .card.small {
     grid-row: span 1;
 }
+.card.span-two-column {
+    grid-column: span 2;
+}
+.card.span-three-column {
+    grid-column: span 3;
+}
 
 .card > h3 {
     color: rgba(0, 255, 0, 0.5);
