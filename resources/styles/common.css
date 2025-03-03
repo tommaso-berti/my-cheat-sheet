@@ -97,7 +97,7 @@ section > h1 {
 
 .card {
     border-radius: 0.5rem;
-    background-color: #1e293b;
+    background-color: #182436;
     color: black;
 }
 
@@ -113,7 +113,8 @@ section > h1 {
 
 .card > h3 {
     color: rgba(0, 255, 0, 0.5);
-    padding-top: 0.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
     padding-right: 0.6rem;
     display: inline-block;
     text-align: right;
@@ -121,7 +122,7 @@ section > h1 {
 }
 
 .content {
-    margin: 1rem;
+    padding: 1rem;
 }
 
 .content.standard-content p {
@@ -131,6 +132,8 @@ section > h1 {
 
 .content.code-content {
     position: relative;
+    background-color: #1e293b;
+    border-radius: 0.5rem;
 }
 
 .code {
@@ -142,8 +145,8 @@ section > h1 {
 
 .code-content .copy-button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     background-color: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
@@ -162,8 +165,15 @@ section > h1 {
     background-color: rgba(0, 255, 0, 0.8);
 }
 
+.code-attribute {
+    font-family: monospace;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: x-large;
+}
+
 .content.list-content {
-    padding-left: 1rem;
+    padding-left: 2rem;
     line-height: 2.5rem;
 }
 
@@ -185,13 +195,6 @@ section > h1 {
 
 .content.definition-content > ul li:last-child {
     border-bottom: none;
-}
-
-.code-attribute {
-    font-family: monospace;
-    color: darkgreen;
-    font-weight: bold;
-    font-size: x-large;
 }
 
 .subtitle {
