@@ -133,3 +133,15 @@ section {
 .ssh-button img {
     width: 25%;
 }
+
+.ubuntu-button {
+    background-color: #A0E7E5;
+}
+
+.vps-button {
+    background-color: #118AB2;
+}
+
+.vps-button img {
+    width: 25%;
+}

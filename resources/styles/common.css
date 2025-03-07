@@ -10,6 +10,7 @@ body {
     width: 100%;
     height: auto;
     background-color: #0f172a;
+    padding: 0 1rem;
 }
 
 header {
@@ -128,18 +129,28 @@ section > h1 {
 }
 
 .content {
-    padding: 1rem;
+    margin: 1rem;
 }
 
-.content.standard-content p {
+p {
     font-weight: lighter;
     color: #94a3b8;
+    margin: 1rem 0;
 }
 
-.content.code-content {
+p.annotations {
+    font-weight: lighter;
+    font-size: small;
+    color: #94a3b8;
+    margin: 1rem 0;
+}
+
+.code-content {
     position: relative;
     background-color: #1e293b;
     border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
 }
 
 .code {
@@ -151,8 +162,8 @@ section > h1 {
 
 .code-content .copy-button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0;
+    right: 0;
     background-color: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
@@ -178,28 +189,44 @@ section > h1 {
     font-size: x-large;
 }
 
-.content.list-content {
-    padding-left: 2rem;
+.list-content {
+    padding-left: 1rem;
     line-height: 2.5rem;
+    margin: 1rem 0;
 }
 
 .list-content li {
     border-bottom: 1px solid #0f172a;
+    font-weight: lighter;
+    color: #94a3b8;
 }
 
 .list-content li:last-child {
     border-bottom: none;
 }
 
-.content.definition-content > ul li {
+.numbered-list-content {
+    padding-left: 1rem;
+    line-height: 1.2rem;
+    margin: 1rem 0;
+}
+
+.numbered-list-content li {
+    font-weight: lighter;
+    color: #94a3b8;
+    margin: 1rem 0;
+}
+
+.definition-content > ul li {
     line-height: 2.5rem;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #0f172a;
+    margin: 1rem 0;
 }
 
-.content.definition-content > ul li:last-child {
+.definition-content > ul li:last-child {
     border-bottom: none;
 }
 
@@ -207,4 +234,6 @@ section > h1 {
     text-align: center;
     background-color: #233142;
     padding: 0.5rem;
+    font-weight: lighter;
+    margin: 1rem 0;
 }

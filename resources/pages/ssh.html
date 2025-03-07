@@ -23,8 +23,10 @@
         <div class="cheatsheet-card-container">
             <div class="card small">
                 <h3>What is an ssh?</h3>
-                <div class="content standard-content">
-                    <p>SSH, or Secure Shell, is a cryptographic network protocol used for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers. It is widely used by network administrators to manage systems and applications remotely, ensuring that data sent over the network is encrypted and secure from eavesdropping.</p>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>SSH, or Secure Shell, is a cryptographic network protocol used for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers. It is widely used by network administrators to manage systems and applications remotely, ensuring that data sent over the network is encrypted and secure from eavesdropping.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,66 +36,90 @@
         <div class="cheatsheet-card-container">
             <div class="card small span-two-column">
                 <h3>What is an RSA key?</h3>
-                <div class="content standard-content">
-                    <p>RSA (Rivest-Shamir-Adleman) is a public-key crypto system used for secure data transmission. An RSA key pair includes a public key for encryption and a private key for decryption. It is widely used in security protocols like SSL/TLS and SSH.</p>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>
+                            RSA (Rivest-Shamir-Adleman) is a public-key crypto system used for secure data transmission. An RSA key pair includes a public key for encryption and a private key for decryption. It is widely used in security protocols like SSL/TLS and SSH.<br>
+                        </p>
+                    </div>
+                    <h4 class="subtitle">Types of RSA Keys</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>Public Key:</strong> Can be shared with anyone and is used for encrypting data or verifying digital signatures/li>
+                            <li><strong>Private Key:</strong> Must remain secret and is used for decrypting data or signing digital documents.</li>
+                        </ul>
+                    </div>
+                    <div class="standard-content">
+                        <p>
+                            RSA remains secure as long as the key length is sufficient (2048 or 4096 bits is the standard today). However, with the advancement of quantum computing, RSA encryption may become vulnerable in the future.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="card small">
-                <h3>Introduction</h3>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code">Your code here...</code></pre>
+                <h3>How Does RSA Work?</h3>
+                <div class="content">
+                    <div class="content numbered-list-content">
+                        <ol>
+                            <li><strong>Key Generation:</strong> Two large prime numbers are chosen, and their product is used as part of the public key.</li>
+                            <li><strong>Encryption:</strong> A message is converted into a number and encrypted using the public key.</li>
+                            <li><strong>Decryption:</strong> Only the holder of the private key can transform the encrypted message back into its original form.</li>
+                            <li><strong>Digital Signatures:</strong> A document can be signed with the private key, and anyone can verify the signature using the public key.</li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content list-content">
-                    <ul>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content definition-content">
-                    <ul>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                    </ul>
-                </div>
-                <h4 class="subtitle">Examples</h4>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code json">
-{
-  "name": "Jason",
-  "age": 39,
-  "height": 1.92,
-  "gender": "M",
-  "salary": 70000,
-  "married": true,
-  "children": [
-    {"name": "Tom", "age": 9, "gender":"M"},
-    {"name": "Ava", "age": 7, "gender":"F"}dads
-  ]
-}
-                    </code></pre>
-                </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
             </div>
             <div class="card small">
-                <h3>Introduction</h3>
-                <p></p>
+                <h3>Where is RSA Used?</h3>
+                <div class="content">
+                    <div class="content list-content">
+                        <ul>
+                            <li>Secure connections (HTTPS, VPN, SSH)</li>
+                            <li>Authentication (e.g., SSH keys like id_rsa.pem)</li>
+                            <li>Digital signatures (documents, emails)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card medium span-two-column">
+                <h3>Create a Private PEM key</h3>
+                <div class="content">
+                    <p>Open terminal and create a private PEM</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">ssh-keygen -t rsa -b 4096 -m PEM -f key_name.pem</code></pre>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>-t:</strong> Specifies the type of key to create (RSA).</li>
+                            <li><strong>-b:</strong> Specifies the number of bits in the key (4096).</li>
+                            <li><strong>-m:</strong> Specifies the key format (PEM).</li>
+                            <li><strong>-f:</strong> Specifies the filename of the key file (key_name.pem).</li>
+                        </ul>
+                    </div>
+                    <p>Set permissions for the private key (required for SSH)</p>
+                    <p class="annotations">This is a commonly used permission set for SSH private keys (.pem), to ensure that they are secure and not accessible to other users on the system. Some SSH clients, such as OpenSSH, will refuse to use a private key if it has too permissive permissions.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">chmod 400 key_name.pem</code></pre>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>chmod:</strong> Changes file permissions.</li>
+                            <li><strong>400:</strong> Sets read-only permissions for the owner.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Create a Public PEM key</h3>
+                <div class="content">
+                    <p>Open terminal and create a public PEM</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">ssh-keygen -y -f key_name.pem > key_name.pub</code></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
