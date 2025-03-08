@@ -14,7 +14,7 @@
 <div class="introduction-container">
     <div id="introduction">
         <h2><span style="font-weight: normal">VPS</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
-        <p>Here you can find how to configure a secure remote connection and command execution</p>
+        <p>Basic VPS commands and configuration quick reference</p>
     </div>
 </div>
 <div class="main-container">
@@ -22,10 +22,51 @@
         <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
             <div class="card small">
-                <h3>What is an ssh?</h3>
+                <h3>What is a vps?</h3>
                 <div class="content">
                     <div class="standard-content">
-                        <p>SSH, or Secure Shell, is a cryptographic network protocol used for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers. It is widely used by network administrators to manage systems and applications remotely, ensuring that data sent over the network is encrypted and secure from eavesdropping.</p>
+                        <p>A Virtual Private Server (VPS) is a virtualized server that mimics a dedicated server within a shared hosting environment. It provides users with root access, allowing them to install and configure software, manage server resources, and host websites or applications. VPS offers a balance between cost and control, making it suitable for businesses and developers needing more flexibility and performance than shared hosting but at a lower cost than a dedicated server.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Operative System</h3>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>A VPS can have various types of operating systems, depending on the user's needs. The most common types are:</p>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong><a href="../../index.html#linux">Linux</a></strong> The most popular choice for VPS. Common distributions include: Ubuntu, CentOS, Debian, Fedora</li>
+                            <li><strong>Windows</strong> Preferred for running specific Windows applications or using technologies like ASP.NET.</li>
+                            <li><strong>BSD</strong> Known for stability and security, with options like FreeBSD.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card medium span-two-column">
+                <h3>Establish a secure SSH connection</h3>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>To establish a secure SSH connection, generate first a <a href="ssh.html#ssh-private-keygen">Private SSH Key</a> and a <a href="ssh.html#ssh-public-keygen">Public SSH Key</a>, then copy the Public Key to the VPS</p>
+                    </div>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">ssh-copy-id -i key_name.pub root@IP_ADDRESS</code></pre>
+                    </div>
+                    <div class="standard-content">
+                        <p>If the above command does not work, a manual copy of the key can be executed</p>
+                    </div>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">cat key_name.pub | ssh root@IP_ADDRESS "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys"</code></pre>
+                    </div>
+                    <div class="standard-content">
+                        <p>The first time connecting, the root password of the VPS must be inserted. After, the connection with the VPS can be established with the command</p>
+                    </div>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">ssh -i key_name.pem root@IP_ADDRESS</code></pre>
                     </div>
                 </div>
             </div>
