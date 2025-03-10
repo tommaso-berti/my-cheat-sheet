@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bash - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<div class="introduction-container">
+    <div id="introduction">
+        <h2><span style="font-weight: normal">Bash</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing Bash commands.</p>
+    </div>
+</div>
+<div class="main-container">
+    <section id="getting-started">
+        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small span-two-column">
+                <h3>Introduction</h3>
+                <div class="content standard-content">
+                    <p>Bash, or the <strong>B</strong>ourne-<strong>A</strong>gain <strong>SH</strong>ell, is a CLI that was created in 1989 by Brian Fox as a free software replacement for the Bourne Shell. A shell is a specific kind of CLI. Bash is open source. In most ways Zsh is an exact replacement for Bash, so there is no need to switch over or install Bash instead.</p>
+                    <p>When using the command line, we refer to folders as directories. Files and directories on your computer are organized into a filesystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="navigation">
+        <h1><a href="#navigation" class="highlight-section">#</a> Navigation</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card large span-two-column">
+                <h3>Basic navigation</h3>
+                <div class="content standard-content">
+                    <p>Clear terminal</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ clear</code></pre>
+                    </div>
+                    <p>Current directory’s files and directories</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ ls</code></pre>
+                    </div>
+                    <p>Result of ls -l</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ ls -l
+drwxr-xr-x 5  cc  eng  4096 Jun 24 16:51  action
+drwxr-xr-x 4  cc  eng  4096 Jun 24 16:51  comedy
+drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
+-rw-r--r-- 1  cc  eng     0 Jun 24 16:51  genres.txt</code></pre>
+                    </div>
+                    <p>Chain options</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">List all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.
+$ ls -alt</code></pre>
+                    </div>
+                    <p>Options:</p>
+                    <ul class="list-content">
+                        <li>-a - lists all contents, including hidden files and directories (shown starting with a .)</li>
+                        <li>-l - lists all contents of a directory in long format, as well as the file permissions. Here’s what each column means:
+                            <ul>
+                                <li>Access rights. These indicate the read, write, and execute permissions on the file or directory allowed to the owner, the group, and all users. You can read more about file permissions.</li>
+                                <li>Number of hard links. This represents the number of hard links to the file or directory. This number includes the parent directory link (..) and current directory link (.).</li>
+                                <li>The username of the file’s owner. Here the username is cc.</li>
+                                <li>The name of the group that owns the file. Here the group name is eng.</li>
+                                <li>The size of the file in bytes.</li>
+                                <li>The date & time that the file was last modified.</li>
+                                <li>The name of the file or directory.</li>
+                            </ul>
+                        </li>
+                        <li>-t - orders files and directories by the time they were last modified.</li>
+                    </ul>
+                    <p>Output the name of the directory you are currently in, called the working directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ pwd</code></pre>
+                    </div>
+                    <p>Change the working directory</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd directory_name</code></pre>
+                    </div>
+                    <p>Move up one folder</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ..</code></pre>
+                    </div>
+                    <p>Move up two or more folders</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ../..</code></pre>
+                    </div>
+                    <p>Move across multiple directories with a single command, we can provide cd a relative path to the memory/ directory as an argument</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd 2015/jan/memory</code></pre>
+                    </div>
+                    <p>The last two points can be chained together (move up then move to the directory)</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ../2014</code></pre>
+                    </div>
+                    <p>The mkdir command stands for “make directory”. It takes in a directory name as an argument and then creates a new directory in the current working directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ mkdir newDirectory_name</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ mkdir relative_path</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
