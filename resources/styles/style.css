@@ -83,7 +83,7 @@ section {
 
 .button {
     display: flex;
-    width: 20%;
+    width: 23%;
     height: 4rem;
     border-radius: 0.5rem;
     background-color: lightgrey;
@@ -95,7 +95,7 @@ section {
 }
 
 .button p {
-    width: 70%;
+    width: 75%;
     height: auto;
     font-size: 1.1rem;
     color: black;
@@ -143,5 +143,13 @@ section {
 }
 
 .vps-button img {
+    width: 25%;
+}
+
+.bash-button {
+    background-color: rgb(103, 103, 103);
+}
+
+.bash-button img {
     width: 25%;
 }
