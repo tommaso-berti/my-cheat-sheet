@@ -139,13 +139,30 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
     <section id="file-manipulation">
         <h1><a href="#file-manipulation" class="highlight-section">#</a> File manipulation</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+
+            <div class="card small">
+                <h3>Create a file</h3>
                 <div class="content">
-                    <p>The touch command creates a new file inside the working directory</p>
+                    <p>Create a new file inside the working directory</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">$ touch keyboard.txt</code></pre>
                     </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Remove files</h3>
+                <div class="content">
+                    <p>The rm command deletes files and directories.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ rm unwanted_file.txt<br>$ rm -r unwanted_directory</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Print the content of a file</h3>
+                <div class="content">
                     <p>The cat command outputs in the terminal the contents of a specified file</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
@@ -156,6 +173,11 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">$ echo "Hello Command Line" >> hello_cli.txt</code></pre>
                     </div>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Copy files</h3>
+                <div class="content">
                     <p>Make a copy of a file</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
@@ -164,22 +186,133 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p>Copy multiple files to a directory</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                        <pre><code class="code">$ cp file1.txt folder/file2.txt my_directory
-    $ cp * my_directory
-    $ cp *.txt my_directory
-    $ cp w*.txt my_directory</code></pre>
+                        <pre><code class="code">$ cp file1.txt folder/file2.txt my_directory<br>$ cp * my_directory<br>$ cp *.txt my_directory<br>$ cp w*.txt my_directory</code></pre>
                     </div>
                     <p>Move files from a directory to another</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                        <pre><code class="code">$ mv my_file.txt my_directory/
-    $ mv my_file.txt .</code></pre>
+                        <pre><code class="code">$ mv my_file.txt my_directory/<br>$ mv my_file.txt .</code></pre>
                     </div>
-                    <p>The rm command deletes files and directories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="redirection">
+        <h1><a href="#redirection" class="highlight-section">#</a> Redirection</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>Introduction</h3>
+                <div class="content">
+                    <p>Through redirection you can direct the input and output of a command to and from other files and programs, and chain commands together in a pipeline.</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                        <pre><code class="code">$ rm unwanted_file.txt
-    $ rm -r unwanted_directory</code></pre>
+                        <pre><code class="code">$ echo "Hello"</code></pre>
+                    </div>
+                    <p>The echo command accepts the string “Hello” as standard input, and echoes the string “Hello” back to the terminal as standard output.</p>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Standard I/O</h3>
+                <div class="content">
+                    <ul class="list-content">
+                        <li><strong>stdin</strong>: information inputted into the terminal through the keyboard or input device.</li>
+                        <li><strong>stdout</strong>: the information outputted after a process is run.</li>
+                        <li><strong>stderr</strong>: an error message outputted by a failed process.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card medium">
+                <h3>Redirection Operators</h3>
+                <div class="content">
+                    <p>Redirect standard output to a file (overwrites content):</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo "Hello" > hello.txt</code></pre>
+                    </div>
+                    <p>Append standard output to a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat forests.txt >> hello.txt</code></pre>
+                    </div>
+                    <p>Use a file as standard input:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat < deserts.txt</code></pre>
+                    </div>
+                    <p>That in this case is the same as:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat deserts.txt</code></pre>
+                    </div>
+                    <p>Pipe standard output to another command:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat volcanoes.txt | wc</code></pre>
+                    </div>
+                    <p>Multiple pipes can be chained together:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat volcanoes.txt | wc | cat > count.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Sort and Uniq</h3>
+                <div class="content">
+                    <p>Sort standard input alphabetically:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sort continents.txt</code></pre>
+                    </div>
+                    <p>Example: Sort and redirect to a new file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat glaciers.txt | sort > sorted-glaciers.txt</code></pre>
+                    </div>
+                    <p>Remove duplicate lines:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sort deserts.txt | uniq</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Sed</h3>
+                <div class="content">
+                    <p>Substitute text in a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed 's/snow/rain/' forests.txt</code></pre>
+                    </div>
+                    <p>Substitute text globally in a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed 's/snow/rain/g' forests.txt</code></pre>
+                    </div>
+                    <p>Rewrite the actual file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed -i 's/snow/rain/g' forests.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Grep</h3>
+                <div class="content">
+                    <p>Search for a pattern in a file (case insensitive):</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -i America continents.txt</code></pre>
+                    </div>
+                    <p>Search recursively in a directory:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -R Arctic /home/ccuser/workspace/geography</code></pre>
+                    </div>
+                    <p>Output only filenames with matched results:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -Rl Arctic /home/ccuser/workspace/geography</code></pre>
                     </div>
                 </div>
             </div>

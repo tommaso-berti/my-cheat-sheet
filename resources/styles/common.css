@@ -139,7 +139,7 @@ section > h1 {
 p {
     font-weight: lighter;
     color: #94a3b8;
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
     line-height: 1.3rem;
 }
 
@@ -164,7 +164,7 @@ p.annotations {
     background-color: #1e293b;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .code {
@@ -205,7 +205,7 @@ p.annotations {
 
 .list-content {
     padding-left: 1rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
     margin: 1rem 0;
 }
 
@@ -229,7 +229,7 @@ p.annotations {
 
 .sub-list-content {
     padding-left: 2rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
 }
 
 .sub-list-content li:last-child {
