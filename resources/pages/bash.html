@@ -318,6 +318,148 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
             </div>
         </div>
     </section>
+    <section id="environment">
+        <h1><a href="#environment" class="highlight-section">#</a> Environment</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card medium">
+                <h3>nano</h3>
+                <div class="content">
+                    <p>nano is a command line text editor. It works the same way as a desktop text editor like TextEdit or Notepad, except that it is accessible from the command line and only accepts keyboard input.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ nano hello.txt</code></pre>
+                    </div>
+                    <p>The command <code>nano hello.txt</code> opens a new text file named <code>hello.txt</code> in the nano text editor.</p>
+                    <p>Hello, I am nano is a text string entered in nano at the line indicated by the cursor.</p>
+                    <p>The menu of keyboard commands at the bottom of the window allows us to save changes to <code>hello.txt</code> and exit nano.</p>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Bash Profile</h3>
+                <div class="content">
+                    <p>A bash profile is a file used to store environment settings for your terminal. On most computer systems, the file is in the home directory and is accessible by the name <code>.bash_profile</code>.</p>
+                    <p>When you edit the bash profile, you can add commands to execute every time a new terminal session is started.</p>
+                    <p>To activate the changes made in <code>.bash_profile</code> for the current session, use:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ source .bash_profile</code></pre>
+                    </div>
+                    <p>Absolute path of <code>.bash_profile</code>:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">~/.bash_profile</code></pre>
+                    </div>
+                    <p>If not existent, a new one has to be created.</p>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Alias</h3>
+                <div class="content">
+                    <p>The <code>alias</code> command allows you to create keyboard shortcuts, or aliases, for commonly used commands.</p>
+                    <p>Here, <code>alias pd="pwd"</code> creates the alias <code>pd</code> for the <code>pwd</code> command, which is then saved in the bash profile. Please note, no spaces are allowed before and after the = symbol.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ alias pd="pwd"</code></pre>
+                    </div>
+                    <p>The <code>pd</code> alias will be available each time we open a new terminal session, and the output of <code>pd</code> will be the same as the <code>pwd</code> command.</p>
+                    <p><code>source .bash_profile</code> will make the alias <code>pd</code> available in the current session.</p>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Environment Variables</h3>
+                <div class="content">
+                    <p>Environment variables are variables that can be used across commands and programs and hold information about the environment.</p>
+                    <p>Example:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ export USER="Jane Doe"</code></pre>
+                    </div>
+                    <p>The line <code>USER="Jane Doe"</code> sets the environment variable USER to a name “Jane Doe”. Usually the USER variable is set to the name of the computer’s owner.</p>
+                    <p>The line <code>export</code> makes the variable available to all child sessions initiated from the session you are in. This is a way to make the variable persist across programs.</p>
+                    <p>At the command line, the command <code>echo $USER</code> returns the value of the variable. Note that <code>$</code> is always used when returning a variable’s value. Here, the command <code>echo $USER</code> returns the name set for the variable.</p>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Env</h3>
+                <div class="content">
+                    <p>The <code>env</code> command stands for “environment,” and returns a list of the environment variables for the current user.</p>
+                    <p>The <code>env</code> command returns a number of variables, including <code>PATH</code>, <code>PWD</code>, <code>PS1</code>, and <code>HOME</code>. To select the value of a particular environment variable, let’s say <code>PATH</code>, you can use the following command:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ env | grep PATH</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card medium span-two-column">
+                <h3>PATH</h3>
+                <div class="content">
+                    <p>PATH is an environment variable that stores a list of directories separated by a colon.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo $PATH</code></pre>
+                    </div>
+                    <p>Returns:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">/home/ccuser/.gem/ruby/2.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin</code></pre>
+                    </div>
+                    <p>Each directory contains scripts for the command line to execute. The PATH variable simply lists which directories contain scripts.</p>
+                    <p>For example, many commands we’ve learned are scripts stored in the <code>/bin</code> directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ /bin/pwd</code></pre>
+                    </div>
+                    <p>Returns the same as:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ pwd</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>PS1</h3>
+                <div class="content">
+                    <p>PS1 is an environment variable that defines the makeup and style of the command prompt. A space must be used after the desired symbol.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ export PS1=">> "</code></pre>
+                    </div>
+                    <p><code>export PS1=">> "</code> sets the command prompt variable and exports the variable. Here we change the default command prompt from <code>$</code> to <code>>></code>.</p>
+                    <p>After using the <code>source</code> command, the command line displays the new command prompt.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">>></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>HOME</h3>
+                <div class="content">
+                    <p>The HOME variable is an environment variable that displays the path of the home directory <code>~</code>. You can specify and change the HOME variable if needed, but in most cases this is not necessary.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo $HOME</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="examples">
+        <h1><a href="#examples" class="highlight-section">#</a> Examples</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small span-two-column">
+                <h3>Find empty .txt files</h3>
+                <div class="content">
+                    <p>List .txt files with no content across all directories and save the listing in <code>empty_files.txt</code> in the <code>todo/</code> directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ wc -l */*.txt | grep 0 > todo/empty_files.txt</code></pre>
+                    </div>
+                    <p>The <code>-l</code> option of the <code>wc</code> command counts the number of lines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 </body>
 </html>
