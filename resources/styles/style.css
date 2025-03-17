@@ -110,24 +110,64 @@ section {
     background-color: #FFB38E;
 }
 
+.html-button:hover {
+    background-color: #ff803a;
+}
+
 .css-button {
     background-color: #FFD166;
+}
+
+.css-button:hover {
+    background-color: #FFB300;
 }
 
 .javascript-button {
     background-color: #06D6A0;
 }
 
+.javascript-button:hover {
+    background-color: #00FF7F;
+}
+
 .node-button {
     background-color: #118AB2;
+}
+
+.node-button:hover {
+    background-color: #00BFFF;
 }
 
 .node-button img {
     width: 25%;
 }
 
+.bash-button {
+    background-color: rgb(103, 103, 103);
+}
+
+.bash-button:hover {
+    background-color: #A9A9A9;
+}
+
+.bash-button img {
+    width: 25%;
+}
+
+.git-button {
+    background-color: #FFB3BA;
+}
+
+.git-button:hover {
+    background-color: #ff735b;
+}
+
 .ssh-button {
     background-color: #FFB3BA;
+}
+
+.ssh-button:hover {
+    background-color: #ff7e66;
 }
 
 .ssh-button img {
@@ -138,18 +178,18 @@ section {
     background-color: #A0E7E5;
 }
 
+.ubuntu-button:hover {
+    background-color: #40E0D0;
+}
+
 .vps-button {
     background-color: #118AB2;
 }
 
+.vps-button:hover {
+    background-color: #00BFFF;
+}
+
 .vps-button img {
-    width: 25%;
-}
-
-.bash-button {
-    background-color: rgb(103, 103, 103);
-}
-
-.bash-button img {
     width: 25%;
 }
