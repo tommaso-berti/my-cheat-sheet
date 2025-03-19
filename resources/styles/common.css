@@ -268,3 +268,13 @@ p.annotations {
     font-weight: lighter;
     margin: 1rem 0;
 }
+
+.image-content {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
