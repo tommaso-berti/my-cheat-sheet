@@ -7,9 +7,10 @@
 }
 
 body {
-    width: 100%;
     height: auto;
     background-color: #0f172a;
+    max-width: 60rem;
+    margin: 0 auto;
 }
 
 header {
@@ -42,11 +43,6 @@ header {
     height: auto;
 }
 
-.main-container {
-    width: 60rem;
-    margin: 0 auto;
-}
-
 #introduction {
     text-align: center;
     line-height: 3rem;
@@ -76,14 +72,16 @@ section {
 .grid {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 2rem 0;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
 .button {
     display: flex;
-    width: 23%;
+    min-width: calc((100% - 3rem) / 4);
+    flex-basis: calc((100% - 3rem) / 4);
     height: 4rem;
     border-radius: 0.5rem;
     background-color: lightgrey;

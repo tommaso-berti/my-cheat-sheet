@@ -34,9 +34,148 @@
             </div>
         </div>
     </section>
-    <section id="git-workflow">
-        <h1><a href="#git-workflow" class="highlight-section">#</a> Basic Git Workflow</h1>
+    <section id="git-basics">
+        <h1><a href="#git-basics" class="highlight-section">#</a> Git Basics</h1>
         <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>Initialize a new Git repository</h3>
+                <div class="content">
+                    <p>Creates a new .git folder and initializes version control.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">git init</code></pre>
+                    </div>
+                    <p>Returns</p>
+                    <div class="code-content">
+                        <pre><code class="code">Initialized empty Git repository in /home/ccuser/workspace/manhattan-zoo-1/.git/</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Check local changes</h3>
+                <div class="content">
+                    <p>Shows untracked or modified files, and branch info.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">git status</code></pre>
+                    </div>
+                    <p>Returns</p>
+                    <div class="code-content">
+                    <pre><code class="code">On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+        scene-1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium">
+                <h3>Add files to staging area</h3>
+                <div class="content">
+                    <p>Adds single, multiple or all modified files to staging.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git add filename_you_are_editing</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">git add file1 file2</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">git add .</code></pre>
+                    </div>
+                    <p>Returns</p>
+                    <div class="code-content">
+                    <pre><code class="code">git status
+
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+        new file:   scene-1.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Check diff between working directory and staging</h3>
+                <div class="content">
+                    <p>Shows what changed in your files before committing.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">git diff</code></pre>
+                    </div>
+                    <p>Returns</p>
+                    <div class="code-content">
+                    <pre><code class="code">diff --git a/scene-1.txt b/scene-1.txt
+index c33ce4c..1e73963 100644
+--- a/scene-1.txt
++++ b/scene-1.txt
+@@ -1 +1,2 @@
+ Harry Programmer and the Sorcerer’s Code: Scene 1
++Dumblediff: I should've known you would be here, Professor McGonagit.
+\ No newline at end of file</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-two-column">
+                <h3>Commit staged changes</h3>
+                <div class="content">
+                    <p>Add a message with <code>-m</code> in present tense, 50 chars max.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git commit -m "Complete first line of dialogue"</code></pre>
+                    </div>
+                    <h4 class="subtitle">Commit message conventions</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>Use quotation marks</li>
+                            <li>Write in present tense</li>
+                            <li>Keep it short (≤ 50 characters)</li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+                    <pre><code class="code">[master (root-commit) a659c51] Prima riga di codice fatta
+ 1 file changed, 2 insertions(+)
+ create mode 100644 scene-1.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-two-column">
+                <h3>View commit history</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">git log</code></pre>
+                    </div>
+                    <p>Lists commits in reverse chronological order.</p>
+                    <div class="code-content">
+                    <pre><code class="code">commit a659c518f418547ce82b4557a86ffcee61ee33f4
+Author: codecademy &lt;ccuser@codecademy.com&gt;
+Date:   Sun Oct 27 22:00:38 2024 +0000
+
+    Prima riga di codice fatta</code></pre>
+                    </div>
+                    <h4 class="subtitle">Output info includes:</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>Commit SHA (unique 40-character ID)</li>
+                            <li>Author name/email</li>
+                            <li>Date and time</li>
+                            <li>Commit message</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>
