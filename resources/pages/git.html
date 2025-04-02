@@ -28,14 +28,14 @@
                         <p>Git is the industry-standard version control system  that allows multiple developers to work on a project simultaneously by tracking changes and coordinating work.</p>
                     </div>
                     <div class="image-content">
-                        <img src="/resources/medias/basic_git_workflow.jpg" alt="git workflow described visually">
+                        <img src="/resources/medias/git/basic_git_workflow.jpg" alt="git workflow described visually">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="git-basics">
-        <h1><a href="#git-basics" class="highlight-section">#</a> Git Basics</h1>
+    <section id="basics">
+        <h1><a href="#basics" class="highlight-section">#</a> Basics</h1>
         <div class="cheatsheet-card-container">
             <div class="card small">
                 <h3>Initialize a new Git repository</h3>
@@ -45,7 +45,7 @@
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git init</code></pre>
                     </div>
-                    <p>Returns</p>
+                    <p class="subtitle">Response</p>
                     <div class="code-content">
                         <pre><code class="code">Initialized empty Git repository in /home/ccuser/workspace/manhattan-zoo-1/.git/</code></pre>
                     </div>
@@ -60,7 +60,7 @@
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git status</code></pre>
                     </div>
-                    <p>Returns</p>
+                    <p class="subtitle">Response</p>
                     <div class="code-content">
                     <pre><code class="code">On branch master
 
@@ -89,11 +89,12 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     <div class="code-content">
                         <pre><code class="code">git add .</code></pre>
                     </div>
-                    <p>Returns</p>
                     <div class="code-content">
-                    <pre><code class="code">git status
-
-On branch master
+                        <pre><code class="code">git status</code></pre>
+                    </div>
+                    <p class="subtitle">Response</p>
+                    <div class="code-content">
+                    <pre><code class="code"> On branch master
 
 Initial commit
 
@@ -113,7 +114,7 @@ Changes to be committed:
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git diff</code></pre>
                     </div>
-                    <p>Returns</p>
+                    <p class="subtitle">Response</p>
                     <div class="code-content">
                     <pre><code class="code">diff --git a/scene-1.txt b/scene-1.txt
 index c33ce4c..1e73963 100644
@@ -127,7 +128,7 @@ index c33ce4c..1e73963 100644
                 </div>
             </div>
 
-            <div class="card medium span-two-column">
+            <div class="card small span-two-column">
                 <h3>Commit staged changes</h3>
                 <div class="content">
                     <p>Add a message with <code>-m</code> in present tense, 50 chars max.</p>
@@ -176,6 +177,217 @@ Date:   Sun Oct 27 22:00:38 2024 +0000
                 </div>
             </div>
 
+        </div>
+    </section>
+    <section id="backtrack">
+        <h1><a href="#backtrack" class="highlight-section">#</a> Backtrack</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card medium span-two-column">
+                <h3>Show HEAD commit</h3>
+                <div class="content">
+                    <p>Displays the latest commit’s metadata and all file changes it includes.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">git show HEAD</code></pre>
+                    </div>
+                    <p class="subtitle">Response</p>
+                    <div class="code-content">
+                    <pre><code class="code">commit fa2706aa2214a3e6b3ba1d2f62b4acbf9c04fcce
+Author: codecademy &lt;ccuser@codecademy.com&gt;
+Date:   Sun Oct 27 22:18:14 2024 +0000
+
+    ghost response scene 5
+
+diff --git a/scene-5.txt b/scene-5.txt
+index b12dd97..fa75b29 100644
+--- a/scene-5.txt
++++ b/scene-5.txt
+@@ -11,4 +11,7 @@ Mark me.
+ Hamlet:
+ I will.
+
+-
++Ghost:
++My hour is almost come,
++When I to sulphurous and tormenting flames
++Must render up myself.</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Restore last commit's version</h3>
+                <div class="content">
+                    <p>Reverts a file to its state in the last commit.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git checkout HEAD filename</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Checkout specific file</h3>
+                <div class="content">
+                    <p>Restores a file from the latest commit.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git checkout -- filename</code></pre>
+                    </div>
+                    <p class="annotations">Same as <code>git checkout HEAD filename</code></p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Reset I - Unstage file</h3>
+                <div class="content">
+                    <p>Removes a file from the staging area (keeps changes in working directory).</p>
+                    <div class="code-content">
+                        <pre><code class="code">git reset HEAD filename</code></pre>
+                    </div>
+                    <p class="subtitle">Response</p>
+                    <div class="code-content">
+                    <pre><code class="code">Unstaged changes after reset:
+M       scene-2.txt</code></pre>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li>M = modified</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Reset II - Back to a commit</h3>
+                <div class="content">
+                    <p>Moves the repo back to a previous commit (by SHA).</p>
+                    <div class="code-content">
+                        <pre><code class="code">git reset 5d69206</code></pre>
+                    </div>
+                    <p class="subtitle">Modes of reset</p>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>--soft:</strong> Only moves HEAD, keeps staged changes</li>
+                            <li><strong>--mixed:</strong> Updates HEAD & staging area (default)</li>
+                            <li><strong>--hard:</strong> Removes all changes</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="/resources/medias/git/before_reset.jpg" alt="reset schema">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Discard all uncommitted changes</h3>
+                <div class="content">
+                    <p>Resets all files in working directory to match HEAD.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git checkout -- .</code></pre>
+                    </div>
+                    <p class="annotations">This discards local changes not yet staged or committed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stash">
+        <h1><a href="#stash" class="highlight-section">#</a> Stash</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>What is Git Stash?</h3>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>Temporarily stores changes in the working directory that are not yet ready to be committed. Useful when you need to switch branches or fix a different issue before resuming work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Stash changes</h3>
+                <div class="content">
+                    <p>Saves uncommitted changes and clears the working directory.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git stash</code></pre>
+                    </div>
+                    <p class="annotations">Used when an interruption occurs and you need to save progress temporarily.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Pop stashed work</h3>
+                <div class="content">
+                    <p>Restores the most recently stashed changes and removes them from the stash list.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git stash pop</code></pre>
+                    </div>
+                    <p class="annotations">Use after resolving the interruption to resume your previous work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="advanced">
+        <h1><a href="#advanced" class="highlight-section">#</a> Advanced Commands</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Log - One line</h3>
+                <div class="content">
+                    <p>Displays each commit on one line (short SHA and message).</p>
+                    <div class="code-content">
+                        <pre><code class="code">git log --oneline</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Log - Search keyword</h3>
+                <div class="content">
+                    <p>Finds commits where the number of keyword occurrences changes.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git log -S "Add"</code></pre>
+                    </div>
+                    <p class="annotations">Matches commits where "Add" was added or removed.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Log - Graph view</h3>
+                <div class="content">
+                    <p>Shows a graphical representation of branch history.</p>
+                    <div class="code-content">
+                        <pre><code class="code">git log --oneline --graph</code></pre>
+                    </div>
+                    <p class="annotations">Helpful to visualize merges and branch structure.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Commit --amend</h3>
+                <div class="content">
+                    <p>Rewrites the last commit (useful to fix message or add changes).</p>
+                    <div class="code-content">
+                        <pre><code class="code">git commit --amend</code></pre>
+                    </div>
+                    <p class="annotations">Replaces the last commit instead of adding a new one.</p>
+                    <p>If you want to keep the same commit message:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git commit --amend --no-edit</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Create aliases</h3>
+                <div class="content">
+                    <p>Shorten frequently used commands via Git config.</p>
+                    <div class="code-content">
+                    <pre><code class="code">git config --global alias.co "checkout"
+git config --global alias.br "branch"
+git config --global alias.glop "log --pretty=format:\"%h %s\" --graph"</code></pre>
+                    </div>
+                    <p class="annotations">After defining, you can use <code>git co example_branch</code> instead of <code>git checkout example_branch</code></p>
+                </div>
+            </div>
         </div>
     </section>
 </div>

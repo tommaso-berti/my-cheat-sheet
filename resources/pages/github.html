@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Github - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<div class="introduction-container">
+    <div id="introduction">
+        <h2><span style="font-weight: normal">GitHub</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing GitHub.</p>
+    </div>
+</div>
+<div class="main-container">
+    <section id="getting-started">
+        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small span-two-column">
+                <h3>Introduction</h3>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>Git is the industry-standard version control system  that allows multiple developers to work on a project simultaneously by tracking changes and coordinating work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="git-flow">
+        <h1><a href="#git-flow" class="highlight-section">#</a> Git - Flow</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-three-column">
+                <h3>Branching Basics</h3>
+                <div class="content">
+                    <p>Check which branch you're on:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git branch</code></pre>
+                    </div>
+                    <p>Create a new branch:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git branch new_branch</code></pre>
+                    </div>
+                    <p>Switch to it:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git checkout branch_name</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Merge & Conflicts</h3>
+                <div class="content">
+                    <p>To merge a branch into master:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git merge branch_name</code></pre>
+                    </div>
+                    <p class="annotations">If no new commits exist on master, this is a fast-forward merge.</p>
+                    <p>If a commit on master modifies the same lines as the branch, a merge conflict occurs:</p>
+                    <div class="code-content">
+                    <pre><code class="code">CONFLICT (content): Merge conflict in resumé.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Delete branches</h3>
+                <div class="content">
+                    <p>After merging:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git branch -d branch_name</code></pre>
+                    </div>
+                    <p>Force delete if not merged:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git branch -D branch_name</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-three-column">
+                <h3>Summary of Branch Commands</h3>
+                <div class="content">
+                    <div class="list-content">
+                        <ul>
+                            <li><code>git branch</code>: Lists all branches</li>
+                            <li><code>git branch name</code>: Creates a new branch</li>
+                            <li><code>git checkout name</code>: Switches branch</li>
+                            <li><code>git merge name</code>: Merges a branch</li>
+                            <li><code>git branch -d name</code>: Deletes a branch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Cloning & Remotes</h3>
+                <div class="content">
+                    <p>Clone a remote repo:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git clone remote_location clone_name</code></pre>
+                    </div>
+                    <p class="annotations">remote_location can be a URL or local path.</p>
+                    <p>See remote connections:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git remote -v</code></pre>
+                    </div>
+                    <p>Download remote changes (no merge):</p>
+                    <div class="code-content">
+                        <pre><code class="code">git fetch</code></pre>
+                    </div>
+                    <p>Merge remote branch into local:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git merge origin/master</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Push to Remote</h3>
+                <div class="content">
+                    <p>Push local branch to origin:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git push origin &lt;branch_name&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-three-column">
+                <h3>Summary of Remote Workflow</h3>
+                <div class="content">
+                    <div class="list-content">
+                        <ul>
+                            <li><code>git clone</code>: Local copy of remote</li>
+                            <li><code>git remote -v</code>: Shows remotes</li>
+                            <li><code>git fetch</code>: Downloads changes</li>
+                            <li><code>git merge origin/master</code>: Merges fetched changes</li>
+                            <li><code>git push origin name</code>: Push local branch to remote</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-three-column">
+                <h3>Git Rebase</h3>
+                <div class="content">
+                    <p>Rewrites the history of a branch to follow a different base.</p>
+                    <p class="annotations">Keeps history linear and clean. Good for feature integration before pushing.</p>
+                    <p>⚠️ Rebase is destructive: don’t use on shared/pushed branches!</p>
+                    <p>May cause more merge conflicts, but provides cleaner logs.</p>
+                    <p>Suggested: rebase often and squash commits.</p>
+                </div>
+            </div>
+
+            <div class="card small span-three-column">
+                <h3>Enhanced Git Log</h3>
+                <div class="content">
+                    <p>Show decorated, compressed graph of all commits:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git log --graph --decorate --oneline --all</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-two-column">
+                <h3>.gitignore</h3>
+                <div class="content">
+                    <p>Ignore files from being staged/committed.</p>
+                    <p>Example:</p>
+                    <div class="code-content">
+                    <pre><code class="code"># Windows OS file
+thumbs.db
+
+# macOS OS file
+.DS_Store
+
+# Dependency folders
+node_modules/
+
+# Configs
+.env</code></pre>
+                    </div>
+                    <p class="annotations">Use patterns. Comments start with <code>#</code>. More at: <a href="https://git-scm.com/docs/gitignore#_pattern_format" target="_blank">git-scm.com</a></p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Fork</h3>
+                <div class="content">
+                    <p>Create a copy of a GitHub project to work on independently.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Repository template</h3>
+                <div class="content">
+                    <p>Blueprint repo to quickly generate new projects with same structure/configs. Useful for teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
