@@ -31,11 +31,11 @@
             </div>
         </div>
     </section>
-    <section id="git-flow">
-        <h1><a href="#git-flow" class="highlight-section">#</a> Git - Flow</h1>
+    <section id="flow">
+        <h1><a href="#flow" class="highlight-section">#</a> Git Flow</h1>
         <div class="cheatsheet-card-container">
 
-            <div class="card small span-three-column">
+            <div class="card small">
                 <h3>Branching Basics</h3>
                 <div class="content">
                     <p>Check which branch you're on:</p>
@@ -83,22 +83,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                 </div>
             </div>
 
-            <div class="card small span-three-column">
-                <h3>Summary of Branch Commands</h3>
-                <div class="content">
-                    <div class="list-content">
-                        <ul>
-                            <li><code>git branch</code>: Lists all branches</li>
-                            <li><code>git branch name</code>: Creates a new branch</li>
-                            <li><code>git checkout name</code>: Switches branch</li>
-                            <li><code>git merge name</code>: Merges a branch</li>
-                            <li><code>git branch -d name</code>: Deletes a branch</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card small span-two-column">
+            <div class="card medium span-two-column">
                 <h3>Cloning & Remotes</h3>
                 <div class="content">
                     <p>Clone a remote repo:</p>
@@ -127,42 +112,6 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                     <p>Push local branch to origin:</p>
                     <div class="code-content">
                         <pre><code class="code">git push origin &lt;branch_name&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card small span-three-column">
-                <h3>Summary of Remote Workflow</h3>
-                <div class="content">
-                    <div class="list-content">
-                        <ul>
-                            <li><code>git clone</code>: Local copy of remote</li>
-                            <li><code>git remote -v</code>: Shows remotes</li>
-                            <li><code>git fetch</code>: Downloads changes</li>
-                            <li><code>git merge origin/master</code>: Merges fetched changes</li>
-                            <li><code>git push origin name</code>: Push local branch to remote</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card medium span-three-column">
-                <h3>Git Rebase</h3>
-                <div class="content">
-                    <p>Rewrites the history of a branch to follow a different base.</p>
-                    <p class="annotations">Keeps history linear and clean. Good for feature integration before pushing.</p>
-                    <p>⚠️ Rebase is destructive: don’t use on shared/pushed branches!</p>
-                    <p>May cause more merge conflicts, but provides cleaner logs.</p>
-                    <p>Suggested: rebase often and squash commits.</p>
-                </div>
-            </div>
-
-            <div class="card small span-three-column">
-                <h3>Enhanced Git Log</h3>
-                <div class="content">
-                    <p>Show decorated, compressed graph of all commits:</p>
-                    <div class="code-content">
-                        <pre><code class="code">git log --graph --decorate --oneline --all</code></pre>
                     </div>
                 </div>
             </div>
@@ -202,6 +151,200 @@ node_modules/
                     <p>Blueprint repo to quickly generate new projects with same structure/configs. Useful for teams.</p>
                 </div>
             </div>
+
+            <div class="card xx-tall span-two-column">
+                <h3>Rebase</h3>
+                <div class="content">
+                    <p>Rewrites the history of a feature branch to place it "on top" of another (usually <strong>main</strong>). Keeps history linear and avoids extra merge commits.</p>
+                    <h4 class="subtitle">Use Case</h4>
+                    <p>You create a feature branch <code>new_feature</code>. Meanwhile, a teammate fixes a bug in <code>quick_fix</code> and merges it into <code>main</code>.</p>
+                    <p>Now <code>main</code> and <code>new_feature</code> have diverged.</p>
+                    <p>To bring changes from <code>main</code> into your feature branch without polluting the history:</p>
+                    <div class="code-content">
+            <pre><code class="code">git checkout new_feature
+git rebase main</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">What Happens?</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>Commits from <code>main</code> are applied first.</li>
+                            <li>Then your <code>new_feature</code> commits are "replayed" one by one.</li>
+                            <li>The base of your branch becomes the tip of <code>main</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content medium">
+                        <img src="/resources/medias/github/before_rebase.jpg" alt="before rebase schema">
+                        <img src="/resources/medias/github/after_rebase.jpg" alt="after rebase schema">
+                    </div>
+
+                    <h4 class="subtitle">Benefits</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>Cleaner, linear history</li>
+                            <li>No unnecessary merge commits</li>
+                            <li>Easier to follow changes in <code>git log</code> or <code>git graph</code></li>
+                        </ul>
+                    </div>
+
+                    <h4 class="subtitle">Merge vs Rebase</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>Merge:</strong> Preserves exact history, includes merge commits.</li>
+                            <li><strong>Rebase:</strong> Rewrites history, applies changes in order.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content medium">
+                        <img src="/resources/medias/github/git_merge.jpg" alt="merge vs rebase schema">
+                    </div>
+                    <h4 class="subtitle">Risks of Rebase</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>It’s a <strong>destructive operation</strong>: old commits are replaced with new ones.</li>
+                            <li>Do <strong>not rebase after pushing</strong> to a shared repo (can break other clones).</li>
+                            <li>Can cause multiple conflict resolutions (once per commit replayed).</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="subtitle">Best Practices</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>Use <code>rebase</code> only on local or private branches.</li>
+                            <li>Squash commits when possible to simplify history.</li>
+                            <li>Rebase frequently to avoid big conflict batches.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="github-actions">
+        <h1><a href="#github-actions" class="highlight-section">#</a> GitHub Actions & Automated Testing</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-two-column">
+                <h3>What is GitHub Actions?</h3>
+                <div class="content">
+                    <p>GitHub Actions is a feature for creating automated workflows triggered by repository events like push, pull request, or issue creation. Workflows are defined in YAML files and run in GitHub-hosted containers.</p>
+                <h4 class="subtitle">When to Use GitHub Actions</h4>
+                <div class="list-content">
+                    <ul>
+                        <li><strong>CI/CD:</strong> Automatically build, test, and deploy code.</li>
+                        <li><strong>Code Reviews:</strong> Run linters or security checks on PRs.</li>
+                        <li><strong>Notifications:</strong> Send Slack/Teams/email alerts on events.</li>
+                        <li><strong>Dependency Updates:</strong> Automate package updates.</li>
+                        <li><strong>Issue Labeling:</strong> Auto-assign labels or contributors.</li>
+                    </ul>
+                </div>
+                <p class="annotations">Find templates in the <a href="https://github.com/marketplace?type=actions" target="_blank">Actions Marketplace</a>.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Workflow Components</h3>
+                <div class="content">
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>Events:</strong> Triggers (e.g. push, pull_request), set using <strong>on</strong></li>
+                            <li><strong>Jobs:</strong> Groups of steps, set with <strong>jobs</strong></li>
+                            <li><strong>Runners:</strong> OS environment, defined via <strong>runs-on</strong></li>
+                            <li><strong>Steps:</strong> Individual commands inside a job</li>
+                            <li><strong>Actions:</strong> Prebuilt or custom logic via <strong>uses</strong> or <strong>run</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-three-column">
+                <h3>Tutorial 1: Automated Testing</h3>
+                <div class="content">
+                    <p>Create: <strong>.github/workflows/unittests.yaml</strong></p>
+                    <div class="code-content">
+<pre><code class="code">name: Continuous Integration
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.0
+          architecture: x64
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Tests
+        run: python -m pytest</code></pre>
+                    </div>
+                    <p>This workflow runs on every push. It:</p>
+                    <div class="list-content">
+                        <ul>
+                            <li>Checks out the current Git branch</li>
+                            <li>Sets up Python 3.12 on Ubuntu</li>
+                            <li>Installs project dependencies</li>
+                            <li>Runs unit tests with <strong>pytest</strong></li>
+                        </ul>
+                    </div>
+                    <p>After pushing, go to the <strong>Actions</strong> tab to view logs. A green check appears if tests pass; if not, the workflow fails and blocks pull request merging.</p>
+                </div>
+            </div>
+
+            <div class="card medium span-three-column">
+                <h3>Tutorial 2: Basic Workflow Template</h3>
+                <div class="content">
+                    <p>File: <strong>.github/workflows/basic.yml</strong></p>
+                    <div class="code-content">
+<pre><code class="code"># This is a basic workflow to help you get started with Actions
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.</code></pre>
+                    </div>
+                    <p>This workflow is triggered on push or pull request to <strong>main</strong>, or manually from GitHub UI. It:</p>
+                    <div class="list-content">
+                        <ul>
+                            <li>Checks out code using <strong>actions/checkout@v4</strong></li>
+                            <li>Prints "Hello, world!" in one step</li>
+                            <li>Prints a multi-line message in another step</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>

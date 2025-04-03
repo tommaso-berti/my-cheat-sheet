@@ -45,7 +45,7 @@
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git init</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                         <pre><code class="code">Initialized empty Git repository in /home/ccuser/workspace/manhattan-zoo-1/.git/</code></pre>
                     </div>
@@ -60,7 +60,7 @@
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git status</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                     <pre><code class="code">On branch master
 
@@ -92,7 +92,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     <div class="code-content">
                         <pre><code class="code">git status</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                     <pre><code class="code"> On branch master
 
@@ -114,7 +114,7 @@ Changes to be committed:
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git diff</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                     <pre><code class="code">diff --git a/scene-1.txt b/scene-1.txt
 index c33ce4c..1e73963 100644
@@ -191,7 +191,7 @@ Date:   Sun Oct 27 22:00:38 2024 +0000
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">git show HEAD</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                     <pre><code class="code">commit fa2706aa2214a3e6b3ba1d2f62b4acbf9c04fcce
 Author: codecademy &lt;ccuser@codecademy.com&gt;
@@ -244,7 +244,7 @@ index b12dd97..fa75b29 100644
                     <div class="code-content">
                         <pre><code class="code">git reset HEAD filename</code></pre>
                     </div>
-                    <p class="subtitle">Response</p>
+                    <h4 class="subtitle">Response</h4>
                     <div class="code-content">
                     <pre><code class="code">Unstaged changes after reset:
 M       scene-2.txt</code></pre>
@@ -386,6 +386,16 @@ git config --global alias.br "branch"
 git config --global alias.glop "log --pretty=format:\"%h %s\" --graph"</code></pre>
                     </div>
                     <p class="annotations">After defining, you can use <code>git co example_branch</code> instead of <code>git checkout example_branch</code></p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Enhanced Git Log</h3>
+                <div class="content">
+                    <p>Show decorated, compressed graph of all commits:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git log --graph --decorate --oneline --all</code></pre>
+                    </div>
                 </div>
             </div>
         </div>

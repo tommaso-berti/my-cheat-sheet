@@ -109,6 +109,12 @@ section > h1 {
 .card.tall {
     grid-row: span 3;
 }
+.card.x-tall {
+    grid-row: span 4;
+}
+.card.xx-tall {
+    grid-row: span 5;
+}
 .card.medium {
     grid-row: span 2;
 }
@@ -276,5 +282,18 @@ p.annotations {
 
 .image-content img {
     width: 100%;
+    height: auto;
+}
+
+.image-content.medium {
+    width: calc(100% - 1rem);
+    height: auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.image-content.medium img {
+    width: 50%;
     height: auto;
 }

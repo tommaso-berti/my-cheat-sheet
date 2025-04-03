@@ -63,10 +63,21 @@ section {
     margin-bottom: 4rem;
 }
 
+.grid-container {
+    border: solid 1px lightgrey;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
 .grid-container > h2 {
     padding-bottom: 1rem;
     border-bottom: solid 1px white;
     font-size: x-large;
+}
+
+.grid-container > h3 {
+    padding-bottom: 1rem;
+    border-bottom: solid 1px lightgrey;
 }
 
 .grid {
@@ -198,4 +209,12 @@ section {
 
 .github-button:hover {
     background-color: grey;
+}
+
+.mongodb-button {
+    background-color: limegreen;
+}
+
+.mongodb-button:hover {
+    background-color: greenyellow;
 }
