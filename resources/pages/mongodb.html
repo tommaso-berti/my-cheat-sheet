@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MongoDB - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<div class="introduction-container">
+    <div id="introduction">
+        <h2><span style="font-weight: normal">MongoDB</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing MongoDB.</p>
+    </div>
+</div>
+<div class="main-container">
+    <section id="getting-started">
+        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-two-column">
+                <h3>What is a Database?</h3>
+                <div class="content">
+                    <p><strong>Databases</strong> are systems that store, modify, and access structured collections of information electronically.</p>
+                    <p>A <strong>Database Management System (DBMS)</strong> allows developers to interact with databases using code or a graphical interface.</p>
+                    <p>Databases can store various types of data: text, numbers, dates, files, and more.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>DBMS Analogy</h3>
+                <div class="content">
+                    <p>If a database is a bucket that stores data, the <strong>DBMS</strong> is the software that wraps around the bucket and provides access via a language or GUI.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Relational Databases</h3>
+                <div class="content">
+                    <p><strong>Relational databases</strong> organize data into structured tables with rows and columns, and use predefined schemas and relationships.</p>
+                    <p>They all use <strong>SQL</strong> to query and manipulate data.</p>
+                    <p>While powerful, they may be expensive to set up and scale. Performance and cost are key considerations.</p>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Non-relational Databases</h3>
+                <div class="content">
+                    <p><strong>Non-relational</strong> or <strong>NoSQL</strong> databases do not follow the traditional table-based model.</p>
+                    <p>They allow more flexible schemas and are often easier to scale horizontally. However, they lack a standard query language and can be harder to maintain due to unstructured data.</p>
+                    <p><strong>NoSQL</strong> stands for “not-only SQL”. Types include:</p>
+                    <div class="list-content">
+                        <ul>
+                            <li>Key-Value Stores</li>
+                            <li>Document Stores</li>
+                            <li>Graph Databases</li>
+                            <li>Column-Oriented Databases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-two-column">
+                <h3>MongoDB Overview</h3>
+                <div class="content">
+                    <p><strong>MongoDB</strong> is a document-based NoSQL database. Each instance can contain multiple databases, each with collections (similar to tables) containing documents (records).</p>
+                    <p><strong>Documents</strong> are stored as field-value pairs using <strong>JSON</strong> format for input, and internally stored as <strong>BSON</strong>.</p>
+                    <p><strong>JSON:</strong> human-readable, less efficient. <strong>BSON:</strong> binary, highly efficient.</p>
+                    <p>The combination of document model and JSON/BSON support makes MongoDB a flexible and performant database.</p>
+                    <p class="annotations"><a href="https://www.mongodb.com/docs/manual/tutorial/model-embedded-one-to-one-relationships-between-documents/" target="_blank">Modeling one-to-one embedded relationships (MongoDB Docs)</a></p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Advantages of NoSQL</h3>
+                <div class="content">
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>Flexibility & Scalability:</strong> Schema-less design allows easy adaptation to changing data.</li>
+                            <li><strong>Custom Query Language:</strong> Each NoSQL DB can use its own language, optimized for its model.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Disadvantages of NoSQL</h3>
+                <div class="content">
+                    <p>Due to their unstructured nature, data in NoSQL databases can become hard to track and maintain.</p>
+                    <p>Each database has its own query language — learning curve increases with each new NoSQL system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mongodb-commands">
+        <h1><a href="#mongodb-commands" class="highlight-section">#</a> Commands</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-two-column">
+                <h3>Show All Databases</h3>
+                <div class="content">
+                    <p>See all databases inside a cluster</p>
+                    <div class="code-content">
+                        <pre><code class="code">show dbs</code></pre>
+                    </div>
+                    <p>This command outputs a list of all databases in the current instance along with the disk space each uses</p>
+                    <div class="code-content">
+                    <pre><code class="code">online_plant_shop       73.7 KiB
+plant_lovers_meet       55.7 MiB
+my_portfolio_site       9.57 MiB
+admin                   340 KiB
+local                   1.37 GiB
+config                  12.00 KiB</code></pre>
+                    </div>
+                    <p>The <strong>admin</strong>, <strong>config</strong>, and <strong>local</strong> databases are system databases used by MongoDB to configure the instance.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Select a Database</h3>
+                <div class="content">
+                    <p>Navigate to a specific database</p>
+                    <div class="code-content">
+                        <pre><code class="code">use online_plant_shop</code></pre>
+                    </div>
+                    <p>This places you inside the <strong>online_plant_shop</strong> database, where you can view and manage all of its collections.</p>
+                    <p>If the specified database does not exist, MongoDB will create it and switch you into that database.</p>
+                    <p>The terminal prompt will change to indicate the current database (e.g., from <strong>test&gt;</strong> to <strong>online_plant_shop&gt;</strong>).</p>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Other commands</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">db</span><span class="code-definition">Outputs the name of the database you are currently using</span></li>
+                            <li><span class="code-attribute">show collections</span><span class="code-definition">List all collections inside the current database</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="operators-methods">
+        <h1><a href="#operators-methods" class="highlight-section">#</a> Operators and methods</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Comparison Operators</h3>
+                <div class="content">
+                    <p>Operators can be used for numbers, dates, or even strings</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">$gt</span>
+                                <span class="code-definition">greater than</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$gte</span>
+                                <span class="code-definition">greater or equal than</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$lt</span>
+                                <span class="code-definition">lower than (also for string)</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$lte</span>
+                                <span class="code-definition">lower or equal than (also for string)</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$eq</span>
+                                <span class="code-definition">equal to</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Query on Arrays</h3>
+                <div class="content">
+                    <p>If an array of values is specified, the array is matched with the given array with the exact values and order</p>
+                    <div class="code-content">
+                        <pre><code class="code">array : ["val1", "val2"]</code></pre>
+                    </div>
+                    <p>If a single value is specified as a string, all arrays containing that element will be returned</p>
+                    <div class="code-content">
+                        <pre><code class="code">array : "val1"</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">$all</span>
+                                <span class="code-definition">Returns all arrays that contain the given elements without considering the order</span>
+
+                            </li>
+                            <li>
+                                <span class="code-attribute">$elemMatch</span>
+                                <span class="code-definition">Used to specify multiple criteria on the elements of an array field, so that at least one element satisfies all criteria</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium span-three-column">
+                <h3>Methods</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">.sort()</span>
+                                <span class="code-definition">Sorts query results by a specified field (ascending <strong>1</strong> or descending <strong>-1</strong>). You can include a projection to include or exclude fields.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">.count()</span>
+                                <span class="code-definition">Returns the number of documents that match a query.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">.limit()</span>
+                                <span class="code-definition">Can be chained to .find() to specify the maximum number of documents returned.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$exists</span>
+                                <span class="code-definition">Matches documents that contain the given field.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$ne</span>
+                                <span class="code-definition">Checks if a field is not equal to a specified value.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">$and, $or</span>
+                                <span class="code-definition">Perform logical AND and OR operations.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">.pretty()</span>
+                                <span class="code-definition">Formats query output in a more readable way.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Embedded Documents Query</h3>
+                <div class="content">
+                    <p>When a record has an embedded document, query its fields using dot notation (<strong>.</strong>) and wrap field names in quotation marks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="crud-operations">
+        <h1><a href="#crud-operations" class="highlight-section">#</a> CRUD operations</h1>
+        <div class="cheatsheet-card-container">
+
+        </div>
+    </section>
+</div>
+<div class="main-container">
+</div>
+</body>
+</html>

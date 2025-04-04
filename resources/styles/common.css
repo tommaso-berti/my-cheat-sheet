@@ -202,13 +202,6 @@ p.annotations {
     background-color: lime;
 }
 
-.code-attribute {
-    font-family: monospace;
-    color: darkgreen;
-    font-weight: bold;
-    font-size: x-large;
-}
-
 .list-content {
     padding-left: 1rem;
     line-height: 2rem;
@@ -261,10 +254,19 @@ p.annotations {
     justify-content: space-between;
     border-bottom: 1px solid #0f172a;
     margin: 1rem 0;
+    width: 100%;
 }
 
 .definition-content > ul li:last-child {
     border-bottom: none;
+}
+
+.code-attribute {
+    font-family: monospace;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: large;
+    max-width: 20%;
 }
 
 .subtitle {
