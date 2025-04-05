@@ -208,38 +208,38 @@ config                  12.00 KiB</code></pre>
                 </div>
             </div>
 
-            <div class="card medium span-three-column">
+            <div class="card medium span-two-column">
                 <h3>Methods</h3>
                 <div class="content">
                     <div class="definition-content">
                         <ul>
                             <li>
                                 <span class="code-attribute">.sort()</span>
-                                <span class="code-definition">Sorts query results by a specified field (ascending <strong>1</strong> or descending <strong>-1</strong>). You can include a projection to include or exclude fields.</span>
+                                <span class="code-definition">Sorts query results by a specified field (ascending <strong>1</strong> or descending <strong>-1</strong>). You can include a projection to include or exclude fields</span>
                             </li>
                             <li>
                                 <span class="code-attribute">.count()</span>
-                                <span class="code-definition">Returns the number of documents that match a query.</span>
+                                <span class="code-definition">Returns the number of documents that match a query</span>
                             </li>
                             <li>
                                 <span class="code-attribute">.limit()</span>
-                                <span class="code-definition">Can be chained to .find() to specify the maximum number of documents returned.</span>
+                                <span class="code-definition">Can be chained to .find() to specify the maximum number of documents returned</span>
                             </li>
                             <li>
                                 <span class="code-attribute">$exists</span>
-                                <span class="code-definition">Matches documents that contain the given field.</span>
+                                <span class="code-definition">Matches documents that contain the given field</span>
                             </li>
                             <li>
                                 <span class="code-attribute">$ne</span>
-                                <span class="code-definition">Checks if a field is not equal to a specified value.</span>
+                                <span class="code-definition">Checks if a field is not equal to a specified value</span>
                             </li>
                             <li>
                                 <span class="code-attribute">$and, $or</span>
-                                <span class="code-definition">Perform logical AND and OR operations.</span>
+                                <span class="code-definition">Perform logical AND and OR operations</span>
                             </li>
                             <li>
                                 <span class="code-attribute">.pretty()</span>
-                                <span class="code-definition">Formats query output in a more readable way.</span>
+                                <span class="code-definition">Formats query output in a more readable way</span>
                             </li>
                         </ul>
                     </div>
@@ -258,7 +258,50 @@ config                  12.00 KiB</code></pre>
     <section id="crud-operations">
         <h1><a href="#crud-operations" class="highlight-section">#</a> CRUD operations</h1>
         <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>General Syntax</h3>
+                <div class="content">
+                    <p>Queries in MongoDB are performed on a specific collection. General syntax:</p>
+                    <div class="code-content">
+                        <pre><code class="code">db.collectionName.operator()</code></pre>
+                    </div>
+                </div>
+            </div>
 
+            <div class="card small span-two-column">
+                <h3>.find()</h3>
+                <div class="content">
+                    <p>The <strong>.find()</strong> method is used to search for documents in a collection.</p>
+                    <div class="code-content">
+                        <pre><code class="code">db.collectionName.find({attribute: value}, {pippo:1, pluto:0})</code></pre>
+                    </div>
+                    <p>This query returns documents that match the filter, showing only the <strong>pippo</strong> field (and excluding <strong>pluto</strong>).</p>
+                    <div class="list-content">
+                        <ul>
+                            <li>The <strong>filter</strong> defines the criteria for matching documents</li>
+                            <li>The <strong>projection</strong> specifies which fields to include (1) or exclude (0) in the output</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Cursor and Iteration</h3>
+                <div class="content">
+                    <p>The <strong>.find()</strong> method returns a cursor. A cursor is an object that points to the matching documents and returns them in batches.</p>
+                    <p>If no arguments are provided, it matches all documents in the specified collection.</p>
+                    <p>To see the next batch of documents, use the <strong>it</strong> command (short for iterate) in the Mongo shell.</p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Query on embedded fields</h3>
+                <div class="content">
+                    <p>When querying an embedded document, use dot notation. For example, to find documents where an embedded field value is less than or equal to a specified value</p>
+                    <div class="code-content">
+                        <pre><code class="code">db.collectionName.find({"parent_field.embedded_field": { $lte: value }})</code></pre>
+                    </div></div>
+            </div>
         </div>
     </section>
 </div>

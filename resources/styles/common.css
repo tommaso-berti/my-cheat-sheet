@@ -18,6 +18,11 @@ header {
     margin: 0 auto;
 }
 
+strong {
+    font-weight: lighter;
+    color: lightgrey;
+}
+
 .header-title {
     display: flex;
     justify-content: flex-start;
@@ -136,6 +141,7 @@ section > h1 {
     display: inline-block;
     text-align: left;
     width: 100%;
+    font-weight: lighter;
 }
 
 .content {
@@ -178,6 +184,7 @@ p.annotations {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 0.9rem;
+    color: #94a3b8;
 }
 
 .code-content .copy-button {
@@ -203,7 +210,6 @@ p.annotations {
 }
 
 .list-content {
-    padding-left: 1rem;
     line-height: 2rem;
     margin: 1rem 0;
 }
@@ -212,6 +218,9 @@ p.annotations {
     border-bottom: 1px solid #0f172a;
     font-weight: lighter;
     color: #94a3b8;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .list-content a {
@@ -253,20 +262,26 @@ p.annotations {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #0f172a;
-    margin: 1rem 0;
-    width: 100%;
+    max-width: 100%;
 }
 
 .definition-content > ul li:last-child {
     border-bottom: none;
 }
 
-.code-attribute {
+span.code-attribute {
     font-family: monospace;
-    color: darkgreen;
-    font-weight: bold;
+    color: #079669;
     font-size: large;
     max-width: 20%;
+    text-align: left;
+}
+
+span.code-definition {
+    font-weight: lighter;
+    color: #94a3b8;
+    max-width: 80%;
+    text-align: right;
 }
 
 .subtitle {
