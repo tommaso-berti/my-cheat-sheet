@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<div class="introduction-container">
+    <div id="introduction">
+        <h2><span style="font-weight: normal">JavaScript</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing JavaScript.</p>
+    </div>
+</div>
+<div class="main-container">
+    <section id="variables">
+        <h1><a href="#variables" class="highlight-section">#</a> Variables</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-two-column">
+                <h3>Variable Declarations</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">var</span>
+                                <span class="code-definition">Used before ES6 to declare variables. It is function-scoped.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">let</span>
+                                <span class="code-definition">Introduced in ES6; allows reassignment and is block-scoped. Can be declared without an initial value (defaults to undefined).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">const</span>
+                                <span class="code-definition">Also introduced in ES6; defines a constant variable. Must be assigned at declaration and cannot be reassigned.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">let vs var</span>
+                                <span class="code-definition">let is block-scoped whereas var is function-scoped, reducing the risk of scope pollution.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Interpolation</h3>
+                <div class="content">
+                    <p>Template literals, introduced in ES6, allow you to embed variables and expressions directly within strings.</p>
+                    <div class="code-content">
+            <pre><code class="code">const myPet = 'armadillo';
+console.log(`I own a pet ${myPet}.`);
+// Output: I own a pet armadillo.</code></pre>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li>Simplify string construction and improve readability.</li>
+                            <li>Enclose strings in backticks and embed variables or expressions using <strong>${expression}</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Truthy and Falsy</h3>
+                <div class="content">
+                    <p>In JavaScript, conditions check the truthiness of a variable rather than its explicit boolean value. A variable with a non-falsy value evaluates to <strong>true</strong> in a conditional context.</p>
+                    <h4 class="subtitle">Falsy values</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li>0</li>
+                            <li>Empty strings ("" or '')</li>
+                            <li>null</li>
+                            <li>undefined</li>
+                            <li>NaN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Scope</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">Global Scope</span>
+                                <span class="code-definition">Variables declared outside any block are global. They reside in the global namespace and can be accessed from anywhere.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Block Scope</span>
+                                <span class="code-definition">Variables declared inside a block ({ ... }) are only accessible within that block.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+                    <pre><code class="code">{
+  let blockVar = 'I am block scoped';
+  console.log(blockVar); // Works here
+}
+console.log(blockVar); // Error: blockVar is not defined</code></pre>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card medium span-three-column">
+                <h3>Other Concepts</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">typeof</span>
+                                <span class="code-definition">An operator that returns a string representing the type of a value.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Truthy / Falsy</span>
+                                <span class="code-definition">Values that evaluate to true or false in boolean contexts. Falsy values include 0, "", null, undefined, and NaN.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Ternary Operator</span>
+                                <span class="code-definition">A concise alternative to if...else. Syntax: condition ? expression_if_true : expression_if_false.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Switch</span>
+                                <span class="code-definition">A control statement that compares an expression to multiple cases. Use break to avoid fall-through.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+</body>
+</html>

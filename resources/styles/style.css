@@ -60,11 +60,10 @@ header {
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .grid-container {
-    border: solid 1px lightgrey;
     padding: 1rem;
     border-radius: 1.5rem;
 }
