@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +9,11 @@
 </head>
 <body>
 <header class="header-title">
-    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1><span class="topic">My</span> <span class="cheatsheet"> cheatsheet</span></h1></a>
 </header>
 <div class="introduction-container">
     <div id="introduction">
-        <h2><span style="font-weight: normal">JavaScript</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <h2><span class="topic">JavaScript</span> <span class="cheatsheet">cheatsheet</span></h2>
         <p>This is a quick reference cheat sheet for understanding and writing JavaScript.</p>
     </div>
 </div>
@@ -29,19 +29,15 @@
                         <ul>
                             <li>
                                 <span class="code-attribute">var</span>
-                                <span class="code-definition">Used before ES6 to declare variables. It is function-scoped.</span>
+                                <span class="code-definition">Used before ES6 to declare variables. It is function-scoped</span>
                             </li>
                             <li>
                                 <span class="code-attribute">let</span>
-                                <span class="code-definition">Introduced in ES6; allows reassignment and is block-scoped. Can be declared without an initial value (defaults to undefined).</span>
+                                <span class="code-definition">Allows reassignment and is block-scoped. Can be declared without an initial value (defaults to undefined).</span>
                             </li>
                             <li>
                                 <span class="code-attribute">const</span>
-                                <span class="code-definition">Also introduced in ES6; defines a constant variable. Must be assigned at declaration and cannot be reassigned.</span>
-                            </li>
-                            <li>
-                                <span class="code-attribute">let vs var</span>
-                                <span class="code-definition">let is block-scoped whereas var is function-scoped, reducing the risk of scope pollution.</span>
+                                <span class="code-definition">Assigned at declaration and cannot be reassigned.</span>
                             </li>
                         </ul>
                     </div>
@@ -55,22 +51,15 @@
                     <div class="code-content">
             <pre><code class="code">const myPet = 'armadillo';
 console.log(`I own a pet ${myPet}.`);
+
 // Output: I own a pet armadillo.</code></pre>
-                    </div>
-                    <div class="list-content">
-                        <ul>
-                            <li>Simplify string construction and improve readability.</li>
-                            <li>Enclose strings in backticks and embed variables or expressions using <strong>${expression}</strong>.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
             <div class="card small">
-                <h3>Truthy and Falsy</h3>
+                <h3>Falsy values</h3>
                 <div class="content">
-                    <p>In JavaScript, conditions check the truthiness of a variable rather than its explicit boolean value. A variable with a non-falsy value evaluates to <strong>true</strong> in a conditional context.</p>
-                    <h4 class="subtitle">Falsy values</h4>
                     <div class="list-content">
                         <ul>
                             <li>0</li>
@@ -101,37 +90,315 @@ console.log(`I own a pet ${myPet}.`);
                     <div class="code-content">
                     <pre><code class="code">{
   let blockVar = 'I am block scoped';
-  console.log(blockVar); // Works here
+  console.log(blockVar);   // Works here
 }
-console.log(blockVar); // Error: blockVar is not defined</code></pre>
+
+console.log(blockVar);   // Error: blockVar is not defined</code></pre>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+    <section id="javascript-conditionals">
+        <h1><a href="#javascript-conditionals" class="highlight-section">#</a> JavaScript Conditionals</h1>
+        <div class="cheatsheet-card-container">
 
-
-            <div class="card medium span-three-column">
-                <h3>Other Concepts</h3>
+            <div class="card small">
+                <h3>If... else...</h3>
                 <div class="content">
-                    <div class="definition-content">
+                    <div class="code-content">
+                         <pre><code class="code">if(condition){
+        // code to be executed if condition is true
+    } else {
+        // code to be executed if condition is false
+    }</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Ternary Operator</h3>
+                <div class="content">
+                    <div class="code-content">
+                         <pre><code class="code">isNightTime ?  console.log('Turn on the lights!') :  console.log('Turn off the lights!');</code></pre>
+                    </div>
+                    <div class="numbered-list-content">
+                        <ol>
+                            <li>Condition</li>
+                            <li>True statement</li>
+                            <li>False statement</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium">
+                <h3>Switch Statement</h3>
+                <div class="content">
+                    <p>It compares a given expression with several cases and executes the matching block of code.</p>
+                    <div class="code-content">
+            <pre><code class="code">let groceryItem = 'papaya';
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  case 'lime':
+    console.log('Limes are $1.49');
+    break;
+  case 'papaya':
+    console.log('Papayas are $1.29');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+
+// Prints 'Papayas are $1.29'</code></pre>
+                    </div>
+                    <div class="list-content">
                         <ul>
-                            <li>
-                                <span class="code-attribute">typeof</span>
-                                <span class="code-definition">An operator that returns a string representing the type of a value.</span>
-                            </li>
-                            <li>
-                                <span class="code-attribute">Truthy / Falsy</span>
-                                <span class="code-definition">Values that evaluate to true or false in boolean contexts. Falsy values include 0, "", null, undefined, and NaN.</span>
-                            </li>
-                            <li>
-                                <span class="code-attribute">Ternary Operator</span>
-                                <span class="code-definition">A concise alternative to if...else. Syntax: condition ? expression_if_true : expression_if_false.</span>
-                            </li>
-                            <li>
-                                <span class="code-attribute">Switch</span>
-                                <span class="code-definition">A control statement that compares an expression to multiple cases. Use break to avoid fall-through.</span>
-                            </li>
+                            <li><strong>Break:</strong> The break keyword terminates the switch block, preventing the execution of subsequent cases. Without it, cases would fall through.</li>
+                            <li><strong>Default:</strong> The default case runs if no other cases match. It acts like an else condition.</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="javascript-arrays">
+        <h1><a href="#javascript-arrays" class="highlight-section">#</a> JavaScript Arrays</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>Array literal</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">let myArray = [1, 'apple', true, null, undefined];</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Access and valorize array data</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">let myArray = [1, 'apple', true, null, undefined];
+console.log(myArray[2]);
+
+// Output: true
+
+myArray[3] = 'Autumn';
+
+// The array now is [1, 'apple', true, Autumn, undefined]</code></pre>
+                    </div>
+                    <p class="annotations">When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as pass-by-reference since what we’re actually passing to the function is a reference to where the variable memory is stored and changing the memory.</p>
+                    <h3 class="subtitle">Const arrays</h3>
+                    <p>Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable.</p>
+                    <div class="code-content">
+                        <pre><code class="code">const myArray = [1, 'apple', true];
+
+myArray[2] = 'banana';  //allows reassignment
+myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Properties</h3>
+                <div class="content">
+                    <h3 class="subtitle">.length</h3>
+                    <div class="code-content">
+                         <pre><code class="code">let numbers = [1,2,3,4];
+numbers.length  // 4</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Destructive Methods</h3>
+                <div class="content">
+                    <h3 class="subtitle">.push()</h3>
+                    <p>Adds one or more elements to the end of an array, mutating the original array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana'];
+fruits.push('cherry');
+console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
+                    </div>
+                    <h3 class="subtitle">.pop()</h3>
+                    <p>Removes the last element from an array and returns that element.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry'];
+let removedFruit = fruits.pop();
+console.log(removedFruit); // 'cherry'
+console.log(fruits);       // ['apple', 'banana']</code></pre>
+                    </div>
+                    <h3 class="subtitle">.splice()</h3>
+                    <p>Adds, removes, or replaces elements in an array and returns an array of the deleted elements.</p>
+                    <div class="code-content">
+            <pre><code class="code">// Remove 1 element starting at index 1:
+let fruits = ['apple', 'banana', 'cherry'];
+let deleted = fruits.splice(1, 1);
+console.log(deleted);  // ['banana']
+console.log(fruits);   // ['apple', 'cherry']</code></pre>
+                    </div>
+                    <h3 class="subtitle">.shift()</h3>
+                    <p>Removes the first element of an array and returns it.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry'];
+let firstFruit = fruits.shift();
+console.log(firstFruit);  // 'apple'
+console.log(fruits);      // ['banana', 'cherry']</code></pre>
+                    </div>
+                    <h3 class="subtitle">.unshift()</h3>
+                    <p>Adds one or more elements to the beginning of an array, mutating the original array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['banana', 'cherry'];
+fruits.unshift('apple');
+console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Non-Destructive Methods</h3>
+                <div class="content">
+                    <h3 class="subtitle">.indexOf()</h3>
+                    <p>Returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+                    <div class="code-content">
+                <pre><code class="code">let cars = ['Fiat', 'Alfa Romeo'];
+    cars.indexOf('Alfa Romeo');  // 1</code></pre>
+                    </div>
+                    <h3 class="subtitle">.join()</h3>
+                    <p>Creates a string by concatenating all elements of an array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let words = ['Hello', 'World'];
+console.log(words.join(' '));  // "Hello World"</code></pre>
+                    </div>
+                    <h3 class="subtitle">.slice()</h3>
+                    <p>Returns a shallow copy of a portion of the array in a new array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry', 'date'];
+let part = fruits.slice(1, 3);
+console.log(part);  // ['banana', 'cherry']</code></pre>
+                    </div>
+                    <h3 class="subtitle">.concat()</h3>
+                    <p>Returns a new array that is the combination of two or more arrays.</p>
+                    <div class="code-content">
+            <pre><code class="code">let arr1 = ['apple', 'banana'];
+let arr2 = ['cherry', 'date'];
+let combined = arr1.concat(arr2);
+console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="javascript-loops">
+        <h1><a href="#javascript-loops" class="highlight-section">#</a> Loops</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>For Loop</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">for (let counter = 0; counter < 4; counter++) {
+  console.log(counter);
+}
+//  1
+//  2
+//  3
+//  4</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>For…of Loop</h3>
+                <div class="content">
+                    <p>Iterates over the values of an iterable object (such as Arrays, Strings, Maps, etc.) without needing an index.</p>
+                    <div class="code-content">
+          <pre><code class="code">const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+for (const hobby of hobbies) {
+  console.log(`I enjoy ${hobby}.`);
+}
+// I enjoy singing
+// I enjoy eating
+// I enjoy quidditch
+// I enjoy writing</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>While Loop</h3>
+                <div class="content">
+                    <p>A while loop runs as long as its condition remains true and is ideal when the number of iterations is not known in advance.</p>
+                    <div class="code-content">
+          <pre><code class="code">let counterTwo = 1;
+while (counterTwo < 4) {
+  console.log(counterTwo);
+  counterTwo++;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Do…while Loop</h3>
+                <div class="content">
+                    <p>A do...while loop executes its code block at least once, and then continues to loop while the condition is true.</p>
+                    <div class="code-content">
+          <pre><code class="code">let countString = '';
+let i = 0;
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+console.log(countString);
+//  0
+//  01
+//  012
+//  0123
+          </code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Break Statement</h3>
+                <div class="content">
+                    <p>Exit a loop prematurely when a certain condition is met. It prevents further iterations even if the loop’s condition is still true.</p>
+                    <div class="code-content">
+          <pre><code class="code">for (let i = 0; i < 99; i++) {
+  if (i > 2) {
+    break;
+  }
+  console.log('Banana.');
+}
+console.log('Orange you glad I broke out the loop!');</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Continue Statement</h3>
+                <div class="content">
+                    <p>Skips the current iteration and proceeds to the next one.</p>
+                    <div class="code-content">
+          <pre><code class="code">const strangeBirds = ['Shoebill', 'Cow', 'Terrorbird', 'Parotia', 'Kakapo'];
+for (const bird of strangeBirds) {
+  if (bird === 'Cow') {
+    continue;
+  }
+  console.log(bird);
+}
+// Output:
+// Shoebill
+// Terrorbird
+// Parotia
+// Kakapo</code></pre>
                     </div>
                 </div>
             </div>

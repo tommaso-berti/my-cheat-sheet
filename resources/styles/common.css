@@ -63,6 +63,16 @@ strong {
     font-size: xxx-large;
 }
 
+.topic {
+    font-weight: normal;
+    color: #cbd5e1;
+}
+
+.cheatsheet {
+    font-weight: lighter;
+    color: #94a3b8
+}
+
 #introduction > p {
     font-weight: lighter;
     color: #94a3b8
@@ -83,6 +93,7 @@ section > h1 {
     text-align: left;
     margin-top: 4rem;
     margin-bottom: 2rem;
+    color: #cbd5e1;
 }
 
 .highlight-section {
@@ -186,6 +197,7 @@ p.annotations {
     word-wrap: break-word;
     font-size: 0.9rem;
     color: #94a3b8;
+    line-height: 1.1rem;
 }
 
 .code-content .copy-button {
@@ -247,7 +259,7 @@ p.annotations {
 
 .numbered-list-content {
     padding-left: 1rem;
-    line-height: 1.2rem;
+    line-height: 0.8rem;
     margin: 1rem 0;
 }
 
@@ -293,6 +305,7 @@ span.code-definition {
     padding: 0.5rem;
     font-weight: lighter;
     margin: 1rem 0;
+    color: #cbd5e1;
 }
 
 .image-content {
