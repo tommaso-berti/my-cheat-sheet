@@ -330,3 +330,18 @@ span.code-definition {
     width: 50%;
     height: auto;
 }
+
+.tag-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.tag-item {
+    align-items: center;
+    display: flex;
+    gap: 0.3rem
+}
