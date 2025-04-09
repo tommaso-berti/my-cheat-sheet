@@ -111,8 +111,48 @@ console.log(blockVar);   // Error: blockVar is not defined</code></pre>
         <h1><a href="#javascript-conditionals" class="highlight-section">#</a> JavaScript Conditionals</h1>
         <div class="cheatsheet-card-container">
 
+            <div class="card medium">
+                <h3>Operators</h3>
+                <div class="content">
+                    <h4 class="subtitle">Logical OR (<strong>||</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">true || false;            // => true
+true || (10 > 20);        // => true
+false || false;           // => false
+(10 > 100) || (10 > 20);  // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Logical AND (<strong>&amp;&amp;</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">true && false;             // => false
+(2 > 1) && (2 > 1);        // => true
+true && false;             // => false
+4 && 5;                    // => 5</code></pre>
+                    </div>
+                    <h4 class="subtitle">Comparison Operators</h4>
+                    <div class="code-content">
+            <pre><code class="code">3 == 3;       // => true
+250 >= 250;    // => true
+1 === 1;       // => true
+1 == '1';      // => true
+1 === '1';     // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Logical Operator (<strong>!</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">let lateToWork = true;
+let oppositeValue = !lateToWork;   // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Nullish Coalescing Operator (<strong>??</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">null ?? 'I win';         // => 'I win'
+undefined ?? 'Me too';   // => 'Me too'
+false ?? 'I lose';       // => false
+'' ?? 'I lose again';    // => ''</code></pre>
+                    </div>
+                </div>
+            </div>
+
             <div class="card small">
-                <h3>If... else...</h3>
+                <h3>If...else...</h3>
                 <div class="content">
                     <div class="code-content">
                          <pre><code class="code">if(condition){
@@ -121,26 +161,20 @@ console.log(blockVar);   // Error: blockVar is not defined</code></pre>
         // code to be executed if condition is false
     }</code></pre>
                     </div>
-                </div>
-            </div>
-
-            <div class="card small span-two-column">
-                <h3>Ternary Operator</h3>
-                <div class="content">
+                    <h4 class="subtitle">If...else if...else</h4>
                     <div class="code-content">
-                         <pre><code class="code">isNightTime ?  console.log('Turn on the lights!') :  console.log('Turn off the lights!');</code></pre>
-                    </div>
-                    <div class="numbered-list-content">
-                        <ol>
-                            <li>Condition</li>
-                            <li>True statement</li>
-                            <li>False statement</li>
-                        </ol>
+                            <pre><code class="code">if(condition1){
+  // code to be executed if condition1 is true
+} else if(condition2){
+  // code to be executed if condition2 is true
+} else {
+  // code to be executed if condition1 and condition2 are false
+}</code></pre>
                     </div>
                 </div>
             </div>
 
-            <div class="card small span-two-column">
+            <div class="card medium">
                 <h3>Switch Statement</h3>
                 <div class="content">
                     <p>It compares a given expression with several cases and executes the matching block of code.</p>
@@ -172,6 +206,22 @@ switch (groceryItem) {
                 </div>
             </div>
 
+            <div class="card small">
+                <h3>Ternary Operator</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">isNightTime ?  console.log('Turn on the lights!') :  console.log('Turn off the lights!');</code></pre>
+                    </div>
+                    <div class="numbered-list-content">
+                        <ol>
+                            <li>Condition</li>
+                            <li>True statement</li>
+                            <li>False statement</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <section id="javascript-arrays">
@@ -192,11 +242,8 @@ switch (groceryItem) {
                     <div class="code-content">
                         <pre><code class="code">let myArray = [1, 'apple', true, null, undefined];
 console.log(myArray[2]);
-
 // Output: true
-
 myArray[3] = 'Autumn';
-
 // The array now is [1, 'apple', true, Autumn, undefined]</code></pre>
                     </div>
                     <p class="annotations">When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as pass-by-reference since what we’re actually passing to the function is a reference to where the variable memory is stored and changing the memory.</p>
@@ -204,7 +251,6 @@ myArray[3] = 'Autumn';
                     <p>Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable.</p>
                     <div class="code-content">
                         <pre><code class="code">const myArray = [1, 'apple', true];
-
 myArray[2] = 'banana';  //allows reassignment
 myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code></pre>
                     </div>
