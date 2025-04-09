@@ -150,7 +150,6 @@ section > h1 {
 .card > h3 {
     color: limegreen;
     margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
     padding-left: 0.6rem;
     display: inline-block;
     text-align: left;
@@ -160,7 +159,7 @@ section > h1 {
 }
 
 .content {
-    margin: 1rem;
+    margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
 p {

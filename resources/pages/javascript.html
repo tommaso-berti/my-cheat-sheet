@@ -426,6 +426,23 @@ for (const hobby of hobbies) {
             </div>
 
             <div class="card small">
+                <h3>for...in Loop</h3>
+                <div class="content">
+                    <p>The <strong>for...in</strong> loop iterates over all enumerable string properties of an object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const obj = { a: 1, b: 2, c: 3 };
+for (const property in obj) {
+  console.log(`${property}: ${obj[property]}`);
+}
+// Expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
                 <h3>While Loop</h3>
                 <div class="content">
                     <p>A while loop runs as long as its condition remains true and is ideal when the number of iterations is not known in advance.</p>
@@ -660,6 +677,390 @@ greet('Simone'); // "Hello, Simone"
                     </div>
                 </div>
             </div>
+
+            <div class="card small span-two-column">
+                <h3>Helper Functions</h3>
+                <div class="content">
+                    <p>Helper functions are functions called within another function to perform specific tasks</p>
+                    <div class="code-content">
+            <pre><code class="code">function multiplyByNineFifths(number) {
+  return number * (9/5);
+};
+
+function getFahrenheit(celsius) {
+  return multiplyByNineFifths(celsius) + 32;
+};
+getFahrenheit(15); // Returns 59</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>High-order Functions</h3>
+                <div class="content">
+                    <h4 class="subtitle">Functions as Data</h4>
+                    <p>Since functions in JavaScript are first-class objects, they can be assigned to variables and passed around as data. This allows you to rename or reuse a function without duplicating its code.</p>
+                    <div class="code-content">
+            <pre><code class="code">const announceThatIAmDoingImportantWork = () => {
+  console.log("I’m doing very important work!");
+};
+const busy = announceThatIAmDoingImportantWork;
+busy(); // This function call barely takes any space!</code></pre>
+                    </div>
+                    <h4 class="subtitle">Functions as Parameters</h4>
+                    <p>Functions can also be passed as arguments to other functions.The functions passed as parameters are commonly known as callback functions.</p>
+                    <div class="code-content">
+            <pre><code class="code">const higherOrderFunc = param => {
+  // Invoke the callback function
+  param();
+  return `I just invoked ${param.name} as a callback function!`;
+};
+const anotherFunc = () => {
+  return "I'm being invoked by the higher-order function!";
+};
+console.log(higherOrderFunc(anotherFunc));
+// Expected output: "I just invoked anotherFunc as a callback function!"</code></pre>
+                    </div>
+                    <p>You can also use higher-order functions to validate the consistency of other functions:</p>
+                    <div class="code-content">
+            <pre><code class="code">const addTwo = num => {
+  return num + 2;
+};
+const checkConsistentOutput = (func, val) => {
+  let checkA = val + 2;
+  let checkB = func(val);
+  if(checkA === checkB)
+    return checkB;
+  else
+    return 'inconsistent results';
+};
+console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="objects">
+        <h1><a href="#objects" class="highlight-section">#</a> Objects</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Object Literals</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  'Fuel Type': 'diesel',  // key is 'Fuel Type', value is 'diesel'
+  color: 'silver'         // key is color, value is 'silver'
+};
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Accessing Properties</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+console.log(spaceship.numCrew);  // 5
+console.log(spaceship['Fuel Type']);  // 'Turbo Fuel'</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium">
+                <h3>Deleting Properties</h3>
+                <div class="content">
+                    <p>Use the <strong>delete</strong> operator to remove a property from an object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe'
+};
+delete spaceship.mission; // Removes the 'mission' property
+console.log(spaceship);</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Updating Properties</h3>
+                <div class="content">
+                    <p>You cannot reassign a constant object, but you can update its properties.</p>
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5,
+  type: 'Shuttle'
+};
+// Updating properties:
+spaceship.type = 'alien';           // Modify existing property
+spaceship.speed = 'Mach 5';         // Add a new property
+spaceship['Active Duty'] = false;   // Change property using bracket notation
+spaceship.numCrew = 6;              // Update numeric value
+spaceship = {'key': 'value'};       // Error: Assignment to constant variable</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Nested Objects</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  telescope: {
+    yearBuilt: 2018,
+    focalLength: 2032
+  },
+  crew: {
+    captain: {
+      name: 'Sandra',
+      encourageTeam() { console.log('We got this!'); }
+    }
+  },
+  engine: {
+    model: 'Nimbus2000'
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+    },
+    'back-up': {
+      battery: 'Lithium',
+      terabytes: 50
+    }
+  }
+};
+console.log(spaceship.nanoelectronics['back-up'].battery);  // 'Lithium'</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Pass By Reference</h3>
+                <div class="content">
+                    <p>If properties are defined within a function, the object itself is mutated. However, reassigning the object within a function does not change the original variable.</p>
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  homePlanet: 'Earth',
+  color: 'red'
+};
+let tryReassignment = obj => {
+  obj = {
+    identified: false,
+    'transport type': 'flying'
+  };
+  obj.color = 'blue';
+  console.log(obj); // Prints the new object
+};
+tryReassignment(spaceship);
+console.log(spaceship); // { homePlanet: 'Earth', color: 'blue' }
+// Regular reassignment works:
+spaceship = {
+  identified: false,
+  'transport type': 'flying'
+};
+console.log(spaceship);  //{identified: false,'transport type': 'flying'}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Custom Methods</h3>
+                <div class="content">
+                    <p>Objects can have methods/functions assigned as property values to encapsulate behavior. With ES6, you can omit the colon and <code>function</code> keyword.</p>
+                    <div class="code-content">
+          <pre><code class="code">const alienShip = {
+  invade() {
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.');
+  },
+  takeOff() {
+    console.log('Take of...');
+  }
+};
+alienShip.invade();  // Invokes the invade method
+//Output: 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>this keyword & Arrow Functions</h3>
+                <div class="content">
+                    <p>In methods defined using the traditional function syntax, <strong>this</strong> refers to the calling object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const goat = {
+  dietType: 'herbivore',
+  diet() {
+    console.log(this.dietType);
+  }
+};
+goat.diet();  // Outputs: herbivore</code></pre>
+                    </div>
+                    <p>Arrow functions, do not bind their own <strong>this</strong>, and will refer to the global object (or remain undefined in strict mode)</p>
+                    <div class="code-content">
+          <pre><code class="code">const goat2 = {
+  dietType: 'herbivore',
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+goat2.diet();  // Outputs: undefined</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Getters</h3>
+                <div class="content">
+                    <p>If properties must remain unaltered, a common convention is to prefix the property name with an underscore (<strong>_</strong>). Getter methods allow controlled access to these properties.</p>
+                    <div class="code-content">
+            <pre><code class="code">const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() {
+    if (this._firstName && this._lastName) {
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or last name.';
+    }
+  }
+};
+console.log(person.fullName);  // 'John Doe'</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Setters</h3>
+                <div class="content">
+                    <p>Setter methods allow controlled modification of properties designated as private by convention. Setters perform validation before updating the property value.</p>
+                    <div class="code-content">
+            <pre><code class="code">const person2 = {
+  _age: 37,
+  set age(newAge) {
+    if (typeof newAge === 'number') {
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
+    }
+  }
+};
+person2.age = 40;
+console.log(person2._age);  // 40
+person2.age = '40';         // Logs: You must assign a number to age</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11: Factory Functions & Destructuring -->
+            <div class="card small span-two-column">
+                <h3>Factory Functions & Destructuring</h3>
+                <div class="content">
+                    <h3 class="subtitle">Factory Function</h3>
+                    <p>A factory function creates and returns an object, allowing you to reuse the function to generate multiple similar objects.</p>
+                    <div class="code-content">
+          <pre><code class="code">const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return {
+    name: name,
+    age: age,
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    }
+  };
+};
+
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare();  // 'BOO!'</code></pre>
+                    </div>
+                    <h3 class="subtitle">Destructured Technique</h3>
+                    <p>Property shorthand allows you to simplify object creation, and destructuring enables you to extract properties into variables.</p>
+                    <div class="code-content">
+          <pre><code class="code">// Property shorthand:
+const monsterFactory2 = (name, age) => {
+  return {
+    name,
+    age
+  };
+};
+
+// Destructured assignment:
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+
+const { residence } = vampire;
+console.log(residence);  // 'Transylvania'
+
+const { day } = vampire.preferences;
+console.log(day);        // 'stay inside'</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12: Object Methods -->
+            <div class="card small span-two-column">
+                <h3>Object Methods</h3>
+                <div class="content">
+                    <p>JavaScript objects have several built-in methods to work with their properties:</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">.hasOwnProperty()</span>
+                                <span class="code-definition">Checks if an object has the specified property as its own property.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">.valueOf()</span>
+                                <span class="code-definition">Returns the primitive value of the specified object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.assign()</span>
+                                <span class="code-definition">Copies the values of all enumerable own properties from one or more source objects to a target object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.entries()</span>
+                                <span class="code-definition">Returns an array of [key, value] pairs of an object’s own enumerable properties.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.keys()</span>
+                                <span class="code-definition">Returns an array of the names of an object’s own enumerable properties.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+          <pre><code class="code">const robot = {
+  name: "Robo",
+  version: 1.0
+};
+
+console.log(robot.hasOwnProperty('name')); // true
+console.log(robot.valueOf());              // { name: "Robo", version: 1.0 }
+
+const newRobot = Object.assign({}, robot, {laserBlaster: true, voiceRecognition: true});
+console.log(newRobot);
+// [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
+console.log(Object.entries(newRobot));
+console.log(Object.keys(newRobot));</code></pre>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>
