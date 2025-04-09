@@ -48,12 +48,18 @@
             <div class="card small">
                 <h3>Interpolation</h3>
                 <div class="content">
-                    <p>Template literals, introduced in ES6, allow you to embed variables and expressions directly within strings.</p>
+                    <p>Template literals allows to embed variables and expressions directly within strings.</p>
                     <div class="code-content">
             <pre><code class="code">const myPet = 'armadillo';
 console.log(`I own a pet ${myPet}.`);
 
 // Output: I own a pet armadillo.</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
                     </div>
                 </div>
             </div>
@@ -134,7 +140,7 @@ console.log(blockVar);   // Error: blockVar is not defined</code></pre>
                 </div>
             </div>
 
-            <div class="card medium">
+            <div class="card small span-two-column">
                 <h3>Switch Statement</h3>
                 <div class="content">
                     <p>It compares a given expression with several cases and executes the matching block of code.</p>
@@ -194,7 +200,7 @@ myArray[3] = 'Autumn';
 // The array now is [1, 'apple', true, Autumn, undefined]</code></pre>
                     </div>
                     <p class="annotations">When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as pass-by-reference since what we’re actually passing to the function is a reference to where the variable memory is stored and changing the memory.</p>
-                    <h3 class="subtitle">Const arrays</h3>
+                    <h4 class="subtitle">Const arrays</h4>
                     <p>Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable.</p>
                     <div class="code-content">
                         <pre><code class="code">const myArray = [1, 'apple', true];
@@ -208,7 +214,7 @@ myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code>
             <div class="card small">
                 <h3>Properties</h3>
                 <div class="content">
-                    <h3 class="subtitle">.length</h3>
+                    <h4 class="subtitle">.length</h4>
                     <div class="code-content">
                          <pre><code class="code">let numbers = [1,2,3,4];
 numbers.length  // 4</code></pre>
@@ -225,11 +231,11 @@ numbers.length  // 4</code></pre>
 fruits.push('cherry');
 console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #ff0000;"></i>
-                            <p>Destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
                     </div>
                 </div>
             </div>
@@ -244,11 +250,11 @@ let removedFruit = fruits.pop();
 console.log(removedFruit); // 'cherry'
 console.log(fruits);       // ['apple', 'banana']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #ff0000;"></i>
-                            <p>Destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
                     </div>
                 </div>
             </div>
@@ -264,11 +270,11 @@ let deleted = fruits.splice(1, 1);
 console.log(deleted);  // ['banana']
 console.log(fruits);   // ['apple', 'cherry']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #ff0000;"></i>
-                            <p>Destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
                     </div>
                 </div>
             </div>
@@ -283,11 +289,11 @@ let firstFruit = fruits.shift();
 console.log(firstFruit);  // 'apple'
 console.log(fruits);      // ['banana', 'cherry']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #ff0000;"></i>
-                            <p>Destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
                     </div>
                 </div>
             </div>
@@ -301,11 +307,11 @@ console.log(fruits);      // ['banana', 'cherry']</code></pre>
 fruits.unshift('apple');
 console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #ff0000;"></i>
-                            <p>Destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
                     </div>
                 </div>
             </div>
@@ -318,11 +324,11 @@ console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
             <pre><code class="code">let cars = ['Fiat', 'Alfa Romeo'];
 cars.indexOf('Alfa Romeo');  // 1</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #00FF04;"></i>
-                            <p>Non-destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
                     </div>
                 </div>
             </div>
@@ -335,11 +341,11 @@ cars.indexOf('Alfa Romeo');  // 1</code></pre>
             <pre><code class="code">let words = ['Hello', 'World'];
 console.log(words.join(' '));  // "Hello World"</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #00FF04;"></i>
-                            <p>Non-destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
                     </div>
                 </div>
             </div>
@@ -353,11 +359,11 @@ console.log(words.join(' '));  // "Hello World"</code></pre>
 let part = fruits.slice(1, 3);
 console.log(part);  // ['banana', 'cherry']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #00FF04;"></i>
-                            <p>Non-destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
                     </div>
                 </div>
             </div>
@@ -372,11 +378,11 @@ let arr2 = ['cherry', 'date'];
 let combined = arr1.concat(arr2);
 console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
                     </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #00FF04;"></i>
-                            <p>Non-destructive</p>
-                        </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
                     </div>
                 </div>
             </div>
@@ -497,6 +503,163 @@ for (const bird of strangeBirds) {
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section id="functions">
+        <h1><a href="#functions" class="highlight-section">#</a> Functions</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Defining a Function</h3>
+                <div class="content">
+                    <p>A basic function declaration with two parameters and a return value.</p>
+                    <div class="code-content">
+<pre><code class="code">function sum(num1, num2) {
+  return num1 + num2;
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Named Function</h3>
+                <div class="content">
+                    <p>Use a descriptive name to clarify what the function does.</p>
+                    <div class="code-content">
+<pre><code class="code">function rocketToMars() {
+  return 'BOOM!';
+}
+// Invoke:
+rocketToMars(); // "BOOM!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Anonymous Function</h3>
+                <div class="content">
+                    <p>Assigned to a variable instead of having its own name.</p>
+                    <div class="code-content">
+<pre><code class="code">const rocketToMars = function() {
+  return 'BOOM!';
+};
+// Invoke:
+rocketToMars(); // "BOOM!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card tall">
+                <h3>Arrow Functions</h3>
+                <div class="content">
+                    <h4 class="subtitle">Basic Arrow Function</h4>
+                    <p>It takes two parameters and returns their sum using implicit return.</p>
+                    <div class="code-content">
+            <pre><code class="code">const sum = (a, b) => a + b;
+console.log(sum(3, 4)); // 7</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function with Block Body</h4>
+                    <p>When using a block body (curly braces), you must explicitly return a value.</p>
+                    <div class="code-content">
+            <pre><code class="code">const multiply = (a, b) => {
+  return a * b;
+};
+console.log(multiply(3, 4)); // 12</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">No-Parameter Arrow Function</h4>
+                    <p>Parentheses are required even if there are no parameters.</p>
+                    <div class="code-content">
+            <pre><code class="code">const greet = () => 'Hello, world!';
+console.log(greet()); // "Hello, world!"</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function with Default Parameters</h4>
+                    <p>Default values can be assigned to parameters in an arrow function.</p>
+                    <div class="code-content">
+            <pre><code class="code">const greetWithDefault = (name = 'stranger') => `Hello, ${name}!`;
+console.log(greetWithDefault('Alice')); // "Hello, Alice!"
+console.log(greetWithDefault());        // "Hello, stranger!"</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function Expression</h4>
+                    <p>Can be assigned to a variable as a function expression.</p>
+                    <div class="code-content">
+            <pre><code class="code">const bark = () => 'Woof!';
+console.log(bark()); // "Woof!"</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Function Expression</h3>
+                <div class="content">
+                    <p>Store a function in a variable. The function can be named or anonymous.</p>
+                    <div class="code-content">
+<pre><code class="code">const bark = function() {
+  return 'Woof!';
+};
+console.log(bark()); // "Woof!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Function Parameters</h3>
+                <div class="content">
+                    <p>Parameters act as placeholders for arguments passed to the function.</p>
+                    <div class="code-content">
+<pre><code class="code">function sayHello(name = 'stranger') {
+  console.log('Hello, ' + name);
+}
+sayHello('Simone');  // "Hello, Simone"
+sayHello();          // "Hello, stranger"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Return Keyword</h3>
+                <div class="content">
+                    <p>If a function hits <strong>return</strong>, it exits immediately and passes the specified value back.</p>
+                    <div class="code-content">
+<pre><code class="code">function checkAge(age) {
+  if (age < 0) {
+    return; // Exits with undefined
+  }
+  return age >= 18;
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Calling a Function</h3>
+                <div class="content">
+                    <p>Invoke a function by using its name followed by parentheses. Include arguments if needed.</p>
+                    <div class="code-content">
+<pre><code class="code">function greet(name) {
+  console.log('Hello, ' + name);
+}
+greet('Simone'); // "Hello, Simone"
+</code></pre>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
