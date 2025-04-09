@@ -105,6 +105,15 @@ section > h1 {
     color:lime;
 }
 
+section > h2 {
+    font-size: x-large;
+    font-weight: lighter;
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+}
+
 .cheatsheet-card-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(18.65rem, 1fr));
@@ -295,7 +304,7 @@ span.code-attribute {
 span.code-definition {
     font-weight: lighter;
     color: #94a3b8;
-    width: 80%;
+    width: 75%;
     text-align: left;
     line-height: 1.8rem;
     align-content: center;

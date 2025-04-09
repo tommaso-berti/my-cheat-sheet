@@ -19,8 +19,8 @@
     </div>
 </div>
 <div class="main-container">
-    <section id="variables">
-        <h1><a href="#variables" class="highlight-section">#</a> Variables</h1>
+    <section id="javascript-variables">
+        <h1><a href="#javascript-variables" class="highlight-section">#</a> Variables</h1>
         <div class="cheatsheet-card-container">
 
             <div class="card small span-two-column">
@@ -186,7 +186,7 @@ switch (groceryItem) {
                 </div>
             </div>
 
-            <div class="card small span-two-column">
+            <div class="card medium span-two-column">
                 <h3>Access and valorize array data</h3>
                 <div class="content">
                     <div class="code-content">
@@ -388,7 +388,168 @@ console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
             </div>
         </div>
     </section>
+    <section id="javascript-arrays-iterator">
+        <h2><a href="#javascript-arrays-iterator" class="highlight-section">#</a> JavaScript Array Iterators</h2>
+        <div class="cheatsheet-card-container">
 
+            <div class="card medium">
+                <h3>.forEach()</h3>
+                <div class="content">
+                    <p>Executes a provided function once for each array element. It does not return a new array.</p>
+                    <h3 class="subtitle">Function Expression</h3>
+                    <div class="code-content">
+          <pre><code class="code">const arr = ['a', 'b', 'c'];
+arr.forEach(function(item) {
+  console.log(item);
+});</code></pre>
+                    </div>
+                    <h3 class="subtitle">Arrow Function</h3>
+                    <div class="code-content">
+                        <pre><code class="code">arr.forEach(item => console.log(item));</code></pre>
+                    </div>
+                    <h3 class="subtitle">Named Function</h3>
+                    <div class="code-content">
+          <pre><code class="code">function printItem(item) {
+  console.log(item);
+}
+arr.forEach(printItem);</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.map()</h3>
+                <div class="content">
+                    <p>Creates a new array by applying a callback function to every element of the original array.</p>
+                    <div class="code-content">
+          <pre><code class="code">const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);  // [2, 4, 6]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.filter()</h3>
+                <div class="content">
+                    <p>Creates a new array with all elements that pass the test implemented by the provided function.</p>
+                    <div class="code-content">
+          <pre><code class="code">const words = ['dog', 'elephant', 'cat'];
+const shortWords = words.filter(word => word.length <= 3);
+console.log(shortWords);  // ['dog', 'cat']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.every()</h3>
+                <div class="content">
+                    <p>Tests whether all elements in the array pass the provided test. It returns true only if every element passes the test.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [2, 4, 6];
+const allEven = nums.every(num => num % 2 === 0);
+console.log(allEven);  // true</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.some()</h3>
+                <div class="content">
+                    <p>Tests whether at least one element in the array satisfies the provided test. It returns true if any element passes the test, otherwise false.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [1, 3, 5, 8];
+const hasEven = nums.some(num => num % 2 === 0);
+console.log(hasEven);  // true</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.split()</h3>
+                <div class="content">
+                    <p>Divides a string into an array of substrings, based on a specified separator.</p>
+                    <div class="code-content">
+          <pre><code class="code">const sentence = "Hello World";
+const words = sentence.split(" ");
+console.log(words);  // ["Hello", "World"]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium">
+                <h3>.reduce()</h3>
+                <div class="content">
+                    <p>Applies a reducer function on each element of the array, resulting in a single output value.</p>
+                    <div class="code-content">
+          <pre><code class="code">const numbers = [1, 2, 3];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(sum);  // 6</code></pre>
+                    </div>
+                    <div class="image-content">
+                        <img src="/resources/medias/javascript/iteration.jpg" alt="reduce function">
+                    </div>
+                    <p>An optional accumulator initial value can be provided</p>
+                    <div class="code-content">
+          <pre><code class="code">const sumWithInitial = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 10);
+console.log(sumWithInitial);  // 16</code></pre>
+                    </div>
+                    <div class="image-content">
+                        <img src="/resources/medias/javascript/iteration1.jpg" alt="reduce function">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.findIndex()</h3>
+                <div class="content">
+                    <p>Returns the index of the first element that satisfies the provided testing function, or -1 if none do.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [10, 20, 5, 40];
+const index = nums.findIndex(num => num < 10);
+console.log(index);  // 2</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>.join()</h3>
+                <div class="content">
+                    <p>Concatenates all the elements of an array into a string, separated by a specified delimiter.</p>
+                    <div class="code-content">
+          <pre><code class="code">const fruits = ["apple", "banana", "cherry"];
+const fruitString = fruits.join(", ");
+console.log(fruitString);  // "apple, banana, cherry"</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <section id="javascript-loops">
         <h1><a href="#javascript-loops" class="highlight-section">#</a> Loops</h1>
         <div class="cheatsheet-card-container">
@@ -522,9 +683,8 @@ for (const bird of strangeBirds) {
 
         </div>
     </section>
-
-    <section id="functions">
-        <h1><a href="#functions" class="highlight-section">#</a> Functions</h1>
+    <section id="javascript-functions">
+        <h1><a href="#javascript-functions" class="highlight-section">#</a> Functions</h1>
         <div class="cheatsheet-card-container">
 
             <div class="card small">
@@ -741,9 +901,8 @@ console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre
 
         </div>
     </section>
-
-    <section id="objects">
-        <h1><a href="#objects" class="highlight-section">#</a> Objects</h1>
+    <section id="javascript-objects">
+        <h1><a href="#javascript-objects" class="highlight-section">#</a> Objects</h1>
         <div class="cheatsheet-card-container">
 
             <div class="card small">
@@ -846,7 +1005,7 @@ console.log(spaceship.nanoelectronics['back-up'].battery);  // 'Lithium'</code><
                 </div>
             </div>
 
-            <div class="card small span-two-column">
+            <div class="card small">
                 <h3>Pass By Reference</h3>
                 <div class="content">
                     <p>If properties are defined within a function, the object itself is mutated. However, reassigning the object within a function does not change the original variable.</p>
@@ -875,25 +1034,6 @@ console.log(spaceship);  //{identified: false,'transport type': 'flying'}</code>
                 </div>
             </div>
 
-            <div class="card small span-two-column">
-                <h3>Custom Methods</h3>
-                <div class="content">
-                    <p>Objects can have methods/functions assigned as property values to encapsulate behavior. With ES6, you can omit the colon and <code>function</code> keyword.</p>
-                    <div class="code-content">
-          <pre><code class="code">const alienShip = {
-  invade() {
-    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.');
-  },
-  takeOff() {
-    console.log('Take of...');
-  }
-};
-alienShip.invade();  // Invokes the invade method
-//Output: 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'</code></pre>
-                    </div>
-                </div>
-            </div>
-
             <div class="card small">
                 <h3>this keyword & Arrow Functions</h3>
                 <div class="content">
@@ -916,6 +1056,25 @@ goat.diet();  // Outputs: herbivore</code></pre>
   }
 };
 goat2.diet();  // Outputs: undefined</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Custom Methods</h3>
+                <div class="content">
+                    <p>Objects can have methods/functions assigned as property values to encapsulate behavior. With ES6, you can omit the colon and <code>function</code> keyword.</p>
+                    <div class="code-content">
+          <pre><code class="code">const alienShip = {
+  invade() {
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.');
+  },
+  takeOff() {
+    console.log('Take of...');
+  }
+};
+alienShip.invade();  // Invokes the invade method
+//Output: 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'</code></pre>
                     </div>
                 </div>
             </div>
@@ -963,14 +1122,12 @@ person2.age = '40';         // Logs: You must assign a number to age</code></pre
                 </div>
             </div>
 
-            <!-- Card 11: Factory Functions & Destructuring -->
             <div class="card small span-two-column">
-                <h3>Factory Functions & Destructuring</h3>
+                <h3>Factory Functions</h3>
                 <div class="content">
-                    <h3 class="subtitle">Factory Function</h3>
-                    <p>A factory function creates and returns an object, allowing you to reuse the function to generate multiple similar objects.</p>
+                    <p>A factory function creates and returns an object. This approach permits the generation of multiple similar object instances through reusable code.</p>
                     <div class="code-content">
-          <pre><code class="code">const monsterFactory = (name, age, energySource, catchPhrase) => {
+      <pre><code class="code">const monsterFactory = (name, age, energySource, catchPhrase) => {
   return {
     name: name,
     age: age,
@@ -980,23 +1137,25 @@ person2.age = '40';         // Logs: You must assign a number to age</code></pre
     }
   };
 };
-
 const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
-ghost.scare();  // 'BOO!'</code></pre>
-                    </div>
-                    <h3 class="subtitle">Destructured Technique</h3>
-                    <p>Property shorthand allows you to simplify object creation, and destructuring enables you to extract properties into variables.</p>
-                    <div class="code-content">
-          <pre><code class="code">// Property shorthand:
+ghost.scare();  // 'BOO!'
+// Using property shorthand in a factory function:
 const monsterFactory2 = (name, age) => {
   return {
     name,
     age
   };
-};
+};</code></pre>
+                    </div>
+                </div>
+            </div>
 
-// Destructured assignment:
-const vampire = {
+            <div class="card small">
+                <h3>Destructuring Technique</h3>
+                <div class="content">
+                    <p>Property shorthand simplifies object creation, and destructuring assignment permits the extraction of object properties into variables.</p>
+                    <div class="code-content">
+      <pre><code class="code">const vampire = {
   name: 'Dracula',
   residence: 'Transylvania',
   preferences: {
@@ -1004,17 +1163,20 @@ const vampire = {
     night: 'satisfy appetite'
   }
 };
-
 const { residence } = vampire;
 console.log(residence);  // 'Transylvania'
-
 const { day } = vampire.preferences;
-console.log(day);        // 'stay inside'</code></pre>
+console.log(day);  // 'stay inside'</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 12: Object Methods -->
             <div class="card small span-two-column">
                 <h3>Object Methods</h3>
                 <div class="content">
@@ -1048,15 +1210,13 @@ console.log(day);        // 'stay inside'</code></pre>
   name: "Robo",
   version: 1.0
 };
-
 console.log(robot.hasOwnProperty('name')); // true
 console.log(robot.valueOf());              // { name: "Robo", version: 1.0 }
-
 const newRobot = Object.assign({}, robot, {laserBlaster: true, voiceRecognition: true});
-console.log(newRobot);
-// [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
-console.log(Object.entries(newRobot));
-console.log(Object.keys(newRobot));</code></pre>
+console.log(newRobot);  // [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
+console.log(Object.entries(newRobot));  // [ [ 'name', 'Robo' ], [ 'version', 1 ], [ 'laserBlaster', true ], [ 'voiceRecognition', true ] ]
+console.log(Object.keys(newRobot));  // [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
+          </code></pre>
                     </div>
                 </div>
             </div>
