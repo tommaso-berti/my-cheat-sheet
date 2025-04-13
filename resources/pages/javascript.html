@@ -547,7 +547,7 @@ console.log(words);  // ["Hello", "World"]</code></pre>
                 </div>
             </div>
 
-            <div class="card medium">
+            <div class="card tall">
                 <h3>.reduce()</h3>
                 <div class="content">
                     <p>Applies a reducer function on each element of the array, resulting in a single output value.</p>
@@ -590,6 +590,33 @@ console.log(index);  // 2</code></pre>
           <pre><code class="code">const fruits = ["apple", "banana", "cherry"];
 const fruitString = fruits.join(", ");
 console.log(fruitString);  // "apple, banana, cherry"</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card medium">
+                <h3>.sort()</h3>
+                <div class="content">
+                    <p>Sorts the elements of an array in place and returns the sorted array. A comparator function can be provided to define the sort order. If the comparator returns a negative number, zero, or a positive number, the positions of elements are determined accordingly.</p>
+                    <h4 class="subtitle">Descending Order</h4>
+                    <div class="code-content">
+            <pre><code class="code">const sortYearsDescending = (yearsArray) => {
+  return yearsArray.sort((a, b) => b - a);
+};
+console.log(sortYearsDescending([2020, 2010, 2005])); // [2020, 2010, 2005]</code></pre>
+                    </div>
+                    <h4 class="subtitle">Ascending Order</h4>
+                    <div class="code-content">
+            <pre><code class="code">const sortYearsAscending = (yearsArray) => {
+  return yearsArray.sort((a, b) => a - b);
+};
+console.log(sortYearsAscending([2020, 2010, 2005])); // [2005, 2010, 2020]</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Modify the input array</p>
+                        </div>
                     </div>
                 </div>
             </div>

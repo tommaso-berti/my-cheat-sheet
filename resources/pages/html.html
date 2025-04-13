@@ -18,72 +18,249 @@
     </div>
 </div>
 <div class="main-container">
-    <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+    <section id="html-documentation">
+        <h1><a href="#html-documentation" class="highlight-section">#</a> HTML Document Structure</h1>
         <div class="cheatsheet-card-container">
-            <div class="card tall">
-               <h3>Introduction</h3>
-                <div class="content standard-content">
-                    <p>lorem</p>
-                </div>
-            </div>
+
             <div class="card small">
-                <h3>Introduction</h3>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code">Your code here...</code></pre>
+                <h3>DOCTYPE Declaration</h3>
+                <div class="content">
+                    <p>This declaration is an instruction and must be the first line of an HTML document. It specifies the document type and version of HTML being used. In modern usage, <strong>&lt;!DOCTYPE html&gt;</strong> indicates HTML5.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+...
+&lt;/html&gt;</code></pre>
+                    </div>
                 </div>
             </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content list-content">
-                    <ul>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                    </ul>
+
+            <div class="card small span-two-column">
+                <h3>Document Structure</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;html&gt;&lt;/html&gt;</span>
+                                <span class="code-definition">The root element, indicating that the content is HTML.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;head&gt;&lt;/head&gt;</span>
+                                <span class="code-definition">Contains metadata about the page (e.g., scripts, styles, and other information not directly displayed).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;title&gt;&lt;/title&gt;</span>
+                                <span class="code-definition">Defines the title shown in the browser's tab; must reside inside &lt;head&gt;.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;body&gt;&lt;/body&gt;</span>
+                                <span class="code-definition">Contains the main content of the page.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;footer&gt;&lt;/footer&gt;</span>
+                                <span class="code-definition">Contains the footer information of the page.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;section&gt;&lt;/section&gt;</span>
+                                <span class="code-definition">Defines a thematic grouping of content, typically with an associated heading. Use this element for semantically meaningful sections, and use &lt;div&gt; for generic containers.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content definition-content">
-                    <ul>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                    </ul>
-                </div>
-                <h4 class="subtitle">Examples</h4>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code">
-{
-  "name": "Jason",
-  "age": 39,
-  "height": 1.92,
-  "gender": "M",
-  "salary": 70000,
-  "married": true,
-  "children": [
-    {"name": "Tom", "age": 9, "gender":"M"},
-    {"name": "Ava", "age": 7, "gender":"F"}dads
-  ]
-}
-                    </code></pre>
-                </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
-            </div>
+
+        </div>
+    </section>
+
+    <section id="element-tags">
+        <h1><a href="#element-tags" class="highlight-section">#</a> Element Tags</h1>
+        <div class="cheatsheet-card-container">
+
             <div class="card small">
-                <h3>Introduction</h3>
-                <p></p>
+                <h3>Relative Path</h3>
+                <div class="content">
+                    <p>A relative path specifies the location of a resource relative to the current file's location.</p>
+                    <p>Relative path starts with a dot followed by a slash (<strong>./</strong>),
+                    <div class="code-content">
+            <pre><code class="code">project-folder/
+├── index.html
+├── about.html
+└── assets/
+    └── images/
+         └── logo.png</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="./contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
             </div>
+
+            <div class="card small span-two-column">
+                <h3>Absolute Path within a Project</h3>
+                <div class="content">
+                    <p>An absolute path specifies the location of a resource starting from the root of the website</p>
+                    <p>Absolute path starts with a slash (<strong>/</strong>), which indicates that it is an absolute reference from the root directory of the website (or project).</p>
+                    <div class="code-content">
+            <pre><code class="code">project-folder/
+├── index.html
+├── about.html
+└── assets/
+    └── images/
+         └── logo.png</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="/assets/images/logo.png" alt="Project Logo"&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;img&gt;</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="path_to_file" alt="A field of yellow sunflowers" /&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">Attributes</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the path to the image file (e.g., a URL or relative path).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">alt</span>
+                                <span class="code-definition">Provides a textual description of the image. This description is used as fallback content if the image fails to load, by screen readers for accessibility, and for SEO purposes. If the image is decorative, the alt attribute should be empty.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;video&gt;</h3>
+                <div class="content">
+                    <div class="code-content">
+            <pre><code class="code">&lt;video src="myVideo.mp4" width="320" height="240" controls&gt;
+  Video not supported
+&lt;/video&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">Attributes</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the URL or path to the video file.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">controls</span>
+                                <span class="code-definition">Adds basic video controls (play, pause, volume, etc.) to the player.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>If the video cannot be rendered, the fallback text inside the <strong>&lt;video&gt;</strong> tag is displayed.</p>
+                </div>
+            </div>
+
+            <!-- Card: Anchor (Link) Elements -->
+            <div class="card small span-two-column">
+                <h3>Anchor (Link) Elements</h3>
+                <div class="content">
+                    <p>The <strong>&lt;a&gt;</strong> tag creates hyperlinks. The <strong>href</strong> attribute specifies the destination URL. The optional <strong>target</strong> attribute controls where the linked document is opened:</p>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>_blank</strong> opens the link in a new tab.</li>
+                            <li><strong>_self</strong> opens the link in the current tab.</li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank"&gt;The Brown Bear&lt;/a&gt;</code></pre>
+                    </div>
+                    <p>Relative paths can be used for linking pages stored in the same folder:</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="./contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+                    </div>
+                    <p>Additionally, nearly any element can be turned into a link by wrapping it inside an anchor. For example, wrapping an image:</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Opuntia" target="_blank"&gt;
+  &lt;img src="https://www.Prickly_Pear_Closeup.jpg" alt="A red prickly pear fruit" /&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: In-Page Links & Title Attribute -->
+            <div class="card small span-two-column">
+                <h3>In-Page Links &amp; Title Attribute</h3>
+                <div class="content">
+                    <p>An element can be assigned an <strong>id</strong> to allow in-page navigation. Clicking a link with a hash (<strong>#</strong>) will scroll the page to the element with the corresponding id.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;p id="top"&gt;This is the top of the page!&lt;/p&gt;
+&lt;a href="#top"&gt;Top&lt;/a&gt;</code></pre>
+                    </div>
+                    <p>The <strong>title</strong> attribute provides additional context or advisory text for elements—often displayed as a tooltip when the user hovers over the element.</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="https://www.codecademy.com" title="Codecademy is an online learning platform"&gt;Codecademy&lt;/a&gt; is the best place to learn to code!</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Table Elements -->
+            <div class="card small span-two-column">
+                <h3>Table Elements</h3>
+                <div class="content">
+                    <p>Tables are created with the <strong>&lt;table&gt;</strong> tag. Rows are defined with <strong>&lt;tr&gt;</strong>, headings with <strong>&lt;th&gt;</strong>, and cells with <strong>&lt;td&gt;</strong>. The <strong>scope</strong> attribute on <strong>&lt;th&gt;</strong> indicates whether a heading applies to a row (<strong>row</strong>) or a column (<strong>col</strong>).</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;         &lt;!-- Empty for column alignment --&gt;
+    &lt;th scope="col"&gt;Saturday&lt;/th&gt;
+    &lt;th scope="col"&gt;Sunday&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;Temperature&lt;/th&gt;
+    &lt;td&gt;73&lt;/td&gt;
+    &lt;td&gt;81&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <p>The <strong>colspan</strong> attribute allows a cell to span multiple columns. For example:</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;td colspan="2"&gt;Out of Town&lt;/td&gt;</code></pre>
+                    </div>
+                    <p>Additionally, tables can be structured with semantic sections: <strong>&lt;thead&gt;</strong> for headings, <strong>&lt;tbody&gt;</strong> for table data, and <strong>&lt;tfoot&gt;</strong> for the footer.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th scope="col"&gt;Saturday&lt;/th&gt;
+      &lt;th scope="col"&gt;Sunday&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Morning&lt;/th&gt;
+      &lt;td rowspan="2"&gt;Work&lt;/td&gt;
+      &lt;td rowspan="3"&gt;Relax&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Afternoon&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Evening&lt;/th&gt;
+      &lt;td&gt;Dinner&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;Totals and other data can be placed here.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>
