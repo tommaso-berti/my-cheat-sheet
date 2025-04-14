@@ -6,6 +6,7 @@
     <title>HTML - cheatsheet</title>
     <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header class="header-title">
@@ -114,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="card small">
+            <div class="card small span-two-column">
                 <h3>&lt;img&gt;</h3>
                 <div class="content">
                     <div class="code-content">
@@ -161,35 +162,35 @@
                 </div>
             </div>
 
-            <!-- Card: Anchor (Link) Elements -->
             <div class="card small span-two-column">
-                <h3>Anchor (Link) Elements</h3>
+                <h3>&lt;a&gt; Anchor (Link) Elements</h3>
                 <div class="content">
-                    <p>The <strong>&lt;a&gt;</strong> tag creates hyperlinks. The <strong>href</strong> attribute specifies the destination URL. The optional <strong>target</strong> attribute controls where the linked document is opened:</p>
-                    <div class="list-content">
+                    <div class="definition-content">
                         <ul>
-                            <li><strong>_blank</strong> opens the link in a new tab.</li>
-                            <li><strong>_self</strong> opens the link in the current tab.</li>
+                            <li>
+                                <span class="code-attribute">href</span>
+                                <span class="code-definition">Specifies the destination URL or relative path.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">target</span>
+                                <span class="code-definition">Where the linked document is opened. Common values are <strong>_blank</strong> (opens in a new tab) and <strong>_self</strong> (opens in the current tab).</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="code-content">
                         <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank"&gt;The Brown Bear&lt;/a&gt;</code></pre>
                     </div>
-                    <p>Relative paths can be used for linking pages stored in the same folder:</p>
+                    <h4 class="subtitle">Wrapping elements</h4>
+                    <p>Additionally, an anchor can wrap any element, turning it into a clickable link</p>
                     <div class="code-content">
-                        <pre><code class="code">&lt;a href="./contact.html"&gt;Contact&lt;/a&gt;</code></pre>
-                    </div>
-                    <p>Additionally, nearly any element can be turned into a link by wrapping it inside an anchor. For example, wrapping an image:</p>
-                    <div class="code-content">
-          <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Opuntia" target="_blank"&gt;
+            <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Opuntia" target="_blank"&gt;
   &lt;img src="https://www.Prickly_Pear_Closeup.jpg" alt="A red prickly pear fruit" /&gt;
 &lt;/a&gt;</code></pre>
                     </div>
                 </div>
             </div>
 
-            <!-- Card: In-Page Links & Title Attribute -->
-            <div class="card small span-two-column">
+            <div class="card">
                 <h3>In-Page Links &amp; Title Attribute</h3>
                 <div class="content">
                     <p>An element can be assigned an <strong>id</strong> to allow in-page navigation. Clicking a link with a hash (<strong>#</strong>) will scroll the page to the element with the corresponding id.</p>
@@ -204,13 +205,31 @@
                 </div>
             </div>
 
-            <!-- Card: Table Elements -->
             <div class="card small span-two-column">
-                <h3>Table Elements</h3>
+                <h3>&lt;table&gt;</h3>
                 <div class="content">
-                    <p>Tables are created with the <strong>&lt;table&gt;</strong> tag. Rows are defined with <strong>&lt;tr&gt;</strong>, headings with <strong>&lt;th&gt;</strong>, and cells with <strong>&lt;td&gt;</strong>. The <strong>scope</strong> attribute on <strong>&lt;th&gt;</strong> indicates whether a heading applies to a row (<strong>row</strong>) or a column (<strong>col</strong>).</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;table&gt;</span>
+                                <span class="code-definition">Initializes the table structure.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tr&gt;</span>
+                                <span class="code-definition">Defines a table row.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;th&gt;</span>
+                                <span class="code-definition">Specifies a header cell. The <strong>scope</strong> attribute indicates whether the header applies to a row (<strong>row</strong>) or a column (<strong>col</strong>).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;td&gt;</span>
+                                <span class="code-definition">Represents a standard data cell in the table.</span>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="code-content">
-          <pre><code class="code">&lt;table&gt;
+            <pre><code class="code">&lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;&lt;/th&gt;         &lt;!-- Empty for column alignment --&gt;
     &lt;th scope="col"&gt;Saturday&lt;/th&gt;
@@ -223,13 +242,35 @@
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
                     </div>
-                    <p>The <strong>colspan</strong> attribute allows a cell to span multiple columns. For example:</p>
+                    <h4 class="subtitle">colspan</h4>
+                    <p>Span across multiple columns</p>
                     <div class="code-content">
                         <pre><code class="code">&lt;td colspan="2"&gt;Out of Town&lt;/td&gt;</code></pre>
                     </div>
-                    <p>Additionally, tables can be structured with semantic sections: <strong>&lt;thead&gt;</strong> for headings, <strong>&lt;tbody&gt;</strong> for table data, and <strong>&lt;tfoot&gt;</strong> for the footer.</p>
+                    <h4 class="subtitle">rowspan</h4>
+                    <p>Span across multiple rows</p>
                     <div class="code-content">
-          <pre><code class="code">&lt;table&gt;
+                        <pre><code class="code">&lt;tr rowspan="2"&gt;Out of Town&lt;/td&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">Semantic table</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;thead&gt;</span>
+                                <span class="code-definition">Contains the header rows of the table.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tbody&gt;</span>
+                                <span class="code-definition">Encapsulates the main data rows.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tfoot&gt;</span>
+                                <span class="code-definition">Contains footer content, such as sums or summaries.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+            <pre><code class="code">&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;&lt;/th&gt;
@@ -257,6 +298,219 @@
     &lt;/tr&gt;
   &lt;/tfoot&gt;
 &lt;/table&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="form-input">
+        <h1><a href="#form-input" class="highlight-section">#</a> Form Input Elements</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small span-three-column">
+                <h3>&lt;form&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;form&gt;</strong> element collects user input and sends it to a server. Its key attributes are defined below:</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">action</span>
+                                <span class="code-definition">Specifies the URL where the form data will be sent.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">method</span>
+                                <span class="code-definition">Specifies the HTTP method (e.g., POST, GET) to use when submitting the form.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>&lt;input&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;input&gt;</strong> element is a self-closing tag used to create interactive controls for forms</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;input type="text" name="first-text-field" value="already pre-filled" /&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">type</span>
+                                <span class="code-definition">Determines the kind of input field rendered (e.g., text, password, number, range, checkbox, radio). The default is "text".</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">name</span>
+                                <span class="code-definition">Specifies the key for the data to be sent when the form is submitted.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">value</span>
+                                <span class="code-definition">Sets a default value for the input field.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">step</span>
+                                <span class="code-definition">For numeric input types, defines the legal number intervals.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;label&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;label&gt;</strong> element defines a caption for an <strong>&lt;input&gt;</strong> element. To associate a label with an input, the input must have an <strong>id</strong> and the label’s <strong>for</strong> attribute must match that id.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;label for="meal"&gt;What do you want to eat?&lt;/label&gt;
+&lt;input type="text" name="food" id="meal" /&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Input type: Submit Button</h3>
+                <div class="content">
+                    <p>The <strong>&lt;input type="submit"&gt;</strong> element creates a button that submits the form data to the server.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  &lt;input type="submit" value="Send" /&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff7e66;"></i>
+                        <p>&lt;input&gt; type</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Input type: Radio Buttons</h3>
+                <div class="content">
+                    <p>Radio buttons allow users to select one option from a set of choices. Each radio input should share the same <strong>name</strong> attribute for grouping.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;p&gt;What is the sum of 1 + 1?&lt;/p&gt;
+  &lt;input type="radio" id="two" name="answer" value="2" /&gt;
+  &lt;label for="two"&gt;2&lt;/label&gt;
+  &lt;br /&gt;
+  &lt;input type="radio" id="eleven" name="answer" value="11" /&gt;
+  &lt;label for="eleven"&gt;11&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff7e66;"></i>
+                        <p>&lt;input&gt; type</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;select&gt; Dropdown</h3>
+                <div class="content">
+                    <p>The <strong>&lt;select&gt;</strong> element creates a dropdown list, and is populated with <strong>&lt;option&gt;</strong> elements. It is used to choose one value among many.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="lunch"&gt;What's for lunch?&lt;/label&gt;
+  &lt;select id="lunch" name="lunch"&gt;
+    &lt;option value="pizza"&gt;Pizza&lt;/option&gt;
+    &lt;option value="curry"&gt;Curry&lt;/option&gt;
+    &lt;option value="salad"&gt;Salad&lt;/option&gt;
+    &lt;option value="ramen"&gt;Ramen&lt;/option&gt;
+    &lt;option value="tacos"&gt;Tacos&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <p>If a user selects Pizza, the data sent will be "lunch=pizza".</p>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>&lt;datalist&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;datalist&gt;</strong> element provides a list of predefined options to suggest to the user as they input data. It is used with an input element's <strong>list</strong> attribute.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="city"&gt;Ideal city to visit?&lt;/label&gt;
+  &lt;input type="text" list="cities" id="city" name="city" /&gt;
+  &lt;datalist id="cities"&gt;
+    &lt;option value="New York City"&gt;&lt;/option&gt;
+    &lt;option value="Tokyo"&gt;&lt;/option&gt;
+    &lt;option value="Barcelona"&gt;&lt;/option&gt;
+    &lt;option value="Mexico City"&gt;&lt;/option&gt;
+    &lt;option value="Melbourne"&gt;&lt;/option&gt;
+    &lt;option value="Other"&gt;&lt;/option&gt;
+  &lt;/datalist&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;textarea&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;textarea&gt;</strong> element creates a multi-line text input field. It supports attributes such as <strong>rows</strong> and <strong>cols</strong> to define its visible size, and can contain default text.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="blog"&gt;New Blog Post:&lt;/label&gt;
+  &lt;br /&gt;
+  &lt;textarea id="blog" name="blog" rows="5" cols="30"&gt;
+    Default text
+  &lt;/textarea&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Input attributes: validation</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">required</span>
+                                <span class="code-definition">Specifies that the field must be filled before the form can be submitted.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">minlength</span>
+                                <span class="code-definition">Sets the minimum number of characters required for the input.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">maxlength</span>
+                                <span class="code-definition">Sets the maximum number of characters allowed in the input.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">pattern</span>
+                                <span class="code-definition">Specifies a regular expression that the input's value must match for validation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>Required, text length restrictions and pattern matching.</p>
+                    <div class="code-content">
+            <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;
+  &lt;br&gt;
+  &lt;input id="username" name="username" type="text" minlength="3" maxlength="15"
+         pattern="^[A-Za-z0-9_]+$" required&gt;
+  &lt;br&gt;
+  &lt;input type="submit" value="Register"&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFB38E;"></i>
+                        <p>&lt;input&gt; attributes</p>
                     </div>
                 </div>
             </div>
