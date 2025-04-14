@@ -297,14 +297,14 @@ span.code-attribute {
     font-family: monospace;
     color: #079669;
     font-size: large;
-    width: 20%;
+    width: 23%;
     text-align: left;
 }
 
 span.code-definition {
     font-weight: lighter;
     color: #94a3b8;
-    width: 78%;
+    width: 75%;
     text-align: left;
     line-height: 1.8rem;
     align-content: center;

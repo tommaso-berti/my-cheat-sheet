@@ -37,7 +37,7 @@
             </div>
 
             <div class="card small span-two-column">
-                <h3>Document Structure</h3>
+                <h3>Semantic document Structure</h3>
                 <div class="content">
                     <div class="definition-content">
                         <ul>
@@ -58,14 +58,36 @@
                                 <span class="code-definition">Contains the main content of the page.</span>
                             </li>
                             <li>
-                                <span class="code-attribute">&lt;footer&gt;&lt;/footer&gt;</span>
-                                <span class="code-definition">Contains the footer information of the page.</span>
+                                <span class="code-attribute">&lt;header&gt;</span>
+                                <span class="code-definition">Designates the introductory content or navigational links for a page.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;nav&gt;&lt;/nav&gt;</span>
+                                <span class="code-definition">Encapsulates a block of navigation links, such as menus or a table of contents.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;main&gt;&lt;/main&gt;</span>
+                                <span class="code-definition">Contains the dominant content of a page, excluding repeated elements like headers, footers, or navigation.</span>
                             </li>
                             <li>
                                 <span class="code-attribute">&lt;section&gt;&lt;/section&gt;</span>
                                 <span class="code-definition">Defines a thematic grouping of content, typically with an associated heading. Use this element for semantically meaningful sections, and use &lt;div&gt; for generic containers.</span>
                             </li>
+                            <li>
+                                <span class="code-attribute">&lt;article&gt;&lt;/article&gt;</span>
+                                <span class="code-definition">Represents a self-contained piece of content, like a blog post or news article, that makes sense on its own.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;footer&gt;&lt;/footer&gt;</span>
+                                <span class="code-definition">Holds footer information, such as contact details, copyright notices, or site maps.</span>
+                            </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
                     </div>
                 </div>
             </div>
@@ -121,7 +143,6 @@
                     <div class="code-content">
                         <pre><code class="code">&lt;img src="path_to_file" alt="A field of yellow sunflowers" /&gt;</code></pre>
                     </div>
-                    <h4 class="subtitle">Attributes</h4>
                     <div class="definition-content">
                         <ul>
                             <li>
@@ -137,28 +158,112 @@
                 </div>
             </div>
 
-            <div class="card small">
-                <h3>&lt;video&gt;</h3>
+            <div class="card medium">
+                <h3>&lt;figure&gt;</h3>
                 <div class="content">
+                    <p>Encapsulates media such as images, illustrations, diagrams, or code snippets that are referenced in the main document flow.</p>
                     <div class="code-content">
-            <pre><code class="code">&lt;video src="myVideo.mp4" width="320" height="240" controls&gt;
-  Video not supported
-&lt;/video&gt;</code></pre>
+      <pre><code class="code">&lt;figure&gt;
+  &lt;img src="overwatch.jpg" alt="An image from Overwatch" /&gt;
+&lt;/figure&gt;</code></pre>
                     </div>
-                    <h4 class="subtitle">Attributes</h4>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>&lt;figcaption&gt;</h3>
+                <div class="content">
+                    <p>Provides a caption for media contained within a <strong>&lt;figure&gt;</strong>. It is placed inside the <strong>&lt;figure&gt;</strong> so that the caption moves with the media if the layout changes.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;figure&gt;
+  &lt;img src="overwatch.jpg" alt="An image from Overwatch" /&gt;
+  &lt;figcaption&gt;This picture shows characters from Overwatch.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;audio&gt;</h3>
+                <div class="content">
+                    <p>Embeds audio content into a document</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;audio controls&gt;
+  &lt;source src="iAmAnAudioFile.mp3" type="audio/mp3"&gt;
+&lt;/audio&gt;</code></pre>
+                    </div>
                     <div class="definition-content">
                         <ul>
                             <li>
                                 <span class="code-attribute">src</span>
-                                <span class="code-definition">Specifies the URL or path to the video file.</span>
+                                <span class="code-definition">Specifies the URL of the audio file.</span>
                             </li>
                             <li>
                                 <span class="code-attribute">controls</span>
-                                <span class="code-definition">Adds basic video controls (play, pause, volume, etc.) to the player.</span>
+                                <span class="code-definition">Displays built-in audio controls (e.g., play, pause, volume).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;source&gt;</span>
+                                <span class="code-definition">Used within the <strong>&lt;audio&gt;</strong> element to define multiple file formats.</span>
                             </li>
                         </ul>
                     </div>
-                    <p>If the video cannot be rendered, the fallback text inside the <strong>&lt;video&gt;</strong> tag is displayed.</p>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>&lt;video&gt;</h3>
+                <div class="content">
+                    <p>Embeds video content. It supports various attributes to control playback</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;video src="coding.mp4" controls&gt;
+  Video not supported
+&lt;/video&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the URL of the video file.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">controls</span>
+                                <span class="code-definition">Displays video controls such as play/pause, volume, and fullscreen options.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">autoplay</span>
+                                <span class="code-definition">Automatically starts video playback when the page loads.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">loop</span>
+                                <span class="code-definition">Repeats the video continuously.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
                 </div>
             </div>
 
@@ -204,6 +309,38 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card small span-three-column">
+                <h3>&lt;aside&gt;</h3>
+                <div class="content">
+                    <p>Marks additional information that enhances the main content. It is useful for content such as bibliographies, endnotes, comments, pull quotes, editorial sidebars, or any supplementary information.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;article&gt;
+  &lt;p&gt;The first World Series was played between Pittsburgh and Boston in 1903.&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside&gt;
+  &lt;p&gt;Babe Ruth once stated, “Heroes get remembered, but legends never die.”&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="card small span-two-column">
                 <h3>&lt;table&gt;</h3>
