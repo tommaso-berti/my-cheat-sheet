@@ -58,7 +58,7 @@
                                 <span class="code-definition">Contains the main content of the page.</span>
                             </li>
                             <li>
-                                <span class="code-attribute">&lt;header&gt;</span>
+                                <span class="code-attribute">&lt;header&gt;&lt;/header&gt;</span>
                                 <span class="code-definition">Designates the introductory content or navigational links for a page.</span>
                             </li>
                             <li>
@@ -88,6 +88,19 @@
                     <div class="tag-item">
                         <i class="fa fa-tag" style="color: #FFD166;"></i>
                         <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>&lt;head&gt;</h3>
+                <div class="content">
+                    <p>This declaration is an instruction and must be the first line of an HTML document. It specifies the document type and version of HTML being used. In modern usage, <strong>&lt;!DOCTYPE html&gt;</strong> indicates HTML5.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+...
+&lt;/html&gt;</code></pre>
                     </div>
                 </div>
             </div>
@@ -638,6 +651,159 @@
                         <i class="fa fa-tag" style="color: #FFB38E;"></i>
                         <p>&lt;input&gt; attributes</p>
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="digital-accessibility">
+        <h1><a href="#digital-accessibility" class="highlight-section">#</a> Digital Accessibility</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Overview</h3>
+                <div class="content">
+                    <p>
+                        Digital accessibility means designing devices, products, and environments so that individuals with disabilities or sensory impairments can successfully use them. It is guided by the <strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong> to ensure an inclusive web experience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Semantic HTML Elements</h3>
+                <div class="content">
+                    <p>
+                        Using semantic elements helps screen reader users understand and navigate a web page more efficiently. For example, wrap a navigation bar in a <strong>&lt;header&gt;</strong> instead of a generic <strong>&lt;div&gt;</strong> with a class.
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;header&gt;
+  &lt;nav&gt;
+  ...
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Role</h3>
+                <div class="content">
+                    <p>The <span class="code-attribute">role</span> attribute provides additional context to web elements, affecting how screen readers announce them</p>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Role: complementary</h3>
+                <div class="content">
+                    <p>The <strong>complementary</strong> role signals that the content supports the primary information on the page.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;div id="code-editor" role="complementary"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Role: presentation</h3>
+                <div class="content">
+                    <p>Some elements, such as <strong>&lt;ol&gt;</strong> and <strong>&lt;div&gt;</strong>, are used solely for organizing content. Setting <strong>role="presentation" </strong>instructs screen readers to skip announcing the element’s name, allowing users to focus directly on the meaningful content.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;ol role="presentation"&gt;
+  &lt;li&gt;List Item 1&lt;/li&gt;
+  &lt;li&gt;List Item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                    </div>
+                    <p>
+                        In the example below, the container’s role prevents unnecessary announcements:
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;div id="container" role="presentation"&gt;
+  &lt;p&gt;I'm content you want to hear!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Property: aria-label</h3>
+                <div class="content">
+                    <p>Gives screen readers extra information without affecting the visual layout</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;img src="#" alt="A painting of the Shenandoah Valley" /&gt;
+&lt;p aria-label="Artist"&gt;Armand Cabrera, 2010&lt;/p&gt;</code></pre>
+                    </div>
+                    <p>
+                        This enhances the relationship between the image and its caption. For a full list of ARIA properties, see the <a href="https://www.w3.org/TR/wai-aria-1.1/" target="_blank">ARIA Techniques</a>.
+                    </p>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>ARIA property</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Alt Attribute</h3>
+                <div class="content">
+                    <p>
+                        The <strong>alt</strong> attribute is vital for accessibility, providing a text alternative to images. Screen readers announce this text, and it is displayed if the image fails to load.
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="#" alt="a kitten snuggling a puppy" /&gt;</code></pre>
+                    </div>
+                    <ul class="list-content">
+                        <li>
+                            <strong>Concise Description:</strong> Summarize the image content in a few words.
+                        </li>
+                        <li>
+                            <strong>Linked Images:</strong> For images serving as links, describe the target destination.
+                        </li>
+                        <li>
+                            <strong>Decorative Images:</strong> For non-informative images, use an empty <strong>alt=""</strong>.
+                        </li>
+                        <li>
+                            <strong>Avoid Redundancy:</strong> If adjacent text already describes the image, leave the alt attribute empty.
+                        </li>
+                        <li>
+                            <strong>Character Limit:</strong> Keep the alt text under 150 characters.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Screen Readers</h3>
+                <div class="content">
+                    <p>
+                        Screen readers convert on-screen text into speech or braille, making it accessible for visually impaired users. Common examples include:
+                    </p>
+                    <ul class="list-content">
+                        <li><strong>(OS X) VoiceOver:</strong> Built into Macs, activated with <strong>Command-F5</strong>.</li>
+                        <li><strong>(Windows) NVDA:</strong> A free screen reader for Windows.</li>
+                        <li><strong>(Google Chrome) ChromeVox:</strong> Developed using web technologies for modern web apps and supports W3C ARIA for enhanced accessibility.</li>
+                    </ul>
                 </div>
             </div>
 
