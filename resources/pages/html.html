@@ -92,15 +92,61 @@
                 </div>
             </div>
 
-            <div class="card small">
-                <h3>&lt;head&gt;</h3>
+            <div class="card small span-three-column">
+                <h3>&lt;head&gt; Tag Contents</h3>
                 <div class="content">
-                    <p>This declaration is an instruction and must be the first line of an HTML document. It specifies the document type and version of HTML being used. In modern usage, <strong>&lt;!DOCTYPE html&gt;</strong> indicates HTML5.</p>
+                    <p>
+                        The <strong>&lt;head&gt;</strong> element contains metadata and resource links that configure your HTML document. It typically includes information that is not directly displayed on the page but is essential for setting up the page’s environment.
+                    </p>
                     <div class="code-content">
-          <pre><code class="code">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-...
-&lt;/html&gt;</code></pre>
+      <pre><code class="code">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;meta charset&gt;</span>
+                                <span class="code-definition">Defines the character encoding, typically set to UTF-8.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="viewport"&gt;</span>
+                                <span class="code-definition">Configures the viewport for responsive design on mobile devices.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;title&gt;</span>
+                                <span class="code-definition">Specifies the title that appears on the browser tab.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;link rel="stylesheet"&gt;</span>
+                                <span class="code-definition">Links to an external CSS file for styling the document.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;link rel="icon"&gt;</span>
+                                <span class="code-definition">Specifies the favicon icon shown in the browser tab.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;script&gt;</span>
+                                <span class="code-definition">Includes or references a JavaScript file to add interactive functionality.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="description"&gt;</span>
+                                <span class="code-definition">Provides a short summary of the page's content for SEO and social sharing.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="keywords"&gt;</span>
+                                <span class="code-definition">Lists relevant keywords related to the page (less critical for modern SEO).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="author"&gt;</span>
+                                <span class="code-definition">Identifies the author of the document.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -809,6 +855,103 @@
 
         </div>
     </section>
+
+    <section id="font-awesome">
+        <h1><a href="#font-awesome" class="highlight-section">#</a> Font Awesome</h1>
+        <div class="cheatsheet-card-container">
+
+            <div class="card small">
+                <h3>Overview</h3>
+                <div class="content">
+                    <p>
+                        Font Awesome is a popular icon library used to visually convey actions and information. Icons are implemented as CSS classes, making them easy to style and resize.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card small span-two-column">
+                <h3>Link Font Awesome</h3>
+                <div class="content"><p>
+                        The Font Awesome library is linked to an HTML document via the <strong>&lt;link&gt;</strong> tag</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">CDN Version:</span>
+                                <span class="code-definition">Link Font Awesome from a CDN (e.g., using the Bootstrap CDN).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Local Version:</span>
+                                <span class="code-definition">Download the latest files and link to the local CSS file.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+          <pre><code class="code">&lt;head&gt;
+  &lt;!-- CDN Version --&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"&gt;
+
+  &lt;!-- Local Version --&gt;
+  &lt;link rel="stylesheet" href="resources/css/fontawesome.css"&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Adding an Icon</h3>
+                <div class="content">
+                    <p>
+                        Font Awesome icons are added using an <strong>&lt;i&gt;</strong> tag with two required classes: the base <strong>fa</strong> class and an icon-specific class (e.g. <strong>fa-save</strong>).
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;i class="fa fa-save"&gt;&lt;/i&gt;</code></pre>
+                    </div>
+                    <p>
+                        In this example, the <strong>fa-save</strong> class displays the floppy disk icon commonly associated with saving.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card small">
+                <h3>Icon Sizing</h3>
+                <div class="content">
+                    <p>
+                        Icon sizes can be adjusted with additional classes:
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;i class="fa fa-camera fa-lg"&gt;&lt;/i&gt;
+&lt;i class="fa fa-cab fa-4x"&gt;&lt;/i&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">fa-lg</span>
+                                <span class="code-definition">Increases the icon size by 33%.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-2x</span>
+                                <span class="code-definition">Doubles the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-3x</span>
+                                <span class="code-definition">Triples the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-4x</span>
+                                <span class="code-definition">Quadruples the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-5x</span>
+                                <span class="code-definition">Quintuples the icon size.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </div>
 </body>
 </html>

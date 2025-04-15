@@ -22,7 +22,6 @@
     <section id="javascript-variables">
         <h1><a href="#javascript-variables" class="highlight-section">#</a> Variables</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small span-two-column">
                 <h3>Variable Declarations</h3>
                 <div class="content">
@@ -44,7 +43,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Interpolation</h3>
                 <div class="content">
@@ -63,7 +61,6 @@ console.log(`I own a pet ${myPet}.`);
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Falsy values</h3>
                 <div class="content">
@@ -78,7 +75,6 @@ console.log(`I own a pet ${myPet}.`);
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Scope</h3>
                 <div class="content">
@@ -104,7 +100,56 @@ console.log(blockVar);   // Error: blockVar is not defined</code></pre>
                     </div>
                 </div>
             </div>
-
+        </div>
+    </section>
+    <section id="javascript-operators">
+        <h1><a href="#javascript-operators" class="highlight-section">#</a> Operators</h1>
+        <div class="cheatsheet-card-container">
+            <div class="card small">
+                <h3>Arithmetic Operators</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">+</span>
+                                <span class="code-definition">Addition: sums two values.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">-</span>
+                                <span class="code-definition">Subtraction: subtracts one value from another.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">*</span>
+                                <span class="code-definition">Multiplication.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">/</span>
+                                <span class="code-definition">Division.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">%</span>
+                                <span class="code-definition">Modulus: returns the remainder after division.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">++</span>
+                                <span class="code-definition">Increment: increases a value by one.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">--</span>
+                                <span class="code-definition">Decrement: decreases a value by one.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let a = 10, b = 3;
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // ≈3.33
+console.log(a % b); // 1</code></pre>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="javascript-conditionals">
@@ -235,7 +280,6 @@ switch (groceryItem) {
                     </div>
                 </div>
             </div>
-
             <div class="card medium span-two-column">
                 <h3>Access and valorize array data</h3>
                 <div class="content">
@@ -256,7 +300,6 @@ myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Properties</h3>
                 <div class="content">
@@ -267,7 +310,6 @@ numbers.length  // 4</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.push()</h3>
                 <div class="content">
@@ -285,7 +327,6 @@ console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.pop()</h3>
                 <div class="content">
@@ -304,7 +345,6 @@ console.log(fruits);       // ['apple', 'banana']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.splice()</h3>
                 <div class="content">
@@ -324,7 +364,6 @@ console.log(fruits);   // ['apple', 'cherry']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.shift()</h3>
                 <div class="content">
@@ -343,7 +382,6 @@ console.log(fruits);      // ['banana', 'cherry']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.unshift()</h3>
                 <div class="content">
@@ -361,7 +399,6 @@ console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.indexOf()</h3>
                 <div class="content">
@@ -378,7 +415,6 @@ cars.indexOf('Alfa Romeo');  // 1</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.join()</h3>
                 <div class="content">
@@ -395,7 +431,6 @@ console.log(words.join(' '));  // "Hello World"</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.slice()</h3>
                 <div class="content">
@@ -413,7 +448,6 @@ console.log(part);  // ['banana', 'cherry']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.concat()</h3>
                 <div class="content">
@@ -432,6 +466,31 @@ console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
                     </div>
                 </div>
             </div>
+            <div class="card small span-three-column">
+                <h3>Remove Duplicates with Set</h3>
+                <div class="content">
+                    <div class="code-content">
+      <pre><code class="code">// Given the companies array:
+['Visa', 'Mastercard', 'Visa', 'Amex', 'Mastercard']
+// The result of:
+return [...new Set(companies)];
+// will be:
+['Visa', 'Mastercard', 'Amex']</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">new Set(companies)</span>
+                                <span class="code-definition">Creates a Set object from the array <code>companies</code>. A Set only stores unique values, automatically removing duplicates.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">[...new Set(companies)]</span>
+                                <span class="code-definition">Uses the spread operator (<code>...</code>) to convert the Set back into an array. This step is required because a Set is not an array.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="javascript-arrays-iterator">
@@ -442,18 +501,18 @@ console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
                 <h3>.forEach()</h3>
                 <div class="content">
                     <p>Executes a provided function once for each array element. It does not return a new array.</p>
-                    <h3 class="subtitle">Function Expression</h3>
+                    <h4 class="subtitle">Function Expression</h4>
                     <div class="code-content">
           <pre><code class="code">const arr = ['a', 'b', 'c'];
 arr.forEach(function(item) {
   console.log(item);
 });</code></pre>
                     </div>
-                    <h3 class="subtitle">Arrow Function</h3>
+                    <h4 class="subtitle">Arrow Function</h4>
                     <div class="code-content">
                         <pre><code class="code">arr.forEach(item => console.log(item));</code></pre>
                     </div>
-                    <h3 class="subtitle">Named Function</h3>
+                    <h4 class="subtitle">Named Function</h4>
                     <div class="code-content">
           <pre><code class="code">function printItem(item) {
   console.log(item);
