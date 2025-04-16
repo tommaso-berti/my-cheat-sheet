@@ -22,7 +22,7 @@
     <section id="mongodb-getting-started">
         <h1><a href="#mongodb-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="mongodb-getting-started_what-is-a-database" class="card small span-two-column">
                 <h3>What is a Database?</h3>
                 <div class="content">
                     <p><strong>Databases</strong> are systems that store, modify, and access structured collections of information electronically.</p>
@@ -30,13 +30,13 @@
                     <p>Databases can store various types of data: text, numbers, dates, files, and more.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-getting-started_dbms-analogy" class="card small">
                 <h3>DBMS Analogy</h3>
                 <div class="content">
                     <p>If a database is a bucket that stores data, the <strong>DBMS</strong> is the software that wraps around the bucket and provides access via a language or GUI.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-getting-started_relational-databases" class="card small">
                 <h3>Relational Databases</h3>
                 <div class="content">
                     <p><strong>Relational databases</strong> organize data into structured tables with rows and columns, and use predefined schemas and relationships.</p>
@@ -44,7 +44,7 @@
                     <p>While powerful, they may be expensive to set up and scale. Performance and cost are key considerations.</p>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="mongodb-getting-started_non-relational-databases" class="card small span-two-column">
                 <h3>Non-relational Databases</h3>
                 <div class="content">
                     <p><strong>Non-relational</strong> or <strong>NoSQL</strong> databases do not follow the traditional table-based model.</p>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="mongodb-getting-started_mongodb-overview" class="card medium span-two-column">
                 <h3>MongoDB Overview</h3>
                 <div class="content">
                     <p><strong>MongoDB</strong> is a document-based NoSQL database. Each instance can contain multiple databases, each with collections (similar to tables) containing documents (records).</p>
@@ -70,7 +70,7 @@
                     <p class="annotations"><a href="https://www.mongodb.com/docs/manual/tutorial/model-embedded-one-to-one-relationships-between-documents/" target="_blank">Modeling one-to-one embedded relationships (MongoDB Docs)</a></p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-getting-started_advantages-of-nosql" class="card small">
                 <h3>Advantages of NoSQL</h3>
                 <div class="content">
                     <div class="list-content">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-getting-started_disadvantages-of-nosql"class="card small">
                 <h3>Disadvantages of NoSQL</h3>
                 <div class="content">
                     <p>Due to their unstructured nature, data in NoSQL databases can become hard to track and maintain.</p>
@@ -93,7 +93,7 @@
     <section id="mongodb-commands">
         <h1><a href="#mongodb-commands" class="highlight-section">#</a> Commands</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="mongodb-commands_show-all-databases" class="card small span-two-column">
                 <h3>Show All Databases</h3>
                 <div class="content">
                     <p>See all databases inside a cluster</p>
@@ -112,7 +112,7 @@ config                  12.00 KiB</code></pre>
                     <p>The <strong>admin</strong>, <strong>config</strong>, and <strong>local</strong> databases are system databases used by MongoDB to configure the instance.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-commands_select-a-database" class="card small">
                 <h3>Select a Database</h3>
                 <div class="content">
                     <p>Navigate to a specific database</p>
@@ -124,7 +124,7 @@ config                  12.00 KiB</code></pre>
                     <p>The terminal prompt will change to indicate the current database (e.g., from <strong>test&gt;</strong> to <strong>online_plant_shop&gt;</strong>).</p>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="mongodb-commands_other-commands" class="card small span-two-column">
                 <h3>Other commands</h3>
                 <div class="content">
                     <div class="definition-content">
@@ -140,7 +140,7 @@ config                  12.00 KiB</code></pre>
     <section id="mongodb-operators-methods">
         <h1><a href="#mongodb-operators-methods" class="highlight-section">#</a> Operators and methods</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="mongodb-operators-methods_comparison-operators" class="card small">
                 <h3>Comparison Operators</h3>
                 <div class="content">
                     <p>Operators can be used for numbers, dates, or even strings</p>
@@ -170,7 +170,7 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="mongodb-operators-methods_query-on-arrays" class="card small span-two-column">
                 <h3>Query on Arrays</h3>
                 <div class="content">
                     <p>If an array of values is specified, the array is matched with the given array with the exact values and order</p>
@@ -196,7 +196,7 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="mongodb-operators-methods_methods" class="card medium span-two-column">
                 <h3>Methods</h3>
                 <div class="content">
                     <div class="definition-content">
@@ -233,7 +233,7 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-operators-methods_embedded-documents-query" class="card small">
                 <h3>Embedded Documents Query</h3>
                 <div class="content">
                     <p>When a record has an embedded document, query its fields using dot notation (<strong>.</strong>) and wrap field names in quotation marks.</p>
@@ -244,7 +244,7 @@ config                  12.00 KiB</code></pre>
     <section id="mongodb-crud-operations">
         <h1><a href="#mongodb-crud-operations" class="highlight-section">#</a> CRUD operations</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="mongodb-crud-operations_general-syntax" class="card small">
                 <h3>General Syntax</h3>
                 <div class="content">
                     <p>Queries in MongoDB are performed on a specific collection. General syntax:</p>
@@ -253,7 +253,7 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="mongodb-crud-operations_find" class="card small span-two-column">
                 <h3>.find()</h3>
                 <div class="content">
                     <p>The <strong>.find()</strong> method is used to search for documents in a collection.</p>
@@ -269,7 +269,7 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-crud-operations_cursor-and-iteration" class="card small">
                 <h3>Cursor and Iteration</h3>
                 <div class="content">
                     <p>The <strong>.find()</strong> method returns a cursor. A cursor is an object that points to the matching documents and returns them in batches.</p>
@@ -277,7 +277,7 @@ config                  12.00 KiB</code></pre>
                     <p>To see the next batch of documents, use the <strong>it</strong> command (short for iterate) in the Mongo shell.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="mongodb-crud-operations_query-on-embedded-fields" class="card small">
                 <h3>Query on embedded fields</h3>
                 <div class="content">
                     <p>When querying an embedded document, use dot notation. For example, to find documents where an embedded field value is less than or equal to a specified value</p>

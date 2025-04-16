@@ -22,7 +22,7 @@
     <section id="github-getting-started">
         <h1><a href="#github-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="github-getting-started_introduction" class="card small span-two-column">
                 <h3>Introduction</h3>
                 <div class="content">
                     <div class="standard-content">
@@ -35,7 +35,7 @@
     <section id="github-flow">
         <h1><a href="#github-flow" class="highlight-section">#</a> Git Flow</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="github-flow_branching-basics" class="card small">
                 <h3>Branching Basics</h3>
                 <div class="content">
                     <p>Check which branch you're on:</p>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="github-flow_merge-&-conflicts" class="card small span-two-column">
                 <h3>Merge & Conflicts</h3>
                 <div class="content">
                     <p>To merge a branch into master:</p>
@@ -67,7 +67,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="github-flow_delete-branches" class="card small">
                 <h3>Delete branches</h3>
                 <div class="content">
                     <p>After merging:</p>
@@ -80,7 +80,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="github-flow_cloning-&-remotes" class="card medium span-two-column">
                 <h3>Cloning & Remotes</h3>
                 <div class="content">
                     <p>Clone a remote repo:</p>
@@ -102,7 +102,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="github-flow_push-to-remote" class="card small">
                 <h3>Push to Remote</h3>
                 <div class="content">
                     <p>Push local branch to origin:</p>
@@ -111,7 +111,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="github-flow_gitignore" class="card medium span-two-column">
                 <h3>.gitignore</h3>
                 <div class="content">
                     <p>Ignore files from being staged/committed.</p>
@@ -132,19 +132,19 @@ node_modules/
                     <p class="annotations">Use patterns. Comments start with <code>#</code>. More at: <a href="https://git-scm.com/docs/gitignore#_pattern_format" target="_blank">git-scm.com</a></p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="github-flow_fork" class="card small">
                 <h3>Fork</h3>
                 <div class="content">
                     <p>Create a copy of a GitHub project to work on independently.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="github-flow_repository-template" class="card small">
                 <h3>Repository template</h3>
                 <div class="content">
                     <p>Blueprint repo to quickly generate new projects with same structure/configs. Useful for teams.</p>
                 </div>
             </div>
-            <div class="card xx-tall span-two-column">
+            <div id="github-flow_rebase" class="card xx-tall span-two-column">
                 <h3>Rebase</h3>
                 <div class="content">
                     <p>Rewrites the history of a feature branch to place it "on top" of another (usually <strong>main</strong>). Keeps history linear and avoids extra merge commits.</p>
@@ -213,7 +213,7 @@ git rebase main</code></pre>
     <section id="github-actions">
         <h1><a href="#github-actions" class="highlight-section">#</a> GitHub Actions & Automated Testing</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="github-actions_what-is-github-actions" class="card small span-two-column">
                 <h3>What is GitHub Actions?</h3>
                 <div class="content">
                     <p>GitHub Actions is a feature for creating automated workflows triggered by repository events like push, pull request, or issue creation. Workflows are defined in YAML files and run in GitHub-hosted containers.</p>
@@ -230,7 +230,7 @@ git rebase main</code></pre>
                 <p class="annotations">Find templates in the <a href="https://github.com/marketplace?type=actions" target="_blank">Actions Marketplace</a>.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="github-actions_workflow-components" class="card small">
                 <h3>Workflow Components</h3>
                 <div class="content">
                     <div class="list-content">
@@ -244,7 +244,7 @@ git rebase main</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card medium span-three-column">
+            <div id="github-actions_tutorial-1-automated-testing" class="card medium span-three-column">
                 <h3>Tutorial 1: Automated Testing</h3>
                 <div class="content">
                     <p>Create: <strong>.github/workflows/unittests.yaml</strong></p>
@@ -280,7 +280,7 @@ jobs:
                     <p>After pushing, go to the <strong>Actions</strong> tab to view logs. A green check appears if tests pass; if not, the workflow fails and blocks pull request merging.</p>
                 </div>
             </div>
-            <div class="card medium span-three-column">
+            <div id="github-actions_tutorial-2-basic-workflow-template" class="card medium span-three-column">
                 <h3>Tutorial 2: Basic Workflow Template</h3>
                 <div class="content">
                     <p>File: <strong>.github/workflows/basic.yml</strong></p>

@@ -22,7 +22,7 @@
     <section id="git-getting-started">
         <h1><a href="#git-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="git-getting-started_introduction" class="card small span-two-column">
                 <h3>Introduction</h3>
                 <div class="content">
                     <div class="standard-content">
@@ -38,7 +38,7 @@
     <section id="git-basics">
         <h1><a href="#git-basics" class="highlight-section">#</a> Basics</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="git-basics_initialize-a-new-git-repository" class="card small">
                 <h3>Initialize a new Git repository</h3>
                 <div class="content">
                     <p>Creates a new .git folder and initializes version control.</p>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="git-basics_check-local-changes" class="card small span-two-column">
                 <h3>Check local changes</h3>
                 <div class="content">
                     <p>Shows untracked or modified files, and branch info.</p>
@@ -75,7 +75,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     </div>
                 </div>
             </div>
-            <div class="card medium">
+            <div id="git-basics_add-files-to-staging-area" class="card medium">
                 <h3>Add files to staging area</h3>
                 <div class="content">
                     <p>Adds single, multiple or all modified files to staging.</p>
@@ -104,7 +104,7 @@ Changes to be committed:
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="git-basics_check-diff-between-working-directory-and-staging" class="card small span-two-column">
                 <h3>Check diff between working directory and staging</h3>
                 <div class="content">
                     <p>Shows what changed in your files before committing.</p>
@@ -125,7 +125,7 @@ index c33ce4c..1e73963 100644
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="git-basics_commit-staged-changes" class="card small span-two-column">
                 <h3>Commit staged changes</h3>
                 <div class="content">
                     <p>Add a message with <code>-m</code> in present tense, 50 chars max.</p>
@@ -147,7 +147,7 @@ index c33ce4c..1e73963 100644
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="git-basics_view-commit-history" class="card medium span-two-column">
                 <h3>View commit history</h3>
                 <div class="content">
                     <div class="code-content">
@@ -177,7 +177,7 @@ Date:   Sun Oct 27 22:00:38 2024 +0000
     <section id="git-backtrack">
         <h1><a href="#git-backtrack" class="highlight-section">#</a> Backtrack</h1>
         <div class="cheatsheet-card-container">
-            <div class="card medium span-two-column">
+            <div id="git-backtrack_show-head-commit" class="card medium span-two-column">
                 <h3>Show HEAD commit</h3>
                 <div class="content">
                     <p>Displays the latest commit’s metadata and all file changes it includes.</p>
@@ -209,7 +209,7 @@ index b12dd97..fa75b29 100644
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-backtrack_restore-last-commit-version" class="card small">
                 <h3>Restore last commit's version</h3>
                 <div class="content">
                     <p>Reverts a file to its state in the last commit.</p>
@@ -218,7 +218,7 @@ index b12dd97..fa75b29 100644
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-backtrack_checkout-specific-file" class="card small">
                 <h3>Checkout specific file</h3>
                 <div class="content">
                     <p>Restores a file from the latest commit.</p>
@@ -228,7 +228,7 @@ index b12dd97..fa75b29 100644
                     <p class="annotations">Same as <code>git checkout HEAD filename</code></p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-backtrack_reset-i-unstage-file" class="card small">
                 <h3>Reset I - Unstage file</h3>
                 <div class="content">
                     <p>Removes a file from the staging area (keeps changes in working directory).</p>
@@ -247,7 +247,7 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-backtrack_reset-ii-back-to-a-commit" class="card small">
                 <h3>Reset II - Back to a commit</h3>
                 <div class="content">
                     <p>Moves the repo back to a previous commit (by SHA).</p>
@@ -267,7 +267,7 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-backtrack_discard-all-uncommitted-changes" class="card small">
                 <h3>Discard all uncommitted changes</h3>
                 <div class="content">
                     <p>Resets all files in working directory to match HEAD.</p>
@@ -282,7 +282,7 @@ M       scene-2.txt</code></pre>
     <section id="git-stash">
         <h1><a href="#git-stash" class="highlight-section">#</a> Stash</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="git-stash_what-is-git-stash" class="card small">
                 <h3>What is Git Stash?</h3>
                 <div class="content">
                     <div class="standard-content">
@@ -290,7 +290,7 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-stash_stash-changes" class="card small">
                 <h3>Stash changes</h3>
                 <div class="content">
                     <p>Saves uncommitted changes and clears the working directory.</p>
@@ -300,7 +300,7 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Used when an interruption occurs and you need to save progress temporarily.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-stash_pop-stashed-work" class="card small">
                 <h3>Pop stashed work</h3>
                 <div class="content">
                     <p>Restores the most recently stashed changes and removes them from the stash list.</p>
@@ -315,7 +315,7 @@ M       scene-2.txt</code></pre>
     <section id="git-advanced">
         <h1><a href="#git-advanced" class="highlight-section">#</a> Advanced Commands</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="git-advanced_log-one-line" class="card small">
                 <h3>Log - One line</h3>
                 <div class="content">
                     <p>Displays each commit on one line (short SHA and message).</p>
@@ -324,7 +324,7 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-advanced_log-search-keyword" class="card small">
                 <h3>Log - Search keyword</h3>
                 <div class="content">
                     <p>Finds commits where the number of keyword occurrences changes.</p>
@@ -334,7 +334,7 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Matches commits where "Add" was added or removed.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-advanced_log-graph-view" class="card small">
                 <h3>Log - Graph view</h3>
                 <div class="content">
                     <p>Shows a graphical representation of branch history.</p>
@@ -344,7 +344,7 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Helpful to visualize merges and branch structure.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-advanced_commit-amend" class="card small">
                 <h3>Commit --amend</h3>
                 <div class="content">
                     <p>Rewrites the last commit (useful to fix message or add changes).</p>
@@ -358,7 +358,7 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="git-advanced_create-aliases" class="card small span-two-column">
                 <h3>Create aliases</h3>
                 <div class="content">
                     <p>Shorten frequently used commands via Git config.</p>
@@ -370,7 +370,7 @@ git config --global alias.glop "log --pretty=format:\"%h %s\" --graph"</code></p
                     <p class="annotations">After defining, you can use <code>git co example_branch</code> instead of <code>git checkout example_branch</code></p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="git-advanced_enhanced-git-log" class="card small">
                 <h3>Enhanced Git Log</h3>
                 <div class="content">
                     <p>Show decorated, compressed graph of all commits:</p>
