@@ -150,6 +150,283 @@ console.log(a % b); // 1</code></pre>
                     </div>
                 </div>
             </div>
+            <div class="card small">
+                <h3>Assignment Operators</h3>
+                <div class="content">
+                    <p>Assignment operators set a variable’s value and can combine operations with assignment.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">=</span>
+                                <span class="code-definition">Assigns a value.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">+=</span>
+                                <span class="code-definition">Adds and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">-=</span>
+                                <span class="code-definition">Subtracts and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">*=</span>
+                                <span class="code-definition">Multiplies and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">/=</span>
+                                <span class="code-definition">Divides and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">%=</span>
+                                <span class="code-definition">Calculates the remainder and assigns it.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">**=</span>
+                                <span class="code-definition">Performs exponentiation and assigns the result.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let x = 5;
+x += 3;  // equivalent to x = x + 3
+console.log(x); // 8</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Comparison Operators</h3>
+                <div class="content">
+                    <p>Comparison operators compare two values and return a Boolean result.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">==</span>
+                                <span class="code-definition">Loose equality, performs type coercion.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">===</span>
+                                <span class="code-definition">Strict equality, no type coercion.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!=</span>
+                                <span class="code-definition">Loose inequality check.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!==</span>
+                                <span class="code-definition">Strict inequality check.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;</span>
+                                <span class="code-definition">Greater than.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;=</span>
+                                <span class="code-definition">Greater than or equal to.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;</span>
+                                <span class="code-definition">Less than.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;=</span>
+                                <span class="code-definition">Less than or equal to.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(5 == '5');  // true (loose equality)
+console.log(5 === '5'); // false (strict equality)</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Logical Operators</h3>
+                <div class="content">
+                    <p>Logical operators are used to combine or invert Boolean values.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&&</span>
+                                <span class="code-definition">Logical AND: true if both operands are true.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">||</span>
+                                <span class="code-definition">Logical OR: true if at least one operand is true.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!</span>
+                                <span class="code-definition">Logical NOT: inverts the Boolean value.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(true && false);  // false
+console.log(true || false);   // true
+console.log(!false);          // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Comma Operator</h3>
+                <div class="content">
+                    <p>
+                        The comma operator evaluates multiple expressions and returns the value of the last expression.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">let x = (1, 2, 3);
+console.log(x); // 3</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card medium">
+                <h3>Bitwise Operators</h3>
+                <div class="content">
+                    <p>Bitwise operators perform operations on the binary representations of numbers.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&amp;</span>
+                                <span class="code-definition">Bitwise AND: compares corresponding bits of two numbers.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">|</span>
+                                <span class="code-definition">Bitwise OR: combines bits of two numbers.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">^</span>
+                                <span class="code-definition">Bitwise XOR: returns a 1 in each bit position where the bits are different.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">~</span>
+                                <span class="code-definition">Bitwise NOT: inverts all bits of a number.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;&lt;</span>
+                                <span class="code-definition">Left shift: shifts bits to the left.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;&gt;</span>
+                                <span class="code-definition">Right shift (with sign): shifts bits to the right, preserving the sign.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;&gt;&gt;</span>
+                                <span class="code-definition">Unsigned right shift: shifts bits to the right, filling with zeros.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(5 &amp; 3); // 1  (0101 &amp; 0011 = 0001)
+console.log(5 | 3);  // 7  (0101 | 0011 = 0111)</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small span-two-column">
+                <h3>Type Operators</h3>
+                <div class="content">
+                    <p>Type operators determine or manipulate the type of values and objects.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">typeof</span>
+                                <span class="code-definition">Returns a string indicating the type of a variable.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">instanceof</span>
+                                <span class="code-definition">Checks if an object is an instance of a particular constructor.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">in</span>
+                                <span class="code-definition">Checks if a property exists in an object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">delete</span>
+                                <span class="code-definition">Removes a property from an object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">void</span>
+                                <span class="code-definition">Evaluates an expression and returns undefined.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let num = 42;
+console.log(typeof num); // "number"
+console.log('length' in {length: 10}); // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Spread Operator (...)</h3>
+                <div class="content">
+                    <p>
+                        Expands an iterable (e.g., an array) into individual elements.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4];
+console.log(newNumbers); // [1, 2, 3, 4]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Optional Chaining (?.)</h3>
+                <div class="content">
+                    <p>
+                        Safely accesses nested properties, returning undefined if any reference is nullish.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">const obj = { a: { b: 5 } };
+console.log(obj?.a?.b); // 5</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Nullish Coalescing (??)</h3>
+                <div class="content">
+                    <p>
+                        Returns the right-hand operand when the left-hand operand is null or undefined.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">let value = null;
+console.log(value ?? 'default'); // "default"</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card small">
+                <h3>Exponentiation Operator (**)</h3>
+                <div class="content">
+                    <p>
+                        Raises the left operand to the power of the right operand.
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">console.log(2 ** 3); // 8</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="javascript-conditionals">
@@ -818,7 +1095,6 @@ for (const bird of strangeBirds) {
     <section id="javascript-functions">
         <h1><a href="#javascript-functions" class="highlight-section">#</a> Functions</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small">
                 <h3>Defining a Function</h3>
                 <div class="content">
@@ -831,7 +1107,6 @@ for (const bird of strangeBirds) {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Named Function</h3>
                 <div class="content">
@@ -846,7 +1121,6 @@ rocketToMars(); // "BOOM!"
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Anonymous Function</h3>
                 <div class="content">
@@ -861,7 +1135,6 @@ rocketToMars(); // "BOOM!"
                     </div>
                 </div>
             </div>
-
             <div class="card tall">
                 <h3>Arrow Functions</h3>
                 <div class="content">
@@ -910,7 +1183,6 @@ console.log(bark()); // "Woof!"</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Function Expression</h3>
                 <div class="content">
@@ -924,7 +1196,6 @@ console.log(bark()); // "Woof!"
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Function Parameters</h3>
                 <div class="content">
@@ -939,7 +1210,6 @@ sayHello();          // "Hello, stranger"
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Return Keyword</h3>
                 <div class="content">
@@ -955,7 +1225,6 @@ sayHello();          // "Hello, stranger"
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Calling a Function</h3>
                 <div class="content">
@@ -969,7 +1238,6 @@ greet('Simone'); // "Hello, Simone"
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Helper Functions</h3>
                 <div class="content">
@@ -986,7 +1254,6 @@ getFahrenheit(15); // Returns 59</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>High-order Functions</h3>
                 <div class="content">
@@ -1030,7 +1297,6 @@ console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section id="javascript-objects">
