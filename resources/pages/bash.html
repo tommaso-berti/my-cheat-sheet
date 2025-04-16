@@ -22,7 +22,7 @@
     <section id="bash-getting-started">
         <h1><a href="#bash-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="bash-getting-started_introduction" class="card small span-two-column">
                 <h3>Introduction</h3>
                 <div class="content">
                     <div class="standard-content">
@@ -36,7 +36,7 @@
     <section id="bash-navigation">
         <h1><a href="#bash-navigation" class="highlight-section">#</a> Navigation</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="bash-navigation_basic-navigation" class="card small">
                 <h3>Basic navigation</h3>
                 <div class="content">
                     <p>Clear terminal</p>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="bash-navigation_chain-options" class="card medium span-two-column">
                 <h3>Chain options</h3>
                 <div class="content">
                     <p>List all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.</p>
@@ -70,7 +70,7 @@
                         <li>-l - lists all contents of a directory in long format, as well as the file permissions. Each column means:
                             <ul class="sub-list-content">
                                 <li>Access rights. These indicate the read, write, and execute permissions on the file or directory allowed to the owner, the group, and all users. You can read more about file permissions.</li>
-                                <li>Number of hard links. This represents the number of hard links to the file or directory. This number includes the parent directory link (..) and current directory link (.).</li>
+                                <li>Number of hard links. This represents the number of hard links to the file or directory. This number includes the parent directory link (...) and current directory link (.).</li>
                                 <li>The username of the file’s owner. Here the username is cc.</li>
                                 <li>The name of the group that owns the file. Here the group name is eng.</li>
                                 <li>The size of the file in bytes.</li>
@@ -91,7 +91,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-navigation_move-between-folders" class="card small">
                 <h3>Move between folders</h3>
                 <div class="content">
                     <p>Change the working directory</p>
@@ -121,7 +121,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-navigation_create-a-folder" class="card small">
                 <h3>Create a folder</h3>
                 <div class="content">
                     <p>The mkdir command stands for “make directory”. It takes in a directory name as an argument and then creates a new directory in the current working directory.</p>
@@ -140,7 +140,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
     <section id="bash-file-manipulation">
         <h1><a href="#bash-file-manipulation" class="highlight-section">#</a> File manipulation</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="bash-file-manipulation_create-a-file" class="card small">
                 <h3>Create a file</h3>
                 <div class="content">
                     <p>Create a new file inside the working directory</p>
@@ -150,7 +150,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-file-manipulation_remove-files" class="card small">
                 <h3>Remove files</h3>
                 <div class="content">
                     <p>The rm command deletes files and directories.</p>
@@ -160,7 +160,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-file-manipulation_print-the-content-of-a-file" class="card small">
                 <h3>Print the content of a file</h3>
                 <div class="content">
                     <p>The cat command outputs in the terminal the contents of a specified file</p>
@@ -175,7 +175,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-file-manipulation_copy-files" class="card small span-two-column">
                 <h3>Copy files</h3>
                 <div class="content">
                     <p>Make a copy of a file</p>
@@ -200,10 +200,10 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
     <section id="bash-redirection">
         <h1><a href="#bash-redirection" class="highlight-section">#</a> Redirection</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small">
+            <div id="bash-redirection_introduction" class="card small">
                 <h3>Introduction</h3>
                 <div class="content">
-                    <p>Through redirection you can direct the input and output of a command to and from other files and programs, and chain commands together in a pipeline.</p>
+                    <p>Through redirection, you can direct the input and output of a command to and from other files and programs, and chain commands together in a pipeline.</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">$ echo "Hello"</code></pre>
@@ -211,7 +211,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p>The echo command accepts the string “Hello” as standard input, and echoes the string “Hello” back to the terminal as standard output.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-redirection_standard-io" class="card small">
                 <h3>Standard I/O</h3>
                 <div class="content">
                     <ul class="list-content">
@@ -221,7 +221,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </ul>
                 </div>
             </div>
-            <div class="card medium">
+            <div id="bash-redirection_redirection-operators" class="card medium">
                 <h3>Redirection Operators</h3>
                 <div class="content">
                     <p>Redirect standard output to a file (overwrites content):</p>
@@ -256,7 +256,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-redirection_sort-and-uniq" class="card small span-two-column">
                 <h3>Sort and Uniq</h3>
                 <div class="content">
                     <p>Sort standard input alphabetically:</p>
@@ -276,7 +276,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-redirection_sed" class="card small">
                 <h3>Sed</h3>
                 <div class="content">
                     <p>Substitute text in a file:</p>
@@ -296,10 +296,10 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-redirection_grep" class="card small span-two-column">
                 <h3>Grep</h3>
                 <div class="content">
-                    <p>Search for a pattern in a file (case insensitive):</p>
+                    <p>Search for a pattern in a file (case-insensitive):</p>
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">$ grep -i America continents.txt</code></pre>
@@ -321,7 +321,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
     <section id="bash-environment">
         <h1><a href="#bash-environment" class="highlight-section">#</a> Environment</h1>
         <div class="cheatsheet-card-container">
-            <div class="card medium">
+            <div id="bash-environment_nano" class="card medium">
                 <h3>nano</h3>
                 <div class="content">
                     <p>nano is a command line text editor. It works the same way as a desktop text editor like TextEdit or Notepad, except that it is accessible from the command line and only accepts keyboard input.</p>
@@ -334,7 +334,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p>The menu of keyboard commands at the bottom of the window allows us to save changes to <code>hello.txt</code> and exit nano.</p>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-environment_bash-profile" class="card small span-two-column">
                 <h3>Bash Profile</h3>
                 <div class="content">
                     <p>A bash profile is a file used to store environment settings for your terminal. On most computer systems, the file is in the home directory and is accessible by the name <code>.bash_profile</code>.</p>
@@ -352,7 +352,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p>If not existent, a new one has to be created.</p>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-environment_alias" class="card small span-two-column">
                 <h3>Alias</h3>
                 <div class="content">
                     <p>The <code>alias</code> command allows you to create keyboard shortcuts, or aliases, for commonly used commands.</p>
@@ -365,7 +365,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p><code>source .bash_profile</code> will make the alias <code>pd</code> available in the current session.</p>
                 </div>
             </div>
-            <div class="card small span-two-column">
+            <div id="bash-environment_environment-variables" class="card small span-two-column">
                 <h3>Environment Variables</h3>
                 <div class="content">
                     <p>Environment variables are variables that can be used across commands and programs and hold information about the environment.</p>
@@ -379,7 +379,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     <p>At the command line, the command <code>echo $USER</code> returns the value of the variable. Note that <code>$</code> is always used when returning a variable’s value. Here, the command <code>echo $USER</code> returns the name set for the variable.</p>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-environment_env" class="card small">
                 <h3>Env</h3>
                 <div class="content">
                     <p>The <code>env</code> command stands for “environment,” and returns a list of the environment variables for the current user.</p>
@@ -390,7 +390,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card medium span-two-column">
+            <div id="bash-environment_path" class="card medium span-two-column">
                 <h3>PATH</h3>
                 <div class="content">
                     <p>PATH is an environment variable that stores a list of directories separated by a colon.</p>
@@ -416,7 +416,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-environment_ps1" class="card small">
                 <h3>PS1</h3>
                 <div class="content">
                     <p>PS1 is an environment variable that defines the makeup and style of the command prompt. A space must be used after the desired symbol.</p>
@@ -432,7 +432,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
                     </div>
                 </div>
             </div>
-            <div class="card small">
+            <div id="bash-environment_home" class="card small">
                 <h3>HOME</h3>
                 <div class="content">
                     <p>The HOME variable is an environment variable that displays the path of the home directory <code>~</code>. You can specify and change the HOME variable if needed, but in most cases this is not necessary.</p>
@@ -447,7 +447,7 @@ drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
     <section id="bash-examples">
         <h1><a href="#bash-examples" class="highlight-section">#</a> Examples</h1>
         <div class="cheatsheet-card-container">
-            <div class="card small span-two-column">
+            <div id="bash-examples_find-empty-txt-files" class="card small span-two-column">
                 <h3>Find empty .txt files</h3>
                 <div class="content">
                     <p>List .txt files with no content across all directories and save the listing in <code>empty_files.txt</code> in the <code>todo/</code> directory.</p>
