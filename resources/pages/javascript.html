@@ -12,13 +12,14 @@
 <header class="header-title">
     <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1><span class="topic">My</span> <span class="cheatsheet"> cheatsheet</span></h1></a>
 </header>
-<div class="introduction-container">
+<main>
+<section class="introduction-container">
     <div id="introduction">
         <h2><span class="topic">JavaScript</span> <span class="cheatsheet">cheatsheet</span></h2>
         <p>This is a quick reference cheat sheet for understanding and writing JavaScript.</p>
     </div>
-</div>
-<div class="main-container">
+</section>
+<section class="main-container">
     <section id="javascript-variables">
         <h1><a href="#javascript-variables" class="highlight-section">#</a> Variables</h1>
         <div class="cheatsheet-card-container">
@@ -432,7 +433,6 @@ console.log(value ?? 'default'); // "default"</code></pre>
     <section id="javascript-conditionals">
         <h1><a href="#javascript-conditionals" class="highlight-section">#</a> JavaScript Conditionals</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card medium">
                 <h3>Operators</h3>
                 <div class="content">
@@ -472,7 +472,6 @@ false ?? 'I lose';       // => false
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>If...else...</h3>
                 <div class="content">
@@ -495,7 +494,6 @@ false ?? 'I lose';       // => false
                     </div>
                 </div>
             </div>
-
             <div class="card medium">
                 <h3>Switch Statement</h3>
                 <div class="content">
@@ -527,7 +525,6 @@ switch (groceryItem) {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Ternary Operator</h3>
                 <div class="content">
@@ -543,7 +540,6 @@ switch (groceryItem) {
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section id="javascript-arrays">
@@ -773,7 +769,6 @@ return [...new Set(companies)];
     <section id="javascript-arrays-iterator">
         <h2><a href="#javascript-arrays-iterator" class="highlight-section">#</a> JavaScript Array Iterators</h2>
         <div class="cheatsheet-card-container">
-
             <div class="card medium">
                 <h3>.forEach()</h3>
                 <div class="content">
@@ -804,7 +799,6 @@ arr.forEach(printItem);</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.map()</h3>
                 <div class="content">
@@ -822,7 +816,6 @@ console.log(doubled);  // [2, 4, 6]</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.filter()</h3>
                 <div class="content">
@@ -840,7 +833,6 @@ console.log(shortWords);  // ['dog', 'cat']</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.every()</h3>
                 <div class="content">
@@ -852,7 +844,6 @@ console.log(allEven);  // true</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.some()</h3>
                 <div class="content">
@@ -864,7 +855,6 @@ console.log(hasEven);  // true</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.split()</h3>
                 <div class="content">
@@ -882,7 +872,6 @@ console.log(words);  // ["Hello", "World"]</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card tall">
                 <h3>.reduce()</h3>
                 <div class="content">
@@ -905,7 +894,6 @@ console.log(sumWithInitial);  // 16</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.findIndex()</h3>
                 <div class="content">
@@ -917,7 +905,6 @@ console.log(index);  // 2</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>.join()</h3>
                 <div class="content">
@@ -929,7 +916,6 @@ console.log(fruitString);  // "apple, banana, cherry"</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card medium">
                 <h3>.sort()</h3>
                 <div class="content">
@@ -956,13 +942,11 @@ console.log(sortYearsAscending([2020, 2010, 2005])); // [2005, 2010, 2020]</code
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section id="javascript-loops">
         <h1><a href="#javascript-loops" class="highlight-section">#</a> Loops</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small">
                 <h3>For Loop</h3>
                 <div class="content">
@@ -977,7 +961,6 @@ console.log(sortYearsAscending([2020, 2010, 2005])); // [2005, 2010, 2020]</code
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>For…of Loop</h3>
                 <div class="content">
@@ -994,7 +977,6 @@ for (const hobby of hobbies) {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>for...in Loop</h3>
                 <div class="content">
@@ -1011,7 +993,6 @@ for (const property in obj) {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>While Loop</h3>
                 <div class="content">
@@ -1025,7 +1006,6 @@ while (counterTwo < 4) {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Do…while Loop</h3>
                 <div class="content">
@@ -1046,7 +1026,6 @@ console.log(countString);
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Break Statement</h3>
                 <div class="content">
@@ -1067,7 +1046,6 @@ console.log(countString);
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Continue Statement</h3>
                 <div class="content">
@@ -1089,7 +1067,6 @@ for (const bird of strangeBirds) {
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section id="javascript-functions">
@@ -1302,7 +1279,6 @@ console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre
     <section id="javascript-objects">
         <h1><a href="#javascript-objects" class="highlight-section">#</a> Objects</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small">
                 <h3>Object Literals</h3>
                 <div class="content">
@@ -1315,7 +1291,6 @@ console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Accessing Properties</h3>
                 <div class="content">
@@ -1331,7 +1306,6 @@ console.log(spaceship['Fuel Type']);  // 'Turbo Fuel'</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card medium">
                 <h3>Deleting Properties</h3>
                 <div class="content">
@@ -1347,7 +1321,6 @@ console.log(spaceship);</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Updating Properties</h3>
                 <div class="content">
@@ -1369,7 +1342,6 @@ spaceship = {'key': 'value'};       // Error: Assignment to constant variable</c
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Nested Objects</h3>
                 <div class="content">
@@ -1402,7 +1374,6 @@ console.log(spaceship.nanoelectronics['back-up'].battery);  // 'Lithium'</code><
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Pass By Reference</h3>
                 <div class="content">
@@ -1431,7 +1402,6 @@ console.log(spaceship);  //{identified: false,'transport type': 'flying'}</code>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>this keyword & Arrow Functions</h3>
                 <div class="content">
@@ -1457,7 +1427,6 @@ goat2.diet();  // Outputs: undefined</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Custom Methods</h3>
                 <div class="content">
@@ -1476,7 +1445,6 @@ alienShip.invade();  // Invokes the invade method
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Getters</h3>
                 <div class="content">
@@ -1497,7 +1465,6 @@ console.log(person.fullName);  // 'John Doe'</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Setters</h3>
                 <div class="content">
@@ -1519,7 +1486,6 @@ person2.age = '40';         // Logs: You must assign a number to age</code></pre
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Factory Functions</h3>
                 <div class="content">
@@ -1547,7 +1513,6 @@ const monsterFactory2 = (name, age) => {
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Destructuring Technique</h3>
                 <div class="content">
@@ -1574,7 +1539,6 @@ console.log(day);  // 'stay inside'</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Object Methods</h3>
                 <div class="content">
@@ -1618,9 +1582,9 @@ console.log(Object.keys(newRobot));  // [ 'name', 'version', 'laserBlaster', 'vo
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-</div>
+</section>
+</main>
 </body>
 </html>

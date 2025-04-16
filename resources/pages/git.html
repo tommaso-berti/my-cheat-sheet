@@ -11,15 +11,16 @@
 <header class="header-title">
     <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
 </header>
-<div class="introduction-container">
+<main>
+<section class="introduction-container">
     <div id="introduction">
         <h2><span style="font-weight: normal">Git</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
         <p>This is a quick reference cheat sheet for understanding and writing Git.</p>
     </div>
-</div>
-<div class="main-container">
-    <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+</section>
+<section class="main-container">
+    <section id="git-getting-started">
+        <h1><a href="#git-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
             <div class="card small span-two-column">
                 <h3>Introduction</h3>
@@ -34,8 +35,8 @@
             </div>
         </div>
     </section>
-    <section id="basics">
-        <h1><a href="#basics" class="highlight-section">#</a> Basics</h1>
+    <section id="git-basics">
+        <h1><a href="#git-basics" class="highlight-section">#</a> Basics</h1>
         <div class="cheatsheet-card-container">
             <div class="card small">
                 <h3>Initialize a new Git repository</h3>
@@ -51,7 +52,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Check local changes</h3>
                 <div class="content">
@@ -75,7 +75,6 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     </div>
                 </div>
             </div>
-
             <div class="card medium">
                 <h3>Add files to staging area</h3>
                 <div class="content">
@@ -105,7 +104,6 @@ Changes to be committed:
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Check diff between working directory and staging</h3>
                 <div class="content">
@@ -127,7 +125,6 @@ index c33ce4c..1e73963 100644
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Commit staged changes</h3>
                 <div class="content">
@@ -150,7 +147,6 @@ index c33ce4c..1e73963 100644
                     </div>
                 </div>
             </div>
-
             <div class="card medium span-two-column">
                 <h3>View commit history</h3>
                 <div class="content">
@@ -176,13 +172,11 @@ Date:   Sun Oct 27 22:00:38 2024 +0000
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <section id="backtrack">
-        <h1><a href="#backtrack" class="highlight-section">#</a> Backtrack</h1>
+    <section id="git-backtrack">
+        <h1><a href="#git-backtrack" class="highlight-section">#</a> Backtrack</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card medium span-two-column">
                 <h3>Show HEAD commit</h3>
                 <div class="content">
@@ -215,7 +209,6 @@ index b12dd97..fa75b29 100644
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Restore last commit's version</h3>
                 <div class="content">
@@ -225,7 +218,6 @@ index b12dd97..fa75b29 100644
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Checkout specific file</h3>
                 <div class="content">
@@ -236,7 +228,6 @@ index b12dd97..fa75b29 100644
                     <p class="annotations">Same as <code>git checkout HEAD filename</code></p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Reset I - Unstage file</h3>
                 <div class="content">
@@ -256,7 +247,6 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Reset II - Back to a commit</h3>
                 <div class="content">
@@ -277,7 +267,6 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Discard all uncommitted changes</h3>
                 <div class="content">
@@ -290,8 +279,8 @@ M       scene-2.txt</code></pre>
             </div>
         </div>
     </section>
-    <section id="stash">
-        <h1><a href="#stash" class="highlight-section">#</a> Stash</h1>
+    <section id="git-stash">
+        <h1><a href="#git-stash" class="highlight-section">#</a> Stash</h1>
         <div class="cheatsheet-card-container">
             <div class="card small">
                 <h3>What is Git Stash?</h3>
@@ -301,7 +290,6 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Stash changes</h3>
                 <div class="content">
@@ -312,7 +300,6 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Used when an interruption occurs and you need to save progress temporarily.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Pop stashed work</h3>
                 <div class="content">
@@ -325,10 +312,9 @@ M       scene-2.txt</code></pre>
             </div>
         </div>
     </section>
-    <section id="advanced">
-        <h1><a href="#advanced" class="highlight-section">#</a> Advanced Commands</h1>
+    <section id="git-advanced">
+        <h1><a href="#git-advanced" class="highlight-section">#</a> Advanced Commands</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small">
                 <h3>Log - One line</h3>
                 <div class="content">
@@ -338,7 +324,6 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Log - Search keyword</h3>
                 <div class="content">
@@ -349,7 +334,6 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Matches commits where "Add" was added or removed.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Log - Graph view</h3>
                 <div class="content">
@@ -360,7 +344,6 @@ M       scene-2.txt</code></pre>
                     <p class="annotations">Helpful to visualize merges and branch structure.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Commit --amend</h3>
                 <div class="content">
@@ -375,7 +358,6 @@ M       scene-2.txt</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Create aliases</h3>
                 <div class="content">
@@ -388,7 +370,6 @@ git config --global alias.glop "log --pretty=format:\"%h %s\" --graph"</code></p
                     <p class="annotations">After defining, you can use <code>git co example_branch</code> instead of <code>git checkout example_branch</code></p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Enhanced Git Log</h3>
                 <div class="content">
@@ -400,6 +381,7 @@ git config --global alias.glop "log --pretty=format:\"%h %s\" --graph"</code></p
             </div>
         </div>
     </section>
-</div>
+</section>
+</main>
 </body>
 </html>

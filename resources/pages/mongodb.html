@@ -11,17 +11,17 @@
 <header class="header-title">
     <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
 </header>
-<div class="introduction-container">
+<main>
+<section class="introduction-container">
     <div id="introduction">
         <h2><span style="font-weight: normal">MongoDB</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
         <p>This is a quick reference cheat sheet for understanding and writing MongoDB.</p>
     </div>
-</div>
-<div class="main-container">
-    <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+</section>
+<section class="main-container">
+    <section id="mongodb-getting-started">
+        <h1><a href="#mongodb-getting-started" class="highlight-section">#</a> Getting started</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small span-two-column">
                 <h3>What is a Database?</h3>
                 <div class="content">
@@ -30,14 +30,12 @@
                     <p>Databases can store various types of data: text, numbers, dates, files, and more.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>DBMS Analogy</h3>
                 <div class="content">
                     <p>If a database is a bucket that stores data, the <strong>DBMS</strong> is the software that wraps around the bucket and provides access via a language or GUI.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Relational Databases</h3>
                 <div class="content">
@@ -46,7 +44,6 @@
                     <p>While powerful, they may be expensive to set up and scale. Performance and cost are key considerations.</p>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Non-relational Databases</h3>
                 <div class="content">
@@ -63,7 +60,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card medium span-two-column">
                 <h3>MongoDB Overview</h3>
                 <div class="content">
@@ -74,7 +70,6 @@
                     <p class="annotations"><a href="https://www.mongodb.com/docs/manual/tutorial/model-embedded-one-to-one-relationships-between-documents/" target="_blank">Modeling one-to-one embedded relationships (MongoDB Docs)</a></p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Advantages of NoSQL</h3>
                 <div class="content">
@@ -86,7 +81,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Disadvantages of NoSQL</h3>
                 <div class="content">
@@ -99,7 +93,6 @@
     <section id="mongodb-commands">
         <h1><a href="#mongodb-commands" class="highlight-section">#</a> Commands</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small span-two-column">
                 <h3>Show All Databases</h3>
                 <div class="content">
@@ -119,7 +112,6 @@ config                  12.00 KiB</code></pre>
                     <p>The <strong>admin</strong>, <strong>config</strong>, and <strong>local</strong> databases are system databases used by MongoDB to configure the instance.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Select a Database</h3>
                 <div class="content">
@@ -132,7 +124,6 @@ config                  12.00 KiB</code></pre>
                     <p>The terminal prompt will change to indicate the current database (e.g., from <strong>test&gt;</strong> to <strong>online_plant_shop&gt;</strong>).</p>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Other commands</h3>
                 <div class="content">
@@ -146,10 +137,9 @@ config                  12.00 KiB</code></pre>
             </div>
         </div>
     </section>
-    <section id="operators-methods">
-        <h1><a href="#operators-methods" class="highlight-section">#</a> Operators and methods</h1>
+    <section id="mongodb-operators-methods">
+        <h1><a href="#mongodb-operators-methods" class="highlight-section">#</a> Operators and methods</h1>
         <div class="cheatsheet-card-container">
-
             <div class="card small">
                 <h3>Comparison Operators</h3>
                 <div class="content">
@@ -180,7 +170,6 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>Query on Arrays</h3>
                 <div class="content">
@@ -207,7 +196,6 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card medium span-two-column">
                 <h3>Methods</h3>
                 <div class="content">
@@ -245,7 +233,6 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Embedded Documents Query</h3>
                 <div class="content">
@@ -254,9 +241,8 @@ config                  12.00 KiB</code></pre>
             </div>
         </div>
     </section>
-
-    <section id="crud-operations">
-        <h1><a href="#crud-operations" class="highlight-section">#</a> CRUD operations</h1>
+    <section id="mongodb-crud-operations">
+        <h1><a href="#mongodb-crud-operations" class="highlight-section">#</a> CRUD operations</h1>
         <div class="cheatsheet-card-container">
             <div class="card small">
                 <h3>General Syntax</h3>
@@ -267,7 +253,6 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small span-two-column">
                 <h3>.find()</h3>
                 <div class="content">
@@ -284,7 +269,6 @@ config                  12.00 KiB</code></pre>
                     </div>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Cursor and Iteration</h3>
                 <div class="content">
@@ -293,7 +277,6 @@ config                  12.00 KiB</code></pre>
                     <p>To see the next batch of documents, use the <strong>it</strong> command (short for iterate) in the Mongo shell.</p>
                 </div>
             </div>
-
             <div class="card small">
                 <h3>Query on embedded fields</h3>
                 <div class="content">
@@ -304,8 +287,7 @@ config                  12.00 KiB</code></pre>
             </div>
         </div>
     </section>
-</div>
-<div class="main-container">
-</div>
+</section>
+</main>
 </body>
 </html>
