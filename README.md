@@ -1,17 +1,17 @@
-### Updated `README.md`
-
 ```markdown
-# Cheatsheet Components Quick Reference
+# MyCheatsheet - Quick Reference for Card Components
 
-This project, `mycheatsheet`, provides a quick reference for various card components and their internal content elements. It aims to help developers quickly add the correct card components with the appropriate content types in their web applications.
+`MyCheatsheet` is a project designed to provide developers with a quick reference for reusable card components and their internal content structures. It simplifies the process of adding pre-designed cards with various content types to web applications, ensuring consistency and efficiency in development.
 
 ## Card Types
 
 ### Small Card
+A compact card for displaying concise information.
+
 ```html
 <div class="card small">
     <h3>Title</h3>
-    <div class="content"></div>
+    <div class="content">
         <div class="standard-content">
             <p>Content goes here...</p>
         </div>
@@ -20,10 +20,12 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### Medium Card
+A medium-sized card suitable for more detailed content.
+
 ```html
 <div class="card medium">
     <h3>Title</h3>
-    <div class="content"></div>
+    <div class="content">
         <div class="standard-content">
             <p>Content goes here...</p>
         </div>
@@ -32,10 +34,12 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### Tall Card
+A taller card for displaying extended content.
+
 ```html
 <div class="card tall">
     <h3>Title</h3>
-    <div class="content"></div>
+    <div class="content">
         <div class="standard-content">
             <p>Content goes here...</p>
         </div>
@@ -46,6 +50,8 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ## Content Types
 
 ### Standard Content
+Used for displaying plain text content.
+
 ```html
 <div class="standard-content">
     <p>Standard text content goes here...</p>
@@ -53,6 +59,8 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### Code Content
+Used for displaying code snippets with a copy button.
+
 ```html
 <div class="code-content">
     <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
@@ -61,6 +69,8 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### List Content
+Used for unordered lists.
+
 ```html
 <div class="list-content">
     <ul>
@@ -72,6 +82,8 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### Numbered List Content
+Used for ordered lists.
+
 ```html
 <div class="numbered-list-content">
     <ol>
@@ -83,6 +95,8 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ```
 
 ### Definition Content
+Used for displaying definitions in a structured format.
+
 ```html
 <div class="definition-content">
     <ul>
@@ -172,11 +186,15 @@ This project, `mycheatsheet`, provides a quick reference for various card compon
 ## Additional Styles
 
 ### Highlighted Section
+Used for creating a highlighted section link.
+
 ```html
 <h1><a href="#section-id" class="highlight-section">#</a> Section Title</h1>
 ```
 
 ### Subtitle
+Used for adding subtitles to sections.
+
 ```html
 <h4 class="subtitle">Subtitle Text</h4>
 ```
