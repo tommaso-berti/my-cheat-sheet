@@ -769,13 +769,24 @@ return [...new Set(companies)];
                         <ul>
                             <li>
                                 <span class="code-attribute">new Set(companies)</span>
-                                <span class="code-definition">Creates a Set object from the array <code>companies</code>. A Set only stores unique values, automatically removing duplicates.</span>
+                                <span class="code-definition">Creates a Set object from the array <strong>companies</strong>. A Set only stores unique values, automatically removing duplicates.</span>
                             </li>
                             <li>
                                 <span class="code-attribute">[...new Set(companies)]</span>
                                 <span class="code-definition">Uses the spread operator (<code>...</code>) to convert the Set back into an array. This step is required because a Set is not an array.</span>
                             </li>
                         </ul>
+                    </div>
+                    <p>Set objects don't have the <strong>.push()</strong> method. Instead, <strong>.add()</strong> should be used</p>
+                    <div class="code-content">
+                        <pre><code class="code">const createSpecimens30 = () => {
+  let resArr = new Set();
+  while(resArr.size < 30) {
+   ...
+  resArr.add(specie);
+  }
+  return resArr
+};</code></pre>
                     </div>
                 </div>
             </div>
