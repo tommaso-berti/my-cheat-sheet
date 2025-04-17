@@ -101,6 +101,21 @@ console.log(blockVar);   // Error: blockVar is not defined</code></pre>
                     </div>
                 </div>
             </div>
+            <div id="javascript-variables_swap-variables" class="card small span-two-column">
+                <h3>Swap two variables using destructuring technique</h3>
+                <div class="content">
+                    <div class="code-content">
+      <pre><code class="code">exampleFunction = (num, start, end) => {
+    if(!end) {
+        end = start;
+        start = 0;
+    }
+    if (start > end) [start, end] = [end, start]
+    return (num >= start) && (num < end)
+}</code></pre>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="javascript-operators">
