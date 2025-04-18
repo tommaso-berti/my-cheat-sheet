@@ -1,0 +1,1616 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1><span class="topic">My</span> <span class="cheatsheet"> cheatsheet</span></h1></a>
+</header>
+<main>
+<section class="introduction-container">
+    <div id="introduction">
+        <h2><span class="topic">JavaScript</span> <span class="cheatsheet">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing JavaScript.</p>
+    </div>
+</section>
+<section class="main-container">
+    <section id="javascript-variables">
+        <h1><a href="#javascript-variables" class="highlight-section">#</a> Variables</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-variables_variable-declarations" class="card small span-two-column">
+                <h3>Variable Declarations</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">var</span>
+                                <span class="code-definition">Used before ES6 to declare variables. It is function-scoped</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">let</span>
+                                <span class="code-definition">Allows reassignment and is block-scoped. Can be declared without an initial value (defaults to undefined).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">const</span>
+                                <span class="code-definition">Assigned at declaration and cannot be reassigned.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-variables_interpolation" class="card small">
+                <h3>Interpolation</h3>
+                <div class="content">
+                    <p>Template literals allows to embed variables and expressions directly within strings.</p>
+                    <div class="code-content">
+            <pre><code class="code">const myPet = 'armadillo';
+console.log(`I own a pet ${myPet}.`);
+
+// Output: I own a pet armadillo.</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-variables_falsy-values" class="card small">
+                <h3>Falsy values</h3>
+                <div class="content">
+                    <div class="list-content">
+                        <ul>
+                            <li>0</li>
+                            <li>Empty strings ("" or '')</li>
+                            <li>null</li>
+                            <li>undefined</li>
+                            <li>NaN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-variables_scope" class="card small span-two-column">
+                <h3>Scope</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">Global Scope</span>
+                                <span class="code-definition">Variables declared outside any block are global. They reside in the global namespace and can be accessed from anywhere.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Block Scope</span>
+                                <span class="code-definition">Variables declared inside a block ({ ... }) are only accessible within that block.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+                    <pre><code class="code">{
+  let blockVar = 'I am block scoped';
+  console.log(blockVar);   // Works here
+}
+
+console.log(blockVar);   // Error: blockVar is not defined</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-variables_swap-variables" class="card small span-two-column">
+                <h3>Swap two variables using destructuring technique</h3>
+                <div class="content">
+                    <div class="code-content">
+      <pre><code class="code">exampleFunction = (num, start, end) => {
+    if(!end) {
+        end = start;
+        start = 0;
+    }
+    if (start > end) [start, end] = [end, start]
+    return (num >= start) && (num < end)
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-operators">
+        <h1><a href="#javascript-operators" class="highlight-section">#</a> Operators</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-operators_arithmetic-operators" class="card small">
+                <h3>Arithmetic Operators</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">+</span>
+                                <span class="code-definition">Addition: sums two values.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">-</span>
+                                <span class="code-definition">Subtraction: subtracts one value from another.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">*</span>
+                                <span class="code-definition">Multiplication.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">/</span>
+                                <span class="code-definition">Division.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">%</span>
+                                <span class="code-definition">Modulus: returns the remainder after division.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">++</span>
+                                <span class="code-definition">Increment: increases a value by one.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">--</span>
+                                <span class="code-definition">Decrement: decreases a value by one.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let a = 10, b = 3;
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // ≈3.33
+console.log(a % b); // 1</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_assignment-operators" class="card small">
+                <h3>Assignment Operators</h3>
+                <div class="content">
+                    <p>Assignment operators set a variable’s value and can combine operations with assignment.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">=</span>
+                                <span class="code-definition">Assigns a value.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">+=</span>
+                                <span class="code-definition">Adds and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">-=</span>
+                                <span class="code-definition">Subtracts and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">*=</span>
+                                <span class="code-definition">Multiplies and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">/=</span>
+                                <span class="code-definition">Divides and assigns the result.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">%=</span>
+                                <span class="code-definition">Calculates the remainder and assigns it.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">**=</span>
+                                <span class="code-definition">Performs exponentiation and assigns the result.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let x = 5;
+x += 3;  // equivalent to x = x + 3
+console.log(x); // 8</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_comparison-operators" class="card small">
+                <h3>Comparison Operators</h3>
+                <div class="content">
+                    <p>Comparison operators compare two values and return a Boolean result.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">==</span>
+                                <span class="code-definition">Loose equality, performs type coercion.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">===</span>
+                                <span class="code-definition">Strict equality, no type coercion.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!=</span>
+                                <span class="code-definition">Loose inequality check.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!==</span>
+                                <span class="code-definition">Strict inequality check.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;</span>
+                                <span class="code-definition">Greater than.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;=</span>
+                                <span class="code-definition">Greater than or equal to.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;</span>
+                                <span class="code-definition">Less than.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;=</span>
+                                <span class="code-definition">Less than or equal to.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(5 == '5');  // true (loose equality)
+console.log(5 === '5'); // false (strict equality)</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_logical-operators" class="card small">
+                <h3>Logical Operators</h3>
+                <div class="content">
+                    <p>Logical operators are used to combine or invert Boolean values.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&&</span>
+                                <span class="code-definition">Logical AND: true if both operands are true.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">||</span>
+                                <span class="code-definition">Logical OR: true if at least one operand is true.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">!</span>
+                                <span class="code-definition">Logical NOT: inverts the Boolean value.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(true && false);  // false
+console.log(true || false);   // true
+console.log(!false);          // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_comma-operator" class="card small">
+                <h3>Comma Operator</h3>
+                <div class="content">
+                    <p>
+                        The comma operator evaluates multiple expressions and returns the value of the last expression.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">let x = (1, 2, 3);
+console.log(x); // 3</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_bitwise-operators" class="card medium">
+                <h3>Bitwise Operators</h3>
+                <div class="content">
+                    <p>Bitwise operators perform operations on the binary representations of numbers.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&amp;</span>
+                                <span class="code-definition">Bitwise AND: compares corresponding bits of two numbers.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">|</span>
+                                <span class="code-definition">Bitwise OR: combines bits of two numbers.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">^</span>
+                                <span class="code-definition">Bitwise XOR: returns a 1 in each bit position where the bits are different.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">~</span>
+                                <span class="code-definition">Bitwise NOT: inverts all bits of a number.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;&lt;</span>
+                                <span class="code-definition">Left shift: shifts bits to the left.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;&gt;</span>
+                                <span class="code-definition">Right shift (with sign): shifts bits to the right, preserving the sign.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&gt;&gt;&gt;</span>
+                                <span class="code-definition">Unsigned right shift: shifts bits to the right, filling with zeros.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">console.log(5 &amp; 3); // 1  (0101 &amp; 0011 = 0001)
+console.log(5 | 3);  // 7  (0101 | 0011 = 0111)</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_type-operators" class="card small span-two-column">
+                <h3>Type Operators</h3>
+                <div class="content">
+                    <p>Type operators determine or manipulate the type of values and objects.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">typeof</span>
+                                <span class="code-definition">Returns a string indicating the type of variable.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">instanceof</span>
+                                <span class="code-definition">Checks if an object is an instance of a particular constructor.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">in</span>
+                                <span class="code-definition">Checks if a property exists in an object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">delete</span>
+                                <span class="code-definition">Removes a property from an object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">void</span>
+                                <span class="code-definition">Evaluates an expression and returns undefined.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+      <pre><code class="code">let num = 42;
+console.log(typeof num); // "number"
+console.log('length' in {length: 10}); // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_spread-operator" class="card small">
+                <h3>Spread Operator (...)</h3>
+                <div class="content">
+                    <p>
+                        Expands an iterable (e.g., an array) into individual elements.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4];
+console.log(newNumbers); // [1, 2, 3, 4]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_optional-chaining" class="card small">
+                <h3>Optional Chaining (?.)</h3>
+                <div class="content">
+                    <p>
+                        Safely accesses nested properties, returning undefined if any reference is nullish.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">const obj = { a: { b: 5 } };
+console.log(obj?.a?.b); // 5</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_nullish-coalescing" class="card small">
+                <h3>Nullish Coalescing (??)</h3>
+                <div class="content">
+                    <p>
+                        Returns the right-hand operand when the left-hand operand is null or undefined.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">let value = null;
+console.log(value ?? 'default'); // "default"</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-operators_exponentiation-operator" class="card small">
+                <h3>Exponentiation Operator (**)</h3>
+                <div class="content">
+                    <p>
+                        Raises the left operand to the power of the right operand.
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">console.log(2 ** 3); // 8</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-conditionals">
+        <h1><a href="#javascript-conditionals" class="highlight-section">#</a> JavaScript Conditionals</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-conditionals_operators" class="card medium">
+                <h3>Operators</h3>
+                <div class="content">
+                    <h4 class="subtitle">Logical OR (<strong>||</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">true || false;            // => true
+true || (10 > 20);        // => true
+false || false;           // => false
+(10 > 100) || (10 > 20);  // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Logical AND (<strong>&amp;&amp;</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">true && false;             // => false
+(2 > 1) && (2 > 1);        // => true
+true && false;             // => false
+4 && 5;                    // => 5</code></pre>
+                    </div>
+                    <h4 class="subtitle">Comparison Operators</h4>
+                    <div class="code-content">
+            <pre><code class="code">3 == 3;       // => true
+250 >= 250;    // => true
+1 === 1;       // => true
+1 == '1';      // => true
+1 === '1';     // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Logical Operator (<strong>!</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">let lateToWork = true;
+let oppositeValue = !lateToWork;   // => false</code></pre>
+                    </div>
+                    <h4 class="subtitle">Nullish Coalescing Operator (<strong>??</strong>)</h4>
+                    <div class="code-content">
+            <pre><code class="code">null ?? 'I win';         // => 'I win'
+undefined ?? 'Me too';   // => 'Me too'
+false ?? 'I lose';       // => false
+'' ?? 'I lose again';    // => ''</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-conditionals_if-else" class="card small">
+                <h3>If...else...</h3>
+                <div class="content">
+                    <div class="code-content">
+                         <pre><code class="code">if(condition){
+        // code to be executed if condition is true
+    } else {
+        // code to be executed if condition is false
+    }</code></pre>
+                    </div>
+                    <h4 class="subtitle">If...else if...else</h4>
+                    <div class="code-content">
+                            <pre><code class="code">if(condition1){
+  // code to be executed if condition1 is true
+} else if(condition2){
+  // code to be executed if condition2 is true
+} else {
+  // code to be executed if condition1 and condition2 are false
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-conditionals_switch-statement" class="card medium">
+                <h3>Switch Statement</h3>
+                <div class="content">
+                    <p>It compares a given expression with several cases and executes the matching block of code.</p>
+                    <div class="code-content">
+            <pre><code class="code">let groceryItem = 'papaya';
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  case 'lime':
+    console.log('Limes are $1.49');
+    break;
+  case 'papaya':
+    console.log('Papayas are $1.29');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+
+// Prints 'Papayas are $1.29'</code></pre>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>Break:</strong> The break keyword terminates the switch block, preventing the execution of subsequent cases. Without it, cases would fall through.</li>
+                            <li><strong>Default:</strong> The default case runs if no other cases match. It acts like an else condition.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-conditionals_ternary-operator" class="card small">
+                <h3>Ternary Operator</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">isNightTime ?  console.log('Turn on the lights!') :  console.log('Turn off the lights!');</code></pre>
+                    </div>
+                    <div class="numbered-list-content">
+                        <ol>
+                            <li>Condition</li>
+                            <li>True statement</li>
+                            <li>False statement</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-arrays">
+        <h1><a href="#javascript-arrays" class="highlight-section">#</a> JavaScript Arrays</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-arrays_array-literal" class="card small">
+                <h3>Array literal</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">let myArray = [1, 'apple', true, null, undefined];</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_access-and-valorize-array-data" class="card medium span-two-column">
+                <h3>Access and valorize array data</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">let myArray = [1, 'apple', true, null, undefined];
+console.log(myArray[2]);
+// Output: true
+myArray[3] = 'Autumn';
+// The array now is [1, 'apple', true, Autumn, undefined]</code></pre>
+                    </div>
+                    <p class="annotations">When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as pass-by-reference since what we’re actually passing to the function is a reference to where the variable memory is stored and changing the memory.</p>
+                    <h4 class="subtitle">Const arrays</h4>
+                    <p>Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable.</p>
+                    <div class="code-content">
+                        <pre><code class="code">const myArray = [1, 'apple', true];
+myArray[2] = 'banana';  //allows reassignment
+myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_properties" class="card small">
+                <h3>Properties</h3>
+                <div class="content">
+                    <h4 class="subtitle">.length</h4>
+                    <div class="code-content">
+                         <pre><code class="code">let numbers = [1,2,3,4];
+numbers.length  // 4</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_push" class="card small">
+                <h3>.push()</h3>
+                <div class="content">
+                    <p>Adds one or more elements to the end of an array, mutating the original array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana'];
+fruits.push('cherry');
+console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_pop" class="card small">
+                <h3>.pop()</h3>
+                <div class="content">
+                    <p>Removes the last element from an array and returns that element.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry'];
+let removedFruit = fruits.pop();
+console.log(removedFruit); // 'cherry'
+console.log(fruits);       // ['apple', 'banana']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_splice" class="card small">
+                <h3>.splice()</h3>
+                <div class="content">
+                    <p>Adds, removes, or replaces elements in an array and returns an array of the deleted elements.</p>
+                    <div class="code-content">
+            <pre><code class="code">// Remove 1 element starting at index 1:
+let fruits = ['apple', 'banana', 'cherry'];
+let deleted = fruits.splice(1, 1);
+console.log(deleted);  // ['banana']
+console.log(fruits);   // ['apple', 'cherry']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_shift" class="card small">
+                <h3>.shift()</h3>
+                <div class="content">
+                    <p>Removes the first element of an array and returns it.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry'];
+let firstFruit = fruits.shift();
+console.log(firstFruit);  // 'apple'
+console.log(fruits);      // ['banana', 'cherry']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_unshift" class="card small">
+                <h3>.unshift()</h3>
+                <div class="content">
+                    <p>Adds one or more elements to the beginning of an array, mutating the original array.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['banana', 'cherry'];
+fruits.unshift('apple');
+console.log(fruits);  // ['apple', 'banana', 'cherry']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff0000;"></i>
+                        <p>Destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_indexof" class="card small">
+                <h3>.indexOf()</h3>
+                <div class="content">
+                    <p>Returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+                    <div class="code-content">
+            <pre><code class="code">let cars = ['Fiat', 'Alfa Romeo'];
+cars.indexOf('Alfa Romeo');  // 1</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_join" class="card small">
+                <h3>.join()</h3>
+                <div class="content">
+                    <p>Creates a string by concatenating all elements of an array, with an optional separator.</p>
+                    <div class="code-content">
+            <pre><code class="code">let words = ['Hello', 'World'];
+console.log(words.join(' '));  // "Hello World"</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_slice" class="card small">
+                <h3>.slice()</h3>
+                <div class="content">
+                    <p>Returns a shallow copy of a portion of the array as a new array, without modifying the original.</p>
+                    <div class="code-content">
+            <pre><code class="code">let fruits = ['apple', 'banana', 'cherry', 'date'];
+let part = fruits.slice(1, 3);
+console.log(part);  // ['banana', 'cherry']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_concat" class="card small">
+                <h3>.concat()</h3>
+                <div class="content">
+                    <p>Returns a new array that is the combination of two or more arrays, leaving the original arrays unmodified.</p>
+                    <div class="code-content">
+            <pre><code class="code">let arr1 = ['apple', 'banana'];
+let arr2 = ['cherry', 'date'];
+let combined = arr1.concat(arr2);
+console.log(combined);  // ['apple', 'banana', 'cherry', 'date']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF04;"></i>
+                        <p>Non-destructive</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_remove-duplicates-with-set" class="card small span-three-column">
+                <h3>Remove Duplicates with Set</h3>
+                <div class="content">
+                    <div class="code-content">
+      <pre><code class="code">// Given the companies array:
+['Visa', 'Mastercard', 'Visa', 'Amex', 'Mastercard']
+// The result of:
+return [...new Set(companies)];
+// will be:
+['Visa', 'Mastercard', 'Amex']</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">new Set(companies)</span>
+                                <span class="code-definition">Creates a Set object from the array <strong>companies</strong>. A Set only stores unique values, automatically removing duplicates.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">[...new Set(companies)]</span>
+                                <span class="code-definition">Uses the spread operator (<code>...</code>) to convert the Set back into an array. This step is required because a Set is not an array.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>Set objects don't have the <strong>.push()</strong> method. Instead, <strong>.add()</strong> should be used</p>
+                    <div class="code-content">
+                        <pre><code class="code">const createSpecimens30 = () => {
+  let resArr = new Set();
+  while(resArr.size < 30) {
+   ...
+  resArr.add(specie);
+  }
+  return resArr
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-arrays-iterator">
+        <h2><a href="#javascript-arrays-iterator" class="highlight-section">#</a> JavaScript Array Iterators</h2>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-arrays-iterator_foreach" class="card medium">
+                <h3>.forEach()</h3>
+                <div class="content">
+                    <p>Executes a provided function once for each array element. It does not return a new array.</p>
+                    <h4 class="subtitle">Function Expression</h4>
+                    <div class="code-content">
+          <pre><code class="code">const arr = ['a', 'b', 'c'];
+arr.forEach(function(item) {
+  console.log(item);
+});</code></pre>
+                    </div>
+                    <h4 class="subtitle">Arrow Function</h4>
+                    <div class="code-content">
+                        <pre><code class="code">arr.forEach(item => console.log(item));</code></pre>
+                    </div>
+                    <h4 class="subtitle">Named Function</h4>
+                    <div class="code-content">
+          <pre><code class="code">function printItem(item) {
+  console.log(item);
+}
+arr.forEach(printItem);</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_map" class="card small">
+                <h3>.map()</h3>
+                <div class="content">
+                    <p>Creates a new array by applying a callback function to every element of the original array.</p>
+                    <div class="code-content">
+          <pre><code class="code">const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);  // [2, 4, 6]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_filter" class="card small">
+                <h3>.filter()</h3>
+                <div class="content">
+                    <p>Creates a new array with all elements that pass the test implemented by the provided function.</p>
+                    <div class="code-content">
+          <pre><code class="code">const words = ['dog', 'elephant', 'cat'];
+const shortWords = words.filter(word => word.length <= 3);
+console.log(shortWords);  // ['dog', 'cat']</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_every" class="card small">
+                <h3>.every()</h3>
+                <div class="content">
+                    <p>Tests whether all elements in the array pass the provided test. It returns true only if every element passes the test.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [2, 4, 6];
+const allEven = nums.every(num => num % 2 === 0);
+console.log(allEven);  // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_some" class="card small">
+                <h3>.some()</h3>
+                <div class="content">
+                    <p>Tests whether at least one element in the array satisfies the provided test. It returns true if any element passes the test, otherwise false.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [1, 3, 5, 8];
+const hasEven = nums.some(num => num % 2 === 0);
+console.log(hasEven);  // true</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_split" class="card small">
+                <h3>.split()</h3>
+                <div class="content">
+                    <p>Divides a string into an array of substrings, based on a specified separator.</p>
+                    <div class="code-content">
+          <pre><code class="code">const sentence = "Hello World";
+const words = sentence.split(" ");
+console.log(words);  // ["Hello", "World"]</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #40E0D0;"></i>
+                        <p>Creates a new array</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_reduce" class="card tall">
+                <h3>.reduce()</h3>
+                <div class="content">
+                    <p>Applies a reducer function on each element of the array, resulting in a single output value.</p>
+                    <div class="code-content">
+          <pre><code class="code">const numbers = [1, 2, 3];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(sum);  // 6</code></pre>
+                    </div>
+                    <div class="image-content">
+                        <img src="/resources/medias/javascript/iteration.jpg" alt="reduce function">
+                    </div>
+                    <p>An optional accumulator initial value can be provided</p>
+                    <div class="code-content">
+          <pre><code class="code">const sumWithInitial = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 10);
+console.log(sumWithInitial);  // 16</code></pre>
+                    </div>
+                    <div class="image-content">
+                        <img src="/resources/medias/javascript/iteration1.jpg" alt="reduce function">
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_findindex" class="card small">
+                <h3>.findIndex()</h3>
+                <div class="content">
+                    <p>Returns the index of the first element that satisfies the provided testing function, or -1 if none do.</p>
+                    <div class="code-content">
+          <pre><code class="code">const nums = [10, 20, 5, 40];
+const index = nums.findIndex(num => num < 10);
+console.log(index);  // 2</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_join" class="card small">
+                <h3>.join()</h3>
+                <div class="content">
+                    <p>Concatenates all the elements of an array into a string, separated by a specified delimiter.</p>
+                    <div class="code-content">
+          <pre><code class="code">const fruits = ["apple", "banana", "cherry"];
+const fruitString = fruits.join(", ");
+console.log(fruitString);  // "apple, banana, cherry"</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays-iterator_sort" class="card medium">
+                <h3>.sort()</h3>
+                <div class="content">
+                    <p>Sorts the elements of an array in place and returns the sorted array. A comparator function can be provided to define the sort order. If the comparator returns a negative number, zero, or a positive number, the positions of elements are determined accordingly.</p>
+                    <h4 class="subtitle">Descending Order</h4>
+                    <div class="code-content">
+            <pre><code class="code">const sortYearsDescending = (yearsArray) => {
+  return yearsArray.sort((a, b) => b - a);
+};
+console.log(sortYearsDescending([2020, 2010, 2005])); // [2020, 2010, 2005]</code></pre>
+                    </div>
+                    <h4 class="subtitle">Ascending Order</h4>
+                    <div class="code-content">
+            <pre><code class="code">const sortYearsAscending = (yearsArray) => {
+  return yearsArray.sort((a, b) => a - b);
+};
+console.log(sortYearsAscending([2020, 2010, 2005])); // [2005, 2010, 2020]</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Modify the input array</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-loops">
+        <h1><a href="#javascript-loops" class="highlight-section">#</a> Loops</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-loops_for-loop" class="card small">
+                <h3>For Loop</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">for (let counter = 0; counter < 4; counter++) {
+  console.log(counter);
+}
+//  1
+//  2
+//  3
+//  4</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_for-of-loop" class="card small">
+                <h3>For…of Loop</h3>
+                <div class="content">
+                    <p>Iterates over the values of an iterable object (such as Arrays, Strings, Maps, etc.) without needing an index.</p>
+                    <div class="code-content">
+          <pre><code class="code">const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+for (const hobby of hobbies) {
+  console.log(`I enjoy ${hobby}.`);
+}
+// I enjoy singing
+// I enjoy eating
+// I enjoy quidditch
+// I enjoy writing</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_for-in-loop" class="card small">
+                <h3>for...in Loop</h3>
+                <div class="content">
+                    <p>The <strong>for...in</strong> loop iterates over all enumerable string properties of an object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const obj = { a: 1, b: 2, c: 3 };
+for (const property in obj) {
+  console.log(`${property}: ${obj[property]}`);
+}
+// Expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_while-loop" class="card small">
+                <h3>While Loop</h3>
+                <div class="content">
+                    <p>A while loop runs as long as its condition remains true and is ideal when the number of iterations is not known in advance.</p>
+                    <div class="code-content">
+          <pre><code class="code">let counterTwo = 1;
+while (counterTwo < 4) {
+  console.log(counterTwo);
+  counterTwo++;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_do-while-loop" class="card small">
+                <h3>Do…while Loop</h3>
+                <div class="content">
+                    <p>A do...while loop executes its code block at least once, and then continues to loop while the condition is true.</p>
+                    <div class="code-content">
+          <pre><code class="code">let countString = '';
+let i = 0;
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+console.log(countString);
+//  0
+//  01
+//  012
+//  0123
+          </code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_break-statement" class="card small">
+                <h3>Break Statement</h3>
+                <div class="content">
+                    <p>Exit a loop prematurely when a certain condition is met. It prevents further iterations even if the loop’s condition is still true.</p>
+                    <div class="code-content">
+          <pre><code class="code">for (let i = 0; i < 99; i++) {
+  if (i > 2) {
+    console.log("I am free!")
+    break;
+  }
+  console.log('Banana');
+}
+// Banana
+// Banana
+// Banana
+// I am free!
+          </code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-loops_continue-statement" class="card small">
+                <h3>Continue Statement</h3>
+                <div class="content">
+                    <p>Skips the current iteration and proceeds to the next one.</p>
+                    <div class="code-content">
+          <pre><code class="code">const strangeBirds = ['Shoebill', 'Cow', 'Terrorbird', 'Parotia', 'Kakapo'];
+
+for (const bird of strangeBirds) {
+  if (bird === 'Cow') {
+    continue;
+  }
+  console.log(bird);
+}
+// Output:
+// Shoebill
+// Terrorbird
+// Parotia
+// Kakapo</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-functions">
+        <h1><a href="#javascript-functions" class="highlight-section">#</a> Functions</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-functions_defining-function" class="card small">
+                <h3>Defining a Function</h3>
+                <div class="content">
+                    <p>A basic function declaration with two parameters and a return value.</p>
+                    <div class="code-content">
+<pre><code class="code">function sum(num1, num2) {
+  return num1 + num2;
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_named-function" class="card small">
+                <h3>Named Function</h3>
+                <div class="content">
+                    <p>Use a descriptive name to clarify what the function does.</p>
+                    <div class="code-content">
+<pre><code class="code">function rocketToMars() {
+  return 'BOOM!';
+}
+// Invoke:
+rocketToMars(); // "BOOM!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_anonymous-function" class="card small">
+                <h3>Anonymous Function</h3>
+                <div class="content">
+                    <p>Assigned to a variable instead of having its own name.</p>
+                    <div class="code-content">
+<pre><code class="code">const rocketToMars = function() {
+  return 'BOOM!';
+};
+// Invoke:
+rocketToMars(); // "BOOM!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_arrow-functions" class="card tall">
+                <h3>Arrow Functions</h3>
+                <div class="content">
+                    <h4 class="subtitle">Basic Arrow Function</h4>
+                    <p>It takes two parameters and returns their sum using implicit return.</p>
+                    <div class="code-content">
+            <pre><code class="code">const sum = (a, b) => a + b;
+console.log(sum(3, 4)); // 7</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function with Block Body</h4>
+                    <p>When using a block body (curly braces), you must explicitly return a value.</p>
+                    <div class="code-content">
+            <pre><code class="code">const multiply = (a, b) => {
+  return a * b;
+};
+console.log(multiply(3, 4)); // 12</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">No-Parameter Arrow Function</h4>
+                    <p>Parentheses are required even if there are no parameters.</p>
+                    <div class="code-content">
+            <pre><code class="code">const greet = () => 'Hello, world!';
+console.log(greet()); // "Hello, world!"</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function with Default Parameters</h4>
+                    <p>Default values can be assigned to parameters in an arrow function.</p>
+                    <div class="code-content">
+            <pre><code class="code">const greetWithDefault = (name = 'stranger') => `Hello, ${name}!`;
+console.log(greetWithDefault('Alice')); // "Hello, Alice!"
+console.log(greetWithDefault());        // "Hello, stranger!"</code></pre>
+                    </div>
+
+                    <h4 class="subtitle">Arrow Function Expression</h4>
+                    <p>Can be assigned to a variable as a function expression.</p>
+                    <div class="code-content">
+            <pre><code class="code">const bark = () => 'Woof!';
+console.log(bark()); // "Woof!"</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_function-expression" class="card small">
+                <h3>Function Expression</h3>
+                <div class="content">
+                    <p>Store a function in a variable. The function can be named or anonymous.</p>
+                    <div class="code-content">
+<pre><code class="code">const bark = function() {
+  return 'Woof!';
+};
+console.log(bark()); // "Woof!"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_function-parameters" class="card small">
+                <h3>Function Parameters</h3>
+                <div class="content">
+                    <p>Parameters act as placeholders for arguments passed to the function.</p>
+                    <div class="code-content">
+<pre><code class="code">function sayHello(name = 'stranger') {
+  console.log('Hello, ' + name);
+}
+sayHello('Simone');  // "Hello, Simone"
+sayHello();          // "Hello, stranger"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_return-keyword" class="card small">
+                <h3>Return Keyword</h3>
+                <div class="content">
+                    <p>If a function hits <strong>return</strong>, it exits immediately and passes the specified value back.</p>
+                    <div class="code-content">
+<pre><code class="code">function checkAge(age) {
+  if (age < 0) {
+    return; // Exits with undefined
+  }
+  return age >= 18;
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_calling-a-function" class="card small">
+                <h3>Calling a Function</h3>
+                <div class="content">
+                    <p>Invoke a function by using its name followed by parentheses. Include arguments if needed.</p>
+                    <div class="code-content">
+<pre><code class="code">function greet(name) {
+  console.log('Hello, ' + name);
+}
+greet('Simone'); // "Hello, Simone"
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_helper-functions" class="card small span-two-column">
+                <h3>Helper Functions</h3>
+                <div class="content">
+                    <p>Helper functions are functions called within another function to perform specific tasks</p>
+                    <div class="code-content">
+            <pre><code class="code">function multiplyByNineFifths(number) {
+  return number * (9/5);
+};
+
+function getFahrenheit(celsius) {
+  return multiplyByNineFifths(celsius) + 32;
+};
+getFahrenheit(15); // Returns 59</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_high-order-functions" class="card small span-two-column">
+                <h3>High-order Functions</h3>
+                <div class="content">
+                    <h4 class="subtitle">Functions as Data</h4>
+                    <p>Since functions in JavaScript are first-class objects, they can be assigned to variables and passed around as data. This allows you to rename or reuse a function without duplicating its code.</p>
+                    <div class="code-content">
+            <pre><code class="code">const announceThatIAmDoingImportantWork = () => {
+  console.log("I’m doing very important work!");
+};
+const busy = announceThatIAmDoingImportantWork;
+busy(); // This function call barely takes any space!</code></pre>
+                    </div>
+                    <h4 class="subtitle">Functions as Parameters</h4>
+                    <p>Functions can also be passed as arguments to other functions.The functions passed as parameters are commonly known as callback functions.</p>
+                    <div class="code-content">
+            <pre><code class="code">const higherOrderFunc = param => {
+  // Invoke the callback function
+  param();
+  return `I just invoked ${param.name} as a callback function!`;
+};
+const anotherFunc = () => {
+  return "I'm being invoked by the higher-order function!";
+};
+console.log(higherOrderFunc(anotherFunc));
+// Expected output: "I just invoked anotherFunc as a callback function!"</code></pre>
+                    </div>
+                    <p>You can also use higher-order functions to validate the consistency of other functions:</p>
+                    <div class="code-content">
+            <pre><code class="code">const addTwo = num => {
+  return num + 2;
+};
+const checkConsistentOutput = (func, val) => {
+  let checkA = val + 2;
+  let checkB = func(val);
+  if(checkA === checkB)
+    return checkB;
+  else
+    return 'inconsistent results';
+};
+console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-objects">
+        <h1><a href="#javascript-objects" class="highlight-section">#</a> Objects</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-objects_object-literals" class="card small">
+                <h3>Object Literals</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  'Fuel Type': 'diesel',  // key is 'Fuel Type', value is 'diesel'
+  color: 'silver'         // key is color, value is 'silver'
+};
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_accessing-properties" class="card small">
+                <h3>Accessing Properties</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+console.log(spaceship.numCrew);  // 5
+console.log(spaceship['Fuel Type']);  // 'Turbo Fuel'</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_deleting-properties" class="card medium">
+                <h3>Deleting Properties</h3>
+                <div class="content">
+                    <p>Use the <strong>delete</strong> operator to remove a property from an object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe'
+};
+delete spaceship.mission; // Removes the 'mission' property
+console.log(spaceship);</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_updating-properties" class="card small span-two-column">
+                <h3>Updating Properties</h3>
+                <div class="content">
+                    <p>You cannot reassign a constant object, but you can update its properties.</p>
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5,
+  type: 'Shuttle'
+};
+// Updating properties:
+spaceship.type = 'alien';           // Modify existing property
+spaceship.speed = 'Mach 5';         // Add a new property
+spaceship['Active Duty'] = false;   // Change property using bracket notation
+spaceship.numCrew = 6;              // Update numeric value
+spaceship = {'key': 'value'};       // Error: Assignment to constant variable</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_nested-objects" class="card small">
+                <h3>Nested Objects</h3>
+                <div class="content">
+                    <div class="code-content">
+          <pre><code class="code">const spaceship = {
+  telescope: {
+    yearBuilt: 2018,
+    focalLength: 2032
+  },
+  crew: {
+    captain: {
+      name: 'Sandra',
+      encourageTeam() { console.log('We got this!'); }
+    }
+  },
+  engine: {
+    model: 'Nimbus2000'
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+    },
+    'back-up': {
+      battery: 'Lithium',
+      terabytes: 50
+    }
+  }
+};
+console.log(spaceship.nanoelectronics['back-up'].battery);  // 'Lithium'</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_pass-by-reference" class="card small">
+                <h3>Pass By Reference</h3>
+                <div class="content">
+                    <p>If properties are defined within a function, the object itself is mutated. However, reassigning the object within a function does not change the original variable.</p>
+                    <div class="code-content">
+          <pre><code class="code">let spaceship = {
+  homePlanet: 'Earth',
+  color: 'red'
+};
+let tryReassignment = obj => {
+  obj = {
+    identified: false,
+    'transport type': 'flying'
+  };
+  obj.color = 'blue';
+  console.log(obj); // Prints the new object
+};
+tryReassignment(spaceship);
+console.log(spaceship); // { homePlanet: 'Earth', color: 'blue' }
+// Regular reassignment works:
+spaceship = {
+  identified: false,
+  'transport type': 'flying'
+};
+console.log(spaceship);  //{identified: false,'transport type': 'flying'}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_this-keyword-and-arrow-functions" class="card small">
+                <h3>this keyword & Arrow Functions</h3>
+                <div class="content">
+                    <p>In methods defined using the traditional function syntax, <strong>this</strong> refers to the calling object.</p>
+                    <div class="code-content">
+          <pre><code class="code">const goat = {
+  dietType: 'herbivore',
+  diet() {
+    console.log(this.dietType);
+  }
+};
+goat.diet();  // Outputs: herbivore</code></pre>
+                    </div>
+                    <p>Arrow functions, do not bind their own <strong>this</strong>, and will refer to the global object (or remain undefined in strict mode)</p>
+                    <div class="code-content">
+          <pre><code class="code">const goat2 = {
+  dietType: 'herbivore',
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+goat2.diet();  // Outputs: undefined</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_custom-methods" class="card small span-two-column">
+                <h3>Custom Methods</h3>
+                <div class="content">
+                    <p>Objects can have methods/functions assigned as property values to encapsulate behavior. With ES6, you can omit the colon and <code>function</code> keyword.</p>
+                    <div class="code-content">
+          <pre><code class="code">const alienShip = {
+  invade() {
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.');
+  },
+  takeOff() {
+    console.log('Take of...');
+  }
+};
+alienShip.invade();  // Invokes the invade method
+//Output: 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_getters" class="card small">
+                <h3>Getters</h3>
+                <div class="content">
+                    <p>If properties must remain unaltered, a common convention is to prefix the property name with an underscore (<strong>_</strong>). Getter methods allow controlled access to these properties.</p>
+                    <div class="code-content">
+            <pre><code class="code">const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() {
+    if (this._firstName && this._lastName) {
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or last name.';
+    }
+  }
+};
+console.log(person.fullName);  // 'John Doe'</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_setters" class="card small">
+                <h3>Setters</h3>
+                <div class="content">
+                    <p>Setter methods allow controlled modification of properties designated as private by convention. Setters perform validation before updating the property value.</p>
+                    <div class="code-content">
+            <pre><code class="code">const person2 = {
+  _age: 37,
+  set age(newAge) {
+    if (typeof newAge === 'number') {
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
+    }
+  }
+};
+person2.age = 40;
+console.log(person2._age);  // 40
+person2.age = '40';         // Logs: You must assign a number to age</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_factory-functions" class="card small span-two-column">
+                <h3>Factory Functions</h3>
+                <div class="content">
+                    <p>A factory function creates and returns an object. This approach permits the generation of multiple similar object instances through reusable code.</p>
+                    <div class="code-content">
+      <pre><code class="code">const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return {
+    name: name,
+    age: age,
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    }
+  };
+};
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare();  // 'BOO!'
+// Using property shorthand in a factory function:
+const monsterFactory2 = (name, age) => {
+  return {
+    name,
+    age
+  };
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_destructuring-technique" class="card small">
+                <h3>Destructuring Technique</h3>
+                <div class="content">
+                    <p>Property shorthand simplifies object creation, and destructuring assignment permits the extraction of object properties into variables.</p>
+                    <div class="code-content">
+      <pre><code class="code">const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+const { residence } = vampire;
+console.log(residence);  // 'Transylvania'
+const { day } = vampire.preferences;
+console.log(day);  // 'stay inside'</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-objects_object-methods" class="card small span-two-column">
+                <h3>Object Methods</h3>
+                <div class="content">
+                    <p>JavaScript objects have several built-in methods to work with their properties:</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">.hasOwnProperty()</span>
+                                <span class="code-definition">Checks if an object has the specified property as its own property.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">.valueOf()</span>
+                                <span class="code-definition">Returns the primitive value of the specified object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.assign()</span>
+                                <span class="code-definition">Copies the values of all enumerable own properties from one or more source objects to a target object.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.entries()</span>
+                                <span class="code-definition">Returns an array of [key, value] pairs of an object’s own enumerable properties.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Object.keys()</span>
+                                <span class="code-definition">Returns an array of the names of an object’s own enumerable properties.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+          <pre><code class="code">const robot = {
+  name: "Robo",
+  version: 1.0
+};
+console.log(robot.hasOwnProperty('name')); // true
+console.log(robot.valueOf());              // { name: "Robo", version: 1.0 }
+const newRobot = Object.assign({}, robot, {laserBlaster: true, voiceRecognition: true});
+console.log(newRobot);  // [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
+console.log(Object.entries(newRobot));  // [ [ 'name', 'Robo' ], [ 'version', 1 ], [ 'laserBlaster', true ], [ 'voiceRecognition', true ] ]
+console.log(Object.keys(newRobot));  // [ 'name', 'version', 'laserBlaster', 'voiceRecognition' ]
+          </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</main>
+</body>
+</html>

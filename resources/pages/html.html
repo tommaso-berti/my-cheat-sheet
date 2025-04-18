@@ -5,87 +5,910 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML - cheatsheet</title>
     <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/resources/styles/html.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header class="header-title">
     <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
 </header>
-<div class="introduction-container">
+<main>
+<section class="introduction-container">
     <div id="introduction">
         <h2><span style="font-weight: normal">HTML</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
         <p>This is a quick reference cheat sheet for understanding and writing JSON format configuration files.</p>
     </div>
-</div>
-<div class="main-container">
-    <section id="getting-started">
-        <h1><a href="#getting-started" class="highlight-section">#</a> Getting started</h1>
+</section>
+<section class="main-container">
+    <section id="html-document-structure">
+        <h1><a href="#html-document-structure" class="highlight-section">#</a> HTML Document Structure</h1>
         <div class="cheatsheet-card-container">
-            <div class="card tall">
-               <h3>Introduction</h3>
-                <div class="content standard-content">
-                    <p>lorem</p>
+            <div id="html-document-structure_doctype-declaration" class="card small">
+                <h3>DOCTYPE Declaration</h3>
+                <div class="content">
+                    <p>This declaration is an instruction and must be the first line of an HTML document. It specifies the document type and version of HTML being used. In modern usage, <strong>&lt;!DOCTYPE html&gt;</strong> indicates HTML5.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+...
+&lt;/html&gt;</code></pre>
+                    </div>
                 </div>
             </div>
-            <div class="card small">
-                <h3>Introduction</h3>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code">Your code here...</code></pre>
+            <div id="html-document-structure_semantic-document-structure" class="card small span-two-column">
+                <h3>Semantic document Structure</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;html&gt;&lt;/html&gt;</span>
+                                <span class="code-definition">The root element, indicating that the content is HTML.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;head&gt;&lt;/head&gt;</span>
+                                <span class="code-definition">Contains metadata about the page (e.g., scripts, styles, and other information not directly displayed).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;title&gt;&lt;/title&gt;</span>
+                                <span class="code-definition">Defines the title shown in the browser's tab; must reside inside &lt;head&gt;.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;body&gt;&lt;/body&gt;</span>
+                                <span class="code-definition">Contains the main content of the page.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;header&gt;&lt;/header&gt;</span>
+                                <span class="code-definition">Designates the introductory content or navigational links for a page.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;nav&gt;&lt;/nav&gt;</span>
+                                <span class="code-definition">Encapsulates a block of navigation links, such as menus or a table of contents.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;main&gt;&lt;/main&gt;</span>
+                                <span class="code-definition">Contains the dominant content of a page, excluding repeated elements like headers, footers, or navigation.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;section&gt;&lt;/section&gt;</span>
+                                <span class="code-definition">Defines a thematic grouping of content, typically with an associated heading. Use this element for semantically meaningful sections, and use &lt;div&gt; for generic containers.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;article&gt;&lt;/article&gt;</span>
+                                <span class="code-definition">Represents a self-contained piece of content, like a blog post or news article, that makes sense on its own.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;footer&gt;&lt;/footer&gt;</span>
+                                <span class="code-definition">Holds footer information, such as contact details, copyright notices, or site maps.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
                 </div>
             </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content list-content">
-                    <ul>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                    </ul>
+            <div id="html-document-structure_head-tag-contents" class="card small span-three-column">
+                <h3>&lt;head&gt; Tag Contents</h3>
+                <div class="content">
+                    <p>
+                        The <strong>&lt;head&gt;</strong> element contains metadata and resource links that configure your HTML document. It typically includes information that is not directly displayed on the page but is essential for setting up the page’s environment.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;meta charset&gt;</span>
+                                <span class="code-definition">Defines the character encoding, typically set to UTF-8.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="viewport"&gt;</span>
+                                <span class="code-definition">Configures the viewport for responsive design on mobile devices.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;title&gt;</span>
+                                <span class="code-definition">Specifies the title that appears on the browser tab.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;link rel="stylesheet"&gt;</span>
+                                <span class="code-definition">Links to an external CSS file for styling the document.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;link rel="icon"&gt;</span>
+                                <span class="code-definition">Specifies the favicon icon shown in the browser tab.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;script&gt;</span>
+                                <span class="code-definition">Includes or references a JavaScript file to add interactive functionality.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="description"&gt;</span>
+                                <span class="code-definition">Provides a short summary of the page's content for SEO and social sharing.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="keywords"&gt;</span>
+                                <span class="code-definition">Lists relevant keywords related to the page (less critical for modern SEO).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;meta name="author"&gt;</span>
+                                <span class="code-definition">Identifies the author of the document.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <div class="content definition-content">
-                    <ul>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                        <li><span class="code-attribute">bool</span><span class="code-definition">definition</span></li>
-                    </ul>
-                </div>
-                <h4 class="subtitle">Examples</h4>
-                <div class="content code-content">
-                    <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
-                    <pre><code class="code">
-{
-  "name": "Jason",
-  "age": 39,
-  "height": 1.92,
-  "gender": "M",
-  "salary": 70000,
-  "married": true,
-  "children": [
-    {"name": "Tom", "age": 9, "gender":"M"},
-    {"name": "Ava", "age": 7, "gender":"F"}dads
-  ]
-}
-                    </code></pre>
-                </div>
-            </div>
-            <div class="card medium">
-                <h3>Introduction</h3>
-                <p></p>
-            </div>
-            <div class="card small">
-                <h3>Introduction</h3>
-                <p></p>
             </div>
         </div>
     </section>
-</div>
+    <section id="html-element-tags">
+        <h1><a href="#html-element-tags" class="highlight-section">#</a> Element Tags</h1>
+        <div class="cheatsheet-card-container">
+            <div id="html-element-tags_relative-path" class="card small">
+                <h3>Relative Path</h3>
+                <div class="content">
+                    <p>A relative path specifies the location of a resource relative to the current file's location.</p>
+                    <p>Relative path starts with a dot followed by a slash (<strong>./</strong>),
+                    <div class="code-content">
+            <pre><code class="code">project-folder/
+├── index.html
+├── about.html
+└── assets/
+    └── images/
+         └── logo.png</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="./contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_absolute-path-within-a-project" class="card small span-two-column">
+                <h3>Absolute Path within a Project</h3>
+                <div class="content">
+                    <p>An absolute path specifies the location of a resource starting from the root of the website</p>
+                    <p>Absolute path starts with a slash (<strong>/</strong>), which indicates that it is an absolute reference from the root directory of the website (or project).</p>
+                    <div class="code-content">
+            <pre><code class="code">project-folder/
+├── index.html
+├── about.html
+└── assets/
+    └── images/
+         └── logo.png</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="/assets/images/logo.png" alt="Project Logo"&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_img" class="card small span-two-column">
+                <h3>&lt;img&gt;</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="path_to_file" alt="A field of yellow sunflowers" /&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the path to the image file (e.g., a URL or relative path).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">alt</span>
+                                <span class="code-definition">Provides a textual description of the image. This description is used as fallback content if the image fails to load, by screen readers for accessibility, and for SEO purposes. If the image is decorative, the alt attribute should be empty.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_figure" class="card medium">
+                <h3>&lt;figure&gt;</h3>
+                <div class="content">
+                    <p>Encapsulates media such as images, illustrations, diagrams, or code snippets that are referenced in the main document flow.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;figure&gt;
+  &lt;img src="overwatch.jpg" alt="An image from Overwatch" /&gt;
+&lt;/figure&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_figcaption" class="card small span-two-column">
+                <h3>&lt;figcaption&gt;</h3>
+                <div class="content">
+                    <p>Provides a caption for media contained within a <strong>&lt;figure&gt;</strong>. It is placed inside the <strong>&lt;figure&gt;</strong> so that the caption moves with the media if the layout changes.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;figure&gt;
+  &lt;img src="overwatch.jpg" alt="An image from Overwatch" /&gt;
+  &lt;figcaption&gt;This picture shows characters from Overwatch.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_audio" class="card small">
+                <h3>&lt;audio&gt;</h3>
+                <div class="content">
+                    <p>Embeds audio content into a document</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;audio controls&gt;
+  &lt;source src="iAmAnAudioFile.mp3" type="audio/mp3"&gt;
+&lt;/audio&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the URL of the audio file.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">controls</span>
+                                <span class="code-definition">Displays built-in audio controls (e.g., play, pause, volume).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;source&gt;</span>
+                                <span class="code-definition">Used within the <strong>&lt;audio&gt;</strong> element to define multiple file formats.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_video" class="card small span-two-column">
+                <h3>&lt;video&gt;</h3>
+                <div class="content">
+                    <p>Embeds video content. It supports various attributes to control playback</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;video src="coding.mp4" controls&gt;
+  Video not supported
+&lt;/video&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">src</span>
+                                <span class="code-definition">Specifies the URL of the video file.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">controls</span>
+                                <span class="code-definition">Displays video controls such as play/pause, volume, and fullscreen options.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">autoplay</span>
+                                <span class="code-definition">Automatically starts video playback when the page loads.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">loop</span>
+                                <span class="code-definition">Repeats the video continuously.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_anchor-link-elements" class="card small span-two-column">
+                <h3>&lt;a&gt; Anchor (Link) Elements</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">href</span>
+                                <span class="code-definition">Specifies the destination URL or relative path.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">target</span>
+                                <span class="code-definition">Where the linked document is opened. Common values are <strong>_blank</strong> (opens in a new tab) and <strong>_self</strong> (opens in the current tab).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank"&gt;The Brown Bear&lt;/a&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">Wrapping elements</h4>
+                    <p>Additionally, an anchor can wrap any element, turning it into a clickable link</p>
+                    <div class="code-content">
+            <pre><code class="code">&lt;a href="https://en.wikipedia.org/wiki/Opuntia" target="_blank"&gt;
+  &lt;img src="https://www.Prickly_Pear_Closeup.jpg" alt="A red prickly pear fruit" /&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_in-page-links-&-title-attribute" class="card">
+                <h3>In-Page Links &amp; Title Attribute</h3>
+                <div class="content">
+                    <p>An element can be assigned an <strong>id</strong> to allow in-page navigation. Clicking a link with a hash (<strong>#</strong>) will scroll the page to the element with the corresponding id.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;p id="top"&gt;This is the top of the page!&lt;/p&gt;
+&lt;a href="#top"&gt;Top&lt;/a&gt;</code></pre>
+                    </div>
+                    <p>The <strong>title</strong> attribute provides additional context or advisory text for elements—often displayed as a tooltip when the user hovers over the element.</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;a href="https://www.codecademy.com" title="Codecademy is an online learning platform"&gt;Codecademy&lt;/a&gt; is the best place to learn to code!</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_aside" class="card small span-three-column">
+                <h3>&lt;aside&gt;</h3>
+                <div class="content">
+                    <p>Marks additional information that enhances the main content. It is useful for content such as bibliographies, endnotes, comments, pull quotes, editorial sidebars, or any supplementary information.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;article&gt;
+  &lt;p&gt;The first World Series was played between Pittsburgh and Boston in 1903.&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside&gt;
+  &lt;p&gt;Babe Ruth once stated, “Heroes get remembered, but legends never die.”&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>Semantic HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-element-tags_table" class="card small span-two-column">
+                <h3>&lt;table&gt;</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;table&gt;</span>
+                                <span class="code-definition">Initializes the table structure.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tr&gt;</span>
+                                <span class="code-definition">Defines a table row.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;th&gt;</span>
+                                <span class="code-definition">Specifies a header cell. The <strong>scope</strong> attribute indicates whether the header applies to a row (<strong>row</strong>) or a column (<strong>col</strong>).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;td&gt;</span>
+                                <span class="code-definition">Represents a standard data cell in the table.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+            <pre><code class="code">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;         &lt;!-- Empty for column alignment --&gt;
+    &lt;th scope="col"&gt;Saturday&lt;/th&gt;
+    &lt;th scope="col"&gt;Sunday&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;Temperature&lt;/th&gt;
+    &lt;td&gt;73&lt;/td&gt;
+    &lt;td&gt;81&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">colspan</h4>
+                    <p>Span across multiple columns</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;td colspan="2"&gt;Out of Town&lt;/td&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">rowspan</h4>
+                    <p>Span across multiple rows</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;tr rowspan="2"&gt;Out of Town&lt;/td&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">Semantic table</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">&lt;thead&gt;</span>
+                                <span class="code-definition">Contains the header rows of the table.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tbody&gt;</span>
+                                <span class="code-definition">Encapsulates the main data rows.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">&lt;tfoot&gt;</span>
+                                <span class="code-definition">Contains footer content, such as sums or summaries.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+            <pre><code class="code">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th scope="col"&gt;Saturday&lt;/th&gt;
+      &lt;th scope="col"&gt;Sunday&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Morning&lt;/th&gt;
+      &lt;td rowspan="2"&gt;Work&lt;/td&gt;
+      &lt;td rowspan="3"&gt;Relax&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Afternoon&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Evening&lt;/th&gt;
+      &lt;td&gt;Dinner&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;Totals and other data can be placed here.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="html-form-input">
+        <h1><a href="#html-form-input" class="highlight-section">#</a> Form Input Elements</h1>
+        <div class="cheatsheet-card-container">
+            <div id="html-form-input_form" class="card small span-three-column">
+                <h3>&lt;form&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;form&gt;</strong> element collects user input and sends it to a server. Its key attributes are defined below:</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">action</span>
+                                <span class="code-definition">Specifies the URL where the form data will be sent.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">method</span>
+                                <span class="code-definition">Specifies the HTTP method (e.g., POST, GET) to use when submitting the form.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_input" class="card small span-two-column">
+                <h3>&lt;input&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;input&gt;</strong> element is a self-closing tag used to create interactive controls for forms</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;input type="text" name="first-text-field" value="already pre-filled" /&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">type</span>
+                                <span class="code-definition">Determines the kind of input field rendered (e.g., text, password, number, range, checkbox, radio). The default is "text".</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">name</span>
+                                <span class="code-definition">Specifies the key for the data to be sent when the form is submitted.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">value</span>
+                                <span class="code-definition">Sets a default value for the input field.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">step</span>
+                                <span class="code-definition">For numeric input types, defines the legal number intervals.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_label" class="card small">
+                <h3>&lt;label&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;label&gt;</strong> element defines a caption for an <strong>&lt;input&gt;</strong> element. To associate a label with an input, the input must have an <strong>id</strong> and the label’s <strong>for</strong> attribute must match that id.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;label for="meal"&gt;What do you want to eat?&lt;/label&gt;
+&lt;input type="text" name="food" id="meal" /&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_input-type-submit-button" class="card small">
+                <h3>Input type: Submit Button</h3>
+                <div class="content">
+                    <p>The <strong>&lt;input type="submit"&gt;</strong> element creates a button that submits the form data to the server.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  &lt;input type="submit" value="Send" /&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff7e66;"></i>
+                        <p>&lt;input&gt; type</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_input-type-radio-buttons" class="card small">
+                <h3>Input type: Radio Buttons</h3>
+                <div class="content">
+                    <p>Radio buttons allow users to select one option from a set of choices. Each radio input should share the same <strong>name</strong> attribute for grouping.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;p&gt;What is the sum of 1 + 1?&lt;/p&gt;
+  &lt;input type="radio" id="two" name="answer" value="2" /&gt;
+  &lt;label for="two"&gt;2&lt;/label&gt;
+  &lt;br /&gt;
+  &lt;input type="radio" id="eleven" name="answer" value="11" /&gt;
+  &lt;label for="eleven"&gt;11&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #ff7e66;"></i>
+                        <p>&lt;input&gt; type</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_select-dropdown" class="card small">
+                <h3>&lt;select&gt; Dropdown</h3>
+                <div class="content">
+                    <p>The <strong>&lt;select&gt;</strong> element creates a dropdown list, and is populated with <strong>&lt;option&gt;</strong> elements. It is used to choose one value among many.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="lunch"&gt;What's for lunch?&lt;/label&gt;
+  &lt;select id="lunch" name="lunch"&gt;
+    &lt;option value="pizza"&gt;Pizza&lt;/option&gt;
+    &lt;option value="curry"&gt;Curry&lt;/option&gt;
+    &lt;option value="salad"&gt;Salad&lt;/option&gt;
+    &lt;option value="ramen"&gt;Ramen&lt;/option&gt;
+    &lt;option value="tacos"&gt;Tacos&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <p>If a user selects Pizza, the data sent will be "lunch=pizza".</p>
+                </div>
+            </div>
+            <div id="html-form-input_datalist" class="card small span-two-column">
+                <h3>&lt;datalist&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;datalist&gt;</strong> element provides a list of predefined options to suggest to the user as they input data. It is used with an input element's <strong>list</strong> attribute.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="city"&gt;Ideal city to visit?&lt;/label&gt;
+  &lt;input type="text" list="cities" id="city" name="city" /&gt;
+  &lt;datalist id="cities"&gt;
+    &lt;option value="New York City"&gt;&lt;/option&gt;
+    &lt;option value="Tokyo"&gt;&lt;/option&gt;
+    &lt;option value="Barcelona"&gt;&lt;/option&gt;
+    &lt;option value="Mexico City"&gt;&lt;/option&gt;
+    &lt;option value="Melbourne"&gt;&lt;/option&gt;
+    &lt;option value="Other"&gt;&lt;/option&gt;
+  &lt;/datalist&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_textarea" class="card small">
+                <h3>&lt;textarea&gt;</h3>
+                <div class="content">
+                    <p>The <strong>&lt;textarea&gt;</strong> element creates a multi-line text input field. It supports attributes such as <strong>rows</strong> and <strong>cols</strong> to define its visible size, and can contain default text.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;form&gt;
+  &lt;label for="blog"&gt;New Blog Post:&lt;/label&gt;
+  &lt;br /&gt;
+  &lt;textarea id="blog" name="blog" rows="5" cols="30"&gt;
+    Default text
+  &lt;/textarea&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-form-input_input-attributes-validation" class="card small span-two-column">
+                <h3>Input attributes: validation</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">required</span>
+                                <span class="code-definition">Specifies that the field must be filled before the form can be submitted.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">minlength</span>
+                                <span class="code-definition">Sets the minimum number of characters required for the input.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">maxlength</span>
+                                <span class="code-definition">Sets the maximum number of characters allowed in the input.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">pattern</span>
+                                <span class="code-definition">Specifies a regular expression that the input's value must match for validation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>Required, text length restrictions and pattern matching.</p>
+                    <div class="code-content">
+            <pre><code class="code">&lt;form action="/example.html" method="POST"&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;
+  &lt;br&gt;
+  &lt;input id="username" name="username" type="text" minlength="3" maxlength="15"
+         pattern="^[A-Za-z0-9_]+$" required&gt;
+  &lt;br&gt;
+  &lt;input type="submit" value="Register"&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFB38E;"></i>
+                        <p>&lt;input&gt; attributes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="html-digital-accessibility">
+        <h1><a href="#html-digital-accessibility" class="highlight-section">#</a> Digital Accessibility</h1>
+        <div class="cheatsheet-card-container">
+            <div id="html-digital-accessibility_overview" class="card small">
+                <h3>Overview</h3>
+                <div class="content">
+                    <p>
+                        Digital accessibility means designing devices, products, and environments so that individuals with disabilities or sensory impairments can successfully use them. It is guided by the <strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong> to ensure an inclusive web experience.
+                    </p>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_semantic-html-elements" class="card small">
+                <h3>Semantic HTML Elements</h3>
+                <div class="content">
+                    <p>
+                        Using semantic elements helps screen reader users understand and navigate a web page more efficiently. For example, wrap a navigation bar in a <strong>&lt;header&gt;</strong> instead of a generic <strong>&lt;div&gt;</strong> with a class.
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;header&gt;
+  &lt;nav&gt;
+  ...
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_role" class="card small">
+                <h3>Role</h3>
+                <div class="content">
+                    <p>The <span class="code-attribute">role</span> attribute provides additional context to web elements, affecting how screen readers announce them</p>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_role-complementary" class="card small">
+                <h3>Role: complementary</h3>
+                <div class="content">
+                    <p>The <strong>complementary</strong> role signals that the content supports the primary information on the page.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;div id="code-editor" role="complementary"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_role-presentation" class="card small">
+                <h3>Role: presentation</h3>
+                <div class="content">
+                    <p>Some elements, such as <strong>&lt;ol&gt;</strong> and <strong>&lt;div&gt;</strong>, are used solely for organizing content. Setting <strong>role="presentation" </strong>instructs screen readers to skip announcing the element’s name, allowing users to focus directly on the meaningful content.</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;ol role="presentation"&gt;
+  &lt;li&gt;List Item 1&lt;/li&gt;
+  &lt;li&gt;List Item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                    </div>
+                    <p>
+                        In the example below, the container’s role prevents unnecessary announcements:
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;div id="container" role="presentation"&gt;
+  &lt;p&gt;I'm content you want to hear!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                        <p>ARIA role</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_property-aria-label" class="card small">
+                <h3>Property: aria-label</h3>
+                <div class="content">
+                    <p>Gives screen readers extra information without affecting the visual layout</p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;img src="#" alt="A painting of the Shenandoah Valley" /&gt;
+&lt;p aria-label="Artist"&gt;Armand Cabrera, 2010&lt;/p&gt;</code></pre>
+                    </div>
+                    <p>
+                        This enhances the relationship between the image and its caption. For a full list of ARIA properties, see the <a href="https://www.w3.org/TR/wai-aria-1.1/" target="_blank">ARIA Techniques</a>.
+                    </p>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD166;"></i>
+                        <p>ARIA property</p>
+                    </div>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_alt-attribute" class="card small span-two-column">
+                <h3>Alt Attribute</h3>
+                <div class="content">
+                    <p>
+                        The <strong>alt</strong> attribute is vital for accessibility, providing a text alternative to images. Screen readers announce this text, and it is displayed if the image fails to load.
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;img src="#" alt="a kitten snuggling a puppy" /&gt;</code></pre>
+                    </div>
+                    <ul class="list-content">
+                        <li>
+                            <strong>Concise Description:</strong> Summarize the image content in a few words.
+                        </li>
+                        <li>
+                            <strong>Linked Images:</strong> For images serving as links, describe the target destination.
+                        </li>
+                        <li>
+                            <strong>Decorative Images:</strong> For non-informative images, use an empty <strong>alt=""</strong>.
+                        </li>
+                        <li>
+                            <strong>Avoid Redundancy:</strong> If adjacent text already describes the image, leave the alt attribute empty.
+                        </li>
+                        <li>
+                            <strong>Character Limit:</strong> Keep the alt text under 150 characters.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="html-digital-accessibility_screen-readers" class="card small">
+                <h3>Screen Readers</h3>
+                <div class="content">
+                    <p>
+                        Screen readers convert on-screen text into speech or braille, making it accessible for visually impaired users. Common examples include:
+                    </p>
+                    <ul class="list-content">
+                        <li><strong>(OS X) VoiceOver:</strong> Built into Macs, activated with <strong>Command-F5</strong>.</li>
+                        <li><strong>(Windows) NVDA:</strong> A free screen reader for Windows.</li>
+                        <li><strong>(Google Chrome) ChromeVox:</strong> Developed using web technologies for modern web apps and supports W3C ARIA for enhanced accessibility.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="html-font-awesome">
+        <h1><a href="#html-font-awesome" class="highlight-section">#</a> Font Awesome</h1>
+        <div class="cheatsheet-card-container">
+            <div id="html-font-awesome_overview" class="card small">
+                <h3>Overview</h3>
+                <div class="content">
+                    <p>
+                        Font Awesome is a popular icon library used to visually convey actions and information. Icons are implemented as CSS classes, making them easy to style and resize.
+                    </p>
+                </div>
+            </div>
+            <div id="html-font-awesome_link-font-awesome" class="card small span-two-column">
+                <h3>Link Font Awesome</h3>
+                <div class="content"><p>
+                        The Font Awesome library is linked to an HTML document via the <strong>&lt;link&gt;</strong> tag</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">CDN Version:</span>
+                                <span class="code-definition">Link Font Awesome from a CDN (e.g., using the Bootstrap CDN).</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Local Version:</span>
+                                <span class="code-definition">Download the latest files and link to the local CSS file.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+          <pre><code class="code">&lt;head&gt;
+  &lt;!-- CDN Version --&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"&gt;
+
+  &lt;!-- Local Version --&gt;
+  &lt;link rel="stylesheet" href="resources/css/fontawesome.css"&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="html-font-awesome_adding-an-icon" class="card small">
+                <h3>Adding an Icon</h3>
+                <div class="content">
+                    <p>
+                        Font Awesome icons are added using an <strong>&lt;i&gt;</strong> tag with two required classes: the base <strong>fa</strong> class and an icon-specific class (e.g. <strong>fa-save</strong>).
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;i class="fa fa-save"&gt;&lt;/i&gt;</code></pre>
+                    </div>
+                    <p>
+                        In this example, the <strong>fa-save</strong> class displays the floppy disk icon commonly associated with saving.
+                    </p>
+                </div>
+            </div>
+            <div id="html-font-awesome_icon-sizing" class="card small">
+                <h3>Icon Sizing</h3>
+                <div class="content">
+                    <p>
+                        Icon sizes can be adjusted with additional classes:
+                    </p>
+                    <div class="code-content">
+          <pre><code class="code">&lt;i class="fa fa-camera fa-lg"&gt;&lt;/i&gt;
+&lt;i class="fa fa-cab fa-4x"&gt;&lt;/i&gt;</code></pre>
+                    </div>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">fa-lg</span>
+                                <span class="code-definition">Increases the icon size by 33%.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-2x</span>
+                                <span class="code-definition">Doubles the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-3x</span>
+                                <span class="code-definition">Triples the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-4x</span>
+                                <span class="code-definition">Quadruples the icon size.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">fa-5x</span>
+                                <span class="code-definition">Quintuples the icon size.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</main>
 </body>
 </html>

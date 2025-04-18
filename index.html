@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,41 +11,84 @@
 <header class="header-title">
     <a href=""><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
 </header>
-    <div class="main-container">
-        <div id="introduction">
-            <h2><span style="font-weight: normal">My</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
-            <p>Here you will find a collection of notes and code snippets that I have found useful in my programming journey</p>
-        </div>
-        <section id="programming" class="grid-container">
-            <h2>Programming</h2>
-            <div class="grid">
-                <a href="resources/pages/html.html" class="html-button button">
-                    <img src="/resources/icons/html.png" alt="HTML">
-                    <p>HTML</p>
-                </a>
-                <a href="" class="css-button button">
-                    <img src="/resources/icons/css.png" alt="HTML">
-                    <p>CSS</p>
-                </a>
-                <a href="" class="javascript-button button">
-                    <img src="/resources/icons/java-script.png" alt="HTML">
-                    <p>Javascript</p>
-                </a>
-                <a href="" class="node-button button">
-                    <img src="/resources/icons/nodejs.png" alt="HTML">
-                    <p>Node.js</p>
-                </a>
-            </div>
-        </section>
-        <section id="security" class="grid-container">
-            <h2>Security</h2>
-            <div class="grid">
-                <a href="resources/pages/ssh.html" class="ssh-button button">
-                    <img src="/resources/icons/ssh.png" alt="SSH">
-                    <p>SSH</p>
-                </a>
-            </div>
-        </section>
+<main>
+    <div id="introduction">
+        <h2><span style="font-weight: normal">My</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>Here you will find a collection of notes and code snippets that I have found useful in my programming journey</p>
     </div>
+    <section id="programming" class="grid-container">
+        <h2>Programming</h2>
+        <div class="grid">
+            <a href="resources/pages/html.html" class="html-button button">
+                <img src="/resources/icons/html.png" alt="HTML">
+                <p>HTML</p>
+            </a>
+            <a href="" class="css-button button">
+                <img src="/resources/icons/css.png" alt="HTML">
+                <p>CSS</p>
+            </a>
+            <a href="resources/pages/javascript.html" class="javascript-button button">
+                <img src="/resources/icons/java-script.png" alt="HTML">
+                <p>Javascript</p>
+            </a>
+            <a href="" class="node-button button">
+                <img src="/resources/icons/nodejs.png" alt="HTML">
+                <p>Node.js</p>
+            </a>
+            <a href="resources/pages/bash.html" class="bash-button button">
+                <img src="/resources/icons/bash.png" alt="bash">
+                <p>Bash</p>
+            </a>
+            <a href="resources/pages/git.html" class="git-button button">
+                <img src="/resources/icons/git.png" alt="git">
+                <p>Git</p>
+            </a>
+            <a href="resources/pages/github.html" class="github-button button">
+                <img src="/resources/icons/github.png" alt="github">
+                <p>GitHub</p>
+            </a>
+        </div>
+    </section>
+    <section id="database" class="grid-container">
+        <h2>Database</h2>
+        <div class="grid">
+            <a href="" class="sql-button button">
+                <img src="/resources/icons/sql-server.png" alt="SQL">
+                <p>SQL</p>
+            </a>
+            <a href="resources/pages/mongodb.html" class="mongodb-button button">
+                <img src="/resources/icons/mongodb.png" alt="MongoDB">
+                <p>MongoDB</p>
+            </a>
+        </div>
+    </section>
+    <section id="security" class="grid-container">
+        <h2>Security</h2>
+        <div class="grid">
+            <a href="resources/pages/ssh.html" class="ssh-button button">
+                <img src="/resources/icons/ssh.png" alt="SSH">
+                <p>SSH</p>
+            </a>
+        </div>
+    </section>
+    <section id="linux" class="grid-container">
+        <h2>Linux</h2>
+        <div class="grid">
+            <a href="resources/pages/ubuntu.html" class="ubuntu-button button">
+                <img src="/resources/icons/ubuntu.png" alt="Ubuntu">
+                <p>Ubuntu</p>
+            </a>
+        </div>
+    </section>
+    <section id="vps" class="grid-container">
+        <h2>VPS</h2>
+        <div class="grid">
+            <a href="resources/pages/vps.html" class="vps-button button">
+                <img src="/resources/icons/vps.png" alt="VPS">
+                <p>VPS</p>
+            </a>
+        </div>
+    </section>
+</main>
 </body>
 </html>

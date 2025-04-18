@@ -7,9 +7,10 @@
 }
 
 body {
-    width: 100%;
     height: auto;
     background-color: #0f172a;
+    max-width: 60rem;
+    margin: 0 auto;
 }
 
 header {
@@ -42,11 +43,6 @@ header {
     height: auto;
 }
 
-.main-container {
-    width: 60rem;
-    margin: 0 auto;
-}
-
 #introduction {
     text-align: center;
     line-height: 3rem;
@@ -64,7 +60,12 @@ header {
 }
 
 section {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+}
+
+.grid-container {
+    padding: 1rem;
+    border-radius: 1.5rem;
 }
 
 .grid-container > h2 {
@@ -73,17 +74,24 @@ section {
     font-size: x-large;
 }
 
+.grid-container > h3 {
+    padding-bottom: 1rem;
+    border-bottom: solid 1px lightgrey;
+}
+
 .grid {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 2rem 0;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
 .button {
     display: flex;
-    width: 20%;
+    min-width: calc((100% - 6rem) / 4);
+    flex-basis: calc((100% - 6rem) / 4);
     height: 4rem;
     border-radius: 0.5rem;
     background-color: lightgrey;
@@ -95,7 +103,7 @@ section {
 }
 
 .button p {
-    width: 70%;
+    width: 75%;
     height: auto;
     font-size: 1.1rem;
     color: black;
@@ -110,26 +118,102 @@ section {
     background-color: #FFB38E;
 }
 
+.html-button:hover {
+    background-color: #ff803a;
+}
+
 .css-button {
     background-color: #FFD166;
+}
+
+.css-button:hover {
+    background-color: #FFB300;
 }
 
 .javascript-button {
     background-color: #06D6A0;
 }
 
+.javascript-button:hover {
+    background-color: #00FF7F;
+}
+
 .node-button {
     background-color: #118AB2;
+}
+
+.node-button:hover {
+    background-color: #00BFFF;
 }
 
 .node-button img {
     width: 25%;
 }
 
+.bash-button {
+    background-color: rgb(103, 103, 103);
+}
+
+.bash-button:hover {
+    background-color: #A9A9A9;
+}
+
+.bash-button img {
+    width: 25%;
+}
+
+.git-button {
+    background-color: #FFB3BA;
+}
+
+.git-button:hover {
+    background-color: #ff735b;
+}
+
 .ssh-button {
     background-color: #FFB3BA;
 }
 
+.ssh-button:hover {
+    background-color: #ff7e66;
+}
+
 .ssh-button img {
     width: 25%;
+}
+
+.ubuntu-button {
+    background-color: #A0E7E5;
+}
+
+.ubuntu-button:hover {
+    background-color: #40E0D0;
+}
+
+.vps-button {
+    background-color: #118AB2;
+}
+
+.vps-button:hover {
+    background-color: #00BFFF;
+}
+
+.vps-button img {
+    width: 25%;
+}
+
+.github-button {
+    background-color: darkgrey;
+}
+
+.github-button:hover {
+    background-color: grey;
+}
+
+.mongodb-button {
+    background-color: limegreen;
+}
+
+.mongodb-button:hover {
+    background-color: greenyellow;
 }

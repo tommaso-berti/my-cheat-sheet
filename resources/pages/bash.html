@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bash - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<main>
+<section class="introduction-container">
+    <div id="introduction">
+        <h2><span style="font-weight: normal">Bash</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+        <p>This is a quick reference cheat sheet for understanding and writing Bash commands.</p>
+    </div>
+</section>
+<section class="main-container">
+    <section id="bash-getting-started">
+        <h1><a href="#bash-getting-started" class="highlight-section">#</a> Getting started</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-getting-started_introduction" class="card small span-two-column">
+                <h3>Introduction</h3>
+                <div class="content">
+                    <div class="standard-content">
+                        <p>Bash, or the <strong>B</strong>ourne-<strong>A</strong>gain <strong>SH</strong>ell, is a CLI that was created in 1989 by Brian Fox as a free software replacement for the Bourne Shell. A shell is a specific kind of CLI. Bash is open source. In most ways Zsh is an exact replacement for Bash, so there is no need to switch over or install Bash instead.</p>
+                        <p>When using the command line, we refer to folders as directories. Files and directories on your computer are organized into a filesystem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bash-navigation">
+        <h1><a href="#bash-navigation" class="highlight-section">#</a> Navigation</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-navigation_basic-navigation" class="card small">
+                <h3>Basic navigation</h3>
+                <div class="content">
+                    <p>Clear terminal</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ clear</code></pre>
+                    </div>
+                    <p>Current directory’s files and directories</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ ls</code></pre>
+                    </div>
+                    <p>Output the name of the directory you are currently in, called the working directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ pwd</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-navigation_chain-options" class="card medium span-two-column">
+                <h3>Chain options</h3>
+                <div class="content">
+                    <p>List all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ ls -alt</code></pre>
+                    </div>
+                    <p>Options:</p>
+                    <ul class="list-content">
+                        <li>-a - lists all contents, including hidden files and directories (shown starting with a .)</li>
+                        <li>-l - lists all contents of a directory in long format, as well as the file permissions. Each column means:
+                            <ul class="sub-list-content">
+                                <li>Access rights. These indicate the read, write, and execute permissions on the file or directory allowed to the owner, the group, and all users. You can read more about file permissions.</li>
+                                <li>Number of hard links. This represents the number of hard links to the file or directory. This number includes the parent directory link (...) and current directory link (.).</li>
+                                <li>The username of the file’s owner. Here the username is cc.</li>
+                                <li>The name of the group that owns the file. Here the group name is eng.</li>
+                                <li>The size of the file in bytes.</li>
+                                <li>The date & time that the file was last modified.</li>
+                                <li>The name of the file or directory.</li>
+                            </ul>
+                        </li>
+                        <li>-t - orders files and directories by the time they were last modified.</li>
+                    </ul>
+                    <p>Result of ls -l</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ ls -l
+drwxr-xr-x 5  cc  eng  4096 Jun 24 16:51  action
+drwxr-xr-x 4  cc  eng  4096 Jun 24 16:51  comedy
+drwxr-xr-x 6  cc  eng  4096 Jun 24 16:51  drama
+-rw-r--r-- 1  cc  eng     0 Jun 24 16:51  genres.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-navigation_move-between-folders" class="card small">
+                <h3>Move between folders</h3>
+                <div class="content">
+                    <p>Change the working directory</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd directory_name</code></pre>
+                    </div>
+                    <p>Move up one folder</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ..</code></pre>
+                    </div>
+                    <p>Move up two or more folders</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ../..</code></pre>
+                    </div>
+                    <p>Move across multiple directories with a single command, we can provide cd a relative path to the memory/ directory as an argument</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd 2015/jan/memory</code></pre>
+                    </div>
+                    <p>The last two points can be chained together (move up then move to the directory)</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cd ../2014</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-navigation_create-folder" class="card small">
+                <h3>Create folder</h3>
+                <div class="content">
+                    <p>The mkdir command stands for “make directory”. It takes in a directory name as an argument and then creates a new directory in the current working directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ mkdir newDirectory_name</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ mkdir relative_path</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bash-file-manipulation">
+        <h1><a href="#bash-file-manipulation" class="highlight-section">#</a> File manipulation</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-file-manipulation_create-file" class="card small">
+                <h3>Create file</h3>
+                <div class="content">
+                    <p>Create a new file inside the working directory</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ touch keyboard.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-file-manipulation_remove-files" class="card small">
+                <h3>Remove files</h3>
+                <div class="content">
+                    <p>The rm command deletes files and directories.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ rm unwanted_file.txt<br>$ rm -r unwanted_directory</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-file-manipulation_print-the-content-of-a-file" class="card small">
+                <h3>Print the content of a file</h3>
+                <div class="content">
+                    <p>The cat command outputs in the terminal the contents of a specified file</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat hello_cli.txt</code></pre>
+                    </div>
+                    <p>Create a new file named hello_cli.txt and add Hello Command Line to that file</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo "Hello Command Line" >> hello_cli.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-file-manipulation_copy-files" class="card small span-two-column">
+                <h3>Copy files</h3>
+                <div class="content">
+                    <p>Make a copy of a file</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cp source.txt destination.bak</code></pre>
+                    </div>
+                    <p>Copy multiple files to a directory</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cp file1.txt folder/file2.txt my_directory<br>$ cp * my_directory<br>$ cp *.txt my_directory<br>$ cp w*.txt my_directory</code></pre>
+                    </div>
+                    <p>Move files from a directory to another</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ mv my_file.txt my_directory/<br>$ mv my_file.txt .</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bash-redirection">
+        <h1><a href="#bash-redirection" class="highlight-section">#</a> Redirection</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-redirection_introduction" class="card small">
+                <h3>Introduction</h3>
+                <div class="content">
+                    <p>Through redirection, you can direct the input and output of a command to and from other files and programs, and chain commands together in a pipeline.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo "Hello"</code></pre>
+                    </div>
+                    <p>The echo command accepts the string “Hello” as standard input, and echoes the string “Hello” back to the terminal as standard output.</p>
+                </div>
+            </div>
+            <div id="bash-redirection_standard-io" class="card small">
+                <h3>Standard I/O</h3>
+                <div class="content">
+                    <ul class="list-content">
+                        <li><strong>stdin</strong>: information inputted into the terminal through the keyboard or input device.</li>
+                        <li><strong>stdout</strong>: the information outputted after a process is run.</li>
+                        <li><strong>stderr</strong>: an error message outputted by a failed process.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="bash-redirection_redirection-operators" class="card medium">
+                <h3>Redirection Operators</h3>
+                <div class="content">
+                    <p>Redirect standard output to a file (overwrites content):</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo "Hello" > hello.txt</code></pre>
+                    </div>
+                    <p>Append standard output to a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat forests.txt >> hello.txt</code></pre>
+                    </div>
+                    <p>Use a file as standard input:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat < deserts.txt</code></pre>
+                    </div>
+                    <p>That in this case is the same as:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat deserts.txt</code></pre>
+                    </div>
+                    <p>Pipe standard output to another command:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat volcanoes.txt | wc</code></pre>
+                    </div>
+                    <p>Multiple pipes can be chained together:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat volcanoes.txt | wc | cat > count.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-redirection_sort-and-uniq" class="card small span-two-column">
+                <h3>Sort and Uniq</h3>
+                <div class="content">
+                    <p>Sort standard input alphabetically:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sort continents.txt</code></pre>
+                    </div>
+                    <p>Example: Sort and redirect to a new file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ cat glaciers.txt | sort > sorted-glaciers.txt</code></pre>
+                    </div>
+                    <p>Remove duplicate lines:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sort deserts.txt | uniq</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-redirection_sed" class="card small">
+                <h3>Sed</h3>
+                <div class="content">
+                    <p>Substitute text in a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed 's/snow/rain/' forests.txt</code></pre>
+                    </div>
+                    <p>Substitute text globally in a file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed 's/snow/rain/g' forests.txt</code></pre>
+                    </div>
+                    <p>Rewrite the actual file:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ sed -i 's/snow/rain/g' forests.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-redirection_grep" class="card small span-two-column">
+                <h3>Grep</h3>
+                <div class="content">
+                    <p>Search for a pattern in a file (case-insensitive):</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -i America continents.txt</code></pre>
+                    </div>
+                    <p>Search recursively in a directory:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -R Arctic /home/ccuser/workspace/geography</code></pre>
+                    </div>
+                    <p>Output only filenames with matched results:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ grep -Rl Arctic /home/ccuser/workspace/geography</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bash-environment">
+        <h1><a href="#bash-environment" class="highlight-section">#</a> Environment</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-environment_nano" class="card medium">
+                <h3>nano</h3>
+                <div class="content">
+                    <p>nano is a command line text editor. It works the same way as a desktop text editor like TextEdit or Notepad, except that it is accessible from the command line and only accepts keyboard input.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ nano hello.txt</code></pre>
+                    </div>
+                    <p>The command <code>nano hello.txt</code> opens a new text file named <code>hello.txt</code> in the nano text editor.</p>
+                    <p>Hello, I am nano is a text string entered in nano at the line indicated by the cursor.</p>
+                    <p>The menu of keyboard commands at the bottom of the window allows us to save changes to <code>hello.txt</code> and exit nano.</p>
+                </div>
+            </div>
+            <div id="bash-environment_bash-profile" class="card small span-two-column">
+                <h3>Bash Profile</h3>
+                <div class="content">
+                    <p>A bash profile is a file used to store environment settings for your terminal. On most computer systems, the file is in the home directory and is accessible by the name <code>.bash_profile</code>.</p>
+                    <p>When you edit the bash profile, you can add commands to execute every time a new terminal session is started.</p>
+                    <p>To activate the changes made in <code>.bash_profile</code> for the current session, use:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ source .bash_profile</code></pre>
+                    </div>
+                    <p>Absolute path of <code>.bash_profile</code>:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">~/.bash_profile</code></pre>
+                    </div>
+                    <p>If not existent, a new one has to be created.</p>
+                </div>
+            </div>
+            <div id="bash-environment_alias" class="card small span-two-column">
+                <h3>Alias</h3>
+                <div class="content">
+                    <p>The <code>alias</code> command allows you to create keyboard shortcuts, or aliases, for commonly used commands.</p>
+                    <p>Here, <code>alias pd="pwd"</code> creates the alias <code>pd</code> for the <code>pwd</code> command, which is then saved in the bash profile. Please note, no spaces are allowed before and after the = symbol.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ alias pd="pwd"</code></pre>
+                    </div>
+                    <p>The <code>pd</code> alias will be available each time we open a new terminal session, and the output of <code>pd</code> will be the same as the <code>pwd</code> command.</p>
+                    <p><code>source .bash_profile</code> will make the alias <code>pd</code> available in the current session.</p>
+                </div>
+            </div>
+            <div id="bash-environment_environment-variables" class="card small span-two-column">
+                <h3>Environment Variables</h3>
+                <div class="content">
+                    <p>Environment variables are variables that can be used across commands and programs and hold information about the environment.</p>
+                    <p>Example:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ export USER="Jane Doe"</code></pre>
+                    </div>
+                    <p>The line <code>USER="Jane Doe"</code> sets the environment variable USER to a name “Jane Doe”. Usually the USER variable is set to the name of the computer’s owner.</p>
+                    <p>The line <code>export</code> makes the variable available to all child sessions initiated from the session you are in. This is a way to make the variable persist across programs.</p>
+                    <p>At the command line, the command <code>echo $USER</code> returns the value of the variable. Note that <code>$</code> is always used when returning a variable’s value. Here, the command <code>echo $USER</code> returns the name set for the variable.</p>
+                </div>
+            </div>
+            <div id="bash-environment_env" class="card small">
+                <h3>Env</h3>
+                <div class="content">
+                    <p>The <code>env</code> command stands for “environment,” and returns a list of the environment variables for the current user.</p>
+                    <p>The <code>env</code> command returns a number of variables, including <code>PATH</code>, <code>PWD</code>, <code>PS1</code>, and <code>HOME</code>. To select the value of a particular environment variable, let’s say <code>PATH</code>, you can use the following command:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ env | grep PATH</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-environment_path" class="card medium span-two-column">
+                <h3>PATH</h3>
+                <div class="content">
+                    <p>PATH is an environment variable that stores a list of directories separated by a colon.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo $PATH</code></pre>
+                    </div>
+                    <p>Returns:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">/home/ccuser/.gem/ruby/2.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin</code></pre>
+                    </div>
+                    <p>Each directory contains scripts for the command line to execute. The PATH variable simply lists which directories contain scripts.</p>
+                    <p>For example, many commands we’ve learned are scripts stored in the <code>/bin</code> directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ /bin/pwd</code></pre>
+                    </div>
+                    <p>Returns the same as:</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ pwd</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-environment_ps1" class="card small">
+                <h3>PS1</h3>
+                <div class="content">
+                    <p>PS1 is an environment variable that defines the makeup and style of the command prompt. A space must be used after the desired symbol.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ export PS1=">> "</code></pre>
+                    </div>
+                    <p><code>export PS1=">> "</code> sets the command prompt variable and exports the variable. Here we change the default command prompt from <code>$</code> to <code>>></code>.</p>
+                    <p>After using the <code>source</code> command, the command line displays the new command prompt.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">>></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="bash-environment_home" class="card small">
+                <h3>HOME</h3>
+                <div class="content">
+                    <p>The HOME variable is an environment variable that displays the path of the home directory <code>~</code>. You can specify and change the HOME variable if needed, but in most cases this is not necessary.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ echo $HOME</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bash-examples">
+        <h1><a href="#bash-examples" class="highlight-section">#</a> Examples</h1>
+        <div class="cheatsheet-card-container">
+            <div id="bash-examples_find-empty-txt-files" class="card small span-two-column">
+                <h3>Find empty .txt files</h3>
+                <div class="content">
+                    <p>List .txt files with no content across all directories and save the listing in <code>empty_files.txt</code> in the <code>todo/</code> directory.</p>
+                    <div class="code-content">
+                        <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
+                        <pre><code class="code">$ wc -l */*.txt | grep 0 > todo/empty_files.txt</code></pre>
+                    </div>
+                    <p>The <code>-l</code> option of the <code>wc</code> command counts the number of lines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</main>
+</body>
+</html>
