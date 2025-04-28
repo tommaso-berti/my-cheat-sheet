@@ -1,4 +1,3 @@
-```markdown
 # MyCheatsheet - Quick Reference for Card Components
 
 `MyCheatsheet` is a project designed to provide developers with a quick reference for reusable card components and their internal content structures. It simplifies the process of adding pre-designed cards with various content types to web applications, ensuring consistency and efficiency in development.
