@@ -217,3 +217,12 @@ section {
 .mongodb-button:hover {
     background-color: greenyellow;
 }
+
+.a11y-button {
+    background-color: #FFB3BA;
+}
+
+.a11y-button:hover {
+    background-color: #ff7e66;
+}
+

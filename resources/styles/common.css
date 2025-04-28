@@ -249,6 +249,7 @@ p.annotations {
 
 .list-content a {
     cursor: pointer;
+    color: #94a3b8;
 }
 
 .list-content a:hover {

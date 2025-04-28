@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<main>
+    <section class="introduction-container">
+        <div id="introduction">
+            <h2><span style="font-weight: normal">A11Y</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+            <p>This is a quick reference cheat sheet for understanding and writing A11Y files.</p>
+        </div>
+    </section>
+    <section class="main-container">
+        <section id="a11y-digital-accessibility">
+            <div class="cheatsheet-card-container">
+                <div id="a11y-digital-accessibility_overview" class="card small span-two-column">
+                    <h3>Accessibility Overview</h3>
+                    <div class="content">
+                        <p>Accessibility ensures digital content is usable by individuals with disabilities or sensory impairments. It follows standards like the Web Content Accessibility Guidelines (WCAG) 2.1.</p>
+                        <div class="list-content">
+                            <ul>
+                                <li>Screen readers to parse and vocalize web content for visually impaired users.</li>
+                                <li>Closed captions for videos to support hearing-impaired users.</li>
+                                <li>Descriptive <strong>alt</strong> attributes for images to convey meaning without visuals.</li>
+                                <li>Full keyboard navigation (e.g., using the <strong>Tab</strong> key) for users unable to operate a mouse.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-digital-accessibility_contrast" class="card small">
+                    <h3>Contrast</h3>
+                    <div class="content">
+                        <p>Proper contrast improves page navigation, draws user attention, and ensures accessibility for users with vision impairments.</p>
+                        <p>To enhance accessibility through contrast, focus on:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>Headings:</strong> Distinguish sections clearly with size, weight, and spacing.</li>
+                                <li><strong>Font choices:</strong> Use readable, high-clarity fonts with strong foreground-background separation.</li>
+                                <li><strong>Color:</strong> Ensure sufficient color contrast ratios, following WCAG 2.1 guidelines.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-digital-accessibility_headings" class="card small span-two-column">
+                    <h3>Headings</h3>
+                    <div class="content">
+                        <p>HTML defines six heading elements (<strong>&lt;h1&gt;</strong> to <strong>&lt;h6&gt;</strong>), decreasing in importance and size from <strong>h1</strong> to <strong>h6</strong>.</p>
+                        <h4 class="subtitle">Purpose</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>Divide content into structured sections.</li>
+                                <li>Create visual contrast for better readability.</li>
+                                <li>Provide navigation and context to browsers, plugins, and assistive technologies (e.g., screen readers).</li>
+                            </ul>
+                        </div>
+                        <h4 class="subtitle">Best Practices</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>Use heading elements in logical order without skipping levels.</li>
+                                <li>Each page should have exactly one <strong>&lt;h1&gt;</strong> that defines the page’s main purpose.</li>
+                                <li>Place important keywords inside <strong>&lt;h1&gt;</strong> to improve SEO relevance.</li>
+                                <li>Use <strong>&lt;h2&gt;</strong> for sibling sections of the page content.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-digital-accessibility_font" class="card medium">
+                    <h3>Font Accessibility</h3>
+                    <div class="content">
+                        <p>Accessible websites use real text, ensure high contrast, and choose legible font sizes to optimize readability and compatibility with assistive technologies.</p>
+                        <h4 class="subtitle">Real Text vs Text in Images</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>Screen readers can interpret real text.</li>
+                                <li>Users can scale text without loss of quality.</li>
+                                <li>Faster loading compared to image-based text.</li>
+                            </ul>
+                        </div>
+                        <h4 class="subtitle">Contrast Ratios</h4>
+                        <p>Follow WCAG 2.1 guidelines:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li>Minimum 4.5:1 contrast ratio for standard text.</li>
+                                <li>Minimum 3:1 contrast ratio for large text (24px or larger).</li>
+                                <li>Use tools like the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Contrast Checker</a> to verify compliance.</li>
+                            </ul>
+                        </div>
+                        <h4 class="subtitle">Font Sizes</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>Default browser font size: 16px (recommended for body text).</li>
+                                <li>Smaller fonts only for nonessential or aesthetic content.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-digital-accessibility_color" class="card small span-two-column">
+                    <h3>Color Accessibility</h3>
+                    <div class="content">
+                        <p>Choosing accessible color combinations ensures that content remains readable and understandable for users with vision impairments or color vision deficiencies.</p>
+                        <h4 class="subtitle">High Contrast</h4>
+                        <p>Maximum contrast (e.g., black <strong>#000000</strong> on white <strong>#ffffff</strong>) improves readability but can cause eye strain over time. Moderate contrast is often preferable for prolonged reading.</p>
+                        <h4 class="subtitle">Color Blindness</h4>
+                        <p>Red-green color blindness is the most common, but blue-yellow deficiency and total color blindness also exist. Colors can appear differently or become indistinguishable.</p>
+                        <h4 class="subtitle">Best Practices</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>Choose highly contrasting colors (opposites on a color wheel).</li>
+                                <li>Use brightness variation within the same color family (e.g., light blue vs dark blue).</li>
+                                <li>Pair color with other indicators (text, icons) — never rely on color alone to convey essential information.</li>
+                            </ul>
+                        </div>
+                        <p>Use tools like the <a href="https://www.toptal.com/designers/colorfilter" target="_blank">Toptal Color Blind Web Page Filter</a> to test your designs for different types of color blindness.</p>
+                    </div>
+                </div>
+                <div id="a11y-digital-accessibility_semantic-html-elements" class="card small">
+                    <h3>Semantic HTML Elements</h3>
+                    <div class="content">
+                        <p>
+                            Using semantic elements helps screen reader users understand and navigate a web page more
+                            efficiently. For example, wrap a navigation bar in a <strong>&lt;header&gt;</strong> instead
+                            of a generic <strong>&lt;div&gt;</strong> with a class.
+                        </p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;header&gt;
+&lt;nav&gt;
+...
+&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="a11y-aria">
+            <h1><a href="#a11y-aria" class="highlight-section">#</a> ARIA</h1>
+            <div class="cheatsheet-card-container">
+                <div id="a11y-aria_role" class="card small">
+                    <h3>Role</h3>
+                    <div class="content">
+                        <p>The <span class="code-attribute">role</span> attribute provides additional context to web
+                            elements, affecting how screen readers announce them</p>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                            <p>ARIA role</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-aria_role-complementary" class="card small">
+                    <h3>Role: complementary</h3>
+                    <div class="content">
+                        <p>The <strong>complementary</strong> role signals that the content supports the primary
+                            information on the page.</p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;div id="code-editor" role="complementary"&gt;
+...
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                            <p>ARIA role</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-aria_role-presentation" class="card small">
+                    <h3>Role: presentation</h3>
+                    <div class="content">
+                        <p>Some elements, such as <strong>&lt;ol&gt;</strong> and <strong>&lt;div&gt;</strong>, are used
+                            solely for organizing content. Setting <strong>role="presentation" </strong>instructs screen
+                            readers to skip announcing the element’s name, allowing users to focus directly on the
+                            meaningful content.</p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;ol role="presentation"&gt;
+&lt;li&gt;List Item 1&lt;/li&gt;
+&lt;li&gt;List Item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+                        <p>
+                            In the example below, the container’s role prevents unnecessary announcements:
+                        </p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;div id="container" role="presentation"&gt;
+&lt;p&gt;I'm content you want to hear!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                            <p>ARIA role</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-aria_property-aria_label" class="card small">
+                    <h3>Property: aria-label</h3>
+                    <div class="content">
+                        <p>Gives screen readers extra information without affecting the visual layout</p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;img src="#" alt="A painting of the Shenandoah Valley" /&gt;
+&lt;p aria-label="Artist"&gt;Armand Cabrera, 2010&lt;/p&gt;</code></pre>
+                        </div>
+                        <p>
+                            This enhances the relationship between the image and its caption. For a full list of ARIA
+                            properties, see the <a href="https://www.w3.org/TR/wai-aria-1.1/" target="_blank">ARIA
+                            Techniques</a>.
+                        </p>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #FFD166;"></i>
+                            <p>ARIA property</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-aria_alt-attribute" class="card small span-two-column">
+                    <h3>Alt Attribute</h3>
+                    <div class="content">
+                        <p>
+                            The <strong>alt</strong> attribute is vital for accessibility, providing a text alternative
+                            to images. Screen readers announce this text, and it is displayed if the image fails to
+                            load.
+                        </p>
+                        <div class="code-content">
+                            <pre><code class="code">&lt;img src="#" alt="a kitten snuggling a puppy" /&gt;</code></pre>
+                        </div>
+                        <ul class="list-content">
+                            <li>
+                                <strong>Concise Description:</strong> Summarize the image content in a few words.
+                            </li>
+                            <li>
+                                <strong>Linked Images:</strong> For images serving as links, describe the target
+                                destination.
+                            </li>
+                            <li>
+                                <strong>Decorative Images:</strong> For non-informative images, use an empty <strong>alt=""</strong>.
+                            </li>
+                            <li>
+                                <strong>Avoid Redundancy:</strong> If an adjacent text already describes the image, leave
+                                the alt attribute empty.
+                            </li>
+                            <li>
+                                <strong>Character Limit:</strong> Keep the alt text under 150 characters.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="a11y-aria_screen-readers" class="card small">
+                    <h3>Screen Readers</h3>
+                    <div class="content">
+                        <p>
+                            Screen readers convert on-screen text into speech or braille, making it accessible for
+                            visually impaired users. Common examples include:
+                        </p>
+                        <ul class="list-content">
+                            <li><strong>(OS X) VoiceOver:</strong> Built into Macs, activated with
+                                <strong>Command-F5</strong>.
+                            </li>
+                            <li><strong>(Windows) NVDA:</strong> A free screen reader for Windows.</li>
+                            <li><strong>(Google Chrome) ChromeVox:</strong> Developed using web technologies for modern
+                                web apps and supports W3C ARIA for enhanced accessibility.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+</body>
+</html>
