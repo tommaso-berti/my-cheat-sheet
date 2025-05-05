@@ -122,6 +122,21 @@
                         <p>Use tools like the <a href="https://www.toptal.com/designers/colorfilter" target="_blank">Toptal Color Blind Web Page Filter</a> to test your designs for different types of color blindness.</p>
                     </div>
                 </div>
+                <div id="a11y-digital-accessibility_best-practices" class="card small span-two-column">
+                    <h3>Accessibility: Best Practices</h3>
+                    <div class="content">
+                        <p>Design trends should never compromise accessibility. Always prioritize clarity, contrast, and compatibility with assistive technologies.</p>
+
+                        <h4 class="subtitle">Text Over Images</h4>
+                        <p>Overlaying white text on images often fails contrast standards. Use a dark transparent overlay behind the text to improve legibility.</p>
+
+                        <h4 class="subtitle">Input Labels</h4>
+                        <p>Do not rely on <strong>placeholder</strong> text alone to identify input fields. Labels are essential for screen readers and users with low vision. Placeholder text is often low contrast and may not be read aloud.</p>
+
+                        <h4 class="subtitle">Buttons and Links</h4>
+                        <p>Flat/minimal designs can reduce clarity. Ensure buttons and links are visually distinct with borders, icons, or underlines — not color alone — to ensure clickability is clear for all users.</p>
+                    </div>
+                </div>
                 <div id="a11y-digital-accessibility_semantic-html-elements" class="card small">
                     <h3>Semantic HTML Elements</h3>
                     <div class="content">
@@ -157,25 +172,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="a11y-aria_role-complementary" class="card small">
-                    <h3>Role: complementary</h3>
-                    <div class="content">
-                        <p>The <strong>complementary</strong> role signals that the content supports the primary
-                            information on the page.</p>
-                        <div class="code-content">
-      <pre><code class="code">&lt;div id="code-editor" role="complementary"&gt;
-...
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                    <div class="tag-content">
-                        <div class="tag-item">
-                            <i class="fa fa-tag" style="color: #00FF7F;"></i>
-                            <p>ARIA role</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="a11y-aria_role-presentation" class="card small">
+                <div id="a11y-aria_role-presentation" class="card medium span-two-column">
                     <h3>Role: presentation</h3>
                     <div class="content">
                         <p>Some elements, such as <strong>&lt;ol&gt;</strong> and <strong>&lt;div&gt;</strong>, are used
@@ -194,6 +191,24 @@
                         <div class="code-content">
       <pre><code class="code">&lt;div id="container" role="presentation"&gt;
 &lt;p&gt;I'm content you want to hear!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #00FF7F;"></i>
+                            <p>ARIA role</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="a11y-aria_role-complementary" class="card small">
+                    <h3>Role: complementary</h3>
+                    <div class="content">
+                        <p>The <strong>complementary</strong> role signals that the content supports the primary
+                            information on the page.</p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;div id="code-editor" role="complementary"&gt;
+...
 &lt;/div&gt;</code></pre>
                         </div>
                     </div>
