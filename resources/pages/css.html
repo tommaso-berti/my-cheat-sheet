@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<main>
+    <section class="introduction-container">
+        <div id="introduction">
+            <h2><span style="font-weight: normal">CSS</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+            <p>This is a quick reference cheat sheet for understanding and writing CSS files.</p>
+        </div>
+    </section>
+    <section class="main-container">
+        <section id="css-introduction">
+            <h1><a href="#css-introduction" class="highlight-section">#</a> Introduction</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-introduction_inline-internal" class="card small">
+                    <h3>Inline & Internal Styling</h3>
+                    <div class="content">
+                        <p>CSS can be written directly in HTML using <strong>inline styles</strong> or within a <strong>&lt;style&gt;</strong> element inside the <strong>&lt;head&gt;</strong> tag (internal stylesheet).</p>
+                        <h4 class="subtitle">Internal Stylesheet</h4>
+                        <p>Allows multiple rules to be defined in one place within <strong>&lt;style&gt;</strong> inside <strong>&lt;head&gt;</strong>. Better than inline, but not best practice.</p>
+                        <div class="code-content">
+      <pre><code class="code">&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: red;
+      font-size: 20px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-introduction_external-stylesheet" class="card small">
+                    <h3>External Stylesheet</h3>
+                    <div class="content">
+                        <p>Linking a CSS file to an HTML file using the <strong>&lt;link&gt;</strong> element keeps styles modular and is considered best practice.</p>
+                        <h4 class="subtitle">Required Attributes</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>href:</strong> Path or URL to the CSS file.</li>
+                                <li><strong>rel:</strong> Defines the relationship — should be <strong>stylesheet</strong>.</li>
+                            </ul>
+                        </div>
+                        <h4 class="subtitle">Example (URL)</h4>
+                        <div class="code-content">
+                            <pre><code class="code">&lt;link href="https://www.codecademy.com/stylesheets/style.css" rel="stylesheet"&gt;</code></pre>
+                        </div>
+                        <h4 class="subtitle">Example (Relative Path)</h4>
+                        <div class="code-content">
+                            <pre><code class="code">&lt;link href="./style.css" rel="stylesheet"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-selectors">
+            <h1><a href="#css-selectors" class="highlight-section">#</a> Selectors</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-selectors_universal" class="card small">
+                    <h3>Universal Selector</h3>
+                    <div class="content">
+                        <p>Targets all elements in the document.</p>
+                        <div class="code-content">
+      <pre><code class="code">* {
+  font-family: Verdana;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-selectors_tag" class="card small">
+                    <h3>Tag Selector</h3>
+                    <div class="content">
+                        <p>Targets all elements of a specific type (e.g., all <strong>&lt;p&gt;</strong> tags).</p>
+                        <div class="code-content">
+      <pre><code class="code">p {
+  font-family: Verdana;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-selectors_class" class="card small">
+                    <h3>Class Selector</h3>
+                    <div class="content">
+                        <p>Targets elements with a specific class using <strong>.</strong> notation. Overrides tag selectors.</p>
+                        <div class="code-content">
+      <pre><code class="code">.brand {
+  font-weight: bold;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-selectors_id" class="card small">
+                    <h3>ID Selector</h3>
+                    <div class="content">
+                        <p>Targets an element with a specific ID using <strong>#</strong>. IDs must be unique and override class selectors.</p>
+                        <div class="code-content">
+      <pre><code class="code">#large-title {
+  font-size: 2rem;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-selectors_attribute" class="card small">
+                    <h3>Attribute Selector</h3>
+                    <div class="content">
+                        <p>Targets elements with a specific attribute or attribute value.</p>
+                        <div class="code-content">
+      <pre><code class="code">[href] {
+  color: magenta;
+}
+img[src*='winter'] {
+  color: lightgreen;
+}
+img[src*='summer'] {
+  color: blue;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-specificity_chaining" class="card small">
+                    <h3>Chained Selectors</h3>
+                    <div class="content">
+                        <p>Combining selectors increases specificity. This targets only elements matching all conditions.</p>
+                        <div class="code-content">
+      <pre><code class="code">h1.special {
+  font-weight: bold;
+}</code></pre>
+                        </div>
+                        <p>This targets <strong>only</strong> <strong>&lt;h1&gt;</strong> elements with class <strong>special</strong>. A <strong>&lt;p class="special"&gt;</strong> would not be affected.</p>
+                    </div>
+                </div>
+                <div id="css-selectors_multiple" class="card small">
+                    <h3>Multiple Selectors</h3>
+                    <div class="content">
+                        <p>Apply the same rules to multiple selectors separated by commas.</p>
+                        <div class="code-content">
+      <pre><code class="code">h1, .menu {
+  font-family: Georgia;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-specificity_descendant" class="card small">
+                    <h3>Descendant Selector</h3>
+                    <div class="content">
+                        <p>Targets elements nested inside others. The space indicates ancestry, not direct parent-child.</p>
+                        <div class="code-content">
+      <pre><code class="code">.main-list li {
+  list-style: square;
+}</code></pre>
+                        </div>
+                        <p>This selects all <strong>&lt;li&gt;</strong> elements inside any element with class <strong>main-list</strong>.</p>
+                    </div>
+                </div>
+                <div id="css-selectors_pseudo-class" class="card small">
+                    <h3>Pseudo-class Selector</h3>
+                    <div class="content">
+                        <p>Targets element states (e.g., hover, visited, focus, active).</p>
+
+                        <div class="code-content">
+      <pre><code class="code">a {
+  color: blue;
+  cursor: pointer;
+}
+a:hover {
+  color: orange;
+}</code></pre>
+                        </div>
+                        <h4 class="subtitle">Recommended Order</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li>:link</li>
+                                <li>:visited</li>
+                                <li>:hover</li>
+                                <li>:active</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-selectors_pseudo-element" class="card small">
+                    <h3>Pseudo-element Selector</h3>
+                    <div class="content">
+                        <p>Allows styling of specific parts of an element (e.g., ::before, ::after).</p>
+                        <div class="code-content">
+      <pre><code class="code">.breadcrumb li+li::before {
+  padding: 10px;
+  content: ">";
+}</code></pre>
+                        </div>
+                        <p><strong>li+li</strong> selects adjacent siblings. <strong>::before</strong> inserts content before the element.</p>
+                    </div>
+                </div>
+                <div id="css-specificity_basic" class="card small">
+                    <h3>Specificity</h3>
+                    <div class="content">
+                        <p>Specificity determines which CSS rule takes precedence when multiple selectors target the same element. The order of specificity, from lowest to highest, is: type selector <strong>(&lt;h1&gt;)</strong>, class selector <strong>(.class)</strong>, and ID selector <strong>(#id)</strong>.</p>
+                        <div class="code-content">
+      <pre><code class="code">h1 {
+  color: red;
+}
+.headline {
+  color: firebrick;
+}</code></pre>
+                        </div>
+                        <p>In this example, the class <strong>.headline</strong> overrides the type <strong>h1</strong> selector due to higher specificity.</p>
+                    </div>
+                </div>
+                <div id="css-specificity_class-conflict" class="card small">
+                    <h3>Multiple Classes & Conflicts</h3>
+                    <div class="content">
+                        <p>An element can have multiple classes. If styles overlap, the most specific or the latest defined rule is applied.</p>
+                        <div class="code-content">
+      <pre><code class="code">.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}</code></pre>
+                        </div>
+                        <p>If both classes are applied, the one defined last or more specifically wins. In this case, <strong>blue</strong> is applied.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-box-model">
+            <h1><a href="#css-box-model" class="highlight-section">#</a> Box model</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-box-model_overview" class="card small">
+                    <h3>Box Model</h3>
+                    <div class="content">
+                        <p>Every element is a rectangular box composed of <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, and <strong>margin</strong>. The default model is <strong>content-box</strong>.</p>
+                        <div class="code-content">
+      <pre><code class="code">* {
+  box-sizing: border-box;
+}</code></pre>
+                        </div>
+                        <p>Using <strong>border-box</strong> includes padding and borders in width and height calculations.</p>
+                    </div>
+                </div>
+                <div id="css-box-model_border-and-radius" class="card small span-two-column">
+                    <h3>Border & Border Radius</h3>
+                    <div class="content">
+                        <p>These properties define the visual edges and corners of an element's box.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">border</span>
+                                    <span class="code-definition">Specifies the width, style, and color of the element’s border (e.g. <strong>3px solid black</strong>).</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">border-radius</span>
+                                    <span class="code-definition">Rounds the corners of the element. Use <strong>border-radius: 50%</strong> to create a circle.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+      <pre><code class="code">.box {
+  border: 3px solid white;
+  border-radius: 5px;
+}
+.circle {
+  border-radius: 50%;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_padding" class="card small">
+                    <h3>Padding</h3>
+                    <div class="content">
+                        <p>Space between content and border. Can accept 1 to 4 values.</p>
+                        <div class="code-content">
+      <pre><code class="code">padding: 5px 10px 20px;  /* top, left/right, bottom */
+padding: 5px 10px;      /* top/bottom, left/right */</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_margin-and-collapse" class="card small span-two-column">
+                    <h3>Margin & Margin Collapse</h3>
+                    <div class="content">
+                        <p><strong>Margin</strong> defines the space outside an element’s border. It can also be used to center block elements horizontally.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">margin</span>
+                                    <span class="code-definition">Defines the outer space of an element. Example: <strong>margin: 0 auto</strong> centers a block element (requires defined width).</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">margin-collapse</span>
+                                    <span class="code-definition">Vertical margins of adjacent elements collapse into a single margin (the largest one is applied).</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+      <pre><code class="code">div {
+  width: 300px;
+  margin: 0 auto;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_min-max" class="card small">
+                    <h3>Min/Max Dimensions</h3>
+                    <div class="content">
+                        <p>Restrict box resizing by defining min/max width or height.</p>
+                        <div class="code-content">
+      <pre><code class="code">min-width: 300px;
+max-width: 600px;
+min-height: 150px;
+max-height: 300px;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_overflow" class="card small">
+                    <h3>Overflow</h3>
+                    <div class="content">
+                        <p>Controls how excess content is handled when it exceeds box limits.</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>visible</strong>: Default. Content overflows visibly.</li>
+                                <li><strong>hidden</strong>: Overflow is clipped.</li>
+                                <li><strong>scroll</strong>: Adds scrollbars.</li>
+                            </ul>
+                        </div>
+                        <p>Overflow works only when the element has a defined height or max-height.</p>
+                    </div>
+                </div>
+                <div id="css-box-model_reset" class="card small">
+                    <h3>Reset Defaults</h3>
+                    <div class="content">
+                        <p>Browsers apply default styles (user agent stylesheets). Reset them for consistency.</p>
+                        <div class="code-content">
+      <pre><code class="code">* {
+  margin: 0;
+  padding: 0;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_visibility" class="card small">
+                    <h3>Visibility</h3>
+                    <div class="content">
+                        <p>Controls whether an element is visible, hidden, or collapsed (for table elements).</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>visible</strong>: Element is shown (default).</li>
+                                <li><strong>hidden</strong>: Element is hidden but space remains.</li>
+                                <li><strong>collapse</strong>: Used in table elements to collapse row/column.</li>
+                            </ul>
+                        </div>
+                        <p>To remove the element and its space entirely, use <strong>display: none;</strong>.</p>
+                    </div>
+                </div>
+                <div id="css-box-model_diagram" class="card small span-three-column">
+                    <h3>Box Model: Visual Structure</h3>
+                    <div class="content">
+                        <p>The CSS box model consists of four main parts:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>Content</strong>: The actual content (text, image, etc.)</li>
+                                <li><strong>Padding</strong>: Space between content and border</li>
+                                <li><strong>Border</strong>: Surrounds the padding</li>
+                                <li><strong>Margin</strong>: Outer space separating the element from others</li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+      <pre><code class="code">.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+  box-sizing: border-box;
+}
+
++---------------------------+  ← margin (30px)
+|   +-------------------+   |  ← border (5px)
+|   |   +-----------+   |   |  ← padding (20px)
+|   |   |  content  |   |   |  ← width (200px)
+|   |   +-----------+   |   |
+|   +-------------------+   |
++---------------------------+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+</body>
+</html>
