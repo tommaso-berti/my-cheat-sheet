@@ -361,7 +361,7 @@ max-height: 300px;</code></pre>
                         <p>To remove the element and its space entirely, use <strong>display: none;</strong>.</p>
                     </div>
                 </div>
-                <div id="css-box-model_diagram" class="card small span-three-column">
+                <div id="css-box-model_diagram" class="card small span-two-column">
                     <h3>Box Model: Visual Structure</h3>
                     <div class="content">
                         <p>The CSS box model consists of four main parts:</p>
@@ -389,6 +389,207 @@ max-height: 300px;</code></pre>
 |   |   +-----------+   |   |
 |   +-------------------+   |
 +---------------------------+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-flow">
+            <h1><a href="#css-flow" class="highlight-section">#</a> Flow of HTML</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-flow_position" class="card medium span-two-column">
+                    <h3>Position</h3>
+                    <div class="content">
+                        <p>Controls how an element is placed within the document flow.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">static</span>
+                                    <span class="code-definition">Default positioning; element is in normal flow.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">relative</span>
+                                    <span class="code-definition">Offsets the element from its original position without affecting others.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">absolute</span>
+                                    <span class="code-definition">Removed from normal flow and positioned relative to the closest non-static ancestor.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">fixed</span>
+                                    <span class="code-definition">Removed from flow and fixed to the viewport even when scrolling.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">sticky</span>
+                                    <span class="code-definition">Behaves like relative until a threshold is reached, then acts like fixed.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+<pre><code class="code">.green-box {
+  position: relative;
+  top: 50px;
+  left: 120px;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flow_z-index" class="card small">
+                    <h3>Z-Index</h3>
+                    <div class="content">
+                        <p>Controls the stack order of elements when overlapping. Only applies to positioned elements.</p>
+                        <div class="code-content">
+<pre><code class="code">.element {
+  position: absolute;
+  z-index: 10;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flow_display" class="card medium">
+                    <h3>Display</h3>
+                    <div class="content">
+                        <p>Defines how an element is displayed in the layout.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">block</span>
+                                    <span class="code-definition">Takes full width, starts on a new line. Width/height can be set.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">inline</span>
+                                    <span class="code-definition">Takes only the necessary space, stays in line. Width/height ignored.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">inline-block</span>
+                                    <span class="code-definition">Stays inline but accepts width and height. Useful for buttons or images.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+<pre><code class="code">h1 {
+  display: inline;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flow_float-clear" class="card small span-two-column">
+                    <h3>Float & Clear</h3>
+                    <div class="content">
+                        <p><strong>Float</strong> removes an element from normal flow and aligns it to the left or right. <strong>Clear</strong> prevents layout issues caused by floats.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">float: left/right</span>
+                                    <span class="code-definition">Moves the element to the left or right edge inside its container.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">clear: left/right/both</span>
+                                    <span class="code-definition">Prevents the element from sitting next to floated elements on that side.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+<pre><code class="code">div {
+  float: left;
+}
+
+div.special {
+  clear: left;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-fonts">
+            <h1><a href="#css-fonts" class="highlight-section">#</a> Fonts</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-fonts_web-link" class="card small">
+                    <h3>Web Fonts via &lt;link&gt;</h3>
+                    <div class="content">
+                        <p>You can include hosted fonts from services like <a href="https://fonts.google.com" target="_blank">Google Fonts</a> or <a href="https://fonts.adobe.com" target="_blank">Adobe Fonts</a> by adding a <strong>&lt;link&gt;</strong> tag inside the <strong>&lt;head&gt;</strong> of your HTML document.</p>
+                        <div class="code-content">
+<pre><code class="code">&lt;head&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap"
+        rel="stylesheet"&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-fonts_font-face" class="card medium span-two-column">
+                    <h3>@font-face</h3>
+                    <div class="content">
+                        <p>To use downloaded fonts, place the font files in your project folder and define a <strong>@font-face</strong> rule in your CSS.</p>
+                        <p>Recommended file formats (for compatibility):</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">.woff2</span>
+                                    <span class="code-definition">Optimized for web; small file size and good browser support.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">.woff</span>
+                                    <span class="code-definition">Web Open Font Format, supported by most modern browsers.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">.ttf</span>
+                                    <span class="code-definition">TrueType; older but widely supported format.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">.otf</span>
+                                    <span class="code-definition">OpenType; supports advanced typographic features.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>Place font files in a <strong>fonts</strong> folder, and define the rule at the top of your CSS file:</p>
+                        <div class="code-content">
+<pre><code class="code">@font-face {
+  font-family: 'MyParagraphFont';
+  src: url('fonts/Roboto.woff2') format('woff2'),
+       url('fonts/Roboto.woff') format('woff'),
+       url('fonts/Roboto.ttf') format('truetype');
+}</code></pre>
+                        </div>
+                        <p>The browser loads the first supported format. Font name can be custom and is used in <strong>font-family</strong> throughout the site.</p>
+                        <p>More info on usage and priority:
+                            <a href="https://css-tricks.com/snippets/css/using-font-face/" target="_blank">CSS-Tricks – Using @font-face</a>
+                        </p>
+                    </div>
+                </div>
+                <div id="css-fonts_stack" class="card small">
+                    <h3>Font Stacks & Fallbacks</h3>
+                    <div class="content">
+                        <p>Font stacks allow you to define fallbacks in case the preferred font isn’t available on the client’s device.</p>
+                        <div class="code-content">
+<pre><code class="code">h1 {
+  font-family: Caslon, Georgia, 'Times New Roman', serif;
+}</code></pre>
+                        </div>
+                        <p>Web-safe fonts are typically used as the last fallback option.</p>
+                    </div>
+                </div>
+                <div id="css-fonts_types" class="card small">
+                    <h3>Serif vs Sans-Serif</h3>
+                    <div class="content">
+                        <p><strong>Serif fonts</strong> have small decorative strokes at the ends of letters. Common examples: Times New Roman, Georgia, Caslon.</p>
+                        <p><strong>Sans-serif fonts</strong> are cleaner, without strokes. Common examples: Roboto, Arial, Helvetica.</p>
+                        <p>When choosing fonts, it's good practice to match the primary font with a similar fallback of the same type (serif or sans-serif) for consistent appearance.</p>
+                    </div>
+                </div>
+                <div id="css-fonts_weight" class="card small">
+                    <h3>Font Weight</h3>
+                    <div class="content">
+                        <p>Specifies how bold or light text appears. Can be keyword-based or numeric (100–900).</p>
+                        <p>Check which weights are available for the font you’re using.</p>
+                        <div class="code-content">
+<pre><code class="code">.left-section {
+  font-weight: 700;
+}
+
+.right-section {
+  font-weight: bold;
+}</code></pre>
                         </div>
                     </div>
                 </div>
