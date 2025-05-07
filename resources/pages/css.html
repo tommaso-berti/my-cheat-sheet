@@ -246,6 +246,9 @@ a:hover {
 }</code></pre>
                         </div>
                         <p>Using <strong>border-box</strong> includes padding and borders in width and height calculations.</p>
+                        <div class="image-content">
+                            <img src="/resources/medias/css/box-model.png" alt="box model visual graph">
+                        </div>
                     </div>
                 </div>
                 <div id="css-box-model_border-and-radius" class="card small span-two-column">
@@ -306,6 +309,9 @@ padding: 5px 10px;      /* top/bottom, left/right */</code></pre>
   width: 300px;
   margin: 0 auto;
 }</code></pre>
+                        </div>
+                        <div class="image-content medium">
+                            <img src="/resources/medias/css/margin-collapse.png" alt="margin collapse visual graph">
                         </div>
                     </div>
                 </div>
@@ -389,6 +395,25 @@ max-height: 300px;</code></pre>
 |   |   +-----------+   |   |
 |   +-------------------+   |
 +---------------------------+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-box-model_content-box" class="card small span-two-column">
+                    <h3>Box Model: content-box</h3>
+                    <div class="content">
+                        <p><strong>content-box</strong> is the default box-sizing model in CSS. The declared <strong>width</strong> and <strong>height</strong> apply only to the content. Padding and border are added outside these dimensions, increasing the total size of the element.</p>
+                        <div class="code-content">
+<pre><code class="code">div {
+  box-sizing: content-box; /* default */
+  width: 200px;
+  padding: 20px;
+  border: 2px solid black;
+}
+/* Final rendered width: 200 + 40 + 4 = 244px */</code></pre>
+                        </div>
+                        <p>To include padding and borders inside the element's total size, use <strong>box-sizing: border-box;</strong> instead.</p>
+                        <div class="image-content medium">
+                            <img src="/resources/medias/css/content-box.png" alt="content-box visual graph">
                         </div>
                     </div>
                 </div>
@@ -590,6 +615,61 @@ div.special {
 .right-section {
   font-weight: bold;
 }</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-colors">
+            <h1><a href="#css-colors" class="highlight-section">#</a> Colors</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-colors_hsl" class="card medium span-two-column">
+                    <h3>HSL</h3>
+                    <div class="content">
+                        <p><strong>HSL</strong> stands for Hue, Saturation, and Lightness. Syntax: <strong>hsl(hue, saturation%, lightness%)</strong></p>
+                        <p>HSL is useful for adjusting color shades easily without affecting other values, unlike RGB.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">Hue</span>
+                                    <span class="code-definition">Angle on a color wheel from 0 to 360 (e.g., 0 = red, 120 = green, 240 = blue).</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">Saturation</span>
+                                    <span class="code-definition">0% is gray, 100% is full color.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">Lightness</span>
+                                    <span class="code-definition">0% is black, 100% is white, 50% is normal color.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="code">color: hsl(120, 60%, 70%);</code></pre>
+                        </div>
+                        <div class="image-content medium">
+                            <img src="/resources/medias/css/css-colors-hsl.png" alt="HSL color wheel">
+                        </div>
+                    </div>
+                </div>
+                <div id="css-colors_hsla" class="card small">
+                    <h3>HSLA</h3>
+                    <div class="content">
+                        <p><strong>HSLA</strong> adds a fourth value: <strong>alpha</strong> (opacity) to the HSL model. Syntax: <strong>hsla(h, s%, l%, a)</strong></p>
+                        <p><strong>Alpha</strong> is a value between 0 (transparent) and 1 (opaque).</p>
+                        <div class="code-content">
+                            <pre><code class="code">color: hsla(34, 100%, 50%, 0.1);</code></pre>
+                        </div>
+                        <p>You can also use the keyword <strong>transparent</strong> for full transparency.</p>
+                    </div>
+                </div>
+                <div id="css-colors_rgba" class="card small">
+                    <h3>RGBA</h3>
+                    <div class="content">
+                        <p><strong>RGBA</strong> is the RGB color model with an added alpha (opacity) channel.</p>
+                        <p>The first three values define red, green, and blue. The fourth defines transparency.</p>
+                        <div class="code-content">
+                            <pre><code class="code">color: rgba(234, 45, 98, 0.33);</code></pre>
                         </div>
                     </div>
                 </div>
