@@ -675,6 +675,750 @@ div.special {
                 </div>
             </div>
         </section>
+        <section id="css-responsive-design">
+            <h1><a href="#css-responsive-design" class="highlight-section">#</a> Responsive Design</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-responsive-relative-measurements" class="card small">
+                    <h3>Relative Measurements</h3>
+                    <div class="content">
+                        <p>Use relative units like <strong>em</strong>, <strong>rem</strong>, and <strong>%</strong> to make layouts adapt to screen size.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">em</span><span class="code-definition">Relative to the element’s font-size or inherited font-size.</span></li>
+                                <li><span class="code-attribute">rem</span><span class="code-definition">Relative to the root element’s font-size (usually <strong>&lt;html&gt;</strong>).</span></li>
+                                <li><span class="code-attribute">%</span><span class="code-definition">Relative to the parent element’s dimension.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-percentage-padding-margin" class="card small">
+                    <h3>Percentage Padding & Margin</h3>
+                    <div class="content">
+                        <p>When used for <strong>padding</strong> and <strong>margin</strong>, percentages are calculated from the <strong>parent's width</strong>.</p>
+                    </div>
+                </div>
+                <div id="css-responsive-max-dimensions" class="card small">
+                    <h3>Max/Min Width & Height</h3>
+                    <div class="content">
+                        <p>Use <strong>min-width</strong>, <strong>max-width</strong>, <strong>min-height</strong>, and <strong>max-height</strong> to limit element size regardless of screen.</p>
+                    </div>
+                </div>
+                <div id="css-responsive-scaling-media" class="card small">
+                    <h3>Scaling Images and Videos</h3>
+                    <div class="content">
+                        <p>Use <strong>max-width: 100%</strong> and <strong>height: auto</strong> to scale media responsively inside containers.</p>
+                        <div class="code-content">
+<pre><code class="code">.container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-scaling-background" class="card small">
+                    <h3>Scaling Background Images</h3>
+                    <div class="content">
+                        <p>Use <strong>background-size: cover</strong> to scale background images responsively while maintaining proportion.</p>
+                        <div class="code-content">
+<pre><code class="code">body {
+  background-image: url('#');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-viewport-meta" class="card small">
+                    <h3>Viewport Meta Tag</h3>
+                    <div class="content">
+                        <p>Add this tag inside <strong>&lt;head&gt;</strong> to scale content correctly on mobile devices.</p>
+                        <div class="code-content">
+                            <pre><code class="code">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-media-query" class="card small">
+                    <h3>@media Queries</h3>
+                    <div class="content">
+                        <p>Apply CSS conditionally based on screen size, resolution, or orientation.</p>
+                        <div class="code-content">
+<pre><code class="code">@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-breakpoints" class="card small">
+                    <h3>Breakpoints</h3>
+                    <div class="content">
+                        <p>Set breakpoints based on natural layout breaking points rather than device sizes.</p>
+                        <div class="image-content">
+                            <img src="/resources/medias/css/screen-size-breakpoints.png" alt="Screen size breakpoints">
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-resolution-dpi" class="card small">
+                    <h3>DPI Targeting</h3>
+                    <div class="content">
+                        <p>Use <strong>min-resolution</strong> and <strong>max-resolution</strong> to apply styles for specific screen DPIs.</p>
+                        <div class="code-content">
+<pre><code class="code">@media only screen and (min-resolution: 300dpi) {
+  /* High-res styles */
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-media-operators" class="card small">
+                    <h3>Media Query Operators</h3>
+                    <div class="content">
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">and</span><span class="code-definition">All conditions must be true.</span></li>
+                                <li><span class="code-attribute">,</span><span class="code-definition">Any condition may be true.</span></li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+<pre><code class="code">@media only screen and (min-width: 480px), (orientation: landscape) {
+  /* Responsive styles */
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-responsive-viewport-units" class="card small span-two-column">
+                    <h3>Viewport Units</h3>
+                    <div class="content">
+                        <p>Viewport units allow elements to scale based on the size of the visible browser window.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">vw</span>
+                                    <span class="code-definition">1% of the viewport’s width. Useful for setting widths or font sizes that scale with the screen width.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">vh</span>
+                                    <span class="code-definition">1% of the viewport’s height. Commonly used for full-height sections or modals.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">vmin</span>
+                                    <span class="code-definition">1% of the smaller value between viewport height and width.</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">vmax</span>
+                                    <span class="code-definition">1% of the larger value between viewport height and width.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+      <pre><code class="code">.hero {
+  width: 100vw;
+  height: 100vh;
+  font-size: 5vmin;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-flexbox">
+            <h1><a href="#css-flexbox" class="highlight-section">#</a> Flexbox</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-flexbox-container" class="card small">
+                    <h3>Flex Container</h3>
+                    <div class="content">
+                        <p>To define a flex container, set <strong>display: flex</strong> or <strong>display: inline-flex</strong>. All direct children become flex items.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">display: flex</span><span class="code-definition">Creates a block-level flex container.</span></li>
+                                <li><span class="code-attribute">display: inline-flex</span><span class="code-definition">Creates an inline-level flex container.</span></li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+        <pre><code class="code">.container {
+  display: flex;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-justify-content" class="card small span-two-column">
+                    <h3>justify-content</h3>
+                    <div class="content">
+                        <p>Aligns items along the main axis (horizontal by default).</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">flex-start</span><span class="code-definition">Items align to the left.</span></li>
+                                <li><span class="code-attribute">flex-end</span><span class="code-definition">Items align to the right.</span></li>
+                                <li><span class="code-attribute">center</span><span class="code-definition">Items center in the container.</span></li>
+                                <li><span class="code-attribute">space-between</span><span class="code-definition">Equal spacing between items.</span></li>
+                                <li><span class="code-attribute">space-around</span><span class="code-definition">Equal spacing around items (half space on edges).</span></li>
+                                <li><span class="code-attribute">space-evenly</span><span class="code-definition">Equal spacing before, between, and after items.</span></li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+        <pre><code class="code">/* justify-content: space-between */
+[Item1]   [Item2]   [Item3]
+
+/* justify-content: space-around */
+ [Item1]  [Item2]  [Item3]
+
+/* justify-content: space-evenly */
+  [Item1]   [Item2]   [Item3]</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-align-items" class="card medium span-two-column">
+                    <h3>align-items</h3>
+                    <div class="content">
+                        <p>Aligns items along the cross axis (vertical by default).</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">flex-start</span><span class="code-definition">Top of container.</span></li>
+                                <li><span class="code-attribute">flex-end</span><span class="code-definition">Bottom of container.</span></li>
+                                <li><span class="code-attribute">center</span><span class="code-definition">Center vertically.</span></li>
+                                <li><span class="code-attribute">baseline</span><span class="code-definition">Align text baselines.</span></li>
+                                <li><span class="code-attribute">stretch</span><span class="code-definition">Stretches items to fill the container (default).</span></li>
+                            </ul>
+                        </div>
+                        <div class="code-content">
+        <pre><code class="code">/* align-items: center */
+|        |
+| Item1  |
+| Item2  |
+| Item3  |
+|        |</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-grow" class="card small">
+                    <h3>flex-grow</h3>
+                    <div class="content">
+                        <p>Controls how much a flex item grows relative to others.</p>
+                        <div class="code-content">
+        <pre><code class="code">.item1 { flex-grow: 1; }
+.item2 { flex-grow: 2; }
+
+/* Available space is distributed:
+   [Item1]      [Item2 Item2] */</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                            <p>Flex item</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-shrink" class="card small">
+                    <h3>flex-shrink</h3>
+                    <div class="content">
+                        <p>Defines how much a flex item shrinks when space is tight.</p>
+                        <div class="code-content">
+        <pre><code class="code">.item1 { flex-shrink: 1; }
+.item2 { flex-shrink: 2; }
+
+/* Item2 will shrink twice as fast as Item1 when necessary */</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                            <p>Flex item</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-basis" class="card small">
+                    <h3>flex-basis</h3>
+                    <div class="content">
+                        <p>Defines the initial main size of a flex item before grow/shrink.</p>
+                        <div class="code-content">
+        <pre><code class="code">.item {
+  flex-basis: 200px;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                            <p>Flex item</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex" class="card small">
+                    <h3>flex</h3>
+                    <div class="content">
+                        <p>Shorthand for <strong>flex-grow</strong>, <strong>flex-shrink</strong>, and <strong>flex-basis</strong>.</p>
+                        <div class="code-content">
+        <pre><code class="code">.item {
+  flex: 1 1 100px;
+}
+/* = flex-grow: 1, flex-shrink: 1, flex-basis: 100px */</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                            <p>Flex item</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-wrap" class="card small">
+                    <h3>flex-wrap</h3>
+                    <div class="content">
+                        <p>Specifies whether items wrap onto multiple lines.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">nowrap</span><span class="code-definition">Single line (default).</span></li>
+                                <li><span class="code-attribute">wrap</span><span class="code-definition">Wraps onto multiple lines.</span></li>
+                                <li><span class="code-attribute">wrap-reverse</span><span class="code-definition">Wraps in reverse order.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-align-content" class="card medium span-two-column">
+                    <h3>align-content</h3>
+                    <div class="content">
+                        <p>Aligns rows when there is extra vertical space.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">flex-start</span><span class="code-definition">Rows packed at the top.</span></li>
+                                <li><span class="code-attribute">flex-end</span><span class="code-definition">Rows packed at the bottom.</span></li>
+                                <li><span class="code-attribute">center</span><span class="code-definition">Rows centered vertically.</span></li>
+                                <li><span class="code-attribute">space-between</span><span class="code-definition">Equal spacing between rows.</span></li>
+                                <li><span class="code-attribute">space-around</span><span class="code-definition">Equal spacing around rows.</span></li>
+                                <li><span class="code-attribute">stretch</span><span class="code-definition">Rows stretch to fill container height.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-direction" class="card small">
+                    <h3>flex-direction</h3>
+                    <div class="content">
+                        <p>Defines the main axis direction in the flex container.</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">row</span><span class="code-definition">Left to right (default).</span></li>
+                                <li><span class="code-attribute">row-reverse</span><span class="code-definition">Right to left.</span></li>
+                                <li><span class="code-attribute">column</span><span class="code-definition">Top to bottom.</span></li>
+                                <li><span class="code-attribute">column-reverse</span><span class="code-definition">Bottom to top.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-flex-flow" class="card small">
+                    <h3>flex-flow</h3>
+                    <div class="content">
+                        <p>Shorthand for <strong>flex-direction</strong> and <strong>flex-wrap</strong>.</p>
+                        <div class="code-content">
+        <pre><code class="code">.container {
+  flex-flow: column wrap;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item">
+                            <i class="fa fa-tag" style="color: #ff803a;"></i>
+                            <p>Flex container</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-flexbox-nested" class="card small">
+                    <h3>Nested Flexboxes</h3>
+                    <div class="content">
+                        <p>Flex containers can be nested inside other flex items for complex layouts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="css-transitions">
+            <h1><a href="#css-transitions" class="highlight-section">#</a> Transitions</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-transition-property" class="card small">
+                    <h3>transition-property</h3>
+                    <div class="content">
+                        <p>Specifies which CSS property (or properties) should animate when changed. Accepts one or more comma-separated property names, or <strong>all</strong> to apply the same transition to every animatable property.</p>
+                        <div class="code-content">
+<pre><code class="code">/* Animate only background-color and font-size */
+a {
+  transition-property: background-color, font-size;
+}
+
+/* Animate all animatable properties */
+div {
+  transition-property: all;
+}</code></pre>
+                        </div>
+                        <p>See the full list of animatable properties on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank" rel="noopener noreferrer">MDN</a>.</p>
+                    </div>
+                </div>
+                <div id="css-transition-duration" class="card small">
+                    <h3>transition-duration</h3>
+                    <div class="content">
+                        <p>Sets how long the transition takes to complete. Required for a transition to occur. Units can be in <strong>s</strong> or <strong>ms</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">/* Background changes in 1.5 seconds */
+button {
+  transition-property: background-color;
+  transition-duration: 1.5s;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-timing-function" class="card medium">
+                    <h3>transition-timing-function</h3>
+                    <div class="content">
+                        <p>Controls how intermediate values are calculated for a transition. Common values:</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">ease</span><span class="code-definition">Starts slow, accelerates, then slows again (default).</span></li>
+                                <li><span class="code-attribute">linear</span><span class="code-definition">Constant speed from start to end.</span></li>
+                                <li><span class="code-attribute">ease-in</span><span class="code-definition">Starts slow and speeds up.</span></li>
+                                <li><span class="code-attribute">ease-out</span><span class="code-definition">Starts fast and slows down.</span></li>
+                                <li><span class="code-attribute">ease-in-out</span><span class="code-definition">Starts and ends slowly.</span></li>
+                            </ul>
+                        </div>
+                        <p>The full list of values is available at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function" target="_blank" rel="noopener noreferrer">MDN</a>.</p>
+                        <div class="code-content">
+<pre><code class="code">/* Smooth ease-out transition */
+.box {
+  transition: transform 1s ease-out;
+}
+
+/* Constant speed */
+p {
+  transition: color 1s linear;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-delay" class="card small">
+                    <h3>transition-delay</h3>
+                    <div class="content">
+                        <p>Delays the start of the transition by a specific time (e.g. <strong>300ms</strong>, <strong>1s</strong>).</p>
+                        <p>Default: <strong>0s</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">/* Wait 0.5s, then fade in */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  transition-delay: 0.5s;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-shorthand" class="card small">
+                    <h3>Shorthand: transition</h3>
+                    <div class="content">
+                        <p>Combines all properties in one line:</p>
+                        <p><strong>transition: property duration timing-function delay;</strong></p>
+                        <p><strong>Note:</strong> if <strong>delay</strong> is used, <strong>duration</strong> must be included first.</p>
+                        <div class="code-content">
+<pre><code class="code">/* One transition with full declaration */
+a {
+  transition: color 1s ease-out 0.2s;
+}
+
+/* Multiple transitions */
+div {
+  transition: background-color 1s, transform 0.5s ease-in-out;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-multiple" class="card small span-two-column">
+                    <h3>Multiple Transitions</h3>
+                    <div class="content">
+                        <p>You can define multiple transitions for different properties, each with its own duration, timing, and delay. Separate each group with a comma.</p>
+                        <div class="code-content">
+<pre><code class="code">/* Each property has its own timing settings */
+.button {
+  transition:
+    color 0.3s ease-in,
+    background-color 0.5s ease-out 0.2s,
+    transform 0.8s linear;
+}
+
+.button:hover {
+  color: white;
+  background-color: navy;
+  transform: translateY(-3px);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-all" class="card small">
+                    <h3>transition: all</h3>
+                    <div class="content">
+                        <p>Applies the same transition timing to all animatable properties of an element. Useful when you want consistency across several property changes.</p>
+                        <div class="code-content">
+<pre><code class="code">/* All properties will transition with the same speed/timing */
+.card {
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  background-color: lightblue;
+  transform: scale(1.05);
+  border-radius: 10px;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="css-transition-slide-fade" class="card small span-two-column">
+                    <h3>Slide-Down and Fade-In Effect</h3>
+                    <div class="content">
+                        <p>This effect makes an element smoothly slide down from above and fade into view when hovered. It uses <strong>top</strong> and <strong>opacity</strong> transitions together.</p>
+                        <div class="code-content">
+<pre><code class="code">.element {
+  position: fixed;          /* or absolute, depending on layout */
+  top: -100%;               /* Start above the viewport */
+  opacity: 0;               /* Invisible initially */
+  transition: top 0.5s ease-out, opacity 0.3s linear;
+}
+
+.element:hover {
+  top: 0;                   /* Slide into view */
+  opacity: 1;               /* Fade in */
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="buttons">
+            <h1><a href="#buttons" class="highlight-section">#</a> Buttons</h1>
+            <div class="cheatsheet-card-container">
+                <div id="buttons-skeuomorphic" class="card medium">
+                    <h3>Skeuomorphic Styling</h3>
+                    <div class="content">
+                        <p>Mimics real-life buttons with shadows and raised appearance to suggest interactivity.</p>
+                        <div class="code-content">
+<pre><code class="code">button {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  margin-top: 5px;
+  color: black;
+  box-shadow: 0px 0px;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttons-flat-design" class="card small">
+                    <h3>Flat Design</h3>
+                    <div class="content">
+                        <p>Uses 2D design without mimicking physical buttons. Relies on simple styling and clear text labels for clarity.</p>
+                    </div>
+                </div>
+                <div id="buttons-hover-states" class="card small">
+                    <h3>Hover States</h3>
+                    <div class="content">
+                        <p>All button parts should respond to <strong>:hover</strong> and behave consistently when clicked or hovered.</p>
+                    </div>
+                </div>
+                <div id="buttons-clickability-signifiers" class="card small span-two-column">
+                    <h3>Buttons: Clickability, Affordances & Signifiers</h3>
+                    <div class="content">
+                        <h4 class="subtitle">Clickability</h4>
+                        <p>Clicking is the core interaction on the web. Hypertext links established the web’s structure, and today users expect visual cues to indicate where clicks or taps will have an effect.</p>
+                        <h4 class="subtitle">Affordances</h4>
+                        <p>Affordances are the potential interactions an object offers. For example, a bench affords sitting; a web button affords clicking. Even if a designer didn’t intend some behaviors, they may still be possible (e.g. dragging a loose bench).</p>
+                        <h4 class="subtitle">Signifiers</h4>
+                        <p>Signifiers are the visual indicators that help users perceive possible actions. A button shape, underline, hover color, or cursor pointer are all examples. A teacup handle suggests where to hold it — that’s a signifier.</p>
+                        <h4 class="subtitle">UX Patterns</h4>
+                        <p>UX patterns reuse familiar signifiers to reduce learning curves. For example, clickable links are often blue and underlined. Cursor styles (like the hand or I-beam) also signal expected actions. Without proper signifiers, users may miss interactive elements entirely — especially on mobile where no cursor hover exists.</p>
+                        <h4 class="subtitle">Resources</h4>
+                        <p>See <strong>Signifiers, Not Affordances</strong> by Don Norman: https://jnd.org/signifiers-not-affordances/</p>
+                        <p>Explore more at <strong>UI Patterns</strong>: https://ui-patterns.com/</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="navigation-breadcrumb">
+            <h1><a href="#navigation-breadcrumb" class="highlight-section">#</a> Breadcrumb Navigation</h1>
+            <div class="cheatsheet-card-container">
+                <div id="breadcrumb-purpose" class="card small span-two-column">
+                    <h3>Breadcrumb Purpose</h3>
+                    <div class="content">
+                        <h4 class="subtitle">Why use breadcrumbs</h4>
+                        <p>Breadcrumbs help users understand their location in a site's hierarchy. They improve navigation and hint at the structure and scope of the site (e.g., <strong>Fashion &gt; Shoes</strong>).</p>
+                        <h4 class="subtitle">Design rules</h4>
+                        <p>Breadcrumbs are typically left-aligned, shown below the main navigation, and separated with symbols like <strong>&gt;</strong> or <strong>/</strong>. They take minimal space and should only be used when meaningful—avoid on flat sites or where primary navigation already covers all pages.</p>
+                        <h4 class="subtitle">Active page highlight</h4>
+                        <p>The current page in the breadcrumb trail is usually highlighted to provide clarity to the user.</p>
+                    </div>
+                </div>
+                <div id="breadcrumb-arrow-style" class="card tall">
+                    <h3>Arrow-style Breadcrumbs</h3>
+                    <div class="content">
+                        <p>Create breadcrumb arrows using <strong>::before</strong> and <strong>::after</strong> with border tricks:</p>
+                        <div class="code-content">
+          <pre><code class="code">.breadcrumb {
+  text-align: left;
+}
+.breadcrumb li {
+  float: left;
+}
+.breadcrumb a {
+  color: #fff;
+  background: darkcyan;
+  text-decoration: none;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 15px;
+  padding: 0 5px;
+}
+.breadcrumb a::before,
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  border-color: darkcyan;
+  border-style: solid;
+  border-width: 15px 5px;
+}
+.breadcrumb a::before {
+  left: -10px;
+  border-left-color: transparent;
+}
+.breadcrumb a::after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: darkcyan;
+}
+.breadcrumb a:hover {
+  background-color: blue;
+}
+.breadcrumb a:hover::before {
+  border-color: blue;
+  border-left-color: transparent;
+}
+.breadcrumb a:hover::after {
+  border-left-color: blue;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="breadcrumb-basic-style" class="card small">
+                    <h3>Basic Styling with ::before</h3>
+                    <div class="content">
+                        <p>Use <strong>::before</strong> to add a separator between adjacent list items:</p>
+                        <div class="code-content">
+          <pre><code class="code">.breadcrumb li+li::before {
+  padding: 10px;
+  content: ">";
+}</code></pre>
+                        </div>
+                        <p>This selects every <strong>li</strong> that directly follows another <strong>li</strong> and adds a <strong>&gt;</strong> before it.</p>
+                    </div>
+                </div>
+                <div id="breadcrumb-abbreviated" class="card small">
+                    <h3>Abbreviated Breadcrumbs</h3>
+                    <div class="content">
+                        <p>To save space, long breadcrumb trails can be abbreviated:</p>
+                        <p><strong>... &gt; About &gt; Register</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section id="utility">
+            <h1><a href="#utility" class="highlight-section">#</a> Utility</h1>
+            <div class="cheatsheet-card-container">
+                <div id="utility-image-formats" class="card small span-two-column">
+                    <h3>Image Formats</h3>
+                    <div class="content">
+                        <p>Common image file formats and their usage:</p>
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">JPEG</span><span class="code-definition">Highly compressible, preferred for images with significant detail.</span></li>
+                                <li><span class="code-attribute">PNG</span><span class="code-definition">Lossless, best for images like logos or graphics with fewer details.</span></li>
+                                <li><span class="code-attribute">SVG</span><span class="code-definition">Scalable Vector Graphics. Great for high-res screens, icons, and logos. Lighter and scalable.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="utility-favicon" class="card small">
+                    <h3>Favicon</h3>
+                    <div class="content">
+                        <p>Favicons are small icons shown in the browser tab. You can generate one using <a href="https://favicon-generator.org" target="_blank">favicon-generator.org</a>.</p>
+                        <p>Once created, save it in your project and link it in the <strong>&lt;head&gt;</strong>:</p>
+                        <div class="code-content">
+                            <pre><code class="code">&lt;link rel="icon" href="./&lt;favicon-name&gt;.ico" type="image/x-icon"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="utility-edit-images" class="card small">
+                    <h3>Edit and Crop Images</h3>
+                    <div class="content">
+                        <p>Use <a href="https://pixlr.com" target="_blank">Pixlr</a> to edit and crop images online quickly and for free.</p>
+                    </div>
+                </div>
+                <div id="utility-convert-svg" class="card small">
+                    <h3>Convert to SVG</h3>
+                    <div class="content">
+                        <p>To convert simple images to scalable SVG format, use <a href="https://image.online-convert.com/convert-to-svg" target="_blank">online-convert</a>.</p>
+                        <p>SVG files are ideal for high-resolution scaling and optimized performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 </main>
 </body>
