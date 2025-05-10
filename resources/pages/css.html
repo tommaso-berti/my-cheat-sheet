@@ -1369,15 +1369,202 @@ button:active {
                 </div>
             </div>
         </section>
-
-
-
-
-
-
-
-
-
+        <section id="css-grid">
+            <h1><a href="#css-grid" class="highlight-section">#</a> CSS Grid</h1>
+            <div class="cheatsheet-card-container">
+                <div id="css-grid_creating-grid" class="card small">
+                    <h3>Creating a Grid</h3>
+                    <div class="content">
+                        <p>To set up a grid, use a grid container and grid items. Set <strong>display: grid</strong> or <strong>display: inline-grid</strong> on the parent container.</p>
+                        <div class="code-content">
+<pre><code class="code">.container {
+  display: grid; /* or inline-grid */
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-template-columns-rows" class="card small">
+                    <h3>Creating Columns & Rows</h3>
+                    <div class="content">
+                        <p>Define columns with <strong>grid-template-columns</strong> and rows with <strong>grid-template-rows</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 100px 50% 20px;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-template" class="card small">
+                    <h3>grid-template</h3>
+                    <div class="content">
+                        <p>Combines row and column definitions in one shorthand property.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  grid-template: 200px 300px / 20% 10% 70%;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_fraction-unit" class="card small">
+                    <h3>Fractional Unit (fr)</h3>
+                    <div class="content">
+                        <p>The <strong>fr</strong> unit divides remaining space among tracks.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  grid-template-columns: 1fr 60px 1fr;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_repeat" class="card small">
+                    <h3>repeat()</h3>
+                    <div class="content">
+                        <p>Repeats column or row patterns.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  grid-template-columns: repeat(2, 20px 50px);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_minmax" class="card small">
+                    <h3>minmax()</h3>
+                    <div class="content">
+                        <p>Sets a min and max size for grid tracks.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  grid-template-columns: 100px minmax(100px, 500px) 100px;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_gap" class="card small">
+                    <h3>gap / row-gap / column-gap</h3>
+                    <div class="content">
+                        <p>Sets space between grid items using <strong>gap</strong>, or separately for rows and columns.</p>
+                        <div class="code-content">
+<pre><code class="code">.grid {
+  gap: 20px 10px; /* row-gap column-gap */
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-row-column-span" class="card small">
+                    <h3>Spanning Rows & Columns</h3>
+                    <div class="content">
+                        <p>Use <strong>grid-row</strong> and <strong>grid-column</strong> to make items span multiple tracks.</p>
+                        <div class="code-content">
+<pre><code class="code">.item {
+  grid-row: 1 / 3;
+  grid-column: 2 / span 2;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#FFD43B;"></i><p>Grid Item</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-area" class="card small">
+                    <h3>grid-area</h3>
+                    <div class="content">
+                        <p>Shorthand for <strong>grid-row-start / column-start / row-end / column-end</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">.item {
+  grid-area: 2 / 3 / 4 / span 5;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#FFD43B;"></i><p>Grid Item</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-template-areas" class="card small">
+                    <h3>grid-template-areas</h3>
+                    <div class="content">
+                        <p>Defines named areas of a grid layout and assigns items to them via <strong>grid-area</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">.container {
+  display: grid;
+  grid-template-areas: "header header"
+                       "nav nav"
+                       "info services"
+                       "footer footer";
+  grid-template-columns: 1fr 3fr;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#ff803a;"></i><p>Explicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-auto" class="card small">
+                    <h3>Implicit Grid & grid-auto</h3>
+                    <div class="content">
+                        <p>When content overflows the explicit grid, new rows/columns are created automatically. Use <strong>grid-auto-rows</strong> and <strong>grid-auto-columns</strong> to control their size.</p>
+                        <div class="code-content">
+<pre><code class="code">body {
+  display: grid;
+  grid: repeat(2, 100px) / repeat(2, 150px);
+  grid-auto-rows: 50px;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#8e44ad;"></i><p>Implicit Grid</p></div>
+                    </div>
+                </div>
+                <div id="css-grid_grid-auto-flow" class="card small">
+                    <h3>grid-auto-flow</h3>
+                    <div class="content">
+                        <p>Controls how auto-placed items are inserted: by row, column, or using dense packing.</p>
+                        <div class="code-content">
+<pre><code class="code">body {
+  display: grid;
+  gap: 5px;
+  grid: repeat(2, 100px) / repeat(2, 150px);
+  grid-auto-rows: 45px;
+  grid-auto-columns: 65px;
+  grid-auto-flow: column;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#4fc3f7;"></i><p>Grid Container</p></div>
+                        <div class="tag-item"><i class="fa fa-tag" style="color:#8e44ad;"></i><p>Implicit Grid</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="utility">
             <h1><a href="#utility" class="highlight-section">#</a> Utility</h1>
             <div class="cheatsheet-card-container">
