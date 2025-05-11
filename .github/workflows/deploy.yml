@@ -17,7 +17,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.VPS_HOST }}
-          username: tommaso
+          username: website_deployer
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /srv/www/sites/my-cheat-sheet/public
