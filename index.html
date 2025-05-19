@@ -94,5 +94,72 @@
         </div>
     </section>
 </main>
+<script>
+    // Add this JavaScript to your page
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all section headers
+  const sectionHeaders = document.querySelectorAll('section > h1, section > h2');
+  
+  // Process each header
+  sectionHeaders.forEach(header => {
+    // Create the section header container
+    const headerContainer = document.createElement('div');
+    headerContainer.className = 'section-header';
+    
+    // Get the parent section
+    const section = header.parentNode;
+    
+    // Get the section ID or create one if it doesn't exist
+    if (!section.id) {
+      section.id = 'section-' + header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+    }
+    
+    // Create the # link
+    const link = document.createElement('a');
+    link.href = '#' + section.id;
+    link.className = 'section-link';
+    link.textContent = '#';
+    
+    // Add click event to highlight the section
+    link.addEventListener('click', function(e) {
+      // Remove highlight from all sections
+      document.querySelectorAll('section').forEach(s => {
+        s.classList.remove('section-highlight');
+      });
+      
+      // Add highlight to this section
+      section.classList.add('section-highlight');
+      
+      // Update URL hash without scrolling
+      history.pushState(null, null, this.getAttribute('href'));
+      e.preventDefault();
+      
+      // Remove highlight after 5 seconds
+      setTimeout(() => {
+        section.classList.remove('section-highlight');
+      }, 5000);
+    });
+    
+    // Replace the header with our container
+    section.insertBefore(headerContainer, header);
+    headerContainer.appendChild(header);
+    headerContainer.appendChild(link);
+  });
+  
+  // Check if URL has a hash on page load
+  if (window.location.hash) {
+    const targetSection = document.querySelector(window.location.hash);
+    if (targetSection) {
+      targetSection.classList.add('section-highlight');
+      
+      // Remove highlight after 5 seconds
+      setTimeout(() => {
+        targetSection.classList.remove('section-highlight');
+      }, 5000);
+    }
+  }
+});
+</script>
 </body>
 </html>

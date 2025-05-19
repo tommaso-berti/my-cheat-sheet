@@ -1,228 +1,364 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Light", sans-serif;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Light", sans-serif;
+  color: white;
 }
 
 body {
-    height: auto;
-    background-color: #0f172a;
+  height: auto;
+  background-color: #0f172a;
+  max-width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
     max-width: 60rem;
-    margin: 0 auto;
+  }
 }
 
 header {
-    width: 90rem;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .header-title {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header-title {
     padding: 2rem;
+  }
 }
 
 .header-title a {
-    display:flex;
-    justify-content: center;
-    text-decoration: none;
-    height: 100%;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+  align-items: center;
 }
 
 .header-title h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .header-title h1 {
     font-size: xx-large;
-    font-weight: normal;
-    text-align: left;
+  }
 }
 
 .header-title img {
+  width: 2rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .header-title img {
     width: 3rem;
-    height: auto;
+  }
 }
 
 #introduction {
-    text-align: center;
+  text-align: center;
+  line-height: 1.8rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  #introduction {
     line-height: 3rem;
-    margin: 4rem 0
+    margin: 4rem 0;
+  }
 }
 
 #introduction > h2 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  #introduction > h2 {
     font-size: xxx-large;
+  }
 }
 
 #introduction > p {
-    font-weight: lighter;
+  font-weight: lighter;
+  font-size: 1rem;
+  color: #94a3b8;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  #introduction > p {
     font-size: larger;
-    color: #94a3b8
+  }
 }
 
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .grid-container {
-    padding: 1rem;
-    border-radius: 1.5rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
 }
 
 .grid-container > h2 {
-    padding-bottom: 1rem;
-    border-bottom: solid 1px white;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px white;
+  font-size: large;
+}
+
+@media (min-width: 768px) {
+  .grid-container > h2 {
     font-size: x-large;
+  }
 }
 
 .grid-container > h3 {
-    padding-bottom: 1rem;
-    border-bottom: solid 1px lightgrey;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px lightgrey;
 }
 
 .grid {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .grid {
     justify-content: flex-start;
-    margin: 2rem 0;
     gap: 2rem;
-    flex-wrap: wrap;
+  }
 }
 
 .button {
-    display: flex;
+  display: flex;
+  min-width: calc((100% - 1rem) / 2);
+  flex-basis: calc((100% - 1rem) / 2);
+  height: 4rem;
+  border-radius: 0.5rem;
+  background-color: lightgrey;
+  align-items: center;
+  padding: 0.75rem;
+  justify-content: left;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .button {
+    min-width: calc((100% - 2rem) / 3);
+    flex-basis: calc((100% - 2rem) / 3);
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button {
     min-width: calc((100% - 6rem) / 4);
     flex-basis: calc((100% - 6rem) / 4);
-    height: 4rem;
-    border-radius: 0.5rem;
-    background-color: lightgrey;
-    align-items: center;
-    padding: 1rem;
-    justify-content: left;
     gap: 1rem;
-    text-decoration: none;
+  }
 }
 
 .button p {
-    width: 75%;
-    height: auto;
+  width: 75%;
+  height: auto;
+  font-size: 0.9rem;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .button p {
     font-size: 1.1rem;
-    color: black;
+  }
 }
 
 .button img {
-    width: 20%;
-    height: auto;
+  width: 20%;
+  height: auto;
+  max-width: 2rem;
 }
 
+/* Button color styles remain unchanged */
 .html-button {
-    background-color: #FFB38E;
+  background-color: #ffb38e;
 }
 
 .html-button:hover {
-    background-color: #ff803a;
+  background-color: #ff803a;
 }
 
 .css-button {
-    background-color: #FFD166;
+  background-color: #ffd166;
 }
 
 .css-button:hover {
-    background-color: #FFB300;
+  background-color: #ffb300;
 }
 
 .javascript-button {
-    background-color: #06D6A0;
+  background-color: #06d6a0;
 }
 
 .javascript-button:hover {
-    background-color: #00FF7F;
+  background-color: #00ff7f;
 }
 
 .node-button {
-    background-color: #118AB2;
+  background-color: #118ab2;
 }
 
 .node-button:hover {
-    background-color: #00BFFF;
+  background-color: #00bfff;
 }
 
 .node-button img {
-    width: 25%;
+  width: 25%;
 }
 
 .bash-button {
-    background-color: rgb(103, 103, 103);
+  background-color: rgb(103, 103, 103);
 }
 
 .bash-button:hover {
-    background-color: #A9A9A9;
+  background-color: #a9a9a9;
 }
 
 .bash-button img {
-    width: 25%;
+  width: 25%;
 }
 
 .git-button {
-    background-color: #FFB3BA;
+  background-color: #ffb3ba;
 }
 
 .git-button:hover {
-    background-color: #ff735b;
+  background-color: #ff735b;
 }
 
 .ssh-button {
-    background-color: #FFB3BA;
+  background-color: #ffb3ba;
 }
 
 .ssh-button:hover {
-    background-color: #ff7e66;
+  background-color: #ff7e66;
 }
 
 .ssh-button img {
-    width: 25%;
+  width: 25%;
 }
 
 .ubuntu-button {
-    background-color: #A0E7E5;
+  background-color: #a0e7e5;
 }
 
 .ubuntu-button:hover {
-    background-color: #40E0D0;
+  background-color: #40e0d0;
 }
 
 .vps-button {
-    background-color: #118AB2;
+  background-color: #118ab2;
 }
 
 .vps-button:hover {
-    background-color: #00BFFF;
+  background-color: #00bfff;
 }
 
 .vps-button img {
-    width: 25%;
+  width: 25%;
 }
 
 .github-button {
-    background-color: darkgrey;
+  background-color: darkgrey;
 }
 
 .github-button:hover {
-    background-color: grey;
+  background-color: grey;
 }
 
 .mongodb-button {
-    background-color: limegreen;
+  background-color: limegreen;
 }
 
 .mongodb-button:hover {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
 
 .a11y-button {
-    background-color: #FFB3BA;
+  background-color: #ffb3ba;
 }
 
 .a11y-button:hover {
-    background-color: #ff7e66;
+  background-color: #ff7e66;
+}
+/* Style for the # button */
+.section-link {
+  color: #94a3b8;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
+.section-link:hover {
+  opacity: 1;
+  color: limegreen;
+}
+
+@media (min-width: 768px) {
+  .section-link {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Style for the highlighted section */
+.section-highlight {
+  border: 2px solid limegreen;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Animation for highlighting */
+@keyframes pulse-highlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(50, 205, 50, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(50, 205, 50, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(50, 205, 50, 0);
+  }
+}
+
+.section-highlight {
+  animation: pulse-highlight 1.5s ease-out 1;
+}
