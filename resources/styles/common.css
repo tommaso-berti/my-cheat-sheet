@@ -85,6 +85,7 @@ strong {
 
 section {
     margin-bottom: 4rem;
+    padding: 0 1rem 1rem;
 }
 
 section > h1 {
@@ -103,6 +104,15 @@ section > h1 {
 
 .highlight-section:hover {
     color:lime;
+}
+
+section.active-highlight {
+    outline: 2px solid limegreen;
+    transition: outline 3s ease;
+}
+
+section.active-highlight-fade {
+    outline-color: transparent;
 }
 
 section > h2 {
