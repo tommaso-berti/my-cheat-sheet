@@ -226,3 +226,10 @@ section {
     background-color: #ff7e66;
 }
 
+.mocha-button {
+    background-color: #FFB3BA;
+}
+
+.mocha-button:hover {
+    background-color: #ff7e66;
+}

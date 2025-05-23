@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mocha - cheatsheet</title>
+  <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="../scripts/scripts.js" async></script>
+</head>
+<body>
+<header class="header-title">
+  <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1>My cheatsheet</h1></a>
+</header>
+<main>
+  <section class="introduction-container">
+    <div id="introduction">
+      <h2><span style="font-weight: normal">Mocha</span> <span style="font-weight: lighter; color: #94a3b8">cheatsheet</span></h2>
+      <p>This is a quick reference cheat sheet for understanding and writing A11Y files.</p>
+    </div>
+  </section>
+  <section class="main-container">
+    <section id="testing-automated">
+      <h1><a href="#testing-automated" class="highlight-section">#</a> Automated Testing</h1>
+      <div class="cheatsheet-card-container">
+        <div id="testing-automated_overview" class="card small span-two-column">
+          <h3>Automated Testing: Overview</h3>
+          <div class="content">
+            <p>Automated testing replaces repetitive manual testing with code-driven tests. It is:</p>
+            <div class="list-content">
+              <ul>
+                <li><strong>Faster:</strong> Covers more in less time.</li>
+                <li><strong>More reliable:</strong> Less prone to human error.</li>
+                <li><strong>Maintainable:</strong> Easily reviewed and extended.</li>
+              </ul>
+            </div>
+            <p>Tests are written in code, like the rest of the application. They live alongside <strong>implementation code</strong> and are often updated together. Example: <span class="code-attribute">index.js</span> and <span class="code-attribute">index-test.js</span>.</p>
+            <p>Tests can also serve as documentation: human-readable, but also machine-executable for validation.</p>
+          </div>
+        </div>
+        <div id="testing-automated_example" class="card small">
+          <h3>Testing Example</h3>
+          <div class="content">
+            <p>This example from the Cake Bar app tests the "name" functionality:</p>
+            <div class="code-content">
+<pre><code class="code">it('accepts the customer name', () =&gt; {
+  const name = 'Hungry Person';
+
+  browser.url('/');
+  browser.setValue('#name', name);
+  browser.click('#submit-order');
+  browser.url('/');
+
+  assert.include(browser.getText('#deliver-to'), name);
+});</code></pre>
+            </div>
+          </div>
+        </div>
+        <div id="testing-automated_regression" class="card small">
+          <h3>Regression</h3>
+          <div class="content">
+            <p>Regression occurs when a new feature breaks a previously working feature. Automated tests help catch regressions early and prevent unintended consequences.</p>
+          </div>
+        </div>
+        <div id="testing-automated_types" class="card medium span-two-column">
+          <h3>Types of Testing</h3>
+          <div class="content">
+            <div class="image-content medium">
+              <img src="/resources/medias/mocha/testing-types.png" alt="Types of testing">
+            </div>
+            <p>Main test types during development include:</p>
+            <h4 class="subtitle">Unit Tests</h4>
+            <p>Tests the smallest pieces of code (e.g., functions) in isolation. Use <strong>mock</strong> data for dependencies. Example: converting temperatures or formatting API data in a weather app.</p>
+            <h4 class="subtitle">Integration Tests</h4>
+            <p>Tests how multiple units work together. Data from external services is mocked, but the integration logic is tested. Example: handling API responses and errors in a weather app.</p>
+            <h4 class="subtitle">End to End Tests</h4>
+            <p>Tests the full application flow from the user perspective. Uses real APIs and databases. Example: a user searches a city, toggles temperature units, and interacts with UI elements.</p>
+          </div>
+        </div>
+        <div id="testing-automated_feedback-loop" class="card small">
+          <h3>Developer Feedback Loop</h3>
+          <div class="content">
+            <div class="numbered-list-content">
+              <ol>
+                <li>Make code changes</li>
+                <li>Create pull request</li>
+                <li>Run unit/integration/e2e tests</li>
+                <li>Fix failing tests locally</li>
+                <li>Repeat until all pass</li>
+                <li>Merge when ready</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div id="testing-automated_methodologies" class="card medium span-two-column">
+          <h3>Testing Methodologies</h3>
+          <div class="content">
+            <p>Some software testing practices focus on writing tests <strong>before</strong> the actual implementation code. These include:</p>
+            <h4 class="subtitle">Test-Driven Development (TDD)</h4>
+            <p>TDD encourages writing tests before writing the functional code. This methodology ensures clarity, minimal code, and testability from the start.</p>
+            <div class="list-content">
+              <ul>
+                <li>Clarifies requirements early</li>
+                <li>Prevents unnecessary code</li>
+                <li>Reduces development scope</li>
+                <li>Promotes testable code</li>
+              </ul>
+            </div>
+            <h4 class="subtitle">Behavior-Driven Development (BDD)</h4>
+            <p>BDD builds upon TDD but focuses on features rather than individual units. Tests are written in a language understandable by all stakeholders and validate application behavior from a user’s perspective.</p>
+            <h4 class="subtitle">Specification by Example (SBE)</h4>
+            <p>SBE uses concrete, real-world examples to define how software should behave. These examples guide both development and testing efforts and ensure shared understanding.</p>
+            <h4 class="subtitle">Acceptance Test-Driven Development (ATDD)</h4>
+            <p>ATDD involves collaboration between developers, testers, and business users to define acceptance criteria before development. These criteria are then turned into automated acceptance tests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="testing-coverage-mocking">
+      <h1><a href="#testing-coverage-mocking" class="highlight-section">#</a> Code Coverage & Mocking</h1>
+      <div class="cheatsheet-card-container">
+        <div id="testing-coverage-mocking_code-coverage" class="card medium span-two-column">
+          <h3>Code Coverage</h3>
+          <div class="content">
+            <p>Code coverage measures how much of your application’s code is executed during testing. Expressed as a percentage, it helps gauge test completeness.</p>
+            <h4 class="subtitle">Coverage Criteria</h4>
+            <div class="definition-content">
+              <ul>
+                <li><span class="code-attribute">Function Coverage</span><span class="code-definition">Checks if every function has been invoked.</span></li>
+                <li><span class="code-attribute">Statement Coverage</span><span class="code-definition">Verifies execution of every line or statement.</span></li>
+                <li><span class="code-attribute">Path Coverage</span><span class="code-definition">Ensures every branch or control-flow path is executed.</span></li>
+                <li><span class="code-attribute">Condition Coverage</span><span class="code-definition">Checks each boolean sub-expression for both true and false evaluations.</span></li>
+              </ul>
+            </div>
+
+            <h4 class="subtitle">Example</h4>
+            <div class="code-content"><pre><code class="code">function numSum(x, y) {
+  if (x && y) {
+    return (x + y);
+  } else {
+    return null;
+  }
+}</code></pre></div>
+            <div class="list-content">
+              <ul>
+                <li><strong>Function Coverage:</strong> numSum(1, 2)</li>
+                <li><strong>Statement/Path Coverage:</strong> Add numSum(1, false)</li>
+                <li><strong>Condition Coverage:</strong> Add numSum(false, 1)and numSum()</li>
+              </ul>
+            </div>
+
+            <p>100% code coverage doesn't mean the code is bug-free — it only shows that the code was exercised. Tests must still target both expected and edge cases for robustness.</p>
+          </div>
+        </div>
+        <div id="testing-coverage-mocking_test-coverage" class="card small">
+          <h3>Test Coverage</h3>
+          <div class="content">
+            <p>Test coverage measures how many of the required features or specs are covered by tests, based on a requirements document (not lines of code).</p>
+            <p>Example: If an app must work on Android and iOS but not browsers, tests for Android and iOS are required to meet coverage goals, not browser tests.</p>
+            <p><strong>Summary:</strong></p>
+            <div class="definition-content">
+              <ul>
+                <li><span class="code-attribute">Code Coverage</span><span class="code-definition">Percentage of lines executed during tests.</span></li>
+                <li><span class="code-attribute">Test Coverage</span><span class="code-definition">Percentage of required features/specs tested.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="testing-coverage-mocking_mocking-overview" class="card small">
+          <h3>Mocking Overview</h3>
+          <div class="content">
+            <p>Mocking creates fake versions of external services (like APIs, DBs) to isolate what you’re testing. Useful for <strong>unit</strong> and sometimes <strong>integration</strong> tests.</p>
+          </div>
+        </div>
+        <div id="testing-coverage-mocking_mocking-unit" class="card medium">
+          <h3>Mocking in Unit Tests</h3>
+          <div class="content">
+            <p>In unit tests, mocking eliminates dependencies and isolates the feature under test.</p>
+            <div class="image-content">
+              <img src="/resources/medias/mocha/mocking.jpg" alt="Mocking in unit tests">
+            </div>
+            <p><strong>Example (Blog App):</strong></p>
+            <div class="list-content">
+              <ul>
+                <li>Step 1: Fetch profile data (DB)</li>
+                <li>Step 2: Format data</li>
+                <li>Step 3: Render data</li>
+              </ul>
+            </div>
+            <p>To test step 3, mock formatted data from step 2 and skip database calls. You can also mock error conditions to test failure behavior.</p>
+          </div>
+        </div>
+        <div id="testing-coverage-mocking_mocking-integration" class="card small">
+          <h3>Mocking in Integration Tests</h3>
+          <div class="content">
+            <p>In integration tests, <strong>internal services should not be mocked</strong> to test how they interact, but <strong>external services should remain mocked</strong>.</p>
+            <p><strong>Example (Blog App):</strong> Test formatting and rendering of data together, but still mock incoming raw data from the database.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="mocha">
+      <h1><a href="#mocha" class="highlight-section">#</a> Mocha</h1>
+      <div class="cheatsheet-card-container">
+        <div id="mocha_installation" class="card medium span-two-column">
+          <h3>Install Mocha</h3>
+          <div class="content">
+            <p>To use <a href="https://mochajs.org/#getting-started" target="_blank">Mocha</a>, set up a JavaScript project with Node.js and npm.</p>
+            <div class="list-content">
+              <ul>
+                <li><strong>Node:</strong> Runs JavaScript in terminal.</li>
+                <li><strong>npm:</strong> Installs and manages packages.</li>
+                <li><strong>Mocha:</strong> JavaScript testing framework.</li>
+              </ul>
+            </div>
+            <p>Start a project:</p>
+            <div class="code-content"><pre><code class="code">$ npm init</code></pre></div>
+            <p>Then install Mocha as a development dependency:</p>
+            <div class="code-content"><pre><code class="code">$ npm install mocha -D</code></pre></div>
+            <p>Project structure after install:</p>
+            <div class="code-content"><pre><code class="code">project/
+├── node_modules/
+│   └── mocha/
+├── package.json</code></pre></div>
+          </div>
+        </div>
+        <div id="mocha_run" class="card small">
+          <h3>Run Mocha</h3>
+          <div class="content">
+            <p><strong>Recommended:</strong> Add a script in <strong>package.json</strong>:</p>
+            <div class="code-content"><pre><code class="code">"scripts": {
+  "test": "mocha"
+}</code></pre></div>
+            <p>Then run:</p>
+            <div class="code-content"><pre><code class="code">$ npm test</code></pre></div>
+          </div>
+        </div>
+        <div id="mocha-tdd_assertion-library" class="card small">
+          <h3>Assertion Libraries</h3>
+          <div class="content">
+            <p>While Mocha does not include an assertion library, you can use libraries like <a href="https://www.chaijs.com/guide/styles/" target="_blank">Chai</a> for expressive syntax.</p>
+            <div class="definition-content">
+              <ul>
+                <li><span class="code-attribute">assert</span><span class="code-definition">Classic Node-style assertions.</span></li>
+                <li><span class="code-attribute">expect</span><span class="code-definition">BDD-style, chainable assertions (recommended).</span></li>
+                <li><span class="code-attribute">should</span><span class="code-definition">Extends Object.prototype with testable methods.</span></li>
+              </ul>
+            </div>
+            <p>Install via:</p>
+            <div class="code-content"><pre><code class="code">$ npm install chai --save-dev</code></pre></div>
+          </div>
+        </div>
+        <div id="mocha_assert" class="card tall">
+          <h3>Assertions with assert</h3>
+          <div class="content">
+            <p>Import <strong>assert</strong> module:</p>
+            <div class="code-content"><pre><code class="code">const assert = require('assert');</code></pre></div>
+            <h4 class="subtitle">assert.ok()</h4>
+            <p>Asserts a value is truthy.</p>
+            <div class="code-content"><pre><code class="code">assert.ok(a === 3);</code></pre></div>
+            <h4 class="subtitle">assert.equal()</h4>
+            <p>Uses loose equality <strong>==</strong>.</p>
+            <div class="code-content"><pre><code class="code">assert.equal(3, '3'); // true</code></pre></div>
+            <h4 class="subtitle">assert.strictEqual()</h4>
+            <p>Uses strict equality <strong>===</strong>.</p>
+            <div class="code-content"><pre><code class="code">assert.strictEqual(3, '3'); // false</code></pre></div>
+            <h4 class="subtitle">assert.deepStrictEqual()</h4>
+            <p>Compares nested objects/arrays with strict equality.</p>
+            <div class="code-content"><pre><code class="code">const a = { x: 1 }, b = { x: 1 };
+assert.deepStrictEqual(a, b); // true</code></pre></div>
+            <h4 class="subtitle">assert.notStrictEqual()</h4>
+            <p>Asserts that two values are not strictly equal (<code>!==</code>).</p>
+            <div class="code-content"><pre><code class="code">const x = 5;
+const y = '5';
+assert.notStrictEqual(x, y); // passes, because 5 !== '5'</code></pre></div>
+            <h4 class="subtitle">assert.throws()</h4>
+            <p>Verifies that a function throws an error.</p>
+            <div class="code-content"><pre><code class="code">function divideByZero() {
+  throw new Error('Cannot divide by zero');
+}
+
+assert.throws(
+  divideByZero,
+  /divide by zero/ // Optional: regex to test error message
+);</code></pre></div>
+            <p>See <a href="https://nodejs.org/api/assert.html" target="_blank">Node.js assert docs</a> for all methods.</p>
+          </div>
+        </div>
+        <div id="mocha_describe-it" class="card small span-two-column">
+          <h3>describe &amp; it</h3>
+          <div class="content">
+            <p>Mocha uses <span class="code-attribute">describe()</span> to group tests and <span class="code-attribute">it()</span> to define individual test cases.</p>
+            <div class="code-content"><pre><code class="code">describe('Math', () =&gt; {
+  describe('.max', () =&gt; {
+    it('returns the highest value', () =&gt; {
+      // Test logic
+    });
+    it('returns -Infinity with no args', () =&gt; {
+      // Test logic
+    });
+  });
+});</code></pre></div>
+            <p>Use nested <strong>describe()</strong> blocks for structure and clarity.</p>
+          </div>
+        </div>
+        <div id="mocha_structure" class="card small">
+          <h3>Test Structure</h3>
+          <div class="content">
+            <p>Follow the 3-phase pattern:</p>
+            <div class="list-content">
+              <ul>
+                <li><strong>Setup:</strong> Create objects, variables, etc.</li>
+                <li><strong>Exercise:</strong> Run the code you’re testing.</li>
+                <li><strong>Verify:</strong> Use assertions to confirm behavior.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="mocha_teardown" class="card small">
+          <h3>Teardown</h3>
+          <div class="content">
+            <p>To isolate tests, restore environment changes (files, DB, etc.). This avoids inter-test interference and allows tests to run in any order.</p>
+          </div>
+        </div>
+        <div id="mocha_hooks" class="card small span-two-column">
+          <h3>Hooks</h3>
+          <div class="content">
+            <p>Mocha provides <strong>hooks</strong> to execute logic before and after tests. These are useful for shared setup and teardown tasks.</p>
+            <div class="definition-content">
+              <ul>
+                <li>
+                  <span class="code-attribute">before(callback)</span>
+                  <span class="code-definition">Runs once before all tests in the suite.</span>
+                </li>
+                <li>
+                  <span class="code-attribute">after(callback)</span>
+                  <span class="code-definition">Runs once after all tests in the suite.</span>
+                </li>
+                <li>
+                  <span class="code-attribute">beforeEach(callback)</span>
+                  <span class="code-definition">Runs before each individual test.</span>
+                </li>
+                <li>
+                  <span class="code-attribute">afterEach(callback)</span>
+                  <span class="code-definition">Runs after each individual test.</span>
+                </li>
+              </ul>
+            </div>
+            <h4 class="subtitle">Example</h4>
+            <div class="code-content"><pre><code class="code">describe('hooks demo', () =&gt; {
+  let testValue;
+
+  beforeEach(() =&gt; {
+    testValue = 5;
+  });
+
+  it('adds', () =&gt; {
+    testValue += 5;
+    assert.equal(testValue, 10);
+  });
+
+  it('multiplies', () =&gt; {
+    testValue *= 5;
+    assert.equal(testValue, 25);
+  });
+});</code></pre></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="mocha-tdd">
+      <h1><a href="#mocha-tdd" class="highlight-section">#</a> TDD with Mocha</h1>
+      <div class="cheatsheet-card-container">
+        <div id="mocha-tdd_overview" class="card small span-two-column">
+          <h3>Test-Driven Development (TDD)</h3>
+          <div class="content">
+            <p>TDD is a technique where tests are written <strong>before</strong> implementation. The test defines the expected behavior, and failure messages guide the implementation.</p>
+            <p>The process is designed to drive development through tight feedback loops, ensuring clear, testable design from the start.</p>
+          </div>
+        </div>
+        <div id="mocha-tdd_red-green-refactor" class="card medium span-two-column">
+          <h3>The Red-Green-Refactor Cycle</h3>
+          <div class="content">
+            <div class="image-content">
+              <img src="/resources/medias/mocha/tdd.jpg" alt="The Red-Green-Refactor Cycle">
+            </div>
+            <p>This is the core iterative cycle of TDD, using test color output to guide development:</p>
+            <h4 class="subtitle">Red</h4>
+            <p>Write a failing test based on desired behavior. Don’t worry about the implementation yet. Running the test should produce a red (failing) result — this confirms the test is valid and not a false positive.</p>
+            <h4 class="subtitle">Green</h4>
+            <p>Write the simplest code possible to make the test pass. Focus only on the error message. The goal is to go from red to green with minimal code, not perfect code.</p>
+            <h4 class="subtitle">Refactor</h4>
+            <p>Once the test passes, clean up the implementation and test code. Remove duplication and improve structure, while ensuring tests continue to pass.</p>
+            <p>Treat your test suite with the same care as production code — it should be maintainable and trustworthy.</p>
+          </div>
+        </div>
+        <div id="mocha-tdd_example-cycle" class="card small">
+          <h3>TDD Cycle Example</h3>
+          <div class="content">
+            <div class="code-content"><pre><code class="code">const assert = require('assert');
+function add(a, b) {
+  return a + b;
+}
+
+describe('add()', () =&gt; {
+  it('should return 5 when 2 and 3 are passed', () =&gt; {
+    assert.strictEqual(add(2, 3), 5);
+  });
+});</code></pre></div>
+            <p>❶ Write the test → ❷ Watch it fail → ❸ Implement code → ❹ Watch it pass → ❺ Refactor if needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sinon-spies">
+      <h1><a href="#sinon-spies" class="highlight-section">#</a> Spies with Sinon</h1>
+      <div class="cheatsheet-card-container">
+
+        <div id="sinon-spies_overview" class="card small">
+          <h3>What is a Spy?</h3>
+          <div class="content">
+            <p>A <strong>spy</strong> observes and records how a function is used: its arguments, return values, context (<strong>this</strong>), and exceptions. This info is then used in test assertions.</p>
+            <p><a href="https://sinonjs.org/" target="_blank">Sinon.js</a> is a standalone JavaScript library offering fakes, spies, and mocks that work with any test framework.</p>
+            <p>See the full <a href="https://sinonjs.org/releases/latest/spies/" target="_blank">Sinon spies documentation</a> for more details.</p>
+          </div>
+        </div>
+
+        <div id="sinon-spies_usage" class="card small">
+          <h3>How to Spy</h3>
+          <div class="content">
+            <p>Spies can wrap existing methods or act as anonymous functions. We’ll focus on the most common use case: wrapping methods to observe their usage during testing.</p>
+            <p>Think of a spy like a wiretap on a function — it records every interaction without interfering with execution.</p>
+          </div>
+        </div>
+
+        <div id="sinon-spies_example" class="card medium">
+          <h3>Example: sinon.spy()</h3>
+          <div class="content">
+            <div class="code-content"><pre><code class="code">const robot = {
+  greet(name) {  // Unit being tested
+    return 'Hello ' + name;
+  }
+};
+
+test('greet should return hello codey', () =&gt; {
+  sinon.spy(robot, 'greet');         // Wrap method
+  robot.greet('codey');              // Call it
+  expect(robot.greet.called).to.be.true;
+  expect(robot.greet.calledWith('codey')).to.be.true;
+  expect(robot.greet.returned('Hello codey')).to.be.true;
+  robot.greet.restore();            // Clean up
+});</code></pre></div>
+            <p>This spy observes how <strong>robot.greet()</strong> behaves during the test, enabling multiple detailed assertions.</p>
+          </div>
+        </div>
+
+        <div id="sinon-spies_methods" class="card small span-two-column">
+          <h3>Common Spy Properties</h3>
+          <div class="content">
+            <div class="definition-content">
+              <ul>
+                <li><span class="code-attribute">.called</span><span class="code-definition">Returns <strong>true</strong> if the function was called.</span></li>
+                <li><span class="code-attribute">.calledWith(...args)</span><span class="code-definition">Checks if the function was called with specific arguments.</span></li>
+                <li><span class="code-attribute">.returned(value)</span><span class="code-definition">Checks if the function returned a specific value.</span></li>
+                <li><span class="code-attribute">.restore()</span><span class="code-definition">Restores the original method (removes the spy).</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </section>
+</main>
+</body>
+</html>
