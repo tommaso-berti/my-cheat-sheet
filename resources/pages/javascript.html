@@ -1933,6 +1933,577 @@ import sayGoodbye from './greetings.js';</code></pre>
             </div>
         </div>
     </section>
+    <section id="js-async">
+        <h1><a href="#js-async" class="highlight-section">#</a> Introduction to Asynchronous JavaScript</h1>
+        <div class="cheatsheet-card-container">
+            <div id="js-async_sync-vs-async" class="card small span-two-column">
+                <h3>Synchronous vs Asynchronous Code</h3>
+                <div class="content">
+                    <h4 class="subtitle">Synchronous Code</h4>
+                    <p>In synchronous JavaScript, code executes <strong>line-by-line</strong>, blocking the next line until the current one finishes. This is known as <strong>blocking behavior</strong>.</p>
+                    <h4 class="subtitle">Asynchronous Code</h4>
+                    <p>In asynchronous JavaScript, tasks can run independently. Code execution doesn’t wait, leading to <strong>non-blocking</strong> behavior. It increases efficiency by using mechanisms like callbacks, promises, and async/await.</p>
+                    <p><strong>JavaScript is single-threaded</strong>, but thanks to the <strong>Event Loop</strong>, it can simulate concurrency.</p>
+                </div>
+            </div>
+            <div id="js-async_callbacks" class="card small">
+                <h3>Asynchronous Callbacks</h3>
+                <div class="content">
+                    <p>A callback is a function passed as an argument that executes later — asynchronously in this case, after an event occurs.</p>
+                    <div class="code-content"><pre><code class="code">easterEgg.addEventListener('click', () =&gt; {
+  console.log('Up, Up, Down, Down, Left, Right, B, A');
+});</code></pre></div>
+                    <p>This function only runs <strong>after the click</strong>, not during page load.</p>
+                </div>
+            </div>
+            <div id="js-async_settimeout" class="card small span-two-column">
+                <h3>setTimeout()</h3>
+                <div class="content">
+                    <p><code>setTimeout()</code> runs a callback after a specified delay (in ms). It does not block other code.</p>
+                    <div class="code-content"><pre><code class="code">setTimeout(() =&gt; {
+  console.log("Delay the printing of this string, please.");
+}, 1000);</code></pre></div>
+                    <p>Useful for creating deferred actions, loading spinners, or expiration timers.</p>
+                </div>
+            </div>
+            <div id="js-async_setinterval" class="card small">
+                <h3>setInterval()</h3>
+                <div class="content">
+                    <p><code>setInterval()</code> executes a callback repeatedly at a fixed interval.</p>
+                    <div class="code-content"><pre><code class="code">setInterval(() =&gt; {
+  alert('Are you paying attention???');
+}, 300000);</code></pre></div>
+                    <p>In this case, an alert is shown every 5 minutes.</p>
+                </div>
+            </div>
+            <div id="js-async_event-loop-detail" class="card tall span-three-column">
+                <h3>What Is the Event Loop?</h3>
+                <div class="content">
+                    <p>
+                        The <strong>event loop</strong> is the core of JavaScript’s asynchronous behavior. Although JavaScript is
+                        <strong>single-threaded</strong>, it can handle multiple tasks seemingly at once thanks to this system. It manages how code is executed, particularly <strong>asynchronous functions</strong> like
+                        <strong>setTimeout()</strong>, <strong>Promises</strong>, or <strong>event listeners</strong>.
+                    </p>
+                    <div class="image-content medium">
+                        <img src="/resources/medias/javascript/event-loop.png" alt="Event Loop">
+                    </div>
+                    <h4 class="subtitle">How It Works (Overview)</h4>
+                    <p>
+                        The event loop coordinates between different parts of the JavaScript runtime:
+                    </p>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">Heap</span>
+                                <span class="code-definition">An area in memory where dynamic data (like objects, arrays) is stored.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Call Stack</span>
+                                <span class="code-definition">A LIFO (last-in, first-out) structure that tracks the current function calls. When a function is called, it's pushed on top of the stack; when it returns, it's popped off.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Web/Node APIs</span>
+                                <span class="code-definition">These are background tools (like timers, DOM listeners, HTTP requests) managed by the environment, not by the engine itself.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Event Queue</span>
+                                <span class="code-definition">A FIFO (first-in, first-out) queue of callback functions waiting to be executed after async tasks complete.</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">Event Loop</span>
+                                <span class="code-definition">A continuous process that checks whether the call stack is empty, and if so, moves the first item from the event queue into the stack for execution.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subtitle">Call Stack in Depth</h4>
+                    <p>
+                        The <strong>call stack</strong> keeps track of what function is currently running. Each function call creates a <strong>stack frame</strong>, which contains its local variables and arguments. Nested functions are pushed one after the other:
+                    </p>
+                    <div class="video-content medium">
+                        <video src="/resources/medias/javascript/call-stack.mov" controls></video>
+                    </div>
+                    <div class="code-content"><pre><code class="code">function foo() {
+  return function bar() {
+    return function baz() {
+      return 'I love CodeCademy';
+    }
+  }
+}
+console.log(foo()()());</code></pre></div>
+                    <p>Each function gets added to the stack, and removed when completed. The top of the stack is always the currently running function.</p>
+                    <h4 class="subtitle">Global Execution Context</h4>
+                    <p>
+                        The stack initially contains the <strong>global execution context</strong>, which holds global variables and scope. When a function is called, a new <strong>function execution context</strong> is created and added to the top of the stack.
+                    </p>
+                    <h4 class="subtitle">Event Queue and the Event Loop</h4>
+                    <p>
+                        The <strong>event queue</strong> holds messages: callbacks from completed async operations. The <strong>event loop</strong> waits for the stack to be empty, then:
+                    </p>
+                    <div class="list-content">
+                        <ul>
+                            <li>Polls the stack to check if it's empty</li>
+                            <li>If empty, takes the first callback in the queue</li>
+                            <li>Puts that callback on the stack for execution</li>
+                        </ul>
+                    </div>
+                    <p>This happens over and over, very quickly, allowing non-blocking execution.</p>
+                </div>
+            </div>
+            <div id="js-async_example-settimeout" class="card medium">
+                <h3>Event Loop Example: setTimeout()</h3>
+                <div class="content">
+                    <p>This example demonstrates how <strong>setTimeout()</strong> interacts with the event loop, the call stack, and the event queue:</p>
+                    <div class="code-content">
+      <pre><code class="code">console.log("This is the first line of code in app.js.");
+function usingsetTimeout() {
+  console.log("I'm going to be queued in the Event Loop.");
+}
+setTimeout(usingsetTimeout, 3000);
+console.log("This is the last line of code in app.js.");</code></pre>
+                    </div>
+                    <h4 class="subtitle">Execution Order</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>console.log("first line")</strong> → added to stack, executed, removed</li>
+                            <li><strong>setTimeout()</strong> → handled by Web API, callback is scheduled</li>
+                            <li><strong>console.log("last line")</strong> → added to stack, executed, removed</li>
+                            <li>After 3 seconds, <strong>usingsetTimeout</strong> enters the <strong>event queue</strong></li>
+                            <li>When stack is empty, <strong>event loop</strong> pushes the callback to the stack → executes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="js-async_example-async-await" class="card medium span-two-column">
+                <h3>Async/Await Example with Event Loop</h3>
+                <div class="content">
+                    <p>This example shows how <strong>async/await</strong> works with <strong>Promises</strong> and the event loop:</p>
+                    <div class="code-content">
+      <pre><code class="code">const shopForBeans = () =&gt; {
+  return new Promise((resolve) =&gt; {
+    const types = ['kidney', 'black', 'garbanzo'];
+    setTimeout(() =&gt; {
+      let type = types[Math.floor(Math.random() * types.length)];
+      console.log(`2. I bought ${type} beans.`);
+      resolve(type);
+    }, 1000);
+  });
+}
+
+async function getBeans() {
+  console.log("1. Heading to the store...");
+  let value = await shopForBeans();
+  console.log(`3. I'm making ${value} beans for dinner!`);
+}
+
+getBeans();
+console.log("Describe what happens with this console.log() statement as well.");</code></pre>
+                    </div>
+                    <h4 class="subtitle">Step-by-Step Execution</h4>
+                    <div class="list-content">
+                        <ul>
+                            <li><strong>getBeans()</strong> is called → added to the stack</li>
+                            <li>Logs "1. Heading to the store..." → executed and removed from stack</li>
+                            <li><strong>await shopForBeans()</strong> → pauses <strong>getBeans</strong>, returns control to main thread</li>
+                            <li><strong>console.log("...")</strong> → executed from global scope immediately</li>
+                            <li><strong>setTimeout</strong> triggers after 1 second, logs "2. I bought..." and resolves the promise</li>
+                            <li>Promise resolution reactivates <strong>getBeans</strong>, continues after <strong>await</strong></li>
+                            <li>Logs "3. I'm making..." and exits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="interactive-website">
+        <h1><a href="#interactive-website" class="highlight-section">#</a> Interactive Website</h1>
+        <div class="cheatsheet-card-container">
+            <div id="interactive-website_script" class="card small">
+                <h3>&lt;script&gt; Element</h3>
+                <div class="content">
+                    <h4 class="subtitle">&lt;script&gt; Tag (Embedded)</h4>
+                    <p>The <strong>&lt;script&gt;</strong> tag allows you to embed JavaScript directly inside an HTML document.</p>
+                    <div class="code-content">
+      <pre><code class="code">&lt;script&gt;
+  function Hello() {
+    alert('Hello World');
+  }
+&lt;/script&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">External Script Link</h4>
+                    <p>To include JavaScript from an external file (local or CDN), use the <strong>src</strong> attribute:</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;script src=\"./exampleScript.js\"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_script-attributes" class="card small">
+                <h3>Script Loading Attributes</h3>
+                <div class="content">
+                    <h4 class="subtitle">defer</h4>
+                    <p>The <strong>defer</strong> attribute defers script execution until the HTML document has been fully parsed. It’s ideal for scripts that interact with the DOM.</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;script src="example.js" defer&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                    <h4 class="subtitle">async</h4>
+                    <p>The <strong>async</strong> attribute downloads the script while the HTML is being parsed and executes it as soon as it's available. Use this when the script does not rely on DOM or other scripts.</p>
+                    <div class="code-content">
+                        <pre><code class="code">&lt;script src="example.js" async&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_document" class="card medium">
+                <h3>DOM Object</h3>
+                <div class="content">
+                    <div class="image-content">
+                        <img src="/resources/medias/javascript/DOM1.jpg" alt="DOM Object">
+                        <img src="/resources/medias/javascript/DOM2.jpg" alt="DOM structure">
+                    </div>
+                    <p>A <strong>parent</strong> node is any node that is a direct ancestor of another node. A <strong>child</strong> node is a direct descendant of another node, called the parent node.</p>
+                    <p>Grants access to the entire DOM tree. Use <strong>document</strong> keyword to retrieve or modify any element.</p>
+                    <div class="code-content"><pre><code class="code">console.log(document.body);</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00FF04;"></i><p>DOM</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_innerhtml" class="card small">
+                <h3>.innerHTML</h3>
+                <div class="content">
+                    <p>Reads or writes HTML content inside an element.</p>
+                    <div class="code-content"><pre><code class="code">document.body.innerHTML = '&lt;h2&gt;New Title&lt;/h2&gt;';</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #FFD43B;"></i><p>DOM property</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_style" class="card small">
+                <h3>.style Property</h3>
+                <div class="content">
+                    <p>Accesses and modifies inline styles using camelCase syntax.</p>
+                    <div class="code-content"><pre><code class="code">document.querySelector('.blue').style.backgroundColor = 'blue';</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #FFD43B;"></i><p>DOM property</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_hidden" class="card small">
+                <h3>.hidden</h3>
+                <div class="content">
+                    <p>Controls element visibility. Set to <strong>true</strong> to hide.</p>
+                    <div class="code-content"><pre><code class="code">document.getElementById('sign').hidden = true;</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #FFD43B;"></i><p>DOM property</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_parentnode" class="card small">
+                <h3>.parentNode</h3>
+                <div class="content">
+                    <p>The <strong>.parentNode</strong> property returns the parent node of a specified DOM element. It is useful when you need to traverse the DOM upward from a given element.</p>
+                    <p>If the element is at the top level (like <strong>&lt;html&gt;</strong>), its <strong>parentNode</strong> will be <strong>null</strong>.</p>
+                    <div class="code-content">
+      <pre><code class="code">let parent = document.getElementById('must-have').parentNode;
+// Returns the &lt;ul&gt; element with id 'groceries'</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #FFD43B;"></i><p>DOM property</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_queryselector" class="card small">
+                <h3>.querySelector()</h3>
+                <div class="content">
+                    <p>The <strong>.querySelector()</strong> method allows you to access a DOM element using any valid CSS selector (tag, class, or ID). It returns the <strong>first matching element</strong> in the document.</p>
+                    <p>Useful for quick and flexible selection without needing to specify exact methods for classes or IDs.</p>
+                    <div class="code-content">
+                        <pre><code class="code">document.querySelector('p');</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_getelementbyid" class="card small span-two-column">
+                <h3>.getElementById()</h3>
+                <div class="content">
+                    <p>The <strong>.getElementById()</strong> method returns the element that has the specified <strong>id</strong> attribute. It is one of the most efficient ways to retrieve a single DOM element.</p>
+                    <p>Use it when you know the unique ID of the element you want to access.</p>
+                    <div class="code-content">
+                        <pre><code class="code">document.getElementById('bio').innerHTML = 'The description';</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_getelementsbyclassname" class="card small">
+                <h3>.getElementsByClassName()</h3>
+                <div class="content">
+                    <p>Returns a live HTMLCollection of all elements with a given class name.</p>
+                    <div class="code-content"><pre><code class="code">document.getElementsByClassName('student')[0].innerHTML = 'Not yet registered';</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_querySelectorAll" class="card small">
+                <h3>document.querySelectorAll()</h3>
+                <div class="content">
+                    <p>Selects all elements that match a given CSS selector string. Returns a static NodeList.</p>
+                    <div class="code-content">
+<pre><code class="code">const items = document.querySelectorAll('.highlight-section');
+items.forEach(el => {
+  el.style.backgroundColor = 'yellow';
+});</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_selector-comparison" class="card medium span-two-column">
+                <h3>querySelectorAll() vs getElementsByClassName()</h3>
+                <div class="content">
+                    <h4 class="subtitle">document.getElementsByClassName('highlight-section')</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">Type:</span><span class="code-definition">HTMLCollection</span></li>
+                            <li><span class="code-attribute">Modern Methods:</span><span class="code-definition">Not directly compatible with map() or forEach() on all browsers</span></li>
+                            <li><span class="code-attribute">Performance:</span><span class="code-definition">Very fast but less flexible</span></li>
+                            <li><span class="code-attribute">Compatibility:</span><span class="code-definition">Supported by all browsers, including legacy</span></li>
+                        </ul>
+                    </div>
+                    <h4 class="subtitle">document.querySelectorAll('.highlight-section') - most modern one</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">Type:</span><span class="code-definition">NodeList</span></li>
+                            <li><span class="code-attribute">Modern Methods:</span><span class="code-definition">Supports forEach() directly</span></li>
+                            <li><span class="code-attribute">Flexibility:</span><span class="code-definition">Uses full CSS selectors (e.g., .class, #id, tag nesting)</span></li>
+                            <li><span class="code-attribute">Compatibility:</span><span class="code-definition">Not supported in IE8 and older (now irrelevant)</span></li>
+                        </ul>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_getelementsbytagname" class="card medium">
+                <h3>.getElementsByTagName()</h3>
+                <div class="content"><p>The <strong>.getElementsByTagName()</strong> method returns a live <strong>HTMLCollection</strong> of all elements with the specified tag name.
+                    </p>
+                    <p>It can be used to access one or more elements by their tag, such as <strong>'li'</strong>, <strong>'div'</strong>, <strong>'p'</strong>, etc. Use array indexing to manipulate specific elements in the collection.</p>
+                    <div class="code-content">
+      <pre><code class="code">// Set the second &lt;li&gt; tag's content
+document.getElementsByTagName('li')[1].innerHTML = 'Cedric Diggory';</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_createelement" class="card small">
+                <h3>.createElement()</h3>
+                <div class="content">
+                    <p>Creates a new HTML element. It is not inserted into the DOM until appended.</p>
+                    <div class="code-content"><pre><code class="code">let p = document.createElement('p');
+p.id = 'info';
+p.innerHTML = 'Text here';</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_appendchild" class="card small">
+                <h3>.appendChild()</h3>
+                <div class="content">
+                    <p>Appends a node as the last child of a parent element.</p>
+                    <div class="code-content"><pre><code class="code">document.body.appendChild(p);</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_removechild" class="card small">
+                <h3>.removeChild()</h3>
+                <div class="content">
+                    <p>Removes a child node from a parent element.</p>
+                    <div class="code-content"><pre><code class="code">let p = document.querySelector('p');
+document.body.removeChild(p);</code></pre></div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #ff803a;"></i><p>DOM method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_addeventlistener" class="card small span-two-column">
+                <h3>.addEventListener()</h3>
+                <div class="content">
+                    <p>
+                        The <strong>.addEventListener()</strong> method attaches an event handler function to a DOM element, allowing you to respond to specific user interactions like clicks, key presses, or mouse movement.
+                    </p>
+                    <p>
+                        It takes two arguments: the name of the event (e.g., <strong>'click'</strong>) and the function to run when the event occurs.
+                    </p>
+                    <div class="code-content">
+      <pre><code class="code">let target = document.getElementById('targetElement');
+function handler() {
+  console.log('Clicked!');
+}
+target.addEventListener('click', handler);</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00BFFF;"></i><p>Event method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_onevent" class="card small">
+                <h3>.onevent</h3>
+                <div class="content">
+                    <p>You can assign an event handler directly using the <strong>.onevent</strong> property (like <strong>.onclick</strong>). This method only supports one handler at a time.</p>
+                    <div class="code-content">
+      <pre><code class="code">let button = document.querySelector('button');
+button.onclick = function() {
+  button.style.backgroundColor = 'blue';
+};</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00BFFF;"></i><p>Event method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_removeeventlistener" class="card small">
+                <h3>.removeEventListener()</h3>
+                <div class="content">
+                    <p>
+                        The <strong>.removeEventListener()</strong> method removes an event listener previously added with <strong>.addEventListener()</strong>. It requires the exact event type and handler function.
+                    </p>
+                    <div class="code-content">
+                        <pre><code class="code">target.removeEventListener('click', handler);</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00BFFF;"></i><p>Event method</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_event-types" class="card medium">
+                <h3>Event Types</h3>
+                <div class="content">
+                    <p>
+                        JavaScript supports a wide variety of <strong>event types</strong> triggered by user interaction or system changes.
+                        Events are grouped by category, such as mouse, keyboard, and lifecycle events. Full reference on
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Mouse_Events" target="_blank">MDN Events</a>.
+                    </p>
+                    <h4 class="subtitle">Page Events</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">load</span>
+                                <span class="code-definition">Fires when the whole page (including images and scripts) has finished loading</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subtitle">Mouse Events</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">click</span>
+                                <span class="code-definition">Triggered when the user presses and releases a mouse button</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">wheel</span>
+                                <span class="code-definition">Fired when the mouse wheel is used</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">mousedown</span>
+                                <span class="code-definition">Fired when a mouse button is pressed down</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">mouseup</span>
+                                <span class="code-definition">Fired when a mouse button is released</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">mouseover</span>
+                                <span class="code-definition">Fired when the mouse enters the content of an element</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">mouseout</span>
+                                <span class="code-definition">Fired when the mouse leaves the content of an element</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subtitle">Keyboard Events</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">keydown</span>
+                                <span class="code-definition">Fired when a key is pressed down</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">keyup</span>
+                                <span class="code-definition">Fired when a key is released</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">keypress</span>
+                                <span class="code-definition">Fired when a key is pressed and released (legacy; use keydown/keyup)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Keyboard events expose properties like <strong>event.key</strong> to determine which key was pressed.
+                    </p>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00BFFF;"></i><p>Event</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="interactive-website_event-object-properties" class="card small span-two-column">
+                <h3>Event Object Properties</h3>
+                <div class="content">
+                    <p>When an event is triggered, an <strong>event object</strong> is automatically passed to the handler function. It provides access to information about the event.</p>
+                    <h4 class="subtitle">Common Properties</h4>
+                    <div class="definition-content">
+                        <ul>
+                            <li>
+                                <span class="code-attribute">event.target</span>
+                                <span class="code-definition">The element that triggered the event</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">event.type</span>
+                                <span class="code-definition">The name/type of the event (e.g., 'click')</span>
+                            </li>
+                            <li>
+                                <span class="code-attribute">event.timeStamp</span>
+                                <span class="code-definition">The number of milliseconds since the document was loaded</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subtitle">Basic Usage</h4>
+                    <div class="code-content">
+      <pre><code class="code">function eventHandlerFunction(event) {
+  console.log(event.timeStamp);
+}
+
+eventTarget.addEventListener('click', eventHandlerFunction);</code></pre>
+                    </div>
+                    <h4 class="subtitle">Example</h4>
+                    <div class="code-content">
+      <pre><code class="code">let social = document.getElementById('social-media');
+let share = document.getElementById('share-button');
+let text = document.getElementById('text');
+
+let sharePhoto = function(event) {
+  event.target.style.display = 'none';
+  text.innerHTML = event.timeStamp;
+};
+
+share.addEventListener('click', sharePhoto);</code></pre>
+                    </div>
+                    <div class="tag-content">
+                        <div class="tag-item"><i class="fa fa-tag" style="color: #00BFFF;"></i><p>Event</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
 </main>
 </body>
