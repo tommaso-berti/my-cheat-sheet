@@ -335,7 +335,17 @@ span.code-definition {
     margin: 1rem 0;
 }
 
+.video-content {
+    text-align: center;
+    margin: 1rem 0;
+}
+
 .image-content img {
+    width: 100%;
+    height: auto;
+}
+
+.video-content video {
     width: 100%;
     height: auto;
 }
@@ -349,6 +359,11 @@ span.code-definition {
 }
 
 .image-content.medium img {
+    width: 50%;
+    height: auto;
+}
+
+.video-content.medium video {
     width: 50%;
     height: auto;
 }

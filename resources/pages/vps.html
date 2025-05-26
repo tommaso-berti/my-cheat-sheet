@@ -38,7 +38,7 @@
                     </div>
                     <div class="list-content">
                         <ul>
-                            <li><strong><a href="../../index.html#linux">Linux</a></strong> The most popular choice for VPS. Common distributions include: Ubuntu, CentOS, Debian, Fedora</li>
+                            <li><strong>Linux</strong> The most popular choice for VPS. Common distributions include: Ubuntu, CentOS, Debian, Fedora</li>
                             <li><strong>Windows</strong> Preferred for running specific Windows applications or using technologies like ASP.NET.</li>
                             <li><strong>BSD</strong> Known for stability and security, with options like FreeBSD.</li>
                         </ul>
@@ -68,6 +68,133 @@
                     <div class="code-content">
                         <button class="copy-button"><img src="/resources/icons/copy.png" alt="copy icon"></button>
                         <pre><code class="code">ssh -i key_name.pem root@IP_ADDRESS</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="vps-package-management">
+        <h1><a href="#vps-package-management" class="highlight-section">#</a> VPS Package Management</h1>
+        <div class="cheatsheet-card-container">
+            <div id="vps-package-management_update-upgrade" class="card small">
+                <h3>Update & Upgrade</h3>
+                <div class="content">
+                    <div class="code-content">
+<pre><code class="code">sudo apt update
+sudo apt upgrade -y
+sudo apt full-upgrade -y</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-package-management_clean-cache" class="card small">
+                <h3>Clean Cache & Unused Packages</h3>
+                <div class="content">
+                    <div class="code-content">
+<pre><code class="code">sudo apt clean
+sudo apt autoclean
+sudo apt autoremove -y</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-package-management_check-fix" class="card small">
+                <h3>Check & Fix</h3>
+                <div class="content">
+                    <div class="code-content">
+<pre><code class="code">sudo apt install -f
+apt list --upgradable
+[ -f /var/run/reboot-required ] &amp;&amp; echo "Reboot is required"</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-package-management_install-remove" class="card small">
+                <h3>Install, Remove, Purge</h3>
+                <div class="content">
+                    <div class="code-content">
+<pre><code class="code">sudo apt install &lt;package&gt;
+sudo apt remove &lt;package&gt;
+sudo apt purge &lt;package&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-package-management_search" class="card small">
+                <h3>Search</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">apt search &lt;package&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-package-management_reboot" class="card small">
+                <h3>Reboot</h3>
+                <div class="content">
+                    <div class="code-content">
+                        <pre><code class="code">sudo reboot</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="vps-git-commands">
+        <h1><a href="#vps-git-commands" class="highlight-section">#</a> Git Commands for VPS Deployment</h1>
+        <div class="cheatsheet-card-container">
+            <div id="vps-git-commands_pull-standard" class="card small">
+                <h3>Standard Git Pull</h3>
+                <div class="content">
+                    <p>Pull the latest changes from a Git repository as a specific user into a project directory:</p>
+                    <div class="code-content">
+                        <pre><code class="code">sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; pull origin main</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-git-commands_pull-force" class="card small span-two-column">
+                <h3>Force Pull (Discard Local Changes)</h3>
+                <div class="content">
+                    <p>Overwrite all local modifications with the remote version:</p>
+                    <div class="code-content">
+<pre><code class="code">sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; reset --hard HEAD
+sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; pull origin main</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-git-commands_pull-stash" class="card small span-two-column">
+                <h3>Pull with Stash</h3>
+                <div class="content">
+                    <p>Temporarily save and restore local changes around a pull operation:</p>
+                    <div class="code-content">
+<pre><code class="code">sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; stash
+sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; pull origin main
+sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; stash pop</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-git-commands_safe-directory" class="card small">
+                <h3>Fix Dubious Ownership</h3>
+                <div class="content">
+                    <p>Add the directory as a safe Git directory to avoid ownership warnings:</p>
+                    <div class="code-content">
+                        <pre><code class="code">git config --global --add safe.directory &lt;project_path&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-git-commands_pull-commit" class="card small span-two-column">
+                <h3>Pull with Local Commit</h3>
+                <div class="content">
+                    <p>Commit local changes before performing a pull:</p>
+                    <div class="code-content">
+<pre><code class="code">sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; add .
+sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; commit -m "WIP: local changes"
+sudo -u &lt;deploy_user&gt; git -C &lt;project_path&gt; pull origin main</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="vps-git-commands_fix-permissions" class="card small">
+                <h3>Fix Directory Permissions</h3>
+                <div class="content">
+                    <p>Allow traversal into the project directory path for web or deploy users:</p>
+                    <div class="code-content">
+<pre><code class="code">sudo chmod o+x /srv
+sudo chmod o+x /srv/www
+sudo chmod o+x /srv/www/sites</code></pre>
                     </div>
                 </div>
             </div>
