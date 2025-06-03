@@ -233,3 +233,11 @@ section {
 .mocha-button:hover {
     background-color: #ff7e66;
 }
+
+.api-button {
+    background-color: #118AB2;
+}
+
+.api-button:hover {
+    background-color: #4fc3f7;
+}

@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript - cheatsheet</title>
+    <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header class="header-title">
+    <a href="../../index.html"><img src="/resources/icons/data_array.png" alt="Logo of the site"><h1><span class="topic">My</span> <span class="cheatsheet"> cheatsheet</span></h1></a>
+</header>
+<main>
+    <section class="introduction-container">
+        <div id="introduction">
+            <h2><span class="topic">JavaScript</span> <span class="cheatsheet">cheatsheet</span></h2>
+            <p>This is a quick reference cheat sheet for understanding and writing JavaScript.</p>
+        </div>
+    </section>
+    <section class="main-container">
+        <section id="api-web-rest">
+            <h1><a href="#api-web-rest" class="highlight-section">#</a> Web APIs and REST</h1>
+            <div class="cheatsheet-card-container">
+                <div id="api-web-overview" class="card small">
+                    <h3>Web APIs</h3>
+                    <div class="content">
+                        <p>An <strong>Application Programming Interface (API)</strong> is a software tool that lets developers interact with another application to use its functionality.</p>
+                        <h4 class="subtitle">Types of APIs</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>Browser APIs:</strong> Access browser features like <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank">Geolocation API</a>, audio, VR, etc. Permissions are often required.</li>
+                                <li><strong>Third-party APIs:</strong> Services like <a href="https://openweathermap.org/api" target="_blank">OpenWeather API</a> offer data or functionality externally. Usually require an <strong>API key</strong>.</li>
+                            </ul>
+                        </div>
+                        <p>For more, see <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">MDN’s Web API documentation</a>.</p>
+                    </div>
+                </div>
+                <div id="api-requests" class="card small">
+                    <h3>Making Requests</h3>
+                    <div class="content">
+                        <p>To request data from an API, you often need to include:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li>Resource path (e.g. <strong>/weather</strong>)</li>
+                                <li>HTTP method (e.g. GET, POST)</li>
+                                <li>Headers (e.g. <strong>Authorization</strong>, <strong>Content-Type</strong>)</li>
+                                <li>Parameters (e.g. city name, time, forecast type)</li>
+                            </ul>
+                        </div>
+                        <p>Details are always found in the <a href="https://openweathermap.org/api" target="_blank">API’s official documentation</a>.</p>
+                    </div>
+                </div>
+                <div id="api-response-json" class="card small">
+                    <h3>Response Format: JSON</h3>
+                    <div class="content">
+                        <p>Most APIs respond with data formatted in <strong>JSON</strong>:</p>
+                        <div class="code-content">
+<pre><code class="code">{
+  "temperature": {
+    "celcius": 25
+  },
+  "city": "chicago"
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="api-rest" class="card small">
+                    <h3>REST Architecture</h3>
+                    <div class="content">
+                        <p><strong>REST</strong> (REpresentational State Transfer) is an architectural style that enables stateless communication between clients and servers over HTTP.</p>
+                        <div class="image-content">
+                            <img src="/resources/medias/api/rest-api.jpg" alt="rest-api scheme">
+                        </div>
+                        <h4 class="subtitle">Principles</h4>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>Stateless:</strong> Each request contains all needed info; no session memory.</li>
+                                <li><strong>Resource-based:</strong> Resources are nouns (e.g. <span class="code-attribute">/customers</span>), not actions.</li>
+                                <li><strong>Separation of Client and Server:</strong> Each can evolve independently.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="api-verbs" class="card small">
+                    <h3>HTTP Methods (CRUD)</h3>
+                    <div class="content">
+                        <div class="definition-content">
+                            <ul>
+                                <li>
+                                    <span class="code-attribute">GET</span>
+                                    <span class="code-definition">Retrieve a specific resource or a collection</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">POST</span>
+                                    <span class="code-definition">Create a new resource</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">PUT</span>
+                                    <span class="code-definition">Update an existing resource</span>
+                                </li>
+                                <li>
+                                    <span class="code-attribute">DELETE</span>
+                                    <span class="code-definition">Remove a resource</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>More in <a href="https://www.codecademy.com/article/what-is-crud" target="_blank">this Codecademy article</a>.</p>
+                    </div>
+                </div>
+                <div id="api-paths" class="card small">
+                    <h3>RESTful Paths</h3>
+                    <div class="content">
+                        <p>Paths identify resources clearly:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>/customers</strong> → All customers</li>
+                                <li><strong>/customers/223/orders/12</strong> → Order 12 for customer 223</li>
+                                <li><strong>POST /customers</strong> → Create new customer</li>
+                                <li><strong>GET /customers/:id</strong> → Retrieve customer by ID</li>
+                                <li><strong>DELETE /customers/:id</strong> → Remove customer by ID</li>
+                            </ul>
+                        </div>
+                        <p>Use <strong>plural nouns</strong> for resources. Avoid verbs in paths.</p>
+                    </div>
+                </div>
+                <div id="api-status-codes" class="card small span-two-column">
+                    <h3>HTTP Status Codes</h3>
+                    <div class="content">
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">200 OK</span><span class="code-definition">Standard response for successful requests</span></li>
+                                <li><span class="code-attribute">201 CREATED</span><span class="code-definition">Resource was successfully created</span></li>
+                                <li><span class="code-attribute">204 NO CONTENT</span><span class="code-definition">Success, no content returned</span></li>
+                                <li><span class="code-attribute">400 BAD REQUEST</span><span class="code-definition">Client-side syntax or format error</span></li>
+                                <li><span class="code-attribute">403 FORBIDDEN</span><span class="code-definition">Client lacks permission</span></li>
+                                <li><span class="code-attribute">404 NOT FOUND</span><span class="code-definition">Resource does not exist</span></li>
+                                <li><span class="code-attribute">500 INTERNAL SERVER ERROR</span><span class="code-definition">Generic server failure</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="api-example" class="card medium">
+                    <h3>RESTful API Example – Customer Management</h3>
+                    <div class="content">
+                        <h4 class="subtitle">1. View all customers</h4>
+                        <div class="code-content">
+<pre><code class="code">GET http://fashionboutique.com/customers
+Accept: application/json</code></pre>
+                        </div>
+
+                        <h4 class="subtitle">2. Create a new customer</h4>
+                        <div class="code-content">
+<pre><code class="code">POST http://fashionboutique.com/customers
+Content-Type: application/json
+
+{
+  "customer": {
+    "name": "Scylla Buss",
+    "email": "scylla.buss@codecademy.org"
+  }
+}</code></pre>
+                        </div>
+
+                        <h4 class="subtitle">3. View a single customer</h4>
+                        <div class="code-content">
+<pre><code class="code">GET http://fashionboutique.com/customers/123
+Accept: application/json</code></pre>
+                        </div>
+
+                        <h4 class="subtitle">4. Update an existing customer</h4>
+                        <div class="code-content">
+<pre><code class="code">PUT http://fashionboutique.com/customers/123
+Content-Type: application/json
+
+{
+  "customer": {
+    "name": "Scylla Buss",
+    "email": "scyllabuss1@codecademy.com"
+  }
+}</code></pre>
+                        </div>
+
+                        <h4 class="subtitle">5. Delete a customer</h4>
+                        <div class="code-content">
+                            <pre><code class="code">DELETE http://fashionboutique.com/customers/123</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="api-headers" class="card small span-two-column">
+                    <h3>Headers & MIME Types</h3>
+                    <div class="content">
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">Accept: application/json</span><span class="code-definition">Client accepts JSON response</span></li>
+                                <li><span class="code-attribute">Content-Type: application/json</span><span class="code-definition">Body is in JSON format</span></li>
+                                <li><span class="code-attribute">text/html</span><span class="code-definition">HTML document</span></li>
+                                <li><span class="code-attribute">text/css</span><span class="code-definition">CSS stylesheet</span></li>
+                                <li><span class="code-attribute">image/png</span><span class="code-definition">PNG image</span></li>
+                                <li><span class="code-attribute">application/pdf</span><span class="code-definition">PDF document</span></li>
+                                <li><span class="code-attribute">application/xml</span><span class="code-definition">XML data</span></li>
+                            </ul>
+                        </div>
+                        <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank">MDN MIME Types</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="api-json">
+            <h1><a href="#api-json" class="highlight-section">#</a> JSON</h1>
+            <div class="cheatsheet-card-container">
+                <div id="json-overview" class="card small span-two-column">
+                    <h3>What is JSON?</h3>
+                    <div class="content">
+                        <p><strong>JSON</strong> (JavaScript Object Notation) is a language-independent data format used to store and exchange data across systems. It is standardized by <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/" target="_blank">ECMA International</a>.</p>
+                        <p>JSON is widely used in web applications to send and receive data between clients (like browsers) and servers.</p>
+                        <p>Public APIs such as Spotify or Google Maps often deliver data in JSON so that any programming language can parse it easily.</p>
+                    </div>
+                </div>
+                <div id="json-syntax" class="card small">
+                    <h3>JSON Syntax</h3>
+                    <div class="content">
+                        <p>JSON is based on JavaScript object syntax. Here's an example:</p>
+                        <div class="code-content">
+<pre><code class="code">{
+  "student": {
+    "name": "Rumaisa Mahoney",
+    "age": 30,
+    "fullTime": true,
+    "languages": ["JavaScript", "HTML", "CSS"],
+    "GPA": 3.9,
+    "favoriteSubject": null
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="json-types" class="card small span-two-column">
+                    <h3>JSON Data Types</h3>
+                    <div class="content">
+                        <div class="definition-content">
+                            <ul>
+                                <li><span class="code-attribute">string</span><span class="code-definition">Text enclosed in double-quotes</span></li>
+                                <li><span class="code-attribute">number</span><span class="code-definition">Integer or float</span></li>
+                                <li><span class="code-attribute">object</span><span class="code-definition">Name-value pairs enclosed in braces { }</span></li>
+                                <li><span class="code-attribute">array</span><span class="code-definition">Comma-separated values in square brackets [ ]</span></li>
+                                <li><span class="code-attribute">boolean</span><span class="code-definition">true or false</span></li>
+                                <li><span class="code-attribute">null</span><span class="code-definition">Empty or unknown value</span></li>
+                            </ul>
+                        </div>
+                        <p>Dates are not supported directly in JSON. Use ISO 8601 string format: <strong>"2014-01-01T23:28:56.782Z"</strong></p>
+                    </div>
+                </div>
+                <div id="json-vs-js" class="card medium">
+                    <h3>JSON vs JavaScript Objects</h3>
+                    <div class="content">
+                        <p>Differences between JSON and native JavaScript objects:</p>
+                        <h4 class="subtitle">JSON</h4>
+                        <div class="code-content">
+<pre><code class="code">{
+  "person": {
+    "name": "Kate",
+    "age": 30,
+    "hobbies": ["reading", "writing", "cooking", "tennis"]
+  }
+}</code></pre>
+                        </div>
+                        <h4 class="subtitle">JavaScript</h4>
+                        <div class="code-content">
+<pre><code class="code">{
+  person: {
+    name: 'Kate',
+    age: 30,
+    hobbies: ['reading', 'writing', 'cooking', 'tennis']
+  }
+}</code></pre>
+                        </div>
+                        <div class="list-content">
+                            <ul>
+                                <li>JSON requires double quotes for keys and string values.</li>
+                                <li>JavaScript accepts both single and double quotes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="json-read" class="card small">
+                    <h3>Reading JSON</h3>
+                    <div class="content">
+                        <p>In JavaScript, use <span class="code-attribute">JSON.parse()</span> to convert a JSON string into an object:</p>
+                        <div class="code-content">
+<pre><code class="code">const jsonData = '{ "book": { "name": "JSON Primer", "price": 29.99, "inStock": true, "rating": null } }';
+const jsObject = JSON.parse(jsonData);
+console.log(jsObject);</code></pre>
+                        </div>
+                        <p>Output:</p>
+                        <div class="code-content">
+<pre><code class="code">{
+  book: { name: 'JSON Primer', price: 29.99, inStock: true, rating: null }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="json-write" class="card small">
+                    <h3>Writing JSON</h3>
+                    <div class="content">
+                        <p>Use <span class="code-attribute">JSON.stringify()</span> to convert an object to a JSON string:</p>
+                        <div class="code-content">
+<pre><code class="code">const jsObject = { book: 'JSON Primer', price: 29.99, inStock: true, rating: null };
+const jsonData = JSON.stringify(jsObject);
+console.log(jsonData);</code></pre>
+                        </div>
+                        <p>Output:</p>
+                        <div class="code-content">
+<pre><code class="code">{
+  "book": "JSON Primer",
+  "price": 29.99,
+  "inStock": true,
+  "rating": null
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="api-fetch-then">
+            <h1><a href="#api-fetch-then" class="highlight-section">#</a> fetch() with .then()</h1>
+            <div class="cheatsheet-card-container">
+                <div id="fetch-overview" class="card small span-two-column">
+                    <h3>fetch()</h3>
+                    <div class="content">
+                        <p>The <strong>fetch()</strong> function is used to make HTTP requests to APIs in JavaScript. It:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li>Creates a request and sends it to a specified endpoint</li>
+                                <li>Returns a <strong>Promise</strong> that resolves to a <strong>Response</strong> object</li>
+                                <li>Allows chaining with <strong>.then()</strong> to handle success and error cases</li>
+                            </ul>
+                        </div>
+                        <p>Basic syntax:</p>
+                        <div class="code-content">
+                            <pre><code class="code">fetch('https://api-to-call.com/endpoint')</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="fetch-then-chain" class="card small">
+                    <h3>.then() Chaining</h3>
+                    <div class="content">
+                        <p>The <strong>.then()</strong> method is chained to <strong>fetch()</strong> to handle the asynchronous response:</p>
+                        <div class="list-content">
+                            <ul>
+                                <li><strong>First .then():</strong> checks if the response is OK and returns <strong>response.json()</strong></li>
+                                <li><strong>Error callback:</strong> logs the network error if the endpoint is unreachable</li>
+                                <li><strong>Second .then():</strong> receives the parsed <strong>jsonResponse</strong> and handles the data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="fetch-get-example" class="card small">
+                    <h3>fetch() - GET Example</h3>
+                    <div class="content">
+                        <div class="code-content">
+<pre><code class="code">fetch('http://api-to-call.com/endpoint')
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Request failed!');
+  }, networkError => console.log(networkError.message)
+).then(jsonResponse => {
+  // Code to execute with jsonResponse
+});</code></pre>
+                        </div>
+                        <p>This fetch call retrieves data from the endpoint and handles both success and error cases.</p>
+                    </div>
+                </div>
+                <div id="fetch-post-example" class="card small span-two-column">
+                    <h3>fetch() - POST Example</h3>
+                    <div class="content">
+                        <p><strong>POST requests</strong> require a second argument in <strong>fetch()</strong> with <strong>method</strong> and <strong>body</strong>:</p>
+                        <div class="code-content">
+<pre><code class="code">fetch('http://api-to-call.com/endpoint', {
+  method: 'POST',
+  body: JSON.stringify({ id: '200' })
+}).then(response => {
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error('Request failed!');
+}, networkError => console.log(networkError.message)
+).then(jsonResponse => {
+  // Code to execute with jsonResponse
+});</code></pre>
+                        </div>
+                        <p>The <strong>body</strong> is stringified and sent as JSON. The response is handled exactly like in the GET request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="api-fetch-async">
+            <h1><a href="#api-fetch-async" class="highlight-section">#</a> fetch() with async / await</h1>
+            <div class="cheatsheet-card-container">
+                <div id="fetch-async-overview" class="card small">
+                    <h3>Why use async / await?</h3>
+                    <div class="content">
+                        <p><strong>async / await</strong> provides a clear and readable way to perform asynchronous operations such as HTTP requests using <span class="code-attribute">fetch()</span>.</p>
+                        <p>Compared to promise chaining (<span class="code-attribute">.then()</span>), this syntax is easier to follow and debug.</p>
+                        <p><span class="code-attribute">response.json()</span> is itself asynchronous and must be awaited.</p>
+                    </div>
+                </div>
+                <div id="fetch-get" class="card small span-two-column">
+                    <h3>GET Request</h3>
+                    <div class="content">
+                        <p>This example fetches data from a URL using <strong>async / await</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">const getData = async () => {
+  try {
+    const response = await fetch('https://api-to-call.com/endpoint');
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      // Code to execute with jsonResponse
+    }
+    throw new Error('Request failed!');
+  } catch (error) {
+    console.log(error);
+  }
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="fetch-post" class="card small span-two-column">
+                    <h3>POST Request</h3>
+                    <div class="content">
+                        <p>This example sends data to a server using <strong>POST</strong> and <strong>async / await</strong>.</p>
+                        <div class="code-content">
+<pre><code class="code">const getData = async () => {
+  try {
+    const response = await fetch('https://api-to-call.com/endpoint', {
+      method: 'POST',
+      body: JSON.stringify({ id: 200 })
+    });
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      // Code to execute with jsonResponse
+    }
+    throw new Error('Request failed!');
+  } catch (error) {
+    console.log(error);
+  }
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="fetch-resources" class="card small">
+                    <h3>Additional Resources</h3>
+                    <div class="content">
+                        <div class="list-content">
+                            <ul>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">MDN: Using the Fetch API</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises" target="_blank">MDN: Asynchronous Programming with Promises</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Choosing_the_right_approach" target="_blank">MDN: Choosing the Right Approach</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data" target="_blank">MDN: Fetching Data from the Server</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction" target="_blank">MDN: Introduction to Web APIs</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">MDN: HTTP Overview</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs" target="_blank">MDN: Third-party APIs</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank">Video: What the Heck is the Event Loop Anyways</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX" target="_blank">MDN: AJAX Documentation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="fetch-querystring" class="card small span-two-column">
+                    <h3>GET with Query String</h3>
+                    <div class="content">
+                        <p>You can dynamically construct query strings when using <strong>fetch()</strong> with <strong>async / await</strong>. Use <strong>URLSearchParams</strong> to safely encode parameters.</p>
+                        <div class="code-content">
+<pre><code class="code">const getWeather = async () => {
+  const params = new URLSearchParams({
+    city: 'Naples',
+    units: 'metric'
+  });
+
+  try {
+    const response = await fetch(`https://api.example.com/weather?${params}`);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      // Use jsonResponse data
+    }
+    throw new Error('Request failed!');
+  } catch (error) {
+    console.log(error);
+  }
+};</code></pre>
+                        </div>
+                        <p>Output URL: <strong>https://api.example.com/weather?city=Naples&units=metric</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+</body>
+</html>
