@@ -2114,6 +2114,199 @@ console.log("Describe what happens with this console.log() statement as well.");
             </div>
         </div>
     </section>
+    <section id="javascript-promises">
+        <h1><a href="#javascript-promises" class="highlight-section">#</a> Promises</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-promises_states" class="card medium">
+                <h3>Promise States</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">Pending</span><span class="code-definition">Initial state. The operation has not completed yet.</span></li>
+                            <li><span class="code-attribute">Fulfilled</span><span class="code-definition">Operation completed successfully. The promise has a resolved value.</span></li>
+                            <li><span class="code-attribute">Rejected</span><span class="code-definition">Operation failed. The promise has a reason for failure (usually an Error).</span></li>
+                        </ul>
+                    </div>
+                    <p class="annotations">A promise is considered <strong>settled</strong> when it is no longer pending (fulfilled or rejected).</p>
+                </div>
+            </div>
+            <div id="javascript-promises_constructor" class="card medium">
+                <h3>Creating a Promise</h3>
+                <div class="content">
+                    <p>The <strong>Promise constructor</strong> takes an executor function with <strong>resolve</strong> and <strong>reject</strong> parameters.</p>
+                    <div class="code-content">
+<pre><code class="code">const executorFunction = (resolve, reject) => {
+  if (someCondition) {
+    resolve('I resolved!');
+  } else {
+    reject('I rejected!');
+  }
+};
+const myPromise = new Promise(executorFunction);</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-promises_then" class="card medium">
+                <h3>.then()</h3>
+                <div class="content">
+                    <p>Handles success or failure when a promise settles. Takes two optional arguments: <strong>onFulfilled</strong> and <strong>onRejected</strong>. It always returns a new promise.</p>
+                    <div class="code-content">
+<pre><code class="code">let prom = new Promise((resolve, reject) => {
+  let num = Math.random();
+  num < .5 ? resolve('Yay!') : reject('Ohhh noooo!');
+});
+
+prom.then(
+  (val) => console.log(val),
+  (err) => console.log(err)
+);</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-promises_catch" class="card small">
+                <h3>.catch()</h3>
+                <div class="content">
+                    <p>Handles errors (rejections). Equivalent to .then(null, onRejected).</p>
+                    <div class="code-content">
+<pre><code class="code">prom
+  .then(res => console.log(res))
+  .catch(err => console.log(err));</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-promises_chaining" class="card small">
+                <h3>Promise Chaining</h3>
+                <div class="content">
+                    <p>Return another promise inside a <strong>.then()</strong> to chain operations.</p>
+                    <div class="code-content">
+<pre><code class="code">first()
+  .then(val => {
+    return second(val);
+  })
+  .then(val2 => {
+    console.log(val2);
+  });</code></pre>
+                    </div>
+                    <p class="annotations">Returning a new promise is essential for chaining correctly.</p>
+                </div>
+            </div>
+            <div id="javascript-promises_all" class="card small">
+                <h3>Promise.all()</h3>
+                <div class="content">
+                    <p>Executes multiple promises in parallel. It accept an array of promises.</p>
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">All Resolve</span><span class="code-definition">Resolves with an array of all resolved values.</span></li>
+                            <li><span class="code-attribute">Any Reject</span><span class="code-definition">Immediately rejects with the first rejection reason.</span></li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+<pre><code class="code">Promise.all([p1, p2, p3])
+  .then(values => console.log(values))
+  .catch(error => console.error(error));</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="javascript-async-await">
+        <h1><a href="#javascript-async-await" class="highlight-section">#</a> Async...Await (ES8)</h1>
+        <div class="cheatsheet-card-container">
+            <div id="javascript-async-await_async-function" class="card small span-two-column">
+                <h3>Async Function</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">async</span><span class="code-definition">Declares a function that returns a promise and can use await inside</span></li>
+                            <li><span class="code-attribute">Syntax</span><span class="code-definition">async function name() { ... } or const name = async () => { ... }</span></li>
+                            <li><span class="code-attribute">Returns</span><span class="code-definition">A Promise that resolves with the function's return value</span></li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+<pre><code class="code">async function myFunc() {
+  return 'Hello';
+}
+myFunc().then(console.log);</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-async-await_try-catch" class="card small">
+                <h3>Error Handling: try...catch</h3>
+                <div class="content">
+                    <p>Async functions can use synchronous-style error handling with <strong>try...catch</strong>.</p>
+                    <div class="code-content">
+<pre><code class="code">async function safeFunction() {
+  try {
+    let result = await riskyAsync();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-async-await_await-operator" class="card small span-two-column">
+                <h3>Await Operator</h3>
+                <div class="content">
+                    <div class="definition-content">
+                        <ul>
+                            <li><span class="code-attribute">await</span><span class="code-definition">Pauses async function execution until the Promise is resolved</span></li>
+                            <li><span class="code-attribute">Usage</span><span class="code-definition">Only within async functions</span></li>
+                            <li><span class="code-attribute">Returns</span><span class="code-definition">The resolved value of the Promise</span></li>
+                        </ul>
+                    </div>
+                    <div class="code-content">
+<pre><code class="code">async function getValue() {
+  let value = await someAsyncFunction();
+  console.log(value);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-async-await_catch-method" class="card small">
+                <h3>Error Handling: .catch()</h3>
+                <div class="content">
+                    <p>Async functions return Promises, so we can handle errors with <strong>.catch()</strong>.</p>
+                    <div class="code-content">
+<pre><code class="code">async function fetchData() {
+  return await callAPI();
+}
+fetchData().catch(error => console.log(error));</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-async-await_concurrent-promises" class="card medium">
+                <h3>Concurrent Promises</h3>
+                <div class="content">
+                    <p>Run multiple async operations in parallel by starting them before awaiting.</p>
+                    <div class="code-content">
+<pre><code class="code">async function run() {
+  const first = firstAsync();
+  const second = secondAsync();
+  console.log(await first, await second);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-async-await_promise-all" class="card medium">
+                <h3>Await Promise.all()</h3>
+                <div class="content">
+                    <p><strong>Promise.all()</strong> executes multiple async tasks in parallel and fails fast.</p>
+                    <div class="code-content">
+<pre><code class="code">async function fetchAll() {
+  const results = await Promise.all([
+    asyncTask1(),
+    asyncTask2(),
+    asyncTask3()
+  ]);
+  console.log(results);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="interactive-website">
         <h1><a href="#interactive-website" class="highlight-section">#</a> Interactive Website</h1>
         <div class="cheatsheet-card-container">
