@@ -568,7 +568,7 @@ switch (groceryItem) {
                     </div>
                 </div>
             </div>
-            <div id="javascript-arrays_access-and-valorize-array-data" class="card medium span-two-column">
+            <div id="javascript-arrays_access-and-valorize-array-data" class="card tall span-two-column">
                 <h3>Access and valorize array data</h3>
                 <div class="content">
                     <div class="code-content">
@@ -595,6 +595,22 @@ myArray = [2, 'banana', false]; // Error: Assignment to constant variable</code>
                     <div class="code-content">
                          <pre><code class="code">let numbers = [1,2,3,4];
 numbers.length  // 4</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-arrays_destructuring-technique" class="card small">
+                <h3>Destructuring Technique</h3>
+                <div class="content">
+                    <div class="code-content">
+      <pre><code class="code">let cars = ['ferrari', 'tesla', 'cadillac'];
+let [car1, car2, car3] = cars;
+console.log(car1, car2, car3); // Prints: ferrari tesla cadillac</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
                     </div>
                 </div>
             </div>
@@ -1257,7 +1273,7 @@ getFahrenheit(15); // Returns 59</code></pre>
                     </div>
                 </div>
             </div>
-            <div id="javascript-functions_high-order-functions" class="card small span-two-column">
+            <div id="javascript-functions_high-order-functions" class="card medium span-two-column">
                 <h3>High-order Functions</h3>
                 <div class="content">
                     <h4 class="subtitle">Functions as Data</h4>
@@ -1297,6 +1313,32 @@ const checkConsistentOutput = (func, val) => {
     return 'inconsistent results';
 };
 console.log(checkConsistentOutput(addTwo, 5)); // Expected output: 7</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="javascript-functions_destructuring-technique" class="card small">
+                <h3>Destructuring Technique</h3>
+                <div class="content">
+                    <p>Instead of accepting a complete object as an argument, a function can use destructuring to capture specific properties as named parameters.</p>
+                    <div class="code-content">
+      <pre><code class="code">let truck = {
+    model: '1977 Mustang convertible',
+    maker: 'Ford',
+    city: 'Detroit',
+    year: '1977',
+    convertible: true
+};
+const printCarInfo = ({model, maker, city}) => {
+    console.log(`The ${model}, or ${maker}, is in the city ${city}.`);
+};
+printCarInfo(truck);
+// Prints: The 1977 Mustang convertible, or Ford, is in the city Detroit.</code></pre>
+                    </div>
+                </div>
+                <div class="tag-content">
+                    <div class="tag-item">
+                        <i class="fa fa-tag" style="color: #FFD43B;"></i>
+                        <p>ES6</p>
                     </div>
                 </div>
             </div>
@@ -1544,7 +1586,7 @@ const monsterFactory2 = (name, age) => {
                 <div class="content">
                     <p>Property shorthand simplifies object creation, and destructuring assignment permits the extraction of object properties into variables.</p>
                     <div class="code-content">
-      <pre><code class="code">const vampire = {
+                        <pre><code class="code">const vampire = {
   name: 'Dracula',
   residence: 'Transylvania',
   preferences: {
@@ -1556,6 +1598,11 @@ const { residence } = vampire;
 console.log(residence);  // 'Transylvania'
 const { day } = vampire.preferences;
 console.log(day);  // 'stay inside'</code></pre>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="code">let destinations = { x: 'LA', y: 'NYC', z: 'MIA' };
+let { x, y, z } = destinations;
+console.log(x, y, z); // Prints LA NYC MIA</code></pre>
                     </div>
                 </div>
                 <div class="tag-content">
